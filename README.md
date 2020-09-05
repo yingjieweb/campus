@@ -1,19 +1,5 @@
 # campus
 
-## Project setup
-```
-npm install
-```
+### 大学生就业推荐系统
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+该系统主要是我研究生期间在做的一个项目，目前还在需求分析阶段，尚未开发...

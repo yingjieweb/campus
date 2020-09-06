@@ -1,7 +1,5 @@
 <template>
-  <div class="home">
-    Welcome to Your Vue.js App
-  </div>
+  <Layout></Layout>
 </template>
 
 <script>

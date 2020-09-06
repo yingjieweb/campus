@@ -8,11 +8,9 @@
 </template>
 
 <style lang="scss">
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  @import "~@/assets/styles/reset.scss";
+  @import "~@/assets/styles/helper.scss";
+
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

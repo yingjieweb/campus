@@ -31,10 +31,19 @@
         <i class="el-icon-cpu"></i>
         <span slot="title">数据处理</span>
       </el-menu-item>
-      <el-menu-item index="7">
-        <i class="el-icon-setting"></i>
-        <span slot="title">系统设置</span>
-      </el-menu-item>
+      <el-submenu index="7">
+        <template slot="title">
+          <i class="el-icon-setting"></i>
+          <span>系统设置</span>
+        </template>
+        <el-menu-item-group>
+          <el-menu-item index="7-1">用户管理</el-menu-item>
+          <el-menu-item index="7-2">班级管理</el-menu-item>
+          <el-menu-item index="7-3">排课管理</el-menu-item>
+          <el-menu-item index="7-4">课程控制</el-menu-item>
+          <el-menu-item index="7-5">课程备份</el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
     </el-menu>
   </div>
 </template>

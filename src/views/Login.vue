@@ -4,11 +4,11 @@
       <div class="avatar">
         <img src="@/assets/images/login.png" alt="avatar">
       </div>
-      <el-input style="margin: 10px auto" placeholder="用户名" prefix-icon="el-icon-user" v-model="input1"></el-input>
-      <el-input style="margin: 14px auto" placeholder="密码" prefix-icon="el-icon-lock" v-model="input2"></el-input>
-      <el-button class="submit" type="primary" size="mini" round>登录</el-button>
+      <el-input style="margin: 10px auto" placeholder="用户名" prefix-icon="el-icon-user" v-model="username"></el-input>
+      <el-input style="margin: 14px auto" placeholder="密码" prefix-icon="el-icon-lock" v-model="password" show-password></el-input>
+      <el-button class="submit" type="primary" size="mini" round @click="onsubmit">登录</el-button>
     </div>
-    <div class="instructions">大学生就业推荐系统</div>
+    <div class="instructions">大学生综合评价就业推荐系统</div>
   </div>
 </template>
 
@@ -17,8 +17,24 @@
     name: "Login",
     data(){
       return {
-        input1: '',
-        input2: ''
+        username: '',
+        password: ''
+      }
+    },
+    methods:{
+      onsubmit(){
+        if(this.username === 'admin' && this.password === 'admin@123'){
+          this.$message({
+            message: '登陆成功',
+            type: 'success'
+          });
+          this.$router.push('/home');
+        }else {
+          this.$message({
+            message: '用户名或密码错误！',
+            type: 'error'
+          });
+        }
       }
     }
   }
@@ -40,6 +56,7 @@
       position: relative;
       border: 1px solid #E6E8ED;
       border-radius: 4px;
+      box-shadow: 0px 0px 1px #888888;
 
       > .avatar {
         position: absolute;
@@ -49,7 +66,7 @@
         background-color: white;
         border-radius: 50%;
         padding: 5px;
-        box-shadow: 2px 2px 2px #888888;
+        box-shadow: 0px 1px 4px #888888;
       }
 
       > input {
@@ -57,13 +74,15 @@
       }
 
       > .submit {
-        padding: 4px 45px;
+        padding: 5px 45px;
+        background-color: #1296DB;
       }
     }
 
     > .instructions{
+      font-size: 24px;
       margin-top: 60px;
-      color: #E6E8ED;
+      color: #1296DB;
     }
   }
 </style>

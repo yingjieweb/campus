@@ -10,6 +10,7 @@
           <span>Employment recommendation</span>
         </p>
       </div>
+      <Nav></Nav>
     </el-aside>
     <el-container>
       <el-header height="50px" style="background-color:#2c3e50;">Header</el-header>
@@ -19,8 +20,13 @@
 </template>
 
 <script>
+  import Nav from '@/components/nav/Nav.vue'
+
   export default {
-    name: "Layout"
+    name: "Layout",
+    components: {
+      Nav
+    }
   }
 </script>
 
@@ -35,8 +41,13 @@
       align-items: center;
 
       > .intro {
-        > .strong { color: #F3F6F8;}
+        > .strong {
+          color: #F3F6F8;
+          vertical-align: top;
+        }
         > .version {
+          display: inline-block;
+          margin-top: 1px;
           font-size: 12px;
           padding: 2px;
           border: 1px solid #F9D149;

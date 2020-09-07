@@ -2,7 +2,7 @@
   <el-container style="height: 100vh; width: 100vw;">
     <el-aside class="aside" width="220px">
       <router-link to="/home">
-        <div class="logo" style="height: 50px;">
+        <div class="logo">
           <p class="intro">
             <strong class="strong">大学生就业推荐系统 </strong>
             <span class="version">1.0.0</span>
@@ -15,7 +15,7 @@
       <Nav></Nav>
     </el-aside>
     <el-container>
-      <el-header height="50px" style="border: 1px solid skyblue;">
+      <el-header height="50px" style="padding: 0;">
         <Header></Header>
       </el-header>
       <el-main>Main</el-main>
@@ -38,9 +38,10 @@
 
 <style lang="scss" scoped>
   .aside {
-    background-color:#20335D;
+    background-color: #20335D;
 
     .logo {
+      height: 50px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;

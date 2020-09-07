@@ -1,14 +1,11 @@
 <template>
   <div class="nav">
-    <el-menu background-color="#20335D" text-color="#fff" style="border-right: none;border-bottom: 1px solid red;">
+    <el-menu background-color="#20335D" text-color="#fff" style="border-right: none;">
       <el-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-edit-outline"></i>
-          <span>考试系统</span>
-        </template>
+        <template slot="title"><i class="el-icon-edit-outline"></i><span>考试系统</span></template>
         <el-menu-item-group>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
+          <el-menu-item index="1-1">本科生考试</el-menu-item>
+          <el-menu-item index="1-2">研究生考试</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-menu-item index="2">
@@ -19,23 +16,23 @@
         <i class="el-icon-folder"></i>
         <span slot="title">课程建设</span>
       </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-aim"></i>
-        <span slot="title">学校标准</span>
-      </el-menu-item>
+      <el-submenu index="4">
+        <template slot="title"><i class="el-icon-aim"></i><span>学校标准</span></template>
+        <el-menu-item-group>
+          <el-menu-item index="4-1">学校标准1</el-menu-item>
+          <el-menu-item index="4-2">学校标准2</el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
       <el-menu-item index="5">
         <i class="el-icon-s-data"></i>
         <span slot="title">数据中心</span>
       </el-menu-item>
       <el-menu-item index="6">
         <i class="el-icon-cpu"></i>
-        <span slot="title">数据处理</span>
+        <span slot="title">数据治理</span>
       </el-menu-item>
       <el-submenu index="7">
-        <template slot="title">
-          <i class="el-icon-setting"></i>
-          <span>系统设置</span>
-        </template>
+        <template slot="title"><i class="el-icon-setting"></i><span>系统设置</span></template>
         <el-menu-item-group>
           <el-menu-item index="7-1">用户管理</el-menu-item>
           <el-menu-item index="7-2">班级管理</el-menu-item>

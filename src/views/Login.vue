@@ -29,6 +29,8 @@
             type: 'success'
           });
           this.$router.push('/home');
+          this.$store.commit('getUserInfo', this.username);
+          console.log(this.$store.state.username)
         }else {
           this.$message({
             message: '用户名或密码错误！',

@@ -34,7 +34,7 @@
       <el-submenu index="7">
         <template slot="title"><i class="el-icon-setting"></i><span>系统设置</span></template>
         <el-menu-item-group>
-          <el-menu-item index="7-1">用户管理</el-menu-item>
+          <el-menu-item index="7-1"><router-link to="/user-manage" style="font-size: inherit;">用户管理</router-link></el-menu-item>
           <el-menu-item index="7-2">班级管理</el-menu-item>
           <el-menu-item index="7-3">排课管理</el-menu-item>
           <el-menu-item index="7-4">课程控制</el-menu-item>

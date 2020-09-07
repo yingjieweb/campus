@@ -1,5 +1,7 @@
 <template>
-  <Layout></Layout>
+  <Layout>
+    Home页面
+  </Layout>
 </template>
 
 <script>

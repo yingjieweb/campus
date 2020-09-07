@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <el-input class="search" :placeholder="placeholder" v-model="queryString"></el-input>
-    <el-button type="primary" size="small" @click="$emit('search', {'queryString': queryString})">搜索</el-button>
+    <el-button type="primary" size="small" plain @click="$emit('search', {'queryString': queryString})">搜索</el-button>
   </div>
 </template>
 

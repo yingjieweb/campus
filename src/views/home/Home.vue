@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    Home页面
+    <Block title="Home页面"></Block>
   </Layout>
 </template>
 

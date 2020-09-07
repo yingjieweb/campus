@@ -1,6 +1,15 @@
 <template>
   <Layout>
-    <Block></Block>
+    <Block>
+      11111 <br>
+      11111 <br>
+      11111 <br>
+      11111 <br>
+      11111 <br>
+      11111 <br>
+      11111 <br>
+      11111 <br>
+    </Block>
   </Layout>
 </template>
 
@@ -10,6 +19,6 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

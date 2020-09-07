@@ -1,5 +1,7 @@
 <template>
-  <div class="block"></div>
+  <el-card class="block">
+    <slot></slot>
+  </el-card>
 </template>
 
 <script>
@@ -10,8 +12,7 @@
 
 <style lang="scss" scoped>
   .block {
-    width: 100%;
-    height: 100%;
-    background-color: #F2F2F2;
+    display: flex;
+    margin: 5px 0;
   }
 </style>

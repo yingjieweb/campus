@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    用户管理1111
+    <Block></Block>
   </Layout>
 </template>
 

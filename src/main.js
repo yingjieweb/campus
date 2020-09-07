@@ -11,7 +11,9 @@ Vue.use(ElementUI);
 Vue.config.productionTip = false;
 
 import Layout from  '@/components/layout/Layout.vue'
+import Block from  '@/components/block/Block.vue'
 Vue.component('Layout', Layout);
+Vue.component('Block', Block);
 
 new Vue({
   router,

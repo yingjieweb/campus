@@ -18,7 +18,7 @@
       <el-header height="50px" style="padding: 0;">
         <Header></Header>
       </el-header>
-      <el-main>
+      <el-main style="padding: 0;">
         <slot></slot>
       </el-main>
     </el-container>

@@ -28,7 +28,7 @@
   </el-dialog>
 </template>
 
-<script lang="ts">
+<script>
   export default {
     name: "UserManageModal",
     data() {
@@ -39,11 +39,7 @@
           name: '',
           gender: '',
           phone: '',
-          address: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: ''
+          address: ''
         },
         formLabelWidth: '60px'
       }
@@ -57,6 +53,7 @@
         done()
       },
       onsubmit(){
+        this.$emit('addUserInfo', this.form);
         this.$message({message: '添加成功！', type: 'success'});
         this.dialogVisible = false;
       }

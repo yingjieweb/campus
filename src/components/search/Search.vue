@@ -1,7 +1,13 @@
 <template>
   <div class="search">
     <el-input class="search" :placeholder="placeholder" v-model="queryString"></el-input>
-    <el-button type="primary" size="small" plain @click="$emit('search', {'queryString': queryString})">搜索</el-button>
+    <el-button
+            plain
+            size="small"
+            type="primary"
+            icon="el-icon-search"
+            @click="$emit('search', {'queryString': queryString})"
+    >搜索</el-button>
   </div>
 </template>
 
@@ -25,7 +31,7 @@
 <style lang="scss" scoped>
   .search {
     display: flex;
-    width: 180px;
+    width: 280px;
     margin-right: 10px;
   }
 </style>

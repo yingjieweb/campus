@@ -1,11 +1,11 @@
 <template>
   <el-card class="block">
     <div slot="header" class="header" v-if="title">
-      <div class="title" style="padding: 0 0 10px 0;">{{title}}</div>
-      <div class="operation" style="width: 100%; display:flex; justify-content: space-between; align-items: center;">
-        <div><slot name="button"></slot></div>
-        <div><slot name="operation"></slot></div>
-      </div>
+      <div class="title">{{title}}</div>
+    </div>
+    <div class="operation" style="width: 100%; display:flex; justify-content: space-between; align-items: center;">
+      <div><slot name="button"></slot></div>
+      <div><slot name="operation"></slot></div>
     </div>
     <slot name="content"></slot>
   </el-card>
@@ -31,11 +31,10 @@
       align-items: center;
       justify-content: flex-start;
 
-      > .title {
+      .title {
         padding: 10px;
       }
-      > .operation {
-        border: 1px solid red;
+      .operation {
         display: flex;
       }
     }

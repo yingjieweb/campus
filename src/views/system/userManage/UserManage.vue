@@ -2,10 +2,10 @@
   <Layout>
     <Block title="用户管理">
       <div slot="button">
-        <el-button type="primary" size="small" plain icon="el-icon-edit">新增</el-button>
-        <el-button type="danger" size="small" plain icon="el-icon-edit">删除</el-button>
-        <el-button type="primary" size="small" plain icon="el-icon-edit">下载模板</el-button>
-        <el-button type="primary" size="small" plain icon="el-icon-edit">导入用户</el-button>
+        <el-button type="primary" size="small" plain icon="el-icon-circle-plus-outline">新增</el-button>
+        <el-button type="danger" size="small" plain icon="el-icon-circle-close">删除</el-button>
+        <el-button type="primary" size="small" plain icon="el-icon-download">下载模板</el-button>
+        <el-button type="primary" size="small" plain icon="el-icon-upload">导入用户</el-button>
       </div>
       <div slot="operation">
         <Search placeholder="登录名/姓名"></Search>

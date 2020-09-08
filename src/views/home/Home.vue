@@ -1,6 +1,8 @@
 <template>
   <Layout>
-    <Block title="Home页面"></Block>
+    <Block title="Home页面">
+      <p slot="content">正在开发...</p>
+    </Block>
   </Layout>
 </template>
 

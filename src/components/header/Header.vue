@@ -1,9 +1,12 @@
 <template>
-  <div class="header">
+  <div class="header" style="position: relative;">
     <div class="userInfo">
-      <button class="button"><i class="el-icon-arrow-down"></i></button>
-      <span class="username">{{username}}</span>
       <el-avatar :size="25" :src="circleUrl"></el-avatar>
+      <span class="username">{{username}}</span>
+      <button class="button" @click="operationVisible = !operationVisible"><i class="el-icon-arrow-down"></i></button>
+    </div>
+    <div class="operation" v-if="operationVisible">
+      <span class="logout" @click="logout">退出</span>
     </div>
   </div>
 </template>
@@ -14,7 +17,13 @@
     data(){
       return {
         username: this.$store.state.username,
-        circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
+        circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
+        operationVisible: false
+      }
+    },
+    methods: {
+      logout(){
+        this.$router.push('/login');
       }
     }
   }
@@ -27,11 +36,11 @@
     border: 1px solid #20335D;
     border-left: none;
 
-    .userInfo {
+    > .userInfo {
       height: 100%;
       margin-right: 15px;
       display: flex;
-      flex-direction: row-reverse;
+      justify-content: flex-end;
       align-items: center;
 
       > .username {
@@ -41,6 +50,26 @@
         border: none;
         outline: none;
         background-color: white;
+        cursor: pointer;
+      }
+    }
+
+    > .operation {
+      padding: 6px;
+      width: 105px;
+      position: absolute;
+      top: 85%;
+      right: 5px;
+      border: 1px solid #E6E8ED;
+      border-radius: 5px;
+      background-color: white;
+
+      > .logout {
+        width: 100%;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        padding: 2px;
       }
     }
   }

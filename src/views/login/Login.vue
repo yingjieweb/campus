@@ -51,6 +51,9 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
+    background-size:  100vw 100vh;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/images/bg_login.png);
 
     > .form {
       max-width: 475px;
@@ -60,6 +63,7 @@
       border: 1px solid #E6E8ED;
       border-radius: 4px;
       box-shadow: 0px 0px 1px #888888;
+      background-color: white;
 
       > .avatar {
         position: absolute;

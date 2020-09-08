@@ -1,5 +1,8 @@
 <template>
-  <div class="header" style="position: relative;">
+  <div class="header">
+    <div class="hiddenNav">
+      <i class="el-icon-s-fold"></i>
+    </div>
     <div class="userInfo">
       <el-avatar :size="25" :src="circleUrl"></el-avatar>
       <span class="username">{{username}}</span>
@@ -35,6 +38,18 @@
     width: 100%;
     border: 1px solid #20335D;
     border-left: none;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > .hiddenNav {
+        padding-left: 5px;
+
+        i {
+          font-size: 1.5em;
+        }
+    }
 
     > .userInfo {
       height: 100%;

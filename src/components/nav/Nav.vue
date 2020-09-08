@@ -4,8 +4,8 @@
       <el-submenu index="1">
         <template slot="title"><i class="el-icon-edit-outline"></i><span>考试系统</span></template>
         <el-menu-item-group>
-          <el-menu-item index="1-1">本科生考试</el-menu-item>
-          <el-menu-item index="1-2">研究生考试</el-menu-item>
+          <el-menu-item index="1-1"><i class="el-icon-caret-right"></i>本科生考试</el-menu-item>
+          <el-menu-item index="1-2"><i class="el-icon-caret-right"></i>研究生考试</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-menu-item index="2">
@@ -19,8 +19,8 @@
       <el-submenu index="4">
         <template slot="title"><i class="el-icon-aim"></i><span>学校标准</span></template>
         <el-menu-item-group>
-          <el-menu-item index="4-1">学校标准1</el-menu-item>
-          <el-menu-item index="4-2">学校标准2</el-menu-item>
+          <el-menu-item index="4-1"><i class="el-icon-caret-right"></i>学校标准1</el-menu-item>
+          <el-menu-item index="4-2"><i class="el-icon-caret-right"></i>学校标准2</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-menu-item index="5">
@@ -34,11 +34,14 @@
       <el-submenu index="7">
         <template slot="title"><i class="el-icon-setting"></i><span>系统设置</span></template>
         <el-menu-item-group>
-          <el-menu-item index="7-1"><router-link to="/user-manage" style="font-size: inherit;">用户管理</router-link></el-menu-item>
-          <el-menu-item index="7-2">班级管理</el-menu-item>
-          <el-menu-item index="7-3">排课管理</el-menu-item>
-          <el-menu-item index="7-4">课程控制</el-menu-item>
-          <el-menu-item index="7-5">课程备份</el-menu-item>
+          <el-menu-item index="7-1">
+            <i class="el-icon-caret-right"></i>
+            <router-link to="/user-manage" style="font-size: inherit;">用户管理</router-link>
+          </el-menu-item>
+          <el-menu-item index="7-2"><i class="el-icon-caret-right"></i>班级管理</el-menu-item>
+          <el-menu-item index="7-3"><i class="el-icon-caret-right"></i>排课管理</el-menu-item>
+          <el-menu-item index="7-4"><i class="el-icon-caret-right"></i>课程控制</el-menu-item>
+          <el-menu-item index="7-5"><i class="el-icon-caret-right"></i>课程备份</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>

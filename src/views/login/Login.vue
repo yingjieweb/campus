@@ -50,6 +50,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    text-align: center;
 
     > .form {
       max-width: 475px;

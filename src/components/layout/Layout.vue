@@ -1,7 +1,7 @@
 <template>
   <el-container style="height: 100vh; width: 100vw;">
     <el-aside class="aside" width="220px">
-      <router-link to="/home">
+      <router-link to="/work-bench">
         <div class="logo">
           <p class="intro">
             <strong class="strong">大学生就业推荐系统 </strong>

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Login from "@/views/login/Login"
-import Home from '@/views/home/Home.vue'
+import WorkBench from '@/views/workBench/Workbench.vue'
 import UserManage from "@/views/systemSetting/userManage/UserManage";
 import CourseConstruct from "@/views/courseConstruct/CourseConstruct"
 
@@ -19,9 +19,9 @@ const routes = [
     component: Login
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: Home
+    path: '/work-bench',
+    name: 'WorkBench',
+    component: WorkBench
   },
   {
     path: '/course-construct',

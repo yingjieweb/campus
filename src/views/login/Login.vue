@@ -28,7 +28,7 @@
             message: '登陆成功',
             type: 'success'
           });
-          this.$router.push('/home');
+          this.$router.push('/work-bench');
           this.$store.commit('getUserInfo', this.username);
           console.log(this.$store.state.username)
         }else {

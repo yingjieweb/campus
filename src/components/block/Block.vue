@@ -21,6 +21,11 @@
 </script>
 
 <style lang="scss" scoped>
+  .block {
+    width: 100%;
+    margin: 2px;
+  }
+
   >>> .el-card__header{
     padding: 5px 20px;
 

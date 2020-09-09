@@ -32,7 +32,7 @@
 
 <script>
   import Search from "@/components/search/Search"
-  import UserManageModal from "@/views/system/userManage/UserManageModal"
+  import UserManageModal from "@/views/systemSetting/userManage/UserManageModal"
 
   export default {
     name: "UserManage",

@@ -3,7 +3,8 @@ import VueRouter from 'vue-router'
 
 import Login from "@/views/login/Login"
 import Home from '@/views/home/Home.vue'
-import UserManage from "@/views/system/userManage/UserManage";
+import UserManage from "@/views/systemSetting/userManage/UserManage";
+import CourseConstruct from "@/views/courseConstruct/CourseConstruct"
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/course-construct',
+    name: 'CourseConstruct',
+    component: CourseConstruct
   },
   {
     path: '/user-manage',

@@ -47,6 +47,16 @@
           <el-menu-item index="7-5"><i class="el-icon-caret-right"></i>课程备份</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
+      <router-link to="/formative-evaluation" style="font-size: inherit;">
+        <el-menu-item index="8">
+          <i class="el-icon-stopwatch"></i>
+          <span slot="title">形成性评价</span>
+        </el-menu-item>
+      </router-link>
+      <el-menu-item index="9">
+        <i class="el-icon-s-promotion"></i>
+        <span slot="title">应届生就业推荐</span>
+      </el-menu-item>
     </el-menu>
   </div>
 </template>

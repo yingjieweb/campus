@@ -5,6 +5,7 @@ import Login from "@/views/login/Login"
 import WorkBench from '@/views/workBench/WorkBench.vue'
 import UserManage from "@/views/systemSetting/userManage/UserManage";
 import CourseConstruct from "@/views/courseConstruct/CourseConstruct"
+import FormativeEvaluation from "@/views/formativeEvaluation/FormativeEvaluation"
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,16 @@ const routes = [
     path: '/user-manage',
     name: 'UserManage',
     component: UserManage
+  },
+  {
+    path: '/formative-evaluation',
+    name: 'FormativeEvaluation',
+    component: FormativeEvaluation
+  },
+  {
+    path: '/formative-evaluation',
+    name: 'FormativeEvaluation',
+    component: FormativeEvaluation
   }
 ]
 

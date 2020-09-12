@@ -53,10 +53,12 @@
           <span slot="title">形成性评价</span>
         </el-menu-item>
       </router-link>
-      <el-menu-item index="9">
-        <i class="el-icon-s-promotion"></i>
-        <span slot="title">应届生就业推荐</span>
-      </el-menu-item>
+      <router-link to="/employ-recommend" style="font-size: inherit;">
+        <el-menu-item index="9">
+          <i class="el-icon-s-promotion"></i>
+          <span slot="title">应届生就业推荐</span>
+        </el-menu-item>
+      </router-link>
     </el-menu>
   </div>
 </template>

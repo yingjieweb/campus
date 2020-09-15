@@ -44,18 +44,18 @@
 <style lang="scss" scoped>
   .container {
     display:flex;
-    border: 1px solid green;
     justify-content: space-between;
 
     > .basicInfo {
       display:flex;
       flex-direction: column;
       flex-grow: 1;
-      border: 1px solid red;
+      margin-right: 8px;
+      border: 1px solid gainsboro;
 
       > .basicInfoItem {
-        height: 33.3%;
-        border: 1px solid yellowgreen;
+        height: 33.333%;
+        border-bottom: 1px solid gainsboro;
       }
     }
 

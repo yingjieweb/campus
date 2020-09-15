@@ -1,9 +1,19 @@
 <template>
   <Layout>
     <Block title="形成性评价">
-      <div slot="content" style="display:flex; border: 1px solid green; justify-content: space-between;">
-        <div>学生基本信息</div>
-        <div style="width: 750px; height: 750px; border: 1px solid gainsboro; justify-content: flex-end;">
+      <div slot="content" class="container">
+        <div class="basicInfo">
+          <div class="basicInfoItem">
+            <barChart></barChart>
+          </div>
+          <div class="basicInfoItem">
+            <barChart></barChart>
+          </div>
+          <div class="basicInfoItem">
+            <barChart></barChart>
+          </div>
+        </div>
+        <div class="radarInfo">
           <div ref="radarChart" style="width: 100%; height: 100%;"></div>
         </div>
       </div>
@@ -13,9 +23,13 @@
 
 <script lang="js">
   import echarts from 'echarts'
+  import barChart from "@/components/charts/barChart"
 
   export default {
     name: "FormativeEvaluation",
+    components: {
+      barChart
+    },
     mounted(){
       this.init();
     },
@@ -68,5 +82,28 @@
 </script>
 
 <style lang="scss" scoped>
+  .container {
+    display:flex;
+    border: 1px solid green;
+    justify-content: space-between;
 
+    > .basicInfo {
+      display:flex;
+      flex-direction: column;
+      flex-grow: 1;
+      border: 1px solid red;
+
+      > .basicInfoItem {
+        height: 33.3%;
+        border: 1px solid yellowgreen;
+      }
+    }
+
+    > .radarInfo {
+      width: 750px;
+      height: 750px;
+      border: 1px solid gainsboro;
+      justify-content: flex-end;
+    }
+  }
 </style>

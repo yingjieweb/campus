@@ -4,7 +4,10 @@
       <div slot="content" class="container">
         <div class="basicInfo">
           <div class="basicInfoItem">
-            <barChart></barChart>
+            <div style="display:flex; height: 100%">
+              <pieChart></pieChart>
+              <pieChart></pieChart>
+            </div>
           </div>
           <div class="basicInfoItem">
             <lineChart></lineChart>
@@ -25,12 +28,14 @@
   import echarts from 'echarts'
   import barChart from "@/components/charts/barChart"
   import lineChart from "@/components/charts/lineChart"
+  import pieChart from "@/components/charts/pieChart"
 
   export default {
     name: "FormativeEvaluation",
     components: {
       barChart,
-      lineChart
+      lineChart,
+      pieChart
     },
     mounted(){
       this.init();

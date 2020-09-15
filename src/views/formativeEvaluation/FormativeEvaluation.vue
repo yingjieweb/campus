@@ -7,7 +7,7 @@
             <barChart></barChart>
           </div>
           <div class="basicInfoItem">
-            <barChart></barChart>
+            <lineChart></lineChart>
           </div>
           <div class="basicInfoItem">
             <barChart></barChart>
@@ -24,11 +24,13 @@
 <script lang="js">
   import echarts from 'echarts'
   import barChart from "@/components/charts/barChart"
+  import lineChart from "@/components/charts/lineChart"
 
   export default {
     name: "FormativeEvaluation",
     components: {
-      barChart
+      barChart,
+      lineChart
     },
     mounted(){
       this.init();

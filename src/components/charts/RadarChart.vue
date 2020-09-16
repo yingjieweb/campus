@@ -6,7 +6,7 @@
   import echarts from 'echarts'
 
   export default {
-    name: "radarChart",
+    name: "RadarChart",
     mounted(){
       this.init();
     },

@@ -6,7 +6,7 @@
   import echarts from 'echarts'
 
   export default {
-    name: "pieChart",
+    name: "PieChart",
     mounted() {
       this.init();
     },

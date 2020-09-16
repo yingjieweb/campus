@@ -5,19 +5,19 @@
         <div class="basicInfo">
           <div class="basicInfoItem">
             <div style="display:flex; height: 100%">
-              <pieChart></pieChart>
-              <pieChart></pieChart>
+              <PieChart></PieChart>
+              <PieChart></PieChart>
             </div>
           </div>
           <div class="basicInfoItem">
-            <lineChart></lineChart>
+            <LineChart></LineChart>
           </div>
           <div class="basicInfoItem">
-            <barChart></barChart>
+            <BarChart></BarChart>
           </div>
         </div>
         <div class="radarInfo">
-          <radarChart></radarChart>
+          <RadarChart></RadarChart>
         </div>
       </div>
     </Block>
@@ -25,18 +25,18 @@
 </template>
 
 <script lang="js">
-  import barChart from "@/components/charts/barChart"
-  import lineChart from "@/components/charts/lineChart"
-  import pieChart from "@/components/charts/pieChart"
-  import radarChart from "@/components/charts/radarChart"
+  import PieChart from "@/components/charts/PieChart"
+  import LineChart from "@/components/charts/LineChart"
+  import BarChart from "@/components/charts/BarChart"
+  import RadarChart from "@/components/charts/RadarChart"
 
   export default {
     name: "FormativeEvaluation",
     components: {
-      pieChart,
-      lineChart,
-      barChart,
-      radarChart
+      PieChart,
+      LineChart,
+      BarChart,
+      RadarChart
     }
   }
 </script>

@@ -27,16 +27,16 @@
       },
       itemStyle: {
         normal: {
-          areaColor: "#0d0059",
+          areaColor: "#DFEAED",
           borderColor: "#389dff",
           borderWidth: 1, //设置外层边框
           shadowBlur: 5,
           shadowOffsetY: 8,
           shadowOffsetX: 0,
-          shadowColor: "#01012a"
+          shadowColor: "#DFEAED"
         },
         emphasis: {
-          areaColor: "#184cff",
+          areaColor: "#70BFC7",
           shadowOffsetX: 0,
           shadowOffsetY: 0,
           shadowBlur: 5,
@@ -60,7 +60,7 @@
             show: false
           },
           emphasis: {
-            show: false,
+            show: true,
             textStyle: {
               color: "#fff"
             }
@@ -68,12 +68,12 @@
         },
         itemStyle: {
           normal: {
-            areaColor: "#0d0059",
+            areaColor: "#DFEAED",
             borderColor: "#389dff",
             borderWidth: 0.5
           },
           emphasis: {
-            areaColor: "#17008d",
+            areaColor: "#70BFC7",
             shadowOffsetX: 0,
             shadowOffsetY: 0,
             shadowBlur: 5,

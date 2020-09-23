@@ -6,6 +6,11 @@
           <div class="max">
             <BarChart :option="option"></BarChart>
           </div>
+          <div class="kind">
+            就业岗位排行榜
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            岗位薪资排行榜
+          </div>
         </div>
         <div class="mid">
           <ChinaMap></ChinaMap>
@@ -74,10 +79,18 @@
 
     > .left {
       flex: 2;
+      display: flex;
+      flex-direction: column;
       margin-right: 5px;
 
       > .max {
         height: 200px;
+        margin-bottom: 5px;
+        border: 1px dashed #1296DB;
+      }
+
+      > .kind {
+        flex-grow: 1;
         border: 1px dashed #1296DB;
       }
     }

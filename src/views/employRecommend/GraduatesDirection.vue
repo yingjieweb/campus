@@ -2,7 +2,11 @@
   <Layout>
     <Block title="往届毕业生去向">
       <div slot="content" class="container">
-        <div class="left"></div>
+        <div class="left">
+          <div class="max">
+            <BarChart :option="option"></BarChart>
+          </div>
+        </div>
         <div class="mid">
           <ChinaMap></ChinaMap>
         </div>
@@ -13,12 +17,51 @@
 </template>
 
 <script lang="js">
+  import BarChart from "@/components/charts/BarChart"
   import ChinaMap from "@/components/charts/ChinaMap"
 
   export default {
     name: "GraduatesDirection",
     components: {
+      BarChart,
       ChinaMap
+    },
+    data(){
+      return {
+        option: {
+          title: {
+            text: '毕业生去向图',
+            subtext: '毕业生主流城市去向'
+          },
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow'
+            }
+          },
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+          },
+          xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+          },
+          yAxis: {
+            type: 'category',
+            data: ['北京', '上海', '青岛', '深圳', '南京', '杭州']
+          },
+          series: [
+            {
+              name: '2020年',
+              type: 'bar',
+              data: [182, 103, 239, 203, 104, 131]
+            }
+          ]
+        }
+      }
     }
   }
 </script>
@@ -31,17 +74,23 @@
 
     > .left {
       flex: 2;
-      border: 1px solid red;
+      margin-right: 5px;
+
+      > .max {
+        height: 200px;
+        border: 1px dashed #1296DB;
+      }
     }
 
     > .mid {
       flex: 6;
-      border: 1px solid red;
+      border: 1px dashed #1296DB;
     }
 
     > .right {
       flex: 2;
-      border: 1px solid red;
+      margin-left: 5px;
+      border: 1px dashed #1296DB;
     }
   }
 </style>

@@ -13,7 +13,7 @@
             <LineChart></LineChart>
           </div>
           <div class="basicInfoItem">
-            <BarChart></BarChart>
+            <BarChart :option="option"></BarChart>
           </div>
         </div>
         <div class="radarInfo">
@@ -37,6 +37,24 @@
       LineChart,
       BarChart,
       RadarChart
+    },
+    data(){
+      return {
+        option: {
+          title: {
+            text: '课程成绩柱状图'
+          },
+          tooltip: {},
+          xAxis: {
+            data: ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]
+          },
+          yAxis: {},
+          series: [{
+            type: 'bar',
+            data: ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]
+          }]
+        }
+      }
     }
   }
 </script>

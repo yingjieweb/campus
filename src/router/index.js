@@ -6,6 +6,7 @@ import WorkBench from '@/views/workBench/WorkBench.vue'
 import UserManage from "@/views/systemSetting/userManage/UserManage";
 import CourseConstruct from "@/views/courseConstruct/CourseConstruct"
 import FormativeEvaluation from "@/views/formativeEvaluation/FormativeEvaluation"
+import PersonalResume from "@/views/employRecommend/PersonalResume"
 import GraduatesDirection from "@/views/employRecommend/GraduatesDirection"
 import EmployRecommend from "@/views/employRecommend/EmployRecommend"
 
@@ -40,6 +41,11 @@ const routes = [
     path: '/formative-evaluation',
     name: 'FormativeEvaluation',
     component: FormativeEvaluation
+  },
+  {
+    path: '/personal-resume',
+    name: 'PersonalResume',
+    component: PersonalResume
   },
   {
     path: '/graduates-direction',

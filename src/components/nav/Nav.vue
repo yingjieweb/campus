@@ -56,6 +56,7 @@
       <el-submenu index="9">
         <template slot="title"><i class="el-icon-s-promotion"></i><span>应届生就业推荐</span></template>
         <el-menu-item-group>
+          <el-menu-item index="/personal-resume"><i class="el-icon-caret-right"></i>个人信息及简历</el-menu-item>
           <el-menu-item index="/graduates-direction"><i class="el-icon-caret-right"></i>往届毕业生去向</el-menu-item>
           <el-menu-item index="/employ-recommend"><i class="el-icon-caret-right"></i>就业岗位推荐</el-menu-item>
         </el-menu-item-group>

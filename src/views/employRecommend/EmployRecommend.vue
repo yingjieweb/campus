@@ -14,7 +14,15 @@
           <input type="text" placeholder="搜索职位、公司或地点">
           <button>搜索</button>
         </div>
+
         <RecommendList :recommend-data="recommendData"></RecommendList>
+
+        <div class="pagination">
+          <el-pagination
+                  layout="prev, pager, next"
+                  :total="1000">
+          </el-pagination>
+        </div>
       </div>
     </Block>
   </Layout>
@@ -266,5 +274,9 @@
         background-color: #55BBCC;
       }
     }
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
   }
 </style>

@@ -253,14 +253,18 @@
     display: flex;
     justify-content: center;
 
-    > .positionType{
-
-    }
-
+    > .positionType ::v-deep .el-input__inner {
+        border-radius: 0;
+      }
     > input {
-      display: inline-block;
       width: 400px;
       height: 40px;
+      color: #606266;
+      padding: 0 4px;
+      display: inline-block;
+      border: 1px solid #DCDFE6;
+
+      &:hover {border: 1px solid #409EFF;}
     }
 
     > button {

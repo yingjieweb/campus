@@ -19,8 +19,11 @@
 
         <div class="pagination">
           <el-pagination
+                  background
                   layout="prev, pager, next"
-                  :total="1000">
+                  @prev-click="prevClick"
+                  @next-click="nextClick"
+                  :total="100">
           </el-pagination>
         </div>
       </div>
@@ -243,6 +246,12 @@
     methods: {
       handleChange(value) {
         console.log(value);
+      },
+      prevClick(){
+        console.log('上一页');
+      },
+      nextClick(){
+        console.log('下一页');
       }
     }
   }
@@ -252,12 +261,14 @@
   .search {
     display: flex;
     justify-content: center;
+    position: relative;
 
     > .positionType ::v-deep .el-input__inner {
         border-radius: 0;
       }
+
     > input {
-      width: 400px;
+      width: 420px;
       height: 40px;
       color: #606266;
       padding: 0 4px;
@@ -274,9 +285,7 @@
       outline: none;
       background-color: #55CBCA;
 
-      &:hover {
-        background-color: #55BBCC;
-      }
+      &:hover {background-color: #55BBCC;}
     }
   }
   .pagination {

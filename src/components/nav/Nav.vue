@@ -6,6 +6,7 @@
       background-color="#20335D"
       text-color="#fff"
       style="border-right: none;"
+      unique-opened
       router>
       <el-submenu index="1">
         <template slot="title"><i class="el-icon-edit-outline"></i><span>考试系统</span></template>

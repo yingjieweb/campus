@@ -3,19 +3,24 @@
     <Block title="往届毕业生去向">
       <div slot="content" class="container">
         <div class="left">
-          <div class="max">
-            <BarChart :option="option"></BarChart>
+          <div class="jobOrient">
+            <BarChart :option="jobOrient"></BarChart>
           </div>
           <div class="kind">
-            就业岗位排行榜
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            岗位薪资排行榜
+            <div class="hotJobs">
+              <BarChart :option="hotJobs"></BarChart>
+            </div>
+            <div class="hotJobs">
+              <BarChart :option="salaryRank"></BarChart>
+            </div>
           </div>
         </div>
-        <div class="mid">
+        <div class="map">
           <ChinaMap></ChinaMap>
         </div>
-        <div class="right"></div>
+        <div class="right">
+
+        </div>
       </div>
     </Block>
   </Layout>
@@ -33,7 +38,7 @@
     },
     data(){
       return {
-        option: {
+        jobOrient: {
           title: {
             text: '毕业生去向图',
             subtext: '毕业生主流城市去向'
@@ -56,13 +61,79 @@
           },
           yAxis: {
             type: 'category',
-            data: ['北京', '上海', '青岛', '深圳', '南京', '杭州']
+            data: ['杭州', '上海', '青岛', '深圳', '南京', '北京']
           },
           series: [
             {
               name: '2020年',
               type: 'bar',
-              data: [182, 103, 239, 203, 104, 131]
+              data: [171, 103, 139, 123, 104, 182]
+            }
+          ]
+        },
+        hotJobs: {
+          title: {
+            text: '就业岗位排行榜',
+            subtext: '2020届毕业生热门岗位'
+          },
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow'
+            }
+          },
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+          },
+          xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+          },
+          yAxis: {
+            type: 'category',
+            data: ['杭州', '上海', '青岛', '深圳', '南京', '北京']
+          },
+          series: [
+            {
+              name: '2020年',
+              type: 'bar',
+              data: [171, 103, 139, 123, 104, 182]
+            }
+          ]
+        },
+        salaryRank: {
+          title: {
+            text: '岗位薪资排行榜',
+            subtext: '岗位薪资排行榜'
+          },
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow'
+            }
+          },
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+          },
+          xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+          },
+          yAxis: {
+            type: 'category',
+            data: ['杭州', '上海', '青岛', '深圳', '南京', '北京']
+          },
+          series: [
+            {
+              name: '2020年',
+              type: 'bar',
+              data: [171, 103, 139, 123, 104, 182]
             }
           ]
         }
@@ -83,8 +154,8 @@
       flex-direction: column;
       margin-right: 5px;
 
-      > .max {
-        height: 200px;
+      > .jobOrient {
+        height: 250px;
         margin-bottom: 5px;
         border: 1px dashed #1296DB;
       }
@@ -92,10 +163,12 @@
       > .kind {
         flex-grow: 1;
         border: 1px dashed #1296DB;
+
+        > .hotJobs { height: 50%}
       }
     }
 
-    > .mid {
+    > .map {
       flex: 6;
       border: 1px dashed #1296DB;
     }

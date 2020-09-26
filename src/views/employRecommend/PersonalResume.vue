@@ -4,8 +4,8 @@
       <div slot="content">
         <el-tabs tab-position="left" style="height: 750px;">
           <el-tab-pane label="基本信息">
-            <div class="basicInfo" style="border: 1px solid red; height: 500px;">
-              基本信息
+            <div class="basicInfo" style="height: 500px;">
+              <ResumeViewTitle title="基本信息"></ResumeViewTitle>
             </div>
           </el-tab-pane>
           <el-tab-pane label="求职意向">求职意向</el-tab-pane>
@@ -24,8 +24,13 @@
 </template>
 
 <script lang="ts">
+  import ResumeViewTitle from "../../components/recommend/ResumeViewTitle.vue";
+
   export default {
-    name: "PersonalResume"
+    name: "PersonalResume",
+    components: {
+      ResumeViewTitle
+    }
   }
 </script>
 

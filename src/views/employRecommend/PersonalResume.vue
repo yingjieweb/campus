@@ -1,12 +1,10 @@
 <template>
   <Layout>
     <Block title="应届生就业推荐">
-      <div slot="content">
-        <el-tabs tab-position="left" style="height: 750px;">
+      <div slot="content" class="container">
+        <el-tabs tab-position="left" class="resumeEdit">
           <el-tab-pane label="基本信息">
-            <div class="basicInfo" style="height: 500px;">
-              <ResumeViewTitle title="基本信息"></ResumeViewTitle>
-            </div>
+            <ResumePersonalInfo></ResumePersonalInfo>
           </el-tab-pane>
           <el-tab-pane label="求职意向">求职意向</el-tab-pane>
           <el-tab-pane label="教育经历">教育经历</el-tab-pane>
@@ -18,22 +16,33 @@
           <el-tab-pane label="自我评价">自我评价</el-tab-pane>
           <el-tab-pane label="其他情况">其他情况</el-tab-pane>
         </el-tabs>
+
+        <ResumePreview></ResumePreview>
       </div>
     </Block>
   </Layout>
 </template>
 
 <script lang="ts">
-  import ResumeViewTitle from "../../components/recommend/ResumeViewTitle.vue";
+  import ResumePersonalInfo from "../../components/recommend/personalResume/ResumePersonalInfo.vue";
+  import ResumePreview from "../../components/recommend/personalResume/ResumePreview.vue";
 
   export default {
     name: "PersonalResume",
     components: {
-      ResumeViewTitle
+      ResumePersonalInfo,
+      ResumePreview
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  .container {
+    display:flex;
 
+    > .resumeEdit {
+      flex: 7;
+      height: 750px;
+    }
+  }
 </style>

@@ -19,6 +19,7 @@
 <style lang="scss" scoped>
   .resumeViewTitle {
     position: relative;
+    margin: 0 0 38px 0;
 
     > h1 {
       font-size: 20px;

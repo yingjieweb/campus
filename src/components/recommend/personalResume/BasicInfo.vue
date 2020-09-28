@@ -9,19 +9,19 @@
     </div>
     <el-button @click="editBasicInfo">编辑</el-button>
 
-    <ResumePersonalInfoModal ref="ResumePersonalInfoModal" @editBasicInfo="updateBasicInfo"></ResumePersonalInfoModal>
+    <BasicInfoModal ref="ResumePersonalInfoModal" @editBasicInfo="updateBasicInfo"></BasicInfoModal>
   </div>
 </template>
 
 <script lang="ts">
   import ResumeViewTitle from "./ResumeViewTitle.vue";
-  import ResumePersonalInfoModal from "./ResumeBasicInfoModal.vue";
+  import BasicInfoModal from "./BasicInfoModal.vue";
 
   export default {
-    name: "ResumeBasicInfo",
+    name: "BasicInfo",
     components: {
       ResumeViewTitle,
-      ResumePersonalInfoModal
+      BasicInfoModal
     },
     data(){
       return {

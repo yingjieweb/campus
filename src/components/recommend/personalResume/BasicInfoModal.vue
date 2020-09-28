@@ -63,7 +63,7 @@
   }
 
   export default {
-    name: "ResumeBasicInfoModal",
+    name: "BasicInfoModal",
     data() {
       return {
         dialogVisible: false,

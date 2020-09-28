@@ -7,17 +7,21 @@
         <div class="infoItemValue">{{item[1]}}</div>
       </div>
     </div>
-    <el-button>编辑</el-button>
+    <el-button @click="editBasicInfo">编辑</el-button>
+
+    <ResumePersonalInfoModal ref="ResumePersonalInfoModal" @editBasicInfo="updateBasicInfo"></ResumePersonalInfoModal>
   </div>
 </template>
 
 <script lang="ts">
   import ResumeViewTitle from "./ResumeViewTitle.vue";
+  import ResumePersonalInfoModal from "./ResumePersonalInfoModal.vue";
 
   export default {
     name: "ResumePersonalInfo",
     components: {
-      ResumeViewTitle
+      ResumeViewTitle,
+      ResumePersonalInfoModal
     },
     data(){
       return {
@@ -28,6 +32,18 @@
           IDCard: ['个人证件','370888189509095574'],
           intentionCity: ['意向地点','南京、上海、北京']
         }
+      }
+    },
+    methods: {
+      editBasicInfo() {
+        this.$refs.ResumePersonalInfoModal.setDialogVisible(true);
+      },
+      updateBasicInfo(form){
+        this.basicInfo.name = ['姓名',form.name];
+        this.basicInfo.phone = ['手机号码',form.phone];
+        this.basicInfo.mail = ['邮箱',form.mail];
+        this.basicInfo.IDCard = ['个人证件',form.IDCard];
+        this.basicInfo.intentionCity = ['意向地点',form.intentionCity];
       }
     }
   }

@@ -72,6 +72,7 @@
   }
   .main {
     padding: 5px;
+    display: flex;
     background-color: #F2F2F2;
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <Block title="应届生就业推荐">
+    <Block title="我的个人简历"  style="flex: 6;">
       <div slot="content" class="container">
         <el-tabs tab-position="left" class="resumeEdit">
           <el-tab-pane label="基本信息">
@@ -16,7 +16,11 @@
           <el-tab-pane label="自我评价">自我评价</el-tab-pane>
           <el-tab-pane label="其他情况">其他情况</el-tab-pane>
         </el-tabs>
+      </div>
+    </Block>
 
+    <Block title="简历预览图" style="flex: 4;">
+      <div slot="content" class="container">
         <ResumePreview></ResumePreview>
       </div>
     </Block>

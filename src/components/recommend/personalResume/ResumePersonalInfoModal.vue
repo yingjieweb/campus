@@ -29,6 +29,39 @@
 </template>
 
 <script lang="ts">
+  let checkName = (rule, value, callback) => {
+    let reg = /^[\u4e00-\u9fa5]{2,6}$/;
+    if (!reg.test(value)){
+      callback(new Error('请输入2~6位中文字符'));
+    }else {
+      callback();
+    }
+  }
+  let checkPhone = (rule, value, callback) => {
+    let reg = /^\d{11}$/;
+    if (!reg.test(value)){
+      callback(new Error('请输入正确格式的手机号码'));
+    }else {
+      callback();
+    }
+  }
+  let checkMail = (rule, value, callback) => {
+    let reg = /^\w{3,12}@\w{1,5}\.[a-z]{2,3}$/;
+    if (!reg.test(value)){
+      callback(new Error('请输入正确格式的邮箱'));
+    }else {
+      callback();
+    }
+  }
+  let checkIdCard = (rule, value, callback) => {
+    let reg = /\d{17}[\d|X]|\d{15}/;
+    if (!reg.test(value)){
+      callback(new Error('请输入正确格式的身份证号'));
+    }else {
+      callback();
+    }
+  }
+
   export default {
     name: "ResumePersonalInfoModal",
     data() {
@@ -45,16 +78,19 @@
         rules: {
           name: [
             { required: true, message: '请输入学生姓名', trigger: 'blur' },
-            { min: 2, max: 8, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+            { validator: checkName, trigger: 'blur' }
           ],
           phone: [
-            { required: true, message: '请输入手机号码', trigger: 'blur' }
+            { required: true, message: '请输入手机号码', trigger: 'blur' },
+            { validator: checkPhone, trigger: 'blur'}
           ],
           mail: [
-            { required: true, message: '请输入邮箱', trigger: 'blur' }
+            { required: true, message: '请输入邮箱', trigger: 'blur' },
+            { validator: checkMail, trigger: 'blur'}
           ],
           IDCard: [
-            { required: true, message: '请输入身份证号', trigger: 'blur' }
+            { required: true, message: '请输入身份证号', trigger: 'blur' },
+            { validator: checkIdCard, trigger: 'blur'}
           ],
           intentionCity: [
             { required: true, message: '请输入意向城市，以、分隔', trigger: 'blur' }

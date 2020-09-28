@@ -36,7 +36,7 @@
     },
     methods: {
       editBasicInfo() {
-        this.$refs.ResumePersonalInfoModal.setDialogVisible(true);
+        this.$refs.ResumePersonalInfoModal.setDialogVisible(true, this.basicInfo);
       },
       updateBasicInfo(form){
         this.basicInfo.name = ['姓名',form.name];

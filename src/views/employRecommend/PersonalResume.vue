@@ -4,7 +4,7 @@
       <div slot="content" class="container">
         <el-tabs tab-position="left" class="resumeEdit" v-model="activeName" @tab-click="handleClick">
           <el-tab-pane label="基本信息" name="first">
-            <ResumePersonalInfo></ResumePersonalInfo>
+            <ResumeBasicInfo></ResumeBasicInfo>
           </el-tab-pane>
           <el-tab-pane label="求职意向" name="second">求职意向</el-tab-pane>
           <el-tab-pane label="教育经历" name="third">教育经历</el-tab-pane>
@@ -28,13 +28,13 @@
 </template>
 
 <script lang="ts">
-  import ResumePersonalInfo from "../../components/recommend/personalResume/ResumePersonalInfo.vue";
+  import ResumeBasicInfo from "../../components/recommend/personalResume/ResumeBasicInfo.vue";
   import ResumePreview from "../../components/recommend/personalResume/ResumePreview.vue";
 
   export default {
     name: "PersonalResume",
     components: {
-      ResumePersonalInfo,
+      ResumeBasicInfo,
       ResumePreview
     },
     data(){

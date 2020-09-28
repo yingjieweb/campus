@@ -15,10 +15,10 @@
 
 <script lang="ts">
   import ResumeViewTitle from "./ResumeViewTitle.vue";
-  import ResumePersonalInfoModal from "./ResumePersonalInfoModal.vue";
+  import ResumePersonalInfoModal from "./ResumeBasicInfoModal.vue";
 
   export default {
-    name: "ResumePersonalInfo",
+    name: "ResumeBasicInfo",
     components: {
       ResumeViewTitle,
       ResumePersonalInfoModal

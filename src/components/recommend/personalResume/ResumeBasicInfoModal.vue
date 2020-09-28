@@ -4,7 +4,7 @@
           :visible.sync="dialogVisible"
           width="30%"
           :before-close="handleClose">
-    <el-form :model="form" :rules="rules">
+    <el-form :model="form" :rules="rules" ref="basicInfoForm">
       <el-form-item label="姓名" :label-width="formLabelWidth" prop="name">
         <el-input v-model="form.name" autocomplete="off"></el-input>
       </el-form-item>
@@ -112,9 +112,13 @@
         done()
       },
       onsubmit(){
-        this.$emit('editBasicInfo', this.form);
-        this.$message({message: '基本信息更新成功！', type: 'success'});
-        this.dialogVisible = false;
+        this.$refs.basicInfoForm.validate((valid) => {
+          if (valid){
+            this.$emit('editBasicInfo', this.form);
+            this.$message({message: '基本信息更新成功！', type: 'success'});
+            this.dialogVisible = false;
+          }
+        })
       }
     }
   }

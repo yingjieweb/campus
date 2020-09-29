@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-          title="编辑基本信息"
+          :title="title"
           :visible.sync="dialogVisible"
           width="30%"
           :before-close="handleClose">
@@ -66,6 +66,7 @@
     name: "BasicInfoModal",
     data() {
       return {
+        title: '',
         dialogVisible: false,
         form: {
           name: '',
@@ -99,8 +100,10 @@
       }
     },
     methods: {
-      setDialogVisible(state, oldBasicInfo){
+      setDialogVisible(title, state, oldBasicInfo){
+        this.title = title;
         this.dialogVisible = state;
+
         this.form.name = oldBasicInfo.name[1];
         this.form.phone = oldBasicInfo.phone[1];
         this.form.mail = oldBasicInfo.mail[1];

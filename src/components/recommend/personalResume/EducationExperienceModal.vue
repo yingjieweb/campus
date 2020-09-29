@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-          title="教育经历"
+          :title="title"
           :visible.sync="dialogVisible"
           width="30%"
           :before-close="handleClose">
@@ -36,6 +36,7 @@
     name: "EducationExperienceModal",
     data(){
       return {
+        title: '',
         dialogVisible: false,
         form: {
           school: '',
@@ -50,14 +51,16 @@
       }
     },
     methods: {
-      setDialogVisible(state, oldBasicInfo){
+      setDialogVisible(title, state, oldEduExp){
+        this.title = title;
         this.dialogVisible = state;
-        this.form.school = oldBasicInfo.school[1];
-        this.form.major = oldBasicInfo.major[1];
-        this.form.period = oldBasicInfo.period[1];
-        this.form.record = oldBasicInfo.record[1];
-        this.form.scoreRank = oldBasicInfo.scoreRank[1];
-        this.form.studyType = oldBasicInfo.studyType[1];
+
+        this.form.school = oldEduExp ? oldEduExp.school[1] : '';
+        this.form.major = oldEduExp ? oldEduExp.major[1] : '';
+        this.form.period = oldEduExp ? oldEduExp.period[1] : '';
+        this.form.record = oldEduExp ? oldEduExp.record[1] : '';
+        this.form.scoreRank = oldEduExp ? oldEduExp.scoreRank[1] : '';
+        this.form.studyType = oldEduExp ? oldEduExp.studyType[1] : '';
       },
       handleClose(done) {
         // this.$confirm('确认关闭？').then(_ => {done();}).catch(_ => {});

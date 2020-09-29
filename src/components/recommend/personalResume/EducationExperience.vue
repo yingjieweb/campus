@@ -38,10 +38,10 @@
     },
     methods: {
       editEduExp(){
-        this.$refs.EducationExperienceModal.setDialogVisible(true, this.eduExp)
+        this.$refs.EducationExperienceModal.setDialogVisible('编辑教育经历', true, this.eduExp)
       },
       addEduExp(){
-
+        this.$refs.EducationExperienceModal.setDialogVisible('新增教育经历', true, '')
       },
       updateEduExp(form){
         this.eduExp.school = ['学校',form.school];

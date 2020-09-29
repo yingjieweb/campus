@@ -10,7 +10,7 @@
     <el-button @click="editEduExp">编辑</el-button>
     <el-button @click="addEduExp">添加</el-button>
 
-    <EducationExperienceModal ref="EducationExperienceModal" @editEduExp="updateEduExp"></EducationExperienceModal>
+    <EducationExperienceModal ref="EducationExperienceModal" @updateEduExp="updateEduExp"></EducationExperienceModal>
   </div>
 </template>
 

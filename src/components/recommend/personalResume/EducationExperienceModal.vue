@@ -66,7 +66,7 @@
       onsubmit(){
         this.$refs.basicInfoForm.validate((valid) => {
           if (valid){
-            this.$emit('editEduExp', this.form);
+            this.$emit('updateEduExp', this.form);
             this.$message({message: '教育经历更新成功！', type: 'success'});
             this.dialogVisible = false;
           }

@@ -114,7 +114,7 @@
       onsubmit(){
         this.$refs.basicInfoForm.validate((valid) => {
           if (valid){
-            this.$emit('editBasicInfo', this.form);
+            this.$emit('updateBasicInfo', this.form);
             this.$message({message: '基本信息更新成功！', type: 'success'});
             this.dialogVisible = false;
           }

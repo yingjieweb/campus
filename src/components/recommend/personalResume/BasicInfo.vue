@@ -10,7 +10,7 @@
     <el-button @click="editBasicInfo">编辑</el-button>
     <el-button @click="goNextItem">下一项</el-button>
 
-    <BasicInfoModal ref="ResumePersonalInfoModal" @editBasicInfo="updateBasicInfo"></BasicInfoModal>
+    <BasicInfoModal ref="ResumePersonalInfoModal" @updateBasicInfo="updateBasicInfo"></BasicInfoModal>
   </div>
 </template>
 

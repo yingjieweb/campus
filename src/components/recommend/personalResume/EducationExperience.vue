@@ -9,6 +9,7 @@
     </div>
     <el-button @click="editEduExp">编辑</el-button>
     <el-button @click="addEduExp">添加</el-button>
+    <el-button @click="goNextItem">下一项</el-button>
 
     <EducationExperienceModal ref="EducationExperienceModal" @updateEduExp="updateEduExp"></EducationExperienceModal>
   </div>
@@ -50,6 +51,9 @@
         this.eduExp.record = ['学历',form.record];
         this.eduExp.scoreRank = ['成绩排名',form.scoreRank];
         this.eduExp.studyType = ['学历类型',form.studyType];
+      },
+      goNextItem(){
+        this.$emit('goNextItem', 'third');
       }
     }
   }

@@ -8,7 +8,7 @@
               <BasicInfo @goNextItem="goNextItem"></BasicInfo>
             </el-tab-pane>
             <el-tab-pane label="教育经历" name="second">
-              <EducationExperience></EducationExperience>
+              <EducationExperience @goNextItem="goNextItem"></EducationExperience>
             </el-tab-pane>
             <el-tab-pane label="实习经历" name="third">实习经历</el-tab-pane>
             <el-tab-pane label="学生干部经历" name="fourth">学生干部经历</el-tab-pane>

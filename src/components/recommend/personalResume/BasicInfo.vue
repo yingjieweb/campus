@@ -8,6 +8,7 @@
       </div>
     </div>
     <el-button @click="editBasicInfo">编辑</el-button>
+    <el-button @click="goNextItem">下一项</el-button>
 
     <BasicInfoModal ref="ResumePersonalInfoModal" @editBasicInfo="updateBasicInfo"></BasicInfoModal>
   </div>
@@ -44,6 +45,9 @@
         this.basicInfo.mail = ['邮箱',form.mail];
         this.basicInfo.IDCard = ['个人证件',form.IDCard];
         this.basicInfo.intentionCity = ['意向地点',form.intentionCity];
+      },
+      goNextItem(){
+        this.$emit('goNextItem', 'second');
       }
     }
   }

@@ -5,7 +5,7 @@
         <div slot="content" class="container">
           <el-tabs tab-position="left" class="resumeEdit" v-model="activeName" @tab-click="handleClick">
             <el-tab-pane label="基本信息" name="first">
-              <BasicInfo></BasicInfo>
+              <BasicInfo @goNextItem="goNextItem"></BasicInfo>
             </el-tab-pane>
             <el-tab-pane label="教育经历" name="second">
               <EducationExperience></EducationExperience>
@@ -52,6 +52,9 @@
     methods: {
       handleClick(tab, event) {
         console.log(tab, event);
+      },
+      goNextItem(next){
+        this.activeName = next;
       }
     }
   }

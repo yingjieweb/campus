@@ -4,20 +4,20 @@
           :visible.sync="dialogVisible"
           width="30%"
           :before-close="handleClose">
-    <el-form :model="form" :rules="rules" ref="basicInfoForm">
-      <el-form-item label="姓名" :label-width="formLabelWidth" prop="name">
+    <el-form :model="form" :rules="rules" ref="basicInfoForm" :label-width="formLabelWidth">
+      <el-form-item label="姓名" prop="name">
         <el-input v-model="form.name" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="手机号码" :label-width="formLabelWidth" prop="phone">
+      <el-form-item label="手机号码" prop="phone">
         <el-input v-model="form.phone" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="邮箱" :label-width="formLabelWidth" prop="mail">
+      <el-form-item label="邮箱" prop="mail">
         <el-input v-model="form.mail" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="个人证件" :label-width="formLabelWidth" prop="IDCard">
+      <el-form-item label="个人证件" prop="IDCard">
         <el-input v-model="form.IDCard" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="意向地点" :label-width="formLabelWidth" prop="intentionCity">
+      <el-form-item label="意向地点" prop="intentionCity">
         <el-input v-model="form.intentionCity" autocomplete="off" placeholder="请输入意向城市，以、分隔"></el-input>
       </el-form-item>
     </el-form>
@@ -54,7 +54,7 @@
     }
   }
   let checkIdCard = (rule, value, callback) => {
-    let reg = /\d{17}[\d|X]|\d{15}/;
+    let reg = /^\d{17}[\d|X]$|^\d{18}$/;
     if (!reg.test(value)){
       callback(new Error('请输入正确格式的身份证号'));
     }else {

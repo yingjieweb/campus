@@ -4,24 +4,52 @@
           :visible.sync="dialogVisible"
           width="30%"
           :before-close="handleClose">
-    <el-form :model="form" :rules="rules" ref="basicInfoForm">
-      <el-form-item label="学校" :label-width="formLabelWidth" prop="school">
+    <el-form :model="form" :rules="rules" ref="basicInfoForm" :label-width="formLabelWidth">
+      <el-form-item label="学校" prop="school">
         <el-input v-model="form.school" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="专业" :label-width="formLabelWidth" prop="major">
+      <el-form-item label="专业">
         <el-input v-model="form.major" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="起止日期" :label-width="formLabelWidth" prop="period">
-        <el-input v-model="form.period" autocomplete="off"></el-input>
+      <el-form-item label="起止日期" prop="period">
+        <el-date-picker
+                v-model="form.period"
+                type="daterange"
+                range-separator="至"
+                start-placeholder="开始日期"
+                end-placeholder="结束日期"
+                style="width: 100%;">
+        </el-date-picker>
       </el-form-item>
-      <el-form-item label="学历" :label-width="formLabelWidth" prop="record">
-        <el-input v-model="form.record" autocomplete="off"></el-input>
+      <el-form-item label="学历" prop="record">
+        <el-select v-model="form.record" placeholder="请选择学历" style="width: 100%;">
+          <el-option label="博士" value="博士"></el-option>
+          <el-option label="硕士" value="硕士"></el-option>
+          <el-option label="本科" value="本科"></el-option>
+          <el-option label="大专" value="大专"></el-option>
+          <el-option label="专职" value="专职"></el-option>
+          <el-option label="初中" value="初中"></el-option>
+          <el-option label="小学" value="小学"></el-option>
+          <el-option label="其他" value="其他"></el-option>
+        </el-select>
       </el-form-item>
-      <el-form-item label="成绩排名" :label-width="formLabelWidth" prop="scoreRank">
-        <el-input v-model="form.scoreRank" autocomplete="off"></el-input>
+      <el-form-item label="成绩排名" prop="scoreRank">
+        <el-select v-model="form.scoreRank" placeholder="请选择成绩排名" style="width: 100%;">
+          <el-option label="前 5%" value="前 5%"></el-option>
+          <el-option label="前 10%" value="前 10%"></el-option>
+          <el-option label="前 20%" value="前 20%"></el-option>
+          <el-option label="前 30%" value="前 30%"></el-option>
+          <el-option label="前 50%" value="前 50%"></el-option>
+          <el-option label="其他" value="其他"></el-option>
+        </el-select>
       </el-form-item>
-      <el-form-item label="学历类型" :label-width="formLabelWidth" prop="studyType">
-        <el-input v-model="form.studyType" autocomplete="off"></el-input>
+      <el-form-item label="学历类型" prop="studyType">
+        <el-select v-model="form.studyType" placeholder="请选择学历" style="width: 100%;">
+          <el-option label="统招全日制" value="统招全日制"></el-option>
+          <el-option label="统招非全日制" value="统招非全日制"></el-option>
+          <el-option label="自考" value="自考"></el-option>
+          <el-option label="其他" value="其他"></el-option>
+        </el-select>
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">

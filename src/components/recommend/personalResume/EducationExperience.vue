@@ -84,11 +84,13 @@
     margin-right: 8px;
     overflow-y: auto;
 
-
     > .eduItems {
       display: flex;
       flex-wrap: wrap;
       margin-bottom: 12px;
+      &:hover {
+        background-color: #F9FBFF;
+      }
 
       > .eduItem {
         width: 50%;

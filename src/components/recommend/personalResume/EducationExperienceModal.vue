@@ -59,7 +59,9 @@
   </el-dialog>
 </template>
 
-<script lang="ts">
+<script lang="js">
+  import {dateFormat} from '@/utils/dateFormat'
+
   export default {
     name: "EducationExperienceModal",
     data(){
@@ -110,6 +112,10 @@
       onsubmit(){
         this.$refs.basicInfoForm.validate((valid) => {
           if (valid){
+            let preTime = dateFormat(this.form.period[0]);
+            let nextTime = dateFormat(this.form.period[1]);
+            this.form.period = `${preTime} ~ ${nextTime}`;
+
             this.$emit('updateEduExp', this.form, this.type, this.editItemIndex);
             this.$message({message: '教育经历更新成功！', type: 'success'});
             this.dialogVisible = false;

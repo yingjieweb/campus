@@ -20,7 +20,7 @@
       <el-form-item label="成绩排名" :label-width="formLabelWidth" prop="scoreRank">
         <el-input v-model="form.scoreRank" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="成绩排名" :label-width="formLabelWidth" prop="studyType">
+      <el-form-item label="学历类型" :label-width="formLabelWidth" prop="studyType">
         <el-input v-model="form.studyType" autocomplete="off"></el-input>
       </el-form-item>
     </el-form>
@@ -37,6 +37,8 @@
     data(){
       return {
         title: '',
+        type: '',
+        editItemIndex: '',
         dialogVisible: false,
         form: {
           school: '',
@@ -51,16 +53,27 @@
       }
     },
     methods: {
-      setDialogVisible(title, state, oldEduExp){
+      setDialogVisible(title, state, oldEduExp, type, index){
         this.title = title;
         this.dialogVisible = state;
+        this.type = type;
 
-        this.form.school = oldEduExp ? oldEduExp.school[1] : '';
-        this.form.major = oldEduExp ? oldEduExp.major[1] : '';
-        this.form.period = oldEduExp ? oldEduExp.period[1] : '';
-        this.form.record = oldEduExp ? oldEduExp.record[1] : '';
-        this.form.scoreRank = oldEduExp ? oldEduExp.scoreRank[1] : '';
-        this.form.studyType = oldEduExp ? oldEduExp.studyType[1] : '';
+        if (type === 'edit'){
+          this.editItemIndex = index
+          this.form.school = oldEduExp ? oldEduExp.school[1] : '';
+          this.form.major = oldEduExp ? oldEduExp.major[1] : '';
+          this.form.period = oldEduExp ? oldEduExp.period[1] : '';
+          this.form.record = oldEduExp ? oldEduExp.record[1] : '';
+          this.form.scoreRank = oldEduExp ? oldEduExp.scoreRank[1] : '';
+          this.form.studyType = oldEduExp ? oldEduExp.studyType[1] : '';
+        }else {
+          this.form.school = '';
+          this.form.major = '';
+          this.form.period = '';
+          this.form.record = '';
+          this.form.scoreRank = '';
+          this.form.studyType = '';
+        }
       },
       handleClose(done) {
         // this.$confirm('确认关闭？').then(_ => {done();}).catch(_ => {});
@@ -69,7 +82,7 @@
       onsubmit(){
         this.$refs.basicInfoForm.validate((valid) => {
           if (valid){
-            this.$emit('updateEduExp', this.form);
+            this.$emit('updateEduExp', this.form, this.type, this.editItemIndex);
             this.$message({message: '教育经历更新成功！', type: 'success'});
             this.dialogVisible = false;
           }

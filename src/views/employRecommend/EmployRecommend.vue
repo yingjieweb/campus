@@ -32,8 +32,8 @@
 </template>
 
 <script lang="ts">
-  import RecommendList from "../../components/recommend/RecommendList.vue";
-  import RecommendItem from "../../components/recommend/RecommendItem.vue";
+  import RecommendList from "../../components/recommend/employRecommend/RecommendList.vue";
+  import RecommendItem from "../../components/recommend/employRecommend/RecommendItem.vue";
   import recommendData from "../../database/recommendData.json"
 
   export default {

@@ -23,16 +23,20 @@
       <el-button @click="addInternExp" v-if="internExp.length === 0">添加</el-button>
       <el-button @click="goNextItem" v-if="internExp.length === 0">下一项</el-button>
     </div>
+
+    <InternExperienceModal ref="InternExperienceModal" @updateInternExp="updateInternExp"></InternExperienceModal>
   </div>
 </template>
 
 <script lang="js">
   import ResumeViewTitle from "@/components/recommend/personalResume/ResumeViewTitle"
+  import InternExperienceModal from "@/components/recommend/personalResume/InternExperienceModal"
 
   export default {
     name: "InternExperience",
     components: {
-      ResumeViewTitle
+      ResumeViewTitle,
+      InternExperienceModal
     },
     data(){
       return {
@@ -50,13 +54,13 @@
         this.hasIntern = !this.hasIntern;
       },
       addInternExp(){
-        this.$refs.InternExperienceModal.setDialogVisible('新增教育经历', true, '', 'add');
+        this.$refs.InternExperienceModal.setDialogVisible('新增实习经历', true, '', 'add');
       },
       editInternExp(index){
-        this.$refs.InternExperienceModal.setDialogVisible('编辑教育经历', true, this.eduExp[index], 'edit', index);
+        this.$refs.InternExperienceModal.setDialogVisible('编辑实习经历', true, this.internExp[index], 'edit', index);
       },
       deleteInternExp(deleteIndex){
-        this.eduExp = this.eduExp.filter((item, index) => {
+        this.internExp = this.internExp.filter((item, index) => {
           return index !== deleteIndex;
         })
       },

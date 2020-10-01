@@ -10,7 +10,9 @@
             <el-tab-pane label="教育经历" name="second">
               <EducationExperience @goNextItem="goNextItem"></EducationExperience>
             </el-tab-pane>
-            <el-tab-pane label="实习经历" name="third">实习经历</el-tab-pane>
+            <el-tab-pane label="实习经历" name="third">
+              <InternExperience></InternExperience>
+            </el-tab-pane>
             <el-tab-pane label="学生干部经历" name="fourth">学生干部经历</el-tab-pane>
             <el-tab-pane label="项目经验" name="fifth">项目经验</el-tab-pane>
             <el-tab-pane label="奖惩经历" name="sixth">奖惩经历</el-tab-pane>
@@ -35,6 +37,7 @@
 <script lang="ts">
   import BasicInfo from "../../components/recommend/personalResume/BasicInfo.vue";
   import EducationExperience from "../../components/recommend/personalResume/EducationExperience.vue";
+  import InternExperience from "../../components/recommend/personalResume/InternExperience.vue";
   import ResumePreview from "../../components/recommend/personalResume/ResumePreview.vue";
 
   export default {
@@ -42,6 +45,7 @@
     components: {
       BasicInfo,
       EducationExperience,
+      InternExperience,
       ResumePreview
     },
     data(){

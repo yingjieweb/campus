@@ -13,7 +13,7 @@
             v-for="(item, index) in internExpItem"
             :key="index">
           <div class="internItemKey">{{item[0]}}</div>
-          <div class="internItemValue">{{item[1]}}</div>
+          <div class="internItemValue"><pre>{{item[1]}}</pre></div>
         </div>
         <el-button @click="editInternExp(index)">编辑</el-button>
         <el-button @click="deleteInternExp(index)">删除</el-button>

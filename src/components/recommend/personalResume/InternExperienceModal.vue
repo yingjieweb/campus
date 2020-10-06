@@ -83,7 +83,6 @@
           this.form.period = oldInternExp ? oldInternExp.period[1] : '';
           this.form.position = oldInternExp ? oldInternExp.position[1] : '';
           this.form.describe = oldInternExp ? oldInternExp.describe[1] : '';
-
         } else {
           this.form.company = '';
           this.form.period = '';

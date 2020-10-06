@@ -4,7 +4,6 @@
     <div class="basicInfo">求职意向</div>
     <div class="basicInfo">教育经历</div>
     <div class="basicInfo">实习经历</div>
-    <div class="basicInfo">学生干部经历</div>
     <div class="basicInfo">项目经验</div>
     <div class="basicInfo">奖惩情况</div>
     <div class="basicInfo">家庭情况</div>

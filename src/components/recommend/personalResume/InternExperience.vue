@@ -80,7 +80,7 @@
         }
       },
       goNextItem(){
-        this.$emit('goNextItem', 'third');
+        this.$emit('goNextItem', 'fourth');
       }
     }
   }

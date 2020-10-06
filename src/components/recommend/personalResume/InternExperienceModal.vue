@@ -24,7 +24,7 @@
       <el-form-item label="描述">
         <el-input
                 type="textarea"
-                :rows="3"
+                :autosize="{ minRows: 4, maxRows: 7}"
                 placeholder="请输入内容"
                 v-model="form.describe">
         </el-input>
@@ -70,6 +70,7 @@
           this.form.period = oldInternExp ? oldInternExp.period[1] : '';
           this.form.position = oldInternExp ? oldInternExp.position[1] : '';
           this.form.describe = oldInternExp ? oldInternExp.describe[1] : '';
+
         } else {
           this.form.company = '';
           this.form.period = '';

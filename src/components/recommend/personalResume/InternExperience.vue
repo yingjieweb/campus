@@ -45,7 +45,7 @@
           company: ['公司', '京东'],
           period: ['时间', '2020.08.01~2020.05.01'],
           position: ['岗位', '前端开发实习生'],
-          describe: ['描述', '我干了哪些模块，具体用到的技术栈具体用到的技术栈具体用到的技术栈具体用到的技术栈具体用到的技术栈具体用到的技术栈']
+          describe: ['描述', '我干了哪些模块，具体用到的技术栈具体用到的技术栈']
         }]
       }
     },
@@ -66,21 +66,17 @@
       },
       updateInternExp(form, type, editItemIndex){
         if (type === 'add'){
-          let newEduExpItem = {};
-          newEduExpItem.school = ['学校',form.school];
-          newEduExpItem.major = ['专业',form.major];
-          newEduExpItem.period = ['起止时间',form.period];
-          newEduExpItem.record = ['学历',form.record];
-          newEduExpItem.scoreRank = ['成绩排名',form.scoreRank];
-          newEduExpItem.studyType = ['学历类型',form.studyType];
-          this.eduExp.push(newEduExpItem);
+          let newInternExpItem = {};
+          newInternExpItem.company = ['公司',form.company];
+          newInternExpItem.period = ['时间',form.period];
+          newInternExpItem.position = ['岗位',form.position];
+          newInternExpItem.describe = ['描述',form.describe];
+          this.internExp.push(newInternExpItem);
         }else {
-          this.eduExp[editItemIndex].school = ['学校',form.school];
-          this.eduExp[editItemIndex].major = ['专业',form.major];
-          this.eduExp[editItemIndex].period = ['起止时间',form.period];
-          this.eduExp[editItemIndex].record = ['学历',form.record];
-          this.eduExp[editItemIndex].scoreRank = ['成绩排名',form.scoreRank];
-          this.eduExp[editItemIndex].studyType = ['学历类型',form.studyType];
+          this.internExp[editItemIndex].company = ['公司',form.company];
+          this.internExp[editItemIndex].period = ['时间',form.period];
+          this.internExp[editItemIndex].position = ['岗位',form.position];
+          this.internExp[editItemIndex].describe = ['描述',form.describe];
         }
       },
       goNextItem(){

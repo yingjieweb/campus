@@ -8,7 +8,7 @@
       <el-form-item label="学校" prop="school">
         <el-input v-model="form.school" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="专业">
+      <el-form-item label="专业" prop="major">
         <el-input v-model="form.major" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item label="起止日期" prop="period">
@@ -62,6 +62,23 @@
 <script lang="js">
   import {dateFormat} from '@/utils/dateFormat'
 
+  let checkSchoolName = (rule, value, callback) => {
+    let reg = /^[\u4e00-\u9fa5]{4,10}$/;
+    if (!reg.test(value)){
+      callback(new Error('请输入正确的学校名称'));
+    }else {
+      callback();
+    }
+  }
+  let checkMajor = (rule, value, callback) => {
+    let reg = /^[\u4e00-\u9fa5]{4,10}$/;
+    if (!reg.test(value)){
+      callback(new Error('请输入正确的专业名称'));
+    }else {
+      callback();
+    }
+  }
+
   export default {
     name: "EducationExperienceModal",
     data(){
@@ -79,7 +96,28 @@
           studyType: ''
         },
         formLabelWidth: '80px',
-        rules: {}
+        rules: {
+          school: [
+            { required: true, message: '请输入学校名称', trigger: 'blur' },
+            { validator: checkSchoolName, trigger: 'blur' }
+          ],
+          major: [
+            { required: true, message: '请输入专业名称', trigger: 'blur' },
+            { validator: checkMajor, trigger: 'blur' }
+          ],
+          period: [
+            { required: true, message: '请选择起止日期', trigger: 'blur' },
+          ],
+          record: [
+            { required: true, message: '请选择学历', trigger: 'blur' },
+          ],
+          scoreRank: [
+            { required: true, message: '请选择成绩排名', trigger: 'blur' }
+          ],
+          studyType: [
+            { required: true, message: '请选择学历类型', trigger: 'blur' }
+          ]
+        }
       }
     },
     methods: {

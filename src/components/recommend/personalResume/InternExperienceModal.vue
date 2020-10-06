@@ -18,10 +18,10 @@
                 style="width: 100%;">
         </el-date-picker>
       </el-form-item>
-      <el-form-item label="岗位">
+      <el-form-item label="岗位" prop="position">
         <el-input v-model="form.position" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="描述">
+      <el-form-item label="描述" prop="describe">
         <el-input
                 type="textarea"
                 :autosize="{ minRows: 4, maxRows: 7}"
@@ -55,7 +55,20 @@
           describe: ''
         },
         formLabelWidth: '80px',
-        rules: {}
+        rules: {
+          company: [
+            { required: true, message: '请输入公司名称', trigger: 'blur' }
+          ],
+          period: [
+            { required: true, message: '请选择起止日期', trigger: 'blur' }
+          ],
+          position: [
+            { required: true, message: '请输入实习岗位', trigger: 'blur' }
+          ],
+          describe: [
+            { required: true, message: '请输入专业名称', trigger: 'blur' }
+          ],
+        }
       }
     },
     methods: {

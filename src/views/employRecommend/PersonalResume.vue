@@ -16,7 +16,9 @@
             <el-tab-pane label="项目经验" name="fourth">
               <ProjectExperience @goNextItem="goNextItem"></ProjectExperience>
             </el-tab-pane>
-            <el-tab-pane label="奖惩经历" name="fifth">奖惩经历</el-tab-pane>
+            <el-tab-pane label="语言能力" name="fifth">
+              <LanguageAbility  @goNextItem="goNextItem"></LanguageAbility>
+            </el-tab-pane>
             <el-tab-pane label="家庭情况" name="sixth">家庭情况</el-tab-pane>
             <el-tab-pane label="自我评价" name="seventh">自我评价</el-tab-pane>
             <el-tab-pane label="其他情况" name="eighth">其他情况</el-tab-pane>
@@ -40,6 +42,7 @@
   import EducationExperience from "../../components/recommend/personalResume/EducationExperience.vue";
   import InternExperience from "../../components/recommend/personalResume/InternExperience.vue";
   import ProjectExperience from "../../components/recommend/personalResume/ProjectExperience.vue";
+  import LanguageAbility from "../../components/recommend/personalResume/LanguageAbility.vue";
   import ResumePreview from "../../components/recommend/personalResume/ResumePreview.vue";
 
   export default {
@@ -49,6 +52,7 @@
       EducationExperience,
       InternExperience,
       ProjectExperience,
+      LanguageAbility,
       ResumePreview
     },
     data(){

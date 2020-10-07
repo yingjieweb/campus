@@ -17,11 +17,11 @@
               <ProjectExperience @goNextItem="goNextItem"></ProjectExperience>
             </el-tab-pane>
             <el-tab-pane label="语言能力" name="fifth">
-              <LanguageAbility  @goNextItem="goNextItem"></LanguageAbility>
+              <LanguageAbility @goNextItem="goNextItem"></LanguageAbility>
             </el-tab-pane>
-            <el-tab-pane label="家庭情况" name="sixth">家庭情况</el-tab-pane>
-            <el-tab-pane label="自我评价" name="seventh">自我评价</el-tab-pane>
-            <el-tab-pane label="其他情况" name="eighth">其他情况</el-tab-pane>
+            <el-tab-pane label="自我评价" name="sixth">
+              <SelfAssess @goNextItem="goNextItem"></SelfAssess>
+            </el-tab-pane>
 
             <el-tab-pane label="😏 求职意向" name="tenth">求职意向</el-tab-pane>
           </el-tabs>
@@ -43,6 +43,7 @@
   import InternExperience from "../../components/recommend/personalResume/InternExperience.vue";
   import ProjectExperience from "../../components/recommend/personalResume/ProjectExperience.vue";
   import LanguageAbility from "../../components/recommend/personalResume/LanguageAbility.vue";
+  import SelfAssess from "../../components/recommend/personalResume/SelfAssess.vue";
   import ResumePreview from "../../components/recommend/personalResume/ResumePreview.vue";
 
   export default {
@@ -53,6 +54,7 @@
       InternExperience,
       ProjectExperience,
       LanguageAbility,
+      SelfAssess,
       ResumePreview
     },
     data(){

@@ -22,8 +22,9 @@
             <el-tab-pane label="自我评价" name="sixth">
               <SelfAssess @goNextItem="goNextItem"></SelfAssess>
             </el-tab-pane>
-
-            <el-tab-pane label="😏 求职意向" name="tenth">求职意向</el-tab-pane>
+            <el-tab-pane label="😏 求职意向" name="tenth">
+              <JobIntention></JobIntention>
+            </el-tab-pane>
           </el-tabs>
         </div>
       </Block>
@@ -44,6 +45,7 @@
   import ProjectExperience from "../../components/recommend/personalResume/ProjectExperience.vue";
   import LanguageAbility from "../../components/recommend/personalResume/LanguageAbility.vue";
   import SelfAssess from "../../components/recommend/personalResume/SelfAssess.vue";
+  import JobIntention from "../../components/recommend/personalResume/JobIntention.vue";
   import ResumePreview from "../../components/recommend/personalResume/ResumePreview.vue";
 
   export default {
@@ -55,6 +57,7 @@
       ProjectExperience,
       LanguageAbility,
       SelfAssess,
+      JobIntention,
       ResumePreview
     },
     data(){

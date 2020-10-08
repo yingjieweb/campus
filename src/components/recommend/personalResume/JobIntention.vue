@@ -15,7 +15,7 @@
         <div class="jobItemValue">{{item[1]}}</div>
       </div>
       <el-button @click="editJobIntention">编辑</el-button>
-      <el-button @click="finishResume">完成</el-button>
+      <el-button @click="finishResume">岗位推荐</el-button>
     </div>
 
     <JobIntentionModal ref="JobIntentionModal" @updateJobIntention="updateJobIntention"></JobIntentionModal>
@@ -53,7 +53,10 @@
         this.jobIntention.salaryRank = ['薪资要求', form.salaryRank];
       },
       finishResume(){
-        alert(1111);
+        this.$message({message: '系统正在根据您的求职意向进行推荐计算，请稍后...', type: 'warning'});
+        setTimeout(() => {
+          this.$message({message: '推荐岗位已更新，请移步到就业岗位推荐模块查看~', type: 'success'});
+        }, 2000)
       }
     }
   }

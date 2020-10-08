@@ -104,12 +104,6 @@
           if (valid){
             this.$emit('updateJobIntention', this.form);
             this.$message({message: '求职意向更新成功！', type: 'success'});
-            setTimeout(() => {
-              this.$message({message: '系统正在根据您的求职意向进行推荐计算，请稍后...', type: 'warning'});
-            }, 500)
-            setTimeout(() => {
-              this.$message({message: '推荐岗位已更新，请移步到就业岗位推荐模块查看~', type: 'success'});
-            }, 2000)
             this.dialogVisible = false;
           }
         })

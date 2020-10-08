@@ -47,6 +47,8 @@
         this.basicInfo.IDCard = ['个人证件',form.IDCard];
         this.basicInfo.currentState = ['当前状态',form.currentState];
         this.basicInfo.expectedPosition = ['求职意向',form.expectedPosition];
+
+        this.$EventBus.$emit('updateResumeBasicInfo', this.basicInfo);
       },
       goNextItem(){
         this.$emit('goNextItem', 'second');

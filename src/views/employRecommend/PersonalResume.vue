@@ -22,7 +22,7 @@
             <el-tab-pane label="自我评价" name="sixth">
               <SelfAssess @goNextItem="goNextItem"></SelfAssess>
             </el-tab-pane>
-            <el-tab-pane label="😏 求职意向" name="tenth">
+            <el-tab-pane label="😏 求职意向" name="seventh">
               <JobIntention></JobIntention>
             </el-tab-pane>
           </el-tabs>

@@ -33,7 +33,7 @@
         eduExp: [{
           school: ['学校','东北大学'],
           major: ['专业','软件工程'],
-          period: ['起止时间','2018.09 ~ 2021.07'],
+          period: ['起止时间','2018.09.07 ~ 2021.07.01'],
           record: ['学历','硕士'],
           scoreRank: ['成绩排名','50%'],
           studyType: ['学历类型', '统招全日制']
@@ -50,7 +50,9 @@
       deleteEduExp(deleteIndex){
         this.eduExp = this.eduExp.filter((item, index) => {
           return index !== deleteIndex;
-        })
+        });
+
+        this.$EventBus.$emit('updateResumeEduExp', this.eduExp);
       },
       updateEduExp(form, type, editItemIndex){
         if (type === 'add'){
@@ -70,6 +72,8 @@
           this.eduExp[editItemIndex].scoreRank = ['成绩排名',form.scoreRank];
           this.eduExp[editItemIndex].studyType = ['学历类型',form.studyType];
         }
+
+        this.$EventBus.$emit('updateResumeEduExp', this.eduExp);
       },
       goNextItem(){
         this.$emit('goNextItem', 'third');

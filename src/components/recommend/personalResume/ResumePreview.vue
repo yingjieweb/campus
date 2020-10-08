@@ -11,7 +11,7 @@
         <span>求职意向：{{personalInfo.basicInfo.expectedPosition[1]}}</span>
       </div>
     </div>
-    <div class="EducationExperience">
+    <div class="EducationExperience" v-if="personalInfo.eduExp.length">
       <div class="title">教育经历</div>
       <div class="eduExpItems" v-for="(eduExpItem, index) in personalInfo.eduExp" :key="index">
         <div class="school_period">
@@ -38,6 +38,9 @@
       this.$EventBus.$on('updateResumeBasicInfo', (newBasicInfo)=>{
         this.personalInfo.basicInfo = newBasicInfo;
       })
+      this.$EventBus.$on('updateResumeEduExp', (newEduExp)=>{
+        this.personalInfo.eduExp = newEduExp;
+      })
     },
     data(){
       return {
@@ -53,7 +56,7 @@
           eduExp: [{
             school: ['学校','东北大学'],
             major: ['专业','软件工程'],
-            period: ['起止时间','2018.09 ~ 2021.07'],
+            period: ['起止时间','2018.09.07 ~ 2021.07.01'],
             record: ['学历','硕士'],
             scoreRank: ['成绩排名','50%'],
             studyType: ['学历类型', '统招全日制']

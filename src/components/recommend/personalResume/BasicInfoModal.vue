@@ -17,8 +17,11 @@
       <el-form-item label="个人证件" prop="IDCard">
         <el-input v-model="form.IDCard" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="意向地点" prop="intentionCity">
-        <el-input v-model="form.intentionCity" autocomplete="off" placeholder="请输入意向城市，以、分隔"></el-input>
+      <el-form-item label="当前状态" prop="currentState">
+        <el-input v-model="form.currentState" autocomplete="off"></el-input>
+      </el-form-item>
+      <el-form-item label="求职意向" prop="expectedPosition">
+        <el-input v-model="form.expectedPosition" autocomplete="off" placeholder="请输入求职意向岗位"></el-input>
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">
@@ -73,7 +76,8 @@
           phone: '',
           mail: '',
           IDCard: '',
-          intentionCity: ''
+          currentState: '',
+          expectedPosition: ''
         },
         formLabelWidth: '80px',
         rules: {
@@ -93,8 +97,11 @@
             { required: true, message: '请输入身份证号', trigger: 'blur' },
             { validator: checkIdCard, trigger: 'blur'}
           ],
-          intentionCity: [
-            { required: true, message: '请输入意向城市，以、分隔', trigger: 'blur' }
+          currentState: [
+            { required: true, message: '请输入当前求职状态', trigger: 'blur' }
+          ],
+          expectedPosition: [
+            { required: true, message: '请输入求职意向岗位', trigger: 'blur' }
           ]
         }
       }
@@ -108,7 +115,8 @@
         this.form.phone = oldBasicInfo.phone[1];
         this.form.mail = oldBasicInfo.mail[1];
         this.form.IDCard = oldBasicInfo.IDCard[1];
-        this.form.intentionCity = oldBasicInfo.intentionCity[1];
+        this.form.currentState = oldBasicInfo.currentState[1];
+        this.form.expectedPosition = oldBasicInfo.expectedPosition[1];
       },
       handleClose(done) {
         // this.$confirm('确认关闭？').then(_ => {done();}).catch(_ => {});

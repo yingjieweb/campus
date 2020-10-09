@@ -63,6 +63,8 @@
         this.internExp = this.internExp.filter((item, index) => {
           return index !== deleteIndex;
         })
+
+        this.$EventBus.$emit('updateResumeInternExp', this.internExp);
       },
       updateInternExp(form, type, editItemIndex){
         if (type === 'add'){
@@ -78,6 +80,8 @@
           this.internExp[editItemIndex].position = ['岗位',form.position];
           this.internExp[editItemIndex].describe = ['描述',form.describe];
         }
+
+        this.$EventBus.$emit('updateResumeInternExp', this.internExp);
       },
       goNextItem(){
         this.$emit('goNextItem', 'fourth');

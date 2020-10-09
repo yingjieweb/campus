@@ -11,7 +11,7 @@
         <span>求职意向：{{personalInfo.basicInfo.expectedPosition[1]}}</span>
       </div>
     </div>
-    <div class="EducationExperience" v-if="personalInfo.eduExp.length">
+    <div class="educationExperience" v-if="personalInfo.eduExp.length">
       <div class="title">教育经历</div>
       <div class="eduExpItems" v-for="(eduExpItem, index) in personalInfo.eduExp" :key="index">
         <div class="school_period">
@@ -21,6 +21,19 @@
         <div class="major_scoreRank">
           <span class="major">{{eduExpItem.major[1]}} - {{eduExpItem.record[1]}}</span>
           <span>成绩排名：{{eduExpItem.scoreRank[1]}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="internExperience" v-if="personalInfo.internExp.length">
+      <div class="title">实习经历</div>
+      <div class="internExpItems" v-for="(internExpItem, index) in personalInfo.internExp" :key="index">
+        <div class="company_period">
+          <span class="company">{{internExpItem.company[1]}} - {{internExpItem.position[1]}}</span>
+          <span>{{internExpItem.period[1]}}</span>
+        </div>
+        <div class="describe">描述：<br>
+          <span style="display: inline-block; width: 30px;"></span>
+          {{internExpItem.describe[1]}}
         </div>
       </div>
     </div>
@@ -41,6 +54,9 @@
       this.$EventBus.$on('updateResumeEduExp', (newEduExp)=>{
         this.personalInfo.eduExp = newEduExp;
       })
+      this.$EventBus.$on('updateResumeInternExp', (newInternExp)=>{
+        this.personalInfo.internExp = newInternExp;
+      })
     },
     data(){
       return {
@@ -60,6 +76,12 @@
             record: ['学历','硕士'],
             scoreRank: ['成绩排名','50%'],
             studyType: ['学历类型', '统招全日制']
+          }],
+          internExp: [{
+            company: ['公司', '京东'],
+            period: ['时间', '2020.08.01~2020.05.01'],
+            position: ['岗位', '前端开发实习生'],
+            describe: ['描述', '我干了哪些模块，具体用到的技术栈具体用到的技术栈']
           }]
         }
       }
@@ -89,7 +111,7 @@
       }
     }
 
-    .EducationExperience {
+    .educationExperience {
       margin-bottom: 8px;
 
       .title {
@@ -110,6 +132,25 @@
           justify-content: space-around;
 
           .major {margin-left: -60px}
+        }
+      }
+    }
+
+    .internExperience {
+      margin-bottom: 8px;
+
+      .title {
+        font-weight: bold;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #909399;
+      }
+      .internExpItems {
+        &:hover {
+          background-color: #F9FBFF;
+        }
+        .company_period {
+          display: flex;
+          justify-content: space-between;
         }
       }
     }

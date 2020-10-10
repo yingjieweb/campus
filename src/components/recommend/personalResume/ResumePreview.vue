@@ -60,7 +60,11 @@
         </div>
       </div>
     </div>
-    <div class="selfAssess">自我评价</div>
+    <div class="selfAssess">
+      <div class="title">自我评价</div>
+      <span style="display: inline-block; width: 30px;"></span>
+      <span class="selfDetails">{{personalInfo.selfAssess}}</span>
+    </div>
   </div>
 </template>
 
@@ -83,6 +87,9 @@
       })
       this.$EventBus.$on('updateResumeLangAbility', (newLangKind)=>{
         this.personalInfo.langKind = newLangKind;
+      })
+      this.$EventBus.$on('updateResumeSelfAccess', (newSelfAccess)=>{
+        this.personalInfo.selfAssess = newSelfAccess;
       })
     },
     data(){
@@ -121,7 +128,8 @@
           langKind: [{
             lang: ['语言','英语'],
             proficient: ['掌握程度','日常会话']
-          }]
+          }],
+          selfAssess: '真不错，感觉自己真不错！'
         }
       }
     }
@@ -227,6 +235,16 @@
           justify-content: space-between;
         }
       }
+    }
+
+    .selfAssess {
+      margin-bottom: 8px;
+      .title {
+        font-weight: bold;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #909399;
+      }
+
     }
   }
 </style>

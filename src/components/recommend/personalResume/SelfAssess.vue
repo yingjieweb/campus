@@ -23,7 +23,7 @@
     },
     data(){
       return {
-        selfAssess: '真不错，感觉自己真不错'
+        selfAssess: '真不错，感觉自己真不错！'
       }
     },
     methods: {
@@ -32,6 +32,8 @@
       },
       updateSelfAssess(form){
         this.selfAssess = form.selfAssess;
+
+        this.$EventBus.$emit('updateResumeSelfAccess', this.selfAssess);
       },
       goNextItem(){
         this.$emit('goNextItem', 'seventh');

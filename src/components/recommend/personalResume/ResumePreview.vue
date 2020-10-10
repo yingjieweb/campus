@@ -51,12 +51,20 @@
         </div>
       </div>
     </div>
-    <div class="languageAbility">语言能力</div>
+    <div class="languageAbility" v-if="personalInfo.langKind.length">
+      <div class="title">语言能力</div>
+      <div class="langKindItems" v-for="(langKindItem, index) in personalInfo.langKind" :key="index">
+        <div class="langAbilityInfo">
+          <strong class="lang">语言：{{langKindItem.lang[1]}}</strong>
+          <strong class="proficient">掌握程度：{{langKindItem.proficient[1]}}</strong>
+        </div>
+      </div>
+    </div>
     <div class="selfAssess">自我评价</div>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
   export default {
     name: "ResumePreview",
     mounted(){
@@ -72,6 +80,9 @@
       })
       this.$EventBus.$on('updateResumeProjectExp', (newProjectExp)=>{
         this.personalInfo.projectExp = newProjectExp;
+      })
+      this.$EventBus.$on('updateResumeLangAbility', (newLangKind)=>{
+        this.personalInfo.langKind = newLangKind;
       })
     },
     data(){
@@ -106,12 +117,13 @@
             period: ['起止时间','2018.09 ~ 2021.07'],
             projectURL: ['项目链接','https://github.com/yingjieweb/resume'],
             describe: ['项目描述', '一款基于 Vue+TypeScript 开发的个人主页，内容包含个人简介、博客、项目清单等']
+          }],
+          langKind: [{
+            lang: ['语言','英语'],
+            proficient: ['掌握程度','日常会话']
           }]
         }
       }
-    },
-    methods: {
-
     }
   }
 </script>
@@ -192,6 +204,25 @@
           background-color: #F9FBFF;
         }
         .projectInfo {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    .languageAbility {
+      margin-bottom: 8px;
+
+      .title {
+        font-weight: bold;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #909399;
+      }
+      .langKindItems {
+        &:hover {
+          background-color: #F9FBFF;
+        }
+        .langAbilityInfo {
           display: flex;
           justify-content: space-between;
         }

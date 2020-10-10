@@ -47,6 +47,8 @@
         this.langKind = this.langKind.filter((item, index) => {
           return index !== deleteIndex;
         })
+
+        this.$EventBus.$emit('updateResumeLangAbility', this.langKind);
       },
       updateLangKind(form, type, editItemIndex){
         if (type === 'add'){
@@ -58,6 +60,8 @@
           this.langKind[editItemIndex].lang = ['语言',form.lang];
           this.langKind[editItemIndex].proficient = ['掌握程度',form.proficient];
         }
+
+        this.$EventBus.$emit('updateResumeLangAbility', this.langKind);
       },
       goNextItem(){
         this.$emit('goNextItem', 'sixth');

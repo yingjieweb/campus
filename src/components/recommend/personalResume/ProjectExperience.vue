@@ -54,6 +54,8 @@
         this.projectExp = this.projectExp.filter((item, index) => {
           return index !== deleteIndex;
         })
+
+        this.$EventBus.$emit('updateResumeProjectExp', this.projectExp);
       },
       updateProjectExp(form, type, editItemIndex){
         if (type === 'add'){
@@ -71,6 +73,8 @@
           this.projectExp[editItemIndex].projectURL = ['项目链接',form.projectURL];
           this.projectExp[editItemIndex].describe = ['项目描述',form.describe];
         }
+
+        this.$EventBus.$emit('updateResumeProjectExp', this.projectExp);
       },
       goNextItem(){
         this.$emit('goNextItem', 'fifth');

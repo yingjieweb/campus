@@ -37,10 +37,22 @@
         </div>
       </div>
     </div>
-    <div class="InternExperience">实习经历</div>
-    <div class="ProjectExperience">项目经验</div>
-    <div class="LanguageAbility">语言能力</div>
-    <div class="SelfAssess">自我评价</div>
+    <div class="projectExperience" v-if="personalInfo.projectExp.length">
+      <div class="title">项目经验</div>
+      <div class="projectExpItems" v-for="(projectExpItem, index) in personalInfo.projectExp" :key="index">
+        <div class="projectInfo">
+          <strong class="projectName">{{projectExpItem.projectName[1]}} - {{projectExpItem.projectRole[1]}}</strong>
+          <span>{{projectExpItem.period[1]}}</span>
+        </div>
+        <div class="projectURL">项目链接： {{projectExpItem.projectURL[1]}}</div>
+        <div class="describe">项目描述：<br>
+          <span style="display: inline-block; width: 30px;"></span>
+          {{projectExpItem.describe[1]}}
+        </div>
+      </div>
+    </div>
+    <div class="languageAbility">语言能力</div>
+    <div class="selfAssess">自我评价</div>
   </div>
 </template>
 
@@ -56,6 +68,9 @@
       })
       this.$EventBus.$on('updateResumeInternExp', (newInternExp)=>{
         this.personalInfo.internExp = newInternExp;
+      })
+      this.$EventBus.$on('updateResumeProjectExp', (newProjectExp)=>{
+        this.personalInfo.projectExp = newProjectExp;
       })
     },
     data(){
@@ -82,6 +97,13 @@
             period: ['时间', '2020.08.01~2020.05.01'],
             position: ['岗位', '前端开发实习生'],
             describe: ['描述', '我干了哪些模块，具体用到的技术栈具体用到的技术栈']
+          }],
+          projectExp: [{
+            projectName: ['项目名称','我的个人主页'],
+            projectRole: ['项目角色','前端模块负责人'],
+            period: ['起止时间','2018.09 ~ 2021.07'],
+            projectURL: ['项目链接','https://github.com/yingjieweb/resume'],
+            describe: ['项目描述', '一款基于 Vue+TypeScript 开发的个人主页，内容包含个人简介、博客、项目清单等']
           }]
         }
       }
@@ -149,6 +171,25 @@
           background-color: #F9FBFF;
         }
         .company_period {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    .projectExperience {
+      margin-bottom: 8px;
+
+      .title {
+        font-weight: bold;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #909399;
+      }
+      .projectExpItems {
+        &:hover {
+          background-color: #F9FBFF;
+        }
+        .projectInfo {
           display: flex;
           justify-content: space-between;
         }

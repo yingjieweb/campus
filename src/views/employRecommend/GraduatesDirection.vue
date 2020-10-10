@@ -19,7 +19,17 @@
           <ChinaMap></ChinaMap>
         </div>
         <div class="right">
-
+          <div class="jobOrient">
+            <BarChart :option="jobOrient"></BarChart>
+          </div>
+          <div class="kind">
+            <div class="hotJobs">
+              <BarChart :option="hotJobs"></BarChart>
+            </div>
+            <div class="hotJobs">
+              <BarChart :option="salaryRank"></BarChart>
+            </div>
+          </div>
         </div>
       </div>
     </Block>
@@ -175,8 +185,22 @@
 
     > .right {
       flex: 2;
+      display: flex;
+      flex-direction: column;
       margin-left: 5px;
-      border: 1px dashed #1296DB;
+
+      > .jobOrient {
+        height: 250px;
+        margin-bottom: 5px;
+        border: 1px dashed #1296DB;
+      }
+
+      > .kind {
+        flex-grow: 1;
+        border: 1px dashed #1296DB;
+
+        > .hotJobs { height: 50%}
+      }
     }
   }
 </style>

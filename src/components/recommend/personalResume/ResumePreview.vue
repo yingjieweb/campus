@@ -15,7 +15,7 @@
       <div class="title">教育经历</div>
       <div class="eduExpItems" v-for="(eduExpItem, index) in personalInfo.eduExp" :key="index">
         <div class="school_period">
-          <span class="school">{{eduExpItem.school[1]}}</span>
+          <strong class="school">{{eduExpItem.school[1]}}</strong>
           <span>{{eduExpItem.period[1]}}</span>
         </div>
         <div class="major_scoreRank">
@@ -28,7 +28,7 @@
       <div class="title">实习经历</div>
       <div class="internExpItems" v-for="(internExpItem, index) in personalInfo.internExp" :key="index">
         <div class="company_period">
-          <span class="company">{{internExpItem.company[1]}} - {{internExpItem.position[1]}}</span>
+          <strong class="company">{{internExpItem.company[1]}} - {{internExpItem.position[1]}}</strong>
           <span>{{internExpItem.period[1]}}</span>
         </div>
         <div class="describe">描述：<br>
@@ -77,7 +77,7 @@
       return {
         personalInfo: {
           basicInfo: {
-            name: ['姓名','张三'],
+            name: ['姓名','张三丰'],
             phone: ['手机号码','18850888958'],
             mail: ['邮箱','1188061078@qq.com'],
             IDCard: ['个人证件','370888189509095574'],

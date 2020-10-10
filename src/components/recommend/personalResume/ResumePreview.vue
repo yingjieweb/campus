@@ -111,7 +111,7 @@
             scoreRank: ['成绩排名','50%'],
             studyType: ['学历类型', '统招全日制']
           }],
-          hasIntern: true,
+          hasIntern: false,
           internExp: [{
             company: ['公司', '京东'],
             period: ['时间', '2020.08.01~2020.05.01'],
@@ -122,14 +122,15 @@
             projectName: ['项目名称','我的个人主页'],
             projectRole: ['项目角色','前端模块负责人'],
             period: ['起止时间','2018.09 ~ 2021.07'],
-            projectURL: ['项目链接','https://github.com/yingjieweb/resume'],
+            projectURL: ['项目链接','https://github.com/yingjieweb'],
             describe: ['项目描述', '一款基于 Vue+TypeScript 开发的个人主页，内容包含个人简介、博客、项目清单等']
           }],
           langKind: [{
             lang: ['语言','英语'],
             proficient: ['掌握程度','日常会话']
           }],
-          selfAssess: '真不错，感觉自己真不错！'
+          selfAssess: '真不错，感觉自己真不错！作为一位职场新人，一定能够以积极主动的工作态度来迎接工作中的每一个挑战；团队配合能力：善于沟通，' +
+              '有一定团队协作经验，具备活动策划和组织协调能力；工作态度评价：良好的责任感，吃苦耐劳，擅于管理时间，勇于面对变化和挑战。'
         }
       }
     }
@@ -139,7 +140,6 @@
 <style lang="scss" scoped>
   .resumePreview {
     color: gray;
-    flex-grow: 3;
     padding: 0 12px;
     /*border: 1px solid salmon;*/
 

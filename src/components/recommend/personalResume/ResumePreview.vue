@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div class="internExperience" v-if="personalInfo.internExp.length">
+    <div class="internExperience" v-if="personalInfo.internExp.length && !personalInfo.hasIntern">
       <div class="title">实习经历</div>
       <div class="internExpItems" v-for="(internExpItem, index) in personalInfo.internExp" :key="index">
         <div class="company_period">
@@ -66,7 +66,8 @@
       this.$EventBus.$on('updateResumeEduExp', (newEduExp)=>{
         this.personalInfo.eduExp = newEduExp;
       })
-      this.$EventBus.$on('updateResumeInternExp', (newInternExp)=>{
+      this.$EventBus.$on('updateResumeInternExp', (hasIntern, newInternExp)=>{
+        this.personalInfo.hasIntern = hasIntern;
         this.personalInfo.internExp = newInternExp;
       })
       this.$EventBus.$on('updateResumeProjectExp', (newProjectExp)=>{
@@ -92,6 +93,7 @@
             scoreRank: ['成绩排名','50%'],
             studyType: ['学历类型', '统招全日制']
           }],
+          hasIntern: true,
           internExp: [{
             company: ['公司', '京东'],
             period: ['时间', '2020.08.01~2020.05.01'],

@@ -49,6 +49,11 @@
         }]
       }
     },
+    watch: {
+      hasIntern(){
+        this.$EventBus.$emit('updateResumeInternExp', this.hasIntern, this.internExp);
+      }
+    },
     methods: {
       switchState(){
         this.hasIntern = !this.hasIntern;
@@ -64,7 +69,7 @@
           return index !== deleteIndex;
         })
 
-        this.$EventBus.$emit('updateResumeInternExp', this.internExp);
+        this.$EventBus.$emit('updateResumeInternExp', this.hasIntern, this.internExp);
       },
       updateInternExp(form, type, editItemIndex){
         if (type === 'add'){
@@ -81,7 +86,7 @@
           this.internExp[editItemIndex].describe = ['描述',form.describe];
         }
 
-        this.$EventBus.$emit('updateResumeInternExp', this.internExp);
+        this.$EventBus.$emit('updateResumeInternExp', this.hasIntern, this.internExp);
       },
       goNextItem(){
         this.$emit('goNextItem', 'fourth');

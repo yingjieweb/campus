@@ -5,15 +5,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    username: ''
+    username: '',
+    permission: ''
   },
   mutations: {
-    getUserInfo(state, username){
-      state.username = username;
+    getUserInfo(state, username) {
+      state.username = username
+    },
+    getUserPermission(state, permission) {
+      state.permission = permission !== 'admin'
     }
   },
-  actions: {
-  },
-  modules: {
-  }
+  actions: {},
+  modules: {}
 })

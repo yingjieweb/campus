@@ -50,11 +50,11 @@
           <el-menu-item index="7-5"><i class="el-icon-caret-right"></i>课程备份</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
-      <el-menu-item index="/formative-evaluation">
+      <el-menu-item index="/formative-evaluation" v-if="this.$store.state.permission">
         <i class="el-icon-stopwatch"></i>
         <span slot="title">形成性评价</span>
       </el-menu-item>
-      <el-submenu index="9">
+      <el-submenu index="9" v-if="this.$store.state.permission">
         <template slot="title"><i class="el-icon-s-promotion"></i><span>应届生就业推荐</span></template>
         <el-menu-item-group>
           <el-menu-item index="/personal-resume"><i class="el-icon-caret-right"></i>个人信息及简历</el-menu-item>

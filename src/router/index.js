@@ -12,7 +12,7 @@ import EmployRecommend from "@/views/employRecommend/EmployRecommend"
 
 Vue.use(VueRouter)
 
-const routes = [
+const constantRoutes = [
   {
     path: '/',
     redirect: '/login'
@@ -59,8 +59,10 @@ const routes = [
   }
 ]
 
+const asyncRoutes = []
+
 const router = new VueRouter({
-  routes
+  routes: constantRoutes
 })
 
 export default router

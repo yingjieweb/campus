@@ -20,7 +20,7 @@
         </div>
         <div class="right">
           <div class="jobOrient">
-            <BarChart :option="jobOrient"></BarChart>
+            <PieChart></PieChart>
           </div>
           <div class="kind">
             <div class="hotJobs">
@@ -39,12 +39,14 @@
 <script lang="js">
   import BarChart from "@/components/charts/BarChart"
   import ChinaMap from "@/components/charts/ChinaMap"
+  import PieChart from "@/components/charts/PieChart"
 
   export default {
     name: "GraduatesDirection",
     components: {
       BarChart,
-      ChinaMap
+      ChinaMap,
+      PieChart
     },
     data(){
       return {

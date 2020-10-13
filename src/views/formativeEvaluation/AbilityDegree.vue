@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <Block title="形成性评价">
+    <Block title="个人能力达成度">
       <div slot="content" class="container">
         <div class="basicInfo">
           <div class="basicInfoItem">
@@ -31,7 +31,7 @@
   import RadarChart from "@/components/charts/RadarChart"
 
   export default {
-    name: "FormativeEvaluation",
+    name: "AbilityDegree",
     components: {
       PieChart,
       LineChart,

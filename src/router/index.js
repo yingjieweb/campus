@@ -6,6 +6,7 @@ import WorkBench from '@/views/workBench/WorkBench.vue'
 import UserManage from "@/views/systemSetting/userManage/UserManage";
 import CourseConstruct from "@/views/courseConstruct/CourseConstruct"
 import AbilityDegree from "@/views/formativeEvaluation/AbilityDegree"
+import AbilityAnalysis from "@/views/formativeEvaluation/AbilityAnalysis"
 import PersonalResume from "@/views/employRecommend/PersonalResume"
 import GraduatesDirection from "@/views/employRecommend/GraduatesDirection"
 import EmployRecommend from "@/views/employRecommend/EmployRecommend"
@@ -41,6 +42,11 @@ const constantRoutes = [
     path: '/ability-degree',
     name: 'AbilityDegree',
     component: AbilityDegree
+  },
+  {
+    path: '/ability-analysis',
+    name: 'AbilityAnalysis',
+    component: AbilityAnalysis
   },
   {
     path: '/personal-resume',

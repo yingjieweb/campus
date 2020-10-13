@@ -54,7 +54,7 @@
         <template slot="title"><i class="el-icon-stopwatch"></i><span>形成性评价</span></template>
         <el-menu-item-group>
           <el-menu-item index="/ability-degree"><i class="el-icon-caret-right"></i>个人能力达成度</el-menu-item>
-          <el-menu-item index="/formative-evaluation"><i class="el-icon-caret-right"></i>能力对比分析</el-menu-item>
+          <el-menu-item index="/ability-analysis"><i class="el-icon-caret-right"></i>能力对比分析</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-submenu index="9" v-if="this.$store.state.permission">

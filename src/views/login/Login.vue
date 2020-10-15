@@ -37,8 +37,8 @@
         } else if (this.username === 'student' && this.password === 'student@123') {
           this.$message({message: '登陆成功', type: 'success'});
 
-          this.$router.push('/work-bench');
           this.$store.commit('changeLoginStatus', true);
+          this.$router.push('/work-bench');
 
           this.$store.commit('getUserInfo', this.username);
           this.$store.commit('getUserPermission', 'student');

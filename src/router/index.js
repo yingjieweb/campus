@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '@/store/index'
 
 import Login from "@/views/login/Login"
 import WorkBench from '@/views/workBench/WorkBench.vue'
-import UserManage from "@/views/systemSetting/userManage/UserManage";
+import UserManage from "@/views/systemSetting/userManage/UserManage"
 import CourseConstruct from "@/views/courseConstruct/CourseConstruct"
 import AbilityDegree from "@/views/formativeEvaluation/AbilityDegree"
 import AbilityAnalysis from "@/views/formativeEvaluation/AbilityAnalysis"
@@ -69,6 +70,15 @@ const asyncRoutes = []
 
 const router = new VueRouter({
   routes: constantRoutes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'Login' && !store.state.isLogin) {
+    next({name: 'Login'})
+    Vue.prototype.$message({message: '如要手动执行路由跳转，需先登录用户信息！', type: 'error'})
+  } else {
+    next()
+  }
 })
 
 export default router

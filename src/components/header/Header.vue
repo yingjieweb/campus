@@ -27,6 +27,7 @@
     methods: {
       logout(){
         this.$router.push('/login');
+        this.$store.commit('changeLoginStatus', false)
       }
     }
   }

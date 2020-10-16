@@ -19,8 +19,8 @@
 </template>
 
 <script lang="js">
-  import ResumeViewTitle from "@/components/recommend/personalResume/ResumeViewTitle"
-  import LanguageAbilityModal from "@/components/recommend/personalResume/LanguageAbilityModal"
+  import ResumeViewTitle from "@/views/employRecommend/personalResume/childComps/ResumeViewTitle"
+  import LanguageAbilityModal from "@/views/employRecommend/personalResume/childComps/LanguageAbilityModal"
 
   export default {
     name: "LanguageAbility",

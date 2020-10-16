@@ -8,9 +8,9 @@ import UserManage from "@/views/systemSetting/userManage/UserManage"
 import CourseConstruct from "@/views/courseConstruct/CourseConstruct"
 import AbilityDegree from "@/views/formativeEvaluation/AbilityDegree"
 import AbilityAnalysis from "@/views/formativeEvaluation/AbilityAnalysis"
-import PersonalResume from "@/views/employRecommend/PersonalResume"
-import GraduatesDirection from "@/views/employRecommend/GraduatesDirection"
-import EmployRecommend from "@/views/employRecommend/EmployRecommend"
+import PersonalResume from "@/views/employRecommend/personalResume/PersonalResume"
+import GraduatesDirection from "@/views/employRecommend/graduatesDirection/GraduatesDirection"
+import EmployRecommend from "@/views/employRecommend/employRecommend/EmployRecommend"
 
 Vue.use(VueRouter)
 

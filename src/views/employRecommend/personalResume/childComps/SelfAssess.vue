@@ -12,8 +12,8 @@
 </template>
 
 <script lang="js">
-  import ResumeViewTitle from "@/components/recommend/personalResume/ResumeViewTitle"
-  import SelfAssessModal from "@/components/recommend/personalResume/SelfAssessModal"
+  import ResumeViewTitle from "@/views/employRecommend/personalResume/childComps/ResumeViewTitle"
+  import SelfAssessModal from "@/views/employRecommend/personalResume/childComps/SelfAssessModal"
 
   export default {
     name: "SelfAssess",

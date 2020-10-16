@@ -29,8 +29,8 @@
 </template>
 
 <script lang="js">
-  import ResumeViewTitle from "@/components/recommend/personalResume/ResumeViewTitle"
-  import InternExperienceModal from "@/components/recommend/personalResume/InternExperienceModal"
+  import ResumeViewTitle from "@/views/employRecommend/personalResume/childComps/ResumeViewTitle"
+  import InternExperienceModal from "@/views/employRecommend/personalResume/childComps/InternExperienceModal"
 
   export default {
     name: "InternExperience",

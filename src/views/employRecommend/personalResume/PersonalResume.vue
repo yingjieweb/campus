@@ -39,14 +39,14 @@
 </template>
 
 <script lang="ts">
-  import BasicInfo from "../../components/recommend/personalResume/BasicInfo.vue";
-  import EducationExperience from "../../components/recommend/personalResume/EducationExperience.vue";
-  import InternExperience from "../../components/recommend/personalResume/InternExperience.vue";
-  import ProjectExperience from "../../components/recommend/personalResume/ProjectExperience.vue";
-  import LanguageAbility from "../../components/recommend/personalResume/LanguageAbility.vue";
-  import SelfAssess from "../../components/recommend/personalResume/SelfAssess.vue";
-  import JobIntention from "../../components/recommend/personalResume/JobIntention.vue";
-  import ResumePreview from "../../components/recommend/personalResume/ResumePreview.vue";
+  import BasicInfo from "./childComps/BasicInfo.vue";
+  import EducationExperience from "./childComps/EducationExperience.vue";
+  import InternExperience from "./childComps/InternExperience.vue";
+  import ProjectExperience from "./childComps/ProjectExperience.vue";
+  import LanguageAbility from "./childComps/LanguageAbility.vue";
+  import SelfAssess from "./childComps/SelfAssess.vue";
+  import JobIntention from "./childComps/JobIntention.vue";
+  import ResumePreview from "./childComps/ResumePreview.vue";
 
   export default {
     name: "PersonalResume",

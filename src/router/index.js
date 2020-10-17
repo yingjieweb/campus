@@ -6,6 +6,7 @@ import Login from "@/views/login/Login"
 import WorkBench from '@/views/workBench/WorkBench.vue'
 import UserManage from "@/views/systemSetting/userManage/UserManage"
 import CourseConstruct from "@/views/courseConstruct/CourseConstruct"
+import ScoreEnquiry from "@/views/scoreEnquiry/ScoreEnquiry"
 import AbilityDegree from "@/views/formativeEvaluation/AbilityDegree"
 import AbilityAnalysis from "@/views/formativeEvaluation/AbilityAnalysis"
 import PersonalResume from "@/views/employRecommend/personalResume/PersonalResume"
@@ -33,6 +34,11 @@ const constantRoutes = [
     path: '/course-construct',
     name: 'CourseConstruct',
     component: CourseConstruct
+  },
+  {
+    path: '/score-enquiry',
+    name: 'ScoreEnquiry',
+    component: ScoreEnquiry
   },
   {
     path: '/user-manage',

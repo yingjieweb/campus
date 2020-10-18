@@ -15,7 +15,7 @@
           <button>搜索</button>
         </div>
 
-        <RecommendList :recommend-data="recommendData"></RecommendList>
+        <RecommendList :recommend-data="currentPageJobs"></RecommendList>
 
         <div class="pagination">
           <el-pagination
@@ -23,7 +23,8 @@
                   layout="prev, pager, next"
                   @prev-click="prevClick"
                   @next-click="nextClick"
-                  :total="100">
+                  @current-change="currentChange"
+                  :total="totalPageCount">
           </el-pagination>
         </div>
       </div>
@@ -42,8 +43,18 @@
       RecommendList,
       RecommendItem
     },
-    data(){
+    created() {
+      this.currentPageJobs = recommendData.slice(0,9);
+    },
+    computed: {
+      totalPageCount() {
+        return Array.from(recommendData).length / 9 * 10;
+      }
+    },
+    data() {
       return {
+        currentPage: 1,
+        currentPageJobs: [],
         recommendData: recommendData,
         value: [],
         options: [{
@@ -58,12 +69,6 @@
             }, {
               value: 'fankui',
               label: '反馈'
-            }, {
-              value: 'xiaolv',
-              label: '效率'
-            }, {
-              value: 'kekong',
-              label: '可控'
             }]
           }, {
             value: 'daohang',
@@ -88,15 +93,6 @@
             }, {
               value: 'color',
               label: 'Color 色彩'
-            }, {
-              value: 'typography',
-              label: 'Typography 字体'
-            }, {
-              value: 'icon',
-              label: 'Icon 图标'
-            }, {
-              value: 'button',
-              label: 'Button 按钮'
             }]
           }, {
             value: 'form',
@@ -107,36 +103,6 @@
             }, {
               value: 'checkbox',
               label: 'Checkbox 多选框'
-            }, {
-              value: 'input',
-              label: 'Input 输入框'
-            }, {
-              value: 'input-number',
-              label: 'InputNumber 计数器'
-            }, {
-              value: 'select',
-              label: 'Select 选择器'
-            }, {
-              value: 'cascader',
-              label: 'Cascader 级联选择器'
-            }, {
-              value: 'switch',
-              label: 'Switch 开关'
-            }, {
-              value: 'slider',
-              label: 'Slider 滑块'
-            }, {
-              value: 'time-picker',
-              label: 'TimePicker 时间选择器'
-            }, {
-              value: 'date-picker',
-              label: 'DatePicker 日期选择器'
-            }, {
-              value: 'datetime-picker',
-              label: 'DateTimePicker 日期时间选择器'
-            }, {
-              value: 'upload',
-              label: 'Upload 上传'
             }, {
               value: 'rate',
               label: 'Rate 评分'
@@ -150,15 +116,6 @@
             children: [{
               value: 'table',
               label: 'Table 表格'
-            }, {
-              value: 'tag',
-              label: 'Tag 标签'
-            }, {
-              value: 'progress',
-              label: 'Progress 进度条'
-            }, {
-              value: 'tree',
-              label: 'Tree 树形控件'
             }, {
               value: 'pagination',
               label: 'Pagination 分页'
@@ -247,11 +204,14 @@
       handleChange(value) {
         console.log(value);
       },
-      prevClick(){
-        console.log('上一页');
+      prevClick(currentPage) {
+        this.currentPageJobs = recommendData.slice((currentPage - 1) * 9, currentPage * 9);
       },
-      nextClick(){
-        console.log('下一页');
+      nextClick(currentPage) {
+        this.currentPageJobs = recommendData.slice((currentPage - 1) * 9, currentPage * 9);
+      },
+      currentChange(currentPage) {
+        this.currentPageJobs = recommendData.slice((currentPage - 1) * 9, currentPage * 9);
       }
     }
   }
@@ -264,8 +224,8 @@
     position: relative;
 
     > .positionType ::v-deep .el-input__inner {
-        border-radius: 0;
-      }
+      border-radius: 0;
+    }
 
     > input {
       width: 420px;
@@ -275,7 +235,9 @@
       display: inline-block;
       border: 1px solid #DCDFE6;
 
-      &:hover {border: 1px solid #409EFF;}
+      &:hover {
+        border: 1px solid #409EFF;
+      }
     }
 
     > button {
@@ -285,9 +247,12 @@
       outline: none;
       background-color: #55CBCA;
 
-      &:hover {background-color: #55BBCC;}
+      &:hover {
+        background-color: #55BBCC;
+      }
     }
   }
+
   .pagination {
     display: flex;
     justify-content: center;

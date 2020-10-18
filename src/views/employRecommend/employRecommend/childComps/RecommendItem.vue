@@ -32,7 +32,7 @@
     border: 1px solid gainsboro;
     width: 525px;
     padding: 18px 18px 10px 18px;
-    margin: 5px;
+    margin: 6px;
 
     &:hover {box-shadow: 5px 5px 20px rgba(0,0,0,.05);}
 

@@ -3,6 +3,7 @@
     "studentNo": "1871123",
     "password": "1871123",
     "username": "包哲铭",
+    "permission": "student",
     "gender": "男",
     "scores": {
       "软件工程专业概论": "优",
@@ -22,7 +23,8 @@
   {
     "studentNo": "1871124",
     "password": "1871124",
-    "username": "包哲铭",
+    "username": "管理员",
+    "permission": "admin",
     "gender": "男",
     "scores": {
       "软件工程专业概论": "优",

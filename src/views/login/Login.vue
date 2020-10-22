@@ -46,26 +46,6 @@
         } else {
           this.$message({message: '当前用户不存在！', type: 'error'});
         }
-
-        // if (this.studentNo === '1871123' && this.password === 'admin@123') {
-        //   this.$message({message: '登陆成功', type: 'success'});
-        //
-        //   this.$store.commit('changeLoginStatus', true);
-        //   this.$router.push('/work-bench');
-        //
-        //   this.$store.commit('getUserInfo', this.studentNo);
-        //   this.$store.commit('getUserPermission', 'admin');
-        // } else if (this.studentNo === 'student' && this.password === 'student@123') {
-        //   this.$message({message: '登陆成功', type: 'success'});
-        //
-        //   this.$store.commit('changeLoginStatus', true);
-        //   this.$router.push('/work-bench');
-        //
-        //   this.$store.commit('getUserInfo', this.studentNo);
-        //   this.$store.commit('getUserPermission', 'student');
-        // } else {
-        //   this.$message({message: '用户名或密码错误！', type: 'error'});
-        // }
       }
     }
   }

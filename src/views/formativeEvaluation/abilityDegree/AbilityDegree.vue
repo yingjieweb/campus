@@ -2,6 +2,7 @@
   <Layout>
     <Block title="个人能力达成度">
       <div slot="content" class="container">
+        <ScoreEnquiry></ScoreEnquiry>
         <div class="basicInfo">
           <div class="basicInfoItem">
             <div style="display:flex; height: 100%">
@@ -29,6 +30,7 @@
   import LineChart from "@/components/charts/LineChart"
   import BarChart from "@/components/charts/BarChart"
   import RadarChart from "@/components/charts/RadarChart"
+  import ScoreEnquiry from "@/views/formativeEvaluation/abilityDegree/childComps/ScoreEnquiry"
 
   export default {
     name: "AbilityDegree",
@@ -36,7 +38,8 @@
       PieChart,
       LineChart,
       BarChart,
-      RadarChart
+      RadarChart,
+      ScoreEnquiry
     },
     data(){
       return {

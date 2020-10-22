@@ -38,10 +38,10 @@
         <i class="el-icon-cpu"></i>
         <span slot="title">数据治理</span>
       </el-menu-item>
-      <el-menu-item index="/score-enquiry">
-        <i class="el-icon-document-checked"></i>
-        <span slot="title">成绩查询</span>
-      </el-menu-item>
+<!--      <el-menu-item index="/score-enquiry">-->
+<!--        <i class="el-icon-document-checked"></i>-->
+<!--        <span slot="title">成绩查询</span>-->
+<!--      </el-menu-item>-->
       <el-submenu index="7">
         <template slot="title"><i class="el-icon-setting"></i><span>系统设置</span></template>
         <el-menu-item-group>

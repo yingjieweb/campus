@@ -1,14 +1,8 @@
 <template>
-  <Layout>
-    <Block title="学生成绩查询">
-      <div slot="content">
-        <el-table :data="tableData" stripe style="width: 100%">
-          <el-table-column prop="courseName" label="课程名" width="250"></el-table-column>
-          <el-table-column prop="courseScore" label="成绩"></el-table-column>
-        </el-table>
-      </div>
-    </Block>
-  </Layout>
+  <el-table :data="tableData" stripe>
+    <el-table-column prop="courseName" label="课程名" width="250"></el-table-column>
+    <el-table-column prop="courseScore" label="成绩" width="180"></el-table-column>
+  </el-table>
 </template>
 
 <script lang="js">

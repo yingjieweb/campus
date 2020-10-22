@@ -4,7 +4,7 @@
       <div class="avatar">
         <img src="@/assets/images/login.png" alt="avatar">
       </div>
-      <el-input style="margin: 10px auto" placeholder="用户名" prefix-icon="el-icon-user" v-model="username"></el-input>
+      <el-input style="margin: 10px auto" placeholder="学号" prefix-icon="el-icon-user" v-model="studentNo"></el-input>
       <el-input style="margin: 14px auto" placeholder="密码" prefix-icon="el-icon-lock" v-model="password"
                 show-password
                 @keydown.enter.native="onsubmit">
@@ -15,36 +15,57 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
+  import studentDetailData from "@/database/studentDetailData"
+
   export default {
     name: "Login",
     data() {
       return {
-        username: '',
+        studentNo: '',
         password: ''
       }
     },
     methods: {
       onsubmit() {
-        if (this.username === 'admin' && this.password === 'admin@123') {
-          this.$message({message: '登陆成功', type: 'success'});
+        let currentStudent = studentDetailData.filter(item => {
+          return item.studentNo === this.studentNo
+        })
 
-          this.$store.commit('changeLoginStatus', true);
-          this.$router.push('/work-bench');
+        if (currentStudent.length === 1){
+          if (currentStudent[0].password === this.password){
+            this.$message({message: '登陆成功', type: 'success'});
 
-          this.$store.commit('getUserInfo', this.username);
-          this.$store.commit('getUserPermission', 'admin');
-        } else if (this.username === 'student' && this.password === 'student@123') {
-          this.$message({message: '登陆成功', type: 'success'});
+            this.$store.commit('changeLoginStatus', true);
+            this.$router.push('/work-bench');
 
-          this.$store.commit('changeLoginStatus', true);
-          this.$router.push('/work-bench');
-
-          this.$store.commit('getUserInfo', this.username);
-          this.$store.commit('getUserPermission', 'student');
+            this.$store.commit('getUserInfo', currentStudent[0]);
+          } else {
+            this.$message({message: '密码错误，请重新输入！', type: 'error'});
+          }
         } else {
-          this.$message({message: '用户名或密码错误！', type: 'error'});
+          this.$message({message: '当前用户不存在！', type: 'error'});
         }
+
+        // if (this.studentNo === '1871123' && this.password === 'admin@123') {
+        //   this.$message({message: '登陆成功', type: 'success'});
+        //
+        //   this.$store.commit('changeLoginStatus', true);
+        //   this.$router.push('/work-bench');
+        //
+        //   this.$store.commit('getUserInfo', this.studentNo);
+        //   this.$store.commit('getUserPermission', 'admin');
+        // } else if (this.studentNo === 'student' && this.password === 'student@123') {
+        //   this.$message({message: '登陆成功', type: 'success'});
+        //
+        //   this.$store.commit('changeLoginStatus', true);
+        //   this.$router.push('/work-bench');
+        //
+        //   this.$store.commit('getUserInfo', this.studentNo);
+        //   this.$store.commit('getUserPermission', 'student');
+        // } else {
+        //   this.$message({message: '用户名或密码错误！', type: 'error'});
+        // }
       }
     }
   }

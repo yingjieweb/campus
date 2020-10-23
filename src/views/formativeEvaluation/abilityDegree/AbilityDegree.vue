@@ -7,7 +7,6 @@
           <div class="basicInfoItem">
             <div style="display:flex; height: 100%">
               <PieChart></PieChart>
-              <PieChart></PieChart>
             </div>
           </div>
           <div class="basicInfoItem">
@@ -65,13 +64,12 @@
 <style lang="scss" scoped>
   .container {
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
     > .basicInfo {
       display:flex;
       flex-direction: column;
-      flex-grow: 1;
-      margin-right: 8px;
+      width: 500px;
       border: 1px solid gainsboro;
 
       > .basicInfoItem {

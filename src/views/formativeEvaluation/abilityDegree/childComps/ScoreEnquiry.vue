@@ -1,8 +1,11 @@
 <template>
-  <el-table :data="tableData" stripe>
-    <el-table-column prop="courseName" label="课程名" width="250"></el-table-column>
-    <el-table-column prop="courseScore" label="成绩" width="180"></el-table-column>
-  </el-table>
+  <div style="border: 1px solid gainsboro;">
+    <p class="title">个人成绩</p>
+    <el-table :data="tableData" stripe>
+      <el-table-column prop="courseName" label="课程名" width="180"></el-table-column>
+      <el-table-column prop="courseScore" label="成绩" width="180"></el-table-column>
+    </el-table>
+  </div>
 </template>
 
 <script lang="js">
@@ -25,5 +28,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+  .title {
+    font-size: 18px;
+    color: #303133;
+    font-weight: bold;
+  }
 </style>

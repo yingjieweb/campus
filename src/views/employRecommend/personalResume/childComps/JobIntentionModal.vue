@@ -6,44 +6,28 @@
           :before-close="handleClose">
     <el-form :model="form" :rules="rules" ref="basicInfoForm" :label-width="formLabelWidth">
       <el-form-item label="期望职位" prop="expectedPosition">
-        <el-select v-model="form.expectedPosition" placeholder="请选择期望职位" style="width: 100%;">
-          <el-option label="博士" value="博士"></el-option>
-          <el-option label="硕士" value="硕士"></el-option>
-          <el-option label="本科" value="本科"></el-option>
-          <el-option label="大专" value="大专"></el-option>
-          <el-option label="专职" value="专职"></el-option>
-          <el-option label="初中" value="初中"></el-option>
-          <el-option label="小学" value="小学"></el-option>
-          <el-option label="其他" value="其他"></el-option>
-        </el-select>
+        <el-cascader
+          v-model="expectedPosition"
+          :options="expectedPositionData"
+          :props="{ expandTrigger: 'hover' }"
+          :show-all-levels="false"
+          style="width: 100%;"></el-cascader>
       </el-form-item>
       <el-form-item label="期望行业" prop="expectedIndustry">
         <el-select v-model="form.expectedIndustry" placeholder="请选择期望行业" style="width: 100%;">
-          <el-option label="前 5%" value="前 5%"></el-option>
           <el-option label="前 10%" value="前 10%"></el-option>
-          <el-option label="前 20%" value="前 20%"></el-option>
-          <el-option label="前 30%" value="前 30%"></el-option>
-          <el-option label="前 50%" value="前 50%"></el-option>
           <el-option label="其他" value="其他"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="工作城市" prop="workCity">
         <el-select v-model="form.workCity" placeholder="请选择期望行业" style="width: 100%;">
-          <el-option label="前 5%" value="前 5%"></el-option>
           <el-option label="前 10%" value="前 10%"></el-option>
-          <el-option label="前 20%" value="前 20%"></el-option>
-          <el-option label="前 30%" value="前 30%"></el-option>
-          <el-option label="前 50%" value="前 50%"></el-option>
           <el-option label="其他" value="其他"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="薪资要求" prop="salaryRank">
         <el-select v-model="form.salaryRank" placeholder="请选择期望行业" style="width: 100%;">
-          <el-option label="前 5%" value="前 5%"></el-option>
           <el-option label="前 10%" value="前 10%"></el-option>
-          <el-option label="前 20%" value="前 20%"></el-option>
-          <el-option label="前 30%" value="前 30%"></el-option>
-          <el-option label="前 50%" value="前 50%"></el-option>
           <el-option label="其他" value="其他"></el-option>
         </el-select>
       </el-form-item>
@@ -56,6 +40,8 @@
 </template>
 
 <script lang="js">
+  import expectedPositionData from "@/database/expectedPositionData"
+
   export default {
     name: "JobIntentionModal",
     data(){
@@ -82,7 +68,9 @@
           salaryRank: [
             { required: true, message: '请选择薪资要求', trigger: 'blur' }
           ]
-        }
+        },
+        expectedPosition: '',
+        expectedPositionData: expectedPositionData
       }
     },
     methods: {

@@ -1,0 +1,246 @@
+[
+  {
+    "value": "开发|测试|运维类",
+    "label": "开发|测试|运维类",
+    "children": [
+      {
+        "value": "前端开发",
+        "label": "前端开发",
+        "children": [
+          {"value": "Web前端", "label": "Web前端"},
+          {"value": "JavaScript", "label": "JavaScript"},
+          {"value": "FLASH", "label": "FLASH"},
+          {"value": "HTML5", "label": "HTML5"},
+          {"value": "Vue", "label": "Vue"},
+          {"value": "React", "label": "React"},
+          {"value": "Angular", "label": "Angular"},
+          {"value": "其他前端开发", "label": "其他前端开发"}
+        ]
+      },
+      {
+        "value": "后端开发",
+        "label": "后端开发",
+        "children": [
+          {"value": "Java", "label": "Java"},
+          {"value": "PHP", "label": "PHP"},
+          {"value": "C/C++", "label": "C/C++"},
+          {"value": "C#|.NET", "label": "C#|.NET"},
+          {"value": "Python", "label": "Python"},
+          {"value": "Node.js", "label": "Node.js"},
+          {"value": "Ruby", "label": "Ruby"},
+          {"value": "Go|Golang", "label": "Go|Golang"},
+          {"value": "ASP", "label": "ASP"},
+          {"value": "Perl", "label": "Perl"},
+          {"value": "Delphi", "label": "Delphi"},
+          {"value": "Shell", "label": "Shell"},
+          {"value": "VB", "label": "VB"},
+          {"value": "Erlang", "label": "Erlang"},
+          {"value": "LUA", "label": "LUA"},
+          {"value": "Hadoop", "label": "Hadoop"},
+          {"value": "搜索算法", "label": "搜索算法"},
+          {"value": "推荐算法", "label": "推荐算法"},
+          {"value": "语音|视频|图形开发", "label": "语音|视频|图形开发"},
+          {"value": "数据采集", "label": "数据采集"},
+          {"value": "区块链开发", "label": "区块链开发"},
+          {"value": "其他后端开发", "label": "其他后端开发"}
+        ]
+      },
+      {
+        "value": "移动端开发",
+        "label": "移动端开发",
+        "children": [
+          {"value": "HTML5", "label": "HTML5"},
+          {"value": "Android", "label": "Android"},
+          {"value": "IOS", "label": "IOS"},
+          {"value": "U3D", "label": "U3D"},
+          {"value": "UE4", "label": "UE4"},
+          {"value": "COCOS2D-X", "label": "COCOS2D-X"},
+          {"value": "React Native", "label": "React Native"},
+          {"value": "其他移动端开发", "label": "其他移动端开发"}
+        ]
+      },
+      {
+        "value": "数据开发",
+        "label": "数据开发",
+        "children": [
+          {"value": "数据开发", "label": "数据开发"},
+          {"value": "数据挖掘", "label": "数据挖掘"},
+          {"value": "数据分析", "label": "数据分析"},
+          {"value": "机器学习", "label": "机器学习"},
+          {"value": "建模识别", "label": "建模识别"},
+          {"value": "ETL", "label": "ETL"},
+          {"value": "Hadoop", "label": "Hadoop"},
+          {"value": "爬虫", "label": "爬虫"},
+          {"value": "建模", "label": "建模"},
+          {"value": "数据治理", "label": "数据治理"},
+          {"value": "BI工程师", "label": "BI工程师"},
+          {"value": "数据采集", "label": "数据采集"},
+          {"value": "Cobol", "label": "Cobol"},
+          {"value": "反作弊算法", "label": "反作弊算法"},
+          {"value": "其他数据开发", "label": "其他数据开发"}
+        ]
+      },
+      {
+        "value": "人工智能",
+        "label": "人工智能",
+        "children": [
+          {"value": "机器学习", "label": "机器学习"},
+          {"value": "深度学习", "label": "深度学习"},
+          {"value": "图像算法", "label": "图像算法"},
+          {"value": "图像处理", "label": "图像处理"},
+          {"value": "图像识别", "label": "图像识别"},
+          {"value": "机器视觉", "label": "机器视觉"},
+          {"value": "语音识别", "label": "语音识别"},
+          {"value": "自然语言处理（NLP）", "label": "自然语言处理（NLP）"},
+          {"value": "其他人工智能", "label": "其他人工智能"}
+        ]
+      },
+      {
+        "value": "硬件开发",
+        "label": "硬件开发",
+        "children": [
+          {"value": "硬件开发", "label": "硬件开发"},
+          {"value": "嵌入式", "label": "嵌入式"},
+          {"value": "自动化", "label": "自动化"},
+          {"value": "单片机", "label": "单片机"},
+          {"value": "电路设计", "label": "电路设计"},
+          {"value": "驱动开发", "label": "驱动开发"},
+          {"value": "系统集成", "label": "系统集成"},
+          {"value": "模具设计", "label": "模具设计"},
+          {"value": "PCB工艺", "label": "PCB工艺"},
+          {"value": "其他硬件开发", "label": "其他硬件开发"}
+        ]
+      },
+      {
+        "value": "通信工程师",
+        "label": "通信工程师",
+        "children": [
+          {"value": "通信技术工程师", "label": "通信技术工程师"},
+          {"value": "通信研发工程师", "label": "通信研发工程师"},
+          {"value": "数据通信工程师", "label": "数据通信工程师"},
+          {"value": "移动通信工程师", "label": "移动通信工程师"},
+          {"value": "电信网络工程师", "label": "电信网络工程师"},
+          {"value": "电信交换工程师", "label": "电信交换工程师"},
+          {"value": "有线传输工程师", "label": "有线传输工程师"},
+          {"value": "无线射频工程师", "label": "无线射频工程师"},
+          {"value": "通信电源工程师", "label": "通信电源工程师"},
+          {"value": "通信标准化工程师", "label": "通信标准化工程师"},
+          {"value": "核心网工工程师", "label": "核心网工工程师"},
+          {"value": "通信测试工程师", "label": "通信测试工程师"},
+          {"value": "通信设备工程师", "label": "通信设备工程师"},
+          {"value": "光通信工程师", "label": "光通信工程师"},
+          {"value": "光网络工程师", "label": "光网络工程师"},
+          {"value": "其他通信开发", "label": "其他通信开发"}
+        ]
+      },
+      {
+        "value": "测试",
+        "label": "测试",
+        "children": [
+          {"value": "测试工程师", "label": "测试工程师"},
+          {"value": "自动化测试", "label": "自动化测试"},
+          {"value": "功能测试", "label": "功能测试"},
+          {"value": "性能测试", "label": "性能测试"},
+          {"value": "测试开发", "label": "测试开发"},
+          {"value": "移动端测试", "label": "移动端测试"},
+          {"value": "游戏测试", "label": "游戏测试"},
+          {"value": "硬件测试", "label": "硬件测试"},
+          {"value": "白盒测试", "label": "白盒测试"},
+          {"value": "灰盒测试", "label": "灰盒测试"},
+          {"value": "黑盒测试", "label": "黑盒测试"},
+          {"value": "安全测试", "label": "安全测试"},
+          {"value": "压力测试", "label": "压力测试"},
+          {"value": "回归测试", "label": "回归测试"},
+          {"value": "渗透测试", "label": "渗透测试"},
+          {"value": "其他测试", "label": "其他测试"}
+        ]
+      },
+      {
+        "value": "运维",
+        "label": "运维",
+        "children": [
+          {"value": "运维工程师", "label": "运维工程师"},
+          {"value": "运维开发工程师", "label": "运维开发工程师"},
+          {"value": "网络工程师", "label": "网络工程师"},
+          {"value": "系统工程师", "label": "系统工程师"},
+          {"value": "系统管理员", "label": "系统管理员"},
+          {"value": "网络安全", "label": "网络安全"},
+          {"value": "信息安全", "label": "信息安全"},
+          {"value": "病毒分析", "label": "病毒分析"},
+          {"value": "数据仓库", "label": "数据仓库"},
+          {"value": "MySQL", "label": "MySQL"},
+          {"value": "ORACLE", "label": "ORACLE"},
+          {"value": "SQL Server", "label": "SQL Server"},
+          {"value": "MongoDB", "label": "MongoDB"},
+          {"value": "系统集成", "label": "系统集成"},
+          {"value": "其他运维", "label": "其他运维"}
+        ]
+      },
+      {
+        "value": "高端技术职位",
+        "label": "高端技术职位",
+        "children": [
+          {"value": "技术经理", "label": "技术经理"},
+          {"value": "技术总监", "label": "技术总监"},
+          {"value": "测试经理", "label": "测试经理"},
+          {"value": "测试总监", "label": "测试总监"},
+          {"value": "运维经理", "label": "运维经理"},
+          {"value": "安全专家", "label": "安全专家"},
+          {"value": "架构师", "label": "架构师"},
+          {"value": "CTO", "label": "CTO"},
+          {"value": "数据总监", "label": "数据总监"},
+          {"value": "技术合伙人", "label": "技术合伙人"},
+          {"value": "其他高端技术职位", "label": "其他高端技术职位"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "产品|需求|项目类",
+    "label": "产品|需求|项目类",
+    "children": [
+      {
+        "value": "产品经理",
+        "label": "产品经理",
+        "children": [
+          {"value": "产品经理", "label": "产品经理"},
+          {"value": "产品助理", "label": "产品助理"},
+          {"value": "移动产品经理", "label": "移动产品经理"},
+          {"value": "网页产品经理", "label": "网页产品经理"},
+          {"value": "电商产品经理", "label": "电商产品经理"},
+          {"value": "数据产品经理", "label": "数据产品经理"},
+          {"value": "金融产品经理", "label": "金融产品经理"},
+          {"value": "广告产品经理", "label": "广告产品经理"},
+          {"value": "社交产品经理", "label": "社交产品经理"},
+          {"value": "商业产品经理", "label": "商业产品经理"},
+          {"value": "游戏产品经理", "label": "游戏产品经理"},
+          {"value": "旅游产品经理", "label": "旅游产品经理"},
+          {"value": "教育产品经理", "label": "教育产品经理"},
+          {"value": "视频产品经理", "label": "视频产品经理"},
+          {"value": "硬件产品经理", "label": "硬件产品经理"},
+          {"value": "搜索产品经理", "label": "搜索产品经理"},
+          {"value": "推荐产品经理", "label": "推荐产品经理"},
+          {"value": "策略产品经理", "label": "策略产品经理"},
+          {"value": "策略产品经理", "label": "策略产品经理"},
+          {"value": "其他产品经理", "label": "其他产品经理"}
+        ]
+      },
+      {
+        "value": "项目管理",
+        "label": "项目管理",
+        "children": [
+          {"value": "radio", "label": "Radio 单选框"},
+          {"value": "radio", "label": "Radio 单选框"}
+        ]
+      },
+      {
+        "value": "游戏策划",
+        "label": "游戏策划",
+        "children": [
+          {"value": "table", "label": "Table 表格"},
+          {"value": "table", "label": "Table 表格"}
+        ]
+      }
+    ]
+  }
+]

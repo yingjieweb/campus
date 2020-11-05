@@ -116,14 +116,14 @@
             company: ['公司', '京东'],
             period: ['时间', '2020.08.01~2020.05.01'],
             position: ['岗位', '前端开发实习生'],
-            describe: ['描述', '我干了哪些模块，具体用到的技术栈具体用到的技术栈']
+            describe: ['描述', '实习过程中具体用到的技术栈具体用到的技术栈']
           }],
           projectExp: [{
             projectName: ['项目名称','我的个人主页'],
             projectRole: ['项目角色','前端模块负责人'],
             period: ['起止时间','2018.09 ~ 2021.07'],
             projectURL: ['项目链接','https://github.com/yingjieweb'],
-            describe: ['项目描述', '一款基于 Vue+TypeScript 开发的个人主页，内容包含个人简介、博客、项目清单等']
+            describe: ['项目描述', '一款基于 Vue+TypeScript 开发的个人主页，内容包含个人简介、博客、项目等']
           }],
           langKind: [{
             lang: ['语言','英语'],

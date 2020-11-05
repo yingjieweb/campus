@@ -6,13 +6,11 @@
           <div class="jobOrient">
             <BarChart :option="jobOrient"></BarChart>
           </div>
-          <div class="kind">
-            <div class="hotJobs">
-              <BarChart :option="hotJobs"></BarChart>
-            </div>
-            <div class="hotJobs">
-              <BarChart :option="salaryRank"></BarChart>
-            </div>
+          <div class="jobOrient">
+            <BarChart :option="jobOrient"></BarChart>
+          </div>
+          <div class="jobOrient">
+            <BarChart :option="jobOrient"></BarChart>
           </div>
         </div>
         <div class="map">
@@ -22,13 +20,11 @@
           <div class="jobOrient">
             <PieChart></PieChart>
           </div>
-          <div class="kind">
-            <div class="hotJobs">
-              <BarChart :option="hotJobs"></BarChart>
-            </div>
-            <div class="hotJobs">
-              <BarChart :option="salaryRank"></BarChart>
-            </div>
+          <div class="jobOrient">
+            <BarChart :option="jobOrient"></BarChart>
+          </div>
+          <div class="jobOrient">
+            <BarChart :option="jobOrient"></BarChart>
           </div>
         </div>
       </div>
@@ -164,19 +160,12 @@
       flex: 2;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       margin-right: 5px;
 
       > .jobOrient {
-        height: 250px;
-        margin-bottom: 5px;
+        height: 246px;
         border: 1px dashed #1296DB;
-      }
-
-      > .kind {
-        flex-grow: 1;
-        border: 1px dashed #1296DB;
-
-        > .hotJobs { height: 50%}
       }
     }
 
@@ -189,19 +178,12 @@
       flex: 2;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       margin-left: 5px;
 
       > .jobOrient {
-        height: 250px;
-        margin-bottom: 5px;
+        height: 246px;
         border: 1px dashed #1296DB;
-      }
-
-      > .kind {
-        flex-grow: 1;
-        border: 1px dashed #1296DB;
-
-        > .hotJobs { height: 50%}
       }
     }
   }

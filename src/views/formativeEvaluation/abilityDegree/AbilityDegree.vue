@@ -2,22 +2,27 @@
   <Layout>
     <Block title="个人能力达成度">
       <div slot="content" class="container">
-        <ScoreEnquiry></ScoreEnquiry>
-        <div class="basicInfo">
-          <div class="basicInfoItem">
-            <div style="display:flex; height: 100%">
+        <div class="scoreInfo">
+          <ScoreEnquiry></ScoreEnquiry>
+        </div>
+
+        <div class="indexInfo">
+          <div class="indexTable">
+            <el-table :data="tableData" border style="width: 100%">
+              <el-table-column prop="ability" label="能力（单项满分为10分）" width="200"></el-table-column>
+              <el-table-column prop="classRank" label="班级内排名" width="180"></el-table-column>
+              <el-table-column prop="majorRank" label="专业排名" width="180"></el-table-column>
+              <el-table-column prop="gradeRank" label="年级内排名"></el-table-column>
+            </el-table>
+          </div>
+          <div class="indexChart">
+            <div class="lineChart">
+              <LineChart></LineChart>
+            </div>
+            <div class="pieChart">
               <PieChart></PieChart>
             </div>
           </div>
-          <div class="basicInfoItem">
-            <LineChart></LineChart>
-          </div>
-          <div class="basicInfoItem">
-            <BarChart :option="option"></BarChart>
-          </div>
-        </div>
-        <div class="radarInfo">
-          <RadarChart></RadarChart>
         </div>
       </div>
     </Block>
@@ -27,7 +32,6 @@
 <script lang="js">
   import PieChart from "@/components/charts/PieChart"
   import LineChart from "@/components/charts/LineChart"
-  import BarChart from "@/components/charts/BarChart"
   import RadarChart from "@/components/charts/RadarChart"
   import ScoreEnquiry from "@/views/formativeEvaluation/abilityDegree/childComps/ScoreEnquiry"
 
@@ -36,26 +40,32 @@
     components: {
       PieChart,
       LineChart,
-      BarChart,
       RadarChart,
       ScoreEnquiry
     },
     data(){
       return {
-        option: {
-          title: {
-            text: '课程成绩柱状图'
-          },
-          tooltip: {},
-          xAxis: {
-            data: ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]
-          },
-          yAxis: {},
-          series: [{
-            type: 'bar',
-            data: ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]
-          }]
-        }
+        tableData: [{
+          ability: '专业能力',
+          classRank: '05-04',
+          majorRank: '56',
+          gradeRank: '517'
+        }, {
+          ability: '学习能力',
+          classRank: '05-04',
+          majorRank: '16',
+          gradeRank: '569'
+        }, {
+          ability: '协作能力',
+          classRank: '05-01',
+          majorRank: '55',
+          gradeRank: '519'
+        }, {
+          ability: '管理能力',
+          classRank: '05-03',
+          majorRank: '48',
+          gradeRank: '116'
+        }]
       }
     }
   }
@@ -66,23 +76,32 @@
     display:flex;
     justify-content: space-around;
 
-    > .basicInfo {
-      display:flex;
-      flex-direction: column;
-      width: 500px;
-      border: 1px solid gainsboro;
-
-      > .basicInfoItem {
-        height: 33.333%;
-        border-bottom: 1px solid gainsboro;
-      }
+    .scoreInfo {
+      flex: 1;
     }
+    .indexInfo {
+      flex: 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-left: 5px;
 
-    > .radarInfo {
-      width: 750px;
-      height: 750px;
-      border: 1px solid gainsboro;
-      justify-content: flex-end;
+      .indexTable {
+        margin-bottom: 5px;
+      }
+
+      .indexChart {
+        display: flex;
+
+        .lineChart, .pieChart {
+          flex: 1;
+          width: 500px;
+          height: 400px;
+          border: 1px solid gainsboro;
+        }
+        .lineChart {flex: 3;}
+        .pieChart {flex: 2; margin-left: 5px;}
+      }
     }
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div style="border: 1px solid gainsboro;">
-    <p class="title">个人成绩</p>
+  <div class="container">
+    <span class="title">个人成绩</span>
     <el-table :data="tableData" stripe>
       <el-table-column prop="courseName" label="课程名" width="180"></el-table-column>
       <el-table-column prop="courseScore" label="成绩" width="180"></el-table-column>
@@ -28,9 +28,16 @@
 </script>
 
 <style lang="scss" scoped>
-  .title {
-    font-size: 18px;
-    color: #303133;
-    font-weight: bold;
+  .container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gainsboro;
+
+    .title {
+      font-size: 18px;
+      color: #303133;
+      font-weight: bold;
+      margin-left: 6px;
+    }
   }
 </style>

@@ -7,7 +7,7 @@ import WorkBench from '@/views/workBench/WorkBench.vue'
 import UserManage from "@/views/systemSetting/userManage/UserManage"
 import CourseConstruct from "@/views/courseConstruct/CourseConstruct"
 import AbilityDegree from "@/views/formativeEvaluation/abilityDegree/AbilityDegree"
-import AbilityAnalysis from "@/views/formativeEvaluation/AbilityAnalysis"
+import AbilityAnalysis from "@/views/formativeEvaluation/abilityAnalysis/AbilityAnalysis"
 import PersonalResume from "@/views/employRecommend/personalResume/PersonalResume"
 import GraduatesDirection from "@/views/employRecommend/graduatesDirection/GraduatesDirection"
 import EmployRecommend from "@/views/employRecommend/employRecommend/EmployRecommend"

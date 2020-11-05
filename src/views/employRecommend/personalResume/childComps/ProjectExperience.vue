@@ -39,7 +39,7 @@
           projectRole: ['项目角色','前端模块负责人'],
           period: ['起止时间','2018.09 ~ 2021.07'],
           projectURL: ['项目链接','https://github.com/yingjieweb'],
-          describe: ['项目描述', '一款基于 Vue+TypeScript 开发的个人主页，内容包含个人简介、博客、项目清单等']
+          describe: ['项目描述', '一款基于 Vue+TypeScript 开发的个人主页，内容包含个人简介、博客、项目等']
         }]
       }
     },

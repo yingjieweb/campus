@@ -28,6 +28,7 @@
       logout(){
         this.$router.push('/login');
         this.$store.commit('changeLoginStatus', false)
+        this.$store.commit('changeNavShowState', false)
       }
     }
   }

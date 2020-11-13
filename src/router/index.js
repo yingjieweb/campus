@@ -79,6 +79,13 @@ router.beforeEach((to, from, next) => {
   } else {
     next()
   }
+
+  if (to.name === 'Login') {
+    store.commit('changeNavShowState', false)
+  }
+  if (from.name === 'Login' && to.name !== 'Login') {
+    store.commit('changeNavShowState', true)
+  }
 })
 
 export default router

@@ -3,7 +3,7 @@
     <ResumeViewTitle title="求职意向"></ResumeViewTitle>
     <el-alert
             title="请谨慎填写求职意向，系统会在您的求职意向的基础上，结合您在校期间的个人综合性评价，尽可能为您提供精准的岗位推荐~"
-            type="info"
+            type="warning"
             center
             show-icon
             :closable="false">

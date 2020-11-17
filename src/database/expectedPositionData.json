@@ -4,20 +4,6 @@
     "label": "开发|测试|运维类",
     "children": [
       {
-        "value": "前端开发",
-        "label": "前端开发",
-        "children": [
-          {"value": "Web前端", "label": "Web前端"},
-          {"value": "JavaScript", "label": "JavaScript"},
-          {"value": "FLASH", "label": "FLASH"},
-          {"value": "HTML5", "label": "HTML5"},
-          {"value": "Vue", "label": "Vue"},
-          {"value": "React", "label": "React"},
-          {"value": "Angular", "label": "Angular"},
-          {"value": "其他前端开发", "label": "其他前端开发"}
-        ]
-      },
-      {
         "value": "后端开发",
         "label": "后端开发",
         "children": [
@@ -57,6 +43,20 @@
           {"value": "COCOS2D-X", "label": "COCOS2D-X"},
           {"value": "React Native", "label": "React Native"},
           {"value": "其他移动端开发", "label": "其他移动端开发"}
+        ]
+      },
+      {
+        "value": "前端开发",
+        "label": "前端开发",
+        "children": [
+          {"value": "Web前端", "label": "Web前端"},
+          {"value": "JavaScript", "label": "JavaScript"},
+          {"value": "FLASH", "label": "FLASH"},
+          {"value": "HTML5", "label": "HTML5"},
+          {"value": "Vue", "label": "Vue"},
+          {"value": "React", "label": "React"},
+          {"value": "Angular", "label": "Angular"},
+          {"value": "其他前端开发", "label": "其他前端开发"}
         ]
       },
       {
@@ -229,16 +229,1071 @@
         "value": "项目管理",
         "label": "项目管理",
         "children": [
-          {"value": "radio", "label": "Radio 单选框"},
-          {"value": "radio", "label": "Radio 单选框"}
+          {"value": "项目管理", "label": "项目管理"},
+          {"value": "流程管理", "label": "流程管理"},
+          {"value": "项目风控", "label": "项目风控"},
+          {"value": "成本管理", "label": "成本管理"},
+          {"value": "采购", "label": "采购"},
+          {"value": "其他项目管理", "label": "其他项目管理"}
         ]
       },
       {
         "value": "游戏策划",
         "label": "游戏策划",
         "children": [
-          {"value": "table", "label": "Table 表格"},
-          {"value": "table", "label": "Table 表格"}
+          {"value": "游戏策划", "label": "游戏策划"},
+          {"value": "数值策划", "label": "数值策划"},
+          {"value": "系统策划", "label": "系统策划"},
+          {"value": "剧情策划", "label": "剧情策划"},
+          {"value": "关卡策划", "label": "关卡策划"},
+          {"value": "游戏文案策划", "label": "游戏文案策划"},
+          {"value": "游戏制作人", "label": "游戏制作人"},
+          {"value": "其他游戏职位", "label": "其他游戏职位"}
+        ]
+      },
+      {
+        "value": "数据分析",
+        "label": "数据分析",
+        "children": [
+          {"value": "数据分析", "label": "数据分析"},
+          {"value": "商业", "label": "商业"},
+          {"value": "业务运营", "label": "业务运营"},
+          {"value": "大数据", "label": "大数据"},
+          {"value": "可视化", "label": "可视化"},
+          {"value": "其他数据分析", "label": "其他数据分析"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "设计类",
+    "label": "设计类",
+    "children": [
+      {
+        "value": "视觉",
+        "label": "视觉",
+        "children": [
+          {"value": "UI", "label": "UI"},
+          {"value": "UE", "label": "UE"},
+          {"value": "GUI", "label": "GUI"},
+          {"value": "视觉设计", "label": "视觉设计"},
+          {"value": "平面设计", "label": "平面设计"},
+          {"value": "网页设计", "label": "网页设计"},
+          {"value": "APP设计", "label": "APP设计"},
+          {"value": "Flash设计", "label": "Flash设计"},
+          {"value": "美工设计", "label": "美工设计"},
+          {"value": "广告设计", "label": "广告设计"},
+          {"value": "包装设计", "label": "包装设计"},
+          {"value": "品牌设计", "label": "品牌设计"},
+          {"value": "其他数据分析", "label": "其他数据分析"}
+        ]
+      },
+      {
+        "value": "交互",
+        "label": "交互",
+        "children": [
+          {"value": "交互设计师", "label": "交互设计师"},
+          {"value": "移动交互设计师", "label": "移动交互设计师"},
+          {"value": "网页交互设计师", "label": "网页交互设计师"},
+          {"value": "硬件交互设计师", "label": "硬件交互设计师"},
+          {"value": "其他交互设计", "label": "其他交互设计"}
+        ]
+      },
+      {
+        "value": "原画|美术|特效",
+        "label": "原画|美术|特效",
+        "children": [
+          {"value": "美术设计师", "label": "美术设计师"},
+          {"value": "多媒体设计师", "label": "多媒体设计师"},
+          {"value": "原画师", "label": "原画师"},
+          {"value": "手绘师", "label": "手绘师"},
+          {"value": "美术特效", "label": "美术特效"},
+          {"value": "视频", "label": "视频"},
+          {"value": "音频", "label": "音频"},
+          {"value": "后期", "label": "后期"},
+          {"value": "动画", "label": "动画"},
+          {"value": "插画", "label": "插画"},
+          {"value": "游戏特效", "label": "游戏特效"},
+          {"value": "游戏界面", "label": "游戏界面"},
+          {"value": "游戏场景", "label": "游戏场景"},
+          {"value": "游戏角色", "label": "游戏角色"},
+          {"value": "游戏动作", "label": "游戏动作"},
+          {"value": "其他美术|特效", "label": "其他美术|特效"}
+        ]
+      },
+      {
+        "value": "其他设计师",
+        "label": "其他设计师",
+        "children": [
+          {"value": "工业设计", "label": "工业设计"},
+          {"value": "用户研究", "label": "用户研究"},
+          {"value": "其他设计师", "label": "其他设计师"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "运营|编辑|客服类",
+    "label": "运营|编辑|客服类",
+    "children": [
+      {
+        "value": "运营",
+        "label": "运营",
+        "children": [
+          {"value": "用户运营", "label": "用户运营"},
+          {"value": "产品运营", "label": "产品运营"},
+          {"value": "数据运营", "label": "数据运营"},
+          {"value": "内容运营", "label": "内容运营"},
+          {"value": "活动运营", "label": "活动运营"},
+          {"value": "商家运营", "label": "商家运营"},
+          {"value": "品类运营", "label": "品类运营"},
+          {"value": "游戏运营", "label": "游戏运营"},
+          {"value": "网络推广", "label": "网络推广"},
+          {"value": "网站运营", "label": "网站运营"},
+          {"value": "社区运营", "label": "社区运营"},
+          {"value": "微信运营", "label": "微信运营"},
+          {"value": "微博运营", "label": "微博运营"},
+          {"value": "策略运营", "label": "策略运营"},
+          {"value": "电商运营", "label": "电商运营"},
+          {"value": "销售运营", "label": "销售运营"},
+          {"value": "线下拓展运营", "label": "线下拓展运营"},
+          {"value": "商品运营", "label": "商品运营"},
+          {"value": "网店运营", "label": "网店运营"},
+          {"value": "海外运营", "label": "海外运营"},
+          {"value": "其他运营", "label": "其他运营"}
+        ]
+      },
+      {
+        "value": "编辑",
+        "label": "编辑",
+        "children": [
+          {"value": "编辑", "label": "编辑"},
+          {"value": "记者", "label": "记者"},
+          {"value": "采编", "label": "采编"},
+          {"value": "撰稿人", "label": "撰稿人"},
+          {"value": "出版发行", "label": "出版发行"},
+          {"value": "校对录入", "label": "校对录入"},
+          {"value": "文案策划", "label": "文案策划"},
+          {"value": "新媒体", "label": "新媒体"},
+          {"value": "其他编辑", "label": "其他编辑"}
+        ]
+      },
+      {
+        "value": "客服",
+        "label": "客服",
+        "children": [
+          {"value": "售前客服", "label": "售前客服"},
+          {"value": "售后客服", "label": "售后客服"},
+          {"value": "网店客服", "label": "网店客服"},
+          {"value": "电话客服", "label": "电话客服"},
+          {"value": "在线客服", "label": "在线客服"},
+          {"value": "客服专员|助理", "label": "客服专员|助理"},
+          {"value": "咨询热线", "label": "咨询热线"},
+          {"value": "其他客服", "label": "其他客服"}
+        ]
+      },
+      {
+        "value": "审核",
+        "label": "审核",
+        "children": [
+          {"value": "内容审核", "label": "内容审核"},
+          {"value": "信息审核", "label": "信息审核"},
+          {"value": "数据审核", "label": "数据审核"},
+          {"value": "广告审核", "label": "广告审核"},
+          {"value": "品控|质检", "label": "品控|质检"},
+          {"value": "其他审核", "label": "其他审核"},
+          {"value": "其他审核", "label": "其他审核"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "市场|商务类",
+    "label": "市场|商务类",
+    "children": [
+      {
+        "value": "市场|营销",
+        "label": "市场|营销",
+        "children": [
+          {"value": "市场营销", "label": "市场营销"},
+          {"value": "市场策划", "label": "市场策划"},
+          {"value": "市场顾问", "label": "市场顾问"},
+          {"value": "商务渠道", "label": "商务渠道"},
+          {"value": "商务专员", "label": "商务专员"},
+          {"value": "商业数据分析", "label": "商业数据分析"},
+          {"value": "活动策划", "label": "活动策划"},
+          {"value": "网络营销", "label": "网络营销"},
+          {"value": "海外市场", "label": "海外市场"},
+          {"value": "其他市场|营销", "label": "其他市场|营销"}
+        ]
+      },
+      {
+        "value": "媒介|公关",
+        "label": "媒介|公关",
+        "children": [
+          {"value": "媒介公关", "label": "媒介公关"},
+          {"value": "政府关系", "label": "政府关系"},
+          {"value": "品牌公关", "label": "品牌公关"},
+          {"value": "广告协调", "label": "广告协调"},
+          {"value": "媒介投放", "label": "媒介投放"},
+          {"value": "媒介合作", "label": "媒介合作"},
+          {"value": "媒介顾问", "label": "媒介顾问"},
+          {"value": "其他媒介公关职位", "label": "其他媒介公关职位"}
+        ]
+      },
+      {
+        "value": "品牌广告",
+        "label": "品牌广告",
+        "children": [
+          {"value": "品牌广告", "label": "品牌广告"},
+          {"value": "广告创意", "label": "广告创意"},
+          {"value": "广告制作", "label": "广告制作"},
+          {"value": "广告文案", "label": "广告文案"},
+          {"value": "广告投放", "label": "广告投放"},
+          {"value": "广告定价", "label": "广告定价"},
+          {"value": "广告专员", "label": "广告专员"},
+          {"value": "品牌合作", "label": "品牌合作"},
+          {"value": "品牌策划", "label": "品牌策划"},
+          {"value": "品牌专员", "label": "品牌专员"},
+          {"value": "美术指导", "label": "美术指导"},
+          {"value": "其他品牌广告职位", "label": "其他品牌广告职位"}
+        ]
+      },
+      {
+        "value": "渠道|推广",
+        "label": "渠道|推广",
+        "children": [
+          {"value": "渠道推广", "label": "品牌广告"},
+          {"value": "市场推广", "label": "广告创意"},
+          {"value": "其他渠道推广", "label": "其他渠道推广"}
+        ]
+      },
+      {
+        "value": "供应链|采购",
+        "label": "供应链|采购",
+        "children": [
+          {"value": "供应链专员", "label": "供应链专员"},
+          {"value": "物流专员", "label": "物流专员"},
+          {"value": "物流跟单", "label": "物流跟单"},
+          {"value": "贸易跟单", "label": "贸易跟单"},
+          {"value": "物仓调度", "label": "物仓调度"},
+          {"value": "货运代理专员", "label": "货运代理专员"},
+          {"value": "采购专员", "label": "采购专员"},
+          {"value": "其他供应链采购职位", "label": "其他供应链采购职位"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "销售类",
+    "label": "销售类",
+    "children": [
+      {
+        "value": "销售",
+        "label": "销售",
+        "children": [
+          {"value": "销售专员|助理", "label": "销售专员|助理"},
+          {"value": "销售经理", "label": "销售经理"},
+          {"value": "销售顾问", "label": "销售顾问"},
+          {"value": "客户代表", "label": "客户代表"},
+          {"value": "客户经理", "label": "客户经理"},
+          {"value": "商务拓展", "label": "商务拓展"},
+          {"value": "渠道销售", "label": "渠道销售"},
+          {"value": "代理商销售", "label": "代理商销售"},
+          {"value": "电话销售", "label": "电话销售"},
+          {"value": "广告销售", "label": "广告销售"},
+          {"value": "信用卡销售", "label": "信用卡销售"},
+          {"value": "保险销售", "label": "保险销售"},
+          {"value": "销售工程师", "label": "销售工程师"},
+          {"value": "商务渠道", "label": "商务渠道"},
+          {"value": "其他销售职位", "label": "其他销售职位"}
+        ]
+      },
+      {
+        "value": "销售管理",
+        "label": "销售管理",
+        "children": [
+          {"value": "销售总监", "label": "销售总监"},
+          {"value": "商务总监", "label": "商务总监"},
+          {"value": "区域总监", "label": "区域总监"},
+          {"value": "城市经理", "label": "城市经理"},
+          {"value": "团队经理", "label": "团队经理"},
+          {"value": "商务主管", "label": "商务主管"},
+          {"value": "区域销售总监", "label": "区域销售总监"},
+          {"value": "大客户销售管理", "label": "大客户销售管理"},
+          {"value": "渠道/分销总监", "label": "渠道/分销总监"},
+          {"value": "渠道/分销经理", "label": "渠道/分销经理"},
+          {"value": "客户总监", "label": "客户总监"},
+          {"value": "其他销售管理职位", "label": "其他销售管理职位"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "综合职能|高级管理",
+    "label": "综合职能|高级管理",
+    "children": [
+      {
+        "value": "人力资源",
+        "label": "人力资源",
+        "children": [
+          {"value": "招聘", "label": "招聘"},
+          {"value": "HRBP", "label": "HRBP"},
+          {"value": "培训（LD）", "label": "培训（LD）"},
+          {"value": "人力资源专员", "label": "人力资源专员"},
+          {"value": "薪酬福利", "label": "薪酬福利"},
+          {"value": "绩效考核", "label": "绩效考核"},
+          {"value": "员工关系", "label": "员工关系"},
+          {"value": "组织发展", "label": "组织发展"},
+          {"value": "人才培养", "label": "人才培养"},
+          {"value": "人事其他人力资源", "label": "人事其他人力资源"}
+        ]
+      },
+      {
+        "value": "行政",
+        "label": "行政",
+        "children": [
+          {"value": "行政", "label": "行政"},
+          {"value": "前台", "label": "前台"},
+          {"value": "助理", "label": "助理"},
+          {"value": "文秘", "label": "文秘"},
+          {"value": "后勤", "label": "后勤"},
+          {"value": "商务司机", "label": "商务司机"},
+          {"value": "其他行政", "label": "其他行政"}
+        ]
+      },
+      {
+        "value": "财政",
+        "label": "财政",
+        "children": [
+          {"value": "出纳", "label": "出纳"},
+          {"value": "会计", "label": "会计"},
+          {"value": "结算", "label": "结算"},
+          {"value": "税务", "label": "税务"},
+          {"value": "财务审计", "label": "财务审计"},
+          {"value": "财务风控", "label": "财务风控"},
+          {"value": "成本资产", "label": "成本资产"},
+          {"value": "财务顾问", "label": "财务顾问"},
+          {"value": "财务分析师", "label": "财务分析师"},
+          {"value": "其他财务", "label": "其他财务"}
+        ]
+      },
+      {
+        "value": "法务",
+        "label": "法务",
+        "children": [
+          {"value": "律师", "label": "律师"},
+          {"value": "专利", "label": "专利"},
+          {"value": "知识产权", "label": "知识产权"},
+          {"value": "法律顾问", "label": "法律顾问"},
+          {"value": "合规", "label": "合规"},
+          {"value": "其他法务", "label": "其他法务"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "金融类",
+    "label": "金融类",
+    "children": [
+      {
+        "value": "银行",
+        "label": "银行",
+        "children": [
+          {"value": "信用卡销售", "label": "信用卡销售"},
+          {"value": "柜员", "label": "柜员"},
+          {"value": "大堂经理", "label": "大堂经理"},
+          {"value": "理财顾问", "label": "理财顾问"},
+          {"value": "客户经理", "label": "客户经理"},
+          {"value": "信贷管理", "label": "信贷管理"},
+          {"value": "其他银行职位", "label": "其他银行职位"}
+        ]
+      },
+      {
+        "value": "风控",
+        "label": "风控",
+        "children": [
+          {"value": "风控", "label": "风控"},
+          {"value": "资信评估", "label": "资信评估"},
+          {"value": "合规稽查", "label": "合规稽查"},
+          {"value": "其他风控", "label": "其他风控"}
+        ]
+      },
+      {
+        "value": "PE|PV",
+        "label": "PE|PV",
+        "children": [
+          {"value": "投资经理", "label": "投资经理"},
+          {"value": "投资总监", "label": "投资总监"},
+          {"value": "资金募集岗", "label": "资金募集岗"},
+          {"value": "定增业务", "label": "定增业务"},
+          {"value": "风险质控经理", "label": "风险质控经理"},
+          {"value": "投后管理经理", "label": "投后管理经理"},
+          {"value": "投资顾问", "label": "投资顾问"},
+          {"value": "其他PE|VC", "label": "其他PE|VC"}
+        ]
+      },
+      {
+        "value": "保险",
+        "label": "保险",
+        "children": [
+          {"value": "保险业务", "label": "保险业务"},
+          {"value": "精算师", "label": "精算师"},
+          {"value": "保险理赔", "label": "保险理赔"},
+          {"value": "其他保险职位", "label": "其他保险职位"}
+        ]
+      },
+      {
+        "value": "证券|基金|信托|期货",
+        "label": "证券|基金|信托|期货",
+        "children": [
+          {"value": "理财顾问", "label": "理财顾问"},
+          {"value": "基金经理", "label": "基金经理"},
+          {"value": "行业研究员", "label": "行业研究员"},
+          {"value": "信托经理", "label": "信托经理"},
+          {"value": "资产管理", "label": "资产管理"},
+          {"value": "资产证券化", "label": "资产证券化"},
+          {"value": "证券经纪人", "label": "证券经纪人"},
+          {"value": "证券分析师", "label": "证券分析师"},
+          {"value": "交易员", "label": "交易员"},
+          {"value": "基金投资顾问", "label": "基金投资顾问"},
+          {"value": "固定收益投资经理", "label": "固定收益投资经理"},
+          {"value": "信托部门负责人", "label": "信托部门负责人"},
+          {"value": "信托经理", "label": "信托经理"},
+          {"value": "高级信托经理", "label": "高级信托经理"},
+          {"value": "期货经纪人", "label": "期货经纪人"},
+          {"value": "居间人", "label": "居间人"},
+          {"value": "操盘手", "label": "操盘手"},
+          {"value": "期货分析师", "label": "期货分析师"},
+          {"value": "其他证券|基金|信托|期货", "label": "其他证券|基金|信托|期货"}
+        ]
+      },
+      {
+        "value": "互联网金融",
+        "label": "互联网金融",
+        "children": [
+          {"value": "金融产品经理", "label": "金融产品经理"},
+          {"value": "风控", "label": "风控"},
+          {"value": "催收员", "label": "催收员"},
+          {"value": "分析师", "label": "分析师"},
+          {"value": "投资经理", "label": "投资经理"},
+          {"value": "交易员", "label": "交易员"},
+          {"value": "理财顾问", "label": "理财顾问"},
+          {"value": "合规稽查", "label": "合规稽查"},
+          {"value": "审计", "label": "审计"},
+          {"value": "清算", "label": "清算"},
+          {"value": "其他互联网金融职位", "label": "其他互联网金融职位"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "MCN|直播|网红",
+    "label": "MCN|直播|网红",
+    "children": [
+      {
+        "value": "主播",
+        "label": "主播",
+        "children": [
+          {"value": "淘宝主播", "label": "淘宝主播"},
+          {"value": "B站UP主", "label": "B站UP主"},
+          {"value": "抖音主播", "label": "抖音主播"},
+          {"value": "快手主播", "label": "快手主播"},
+          {"value": "小红书达人", "label": "小红书达人"},
+          {"value": "网红艺人", "label": "网红艺人"},
+          {"value": "助理主播", "label": "助理主播"}
+        ]
+      },
+      {
+        "value": "经纪",
+        "label": "经纪",
+        "children": [
+          {"value": "主播经纪人", "label": "主播经纪人"},
+          {"value": "网红星探", "label": "网红星探"},
+          {"value": "主播助理", "label": "主播助理"},
+          {"value": "合约管理", "label": "合约管理"}
+        ]
+      },
+      {
+        "value": "市场商务",
+        "label": "市场商务",
+        "children": [
+          {"value": "合作商务", "label": "合作商务"},
+          {"value": "内容分销", "label": "内容分销"},
+          {"value": "媒体合作", "label": "媒体合作"}
+        ]
+      },
+      {
+        "value": "运营",
+        "label": "运营",
+        "children": [
+          {"value": "活动运营", "label": "活动运营"},
+          {"value": "店铺运营", "label": "店铺运营"},
+          {"value": "社群运营", "label": "社群运营"},
+          {"value": "直播运营", "label": "直播运营"},
+          {"value": "独立IP运营", "label": "独立IP运营"}
+        ]
+      },
+      {
+        "value": "内容",
+        "label": "内容",
+        "children": [
+          {"value": "剧本创作", "label": "剧本创作"},
+          {"value": "拍摄", "label": "拍摄"},
+          {"value": "后期剪辑", "label": "后期剪辑"},
+          {"value": "动画包装", "label": "动画包装"},
+          {"value": "店铺设计", "label": "店铺设计"},
+          {"value": "网页设计", "label": "网页设计"}
+        ]
+      },
+      {
+        "value": "技术",
+        "label": "技术",
+        "children": [
+          {"value": "直播数据分析", "label": "直播数据分析"},
+          {"value": "平台数据分析", "label": "平台数据分析"},
+          {"value": "店铺技术支持", "label": "店铺技术支持"}
+        ]
+      },
+      {
+        "value": "供应链",
+        "label": "供应链",
+        "children": [
+          {"value": "直播选品", "label": "直播选品"},
+          {"value": "店铺选品", "label": "店铺选品"},
+          {"value": "供应链管理", "label": "供应链管理"},
+          {"value": "店铺管理", "label": "店铺管理"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "文娱|传媒|艺术|体育",
+    "label": "文娱|传媒|艺术|体育",
+    "children": [
+      {
+        "value": "广告|会展",
+        "label": "广告|会展",
+        "children": [
+          {"value": "广告客户总监", "label": "广告客户总监"},
+          {"value": "广告客户经理", "label": "广告客户经理"},
+          {"value": "广告客户专员", "label": "广告客户专员"},
+          {"value": "广告创意|设计经理|主管", "label": "广告创意|设计经理|主管"},
+          {"value": "广告创意总监", "label": "广告创意总监"},
+          {"value": "广告创意|设计专员", "label": "广告创意|设计专员"},
+          {"value": "文案|策划", "label": "文案|策划"},
+          {"value": "企业|业务发展经理", "label": "企业|业务发展经理"},
+          {"value": "企业策划人员", "label": "企业策划人员"},
+          {"value": "美术指导", "label": "美术指导"},
+          {"value": "会务|会展经理", "label": "会务|会展经理"},
+          {"value": "会务|会展主管", "label": "会务|会展主管"},
+          {"value": "会务|会展专员", "label": "会务|会展专员"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "广告|会展",
+        "label": "广告|会展",
+        "children": [
+          {"value": "广告客户总监", "label": "广告客户总监"},
+          {"value": "广告客户经理", "label": "广告客户经理"},
+          {"value": "广告客户专员", "label": "广告客户专员"},
+          {"value": "广告创意|设计经理|主管", "label": "广告创意|设计经理|主管"},
+          {"value": "广告创意总监", "label": "广告创意总监"},
+          {"value": "广告创意|设计专员", "label": "广告创意|设计专员"},
+          {"value": "文案|策划", "label": "文案|策划"},
+          {"value": "企业|业务发展经理", "label": "企业|业务发展经理"},
+          {"value": "企业策划人员", "label": "企业策划人员"},
+          {"value": "美术指导", "label": "美术指导"},
+          {"value": "会务|会展经理", "label": "会务|会展经理"},
+          {"value": "会务|会展主管", "label": "会务|会展主管"},
+          {"value": "会务|会展专员", "label": "会务|会展专员"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "写作|出版|印刷",
+        "label": "写作|出版|印刷",
+        "children": [
+          {"value": "总编|副总编", "label": "总编|副总编"},
+          {"value": "编辑", "label": "编辑"},
+          {"value": "记者", "label": "记者"},
+          {"value": "美术编辑", "label": "美术编辑"},
+          {"value": "排版设计", "label": "排版设计"},
+          {"value": "校对|录入", "label": "校对|录入"},
+          {"value": "出版|发行", "label": "出版|发行"},
+          {"value": "电分操作员", "label": "电分操作员"},
+          {"value": "印刷排版|制版", "label": "印刷排版|制版"},
+          {"value": "数码直印|菲林输出", "label": "数码直印|菲林输出"},
+          {"value": "打稿机操作员", "label": "打稿机操作员"},
+          {"value": "调墨技师", "label": "调墨技师"},
+          {"value": "印刷机械机长", "label": "印刷机械机长"},
+          {"value": "晒版|拼版|装订|烫金技工", "label": "晒版|拼版|装订|烫金技工"},
+          {"value": "电话采编", "label": "电话采编"},
+          {"value": "作家|撰稿人", "label": "作家|撰稿人"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "艺术设计",
+        "label": "艺术设计",
+        "children": [
+          {"value": "平面设计总监", "label": "平面设计总监"},
+          {"value": "平面设计经理|主管", "label": "平面设计经理|主管"},
+          {"value": "平面设计师", "label": "平面设计师"},
+          {"value": "绘画", "label": "绘画"},
+          {"value": "动画|3D设计", "label": "动画|3D设计"},
+          {"value": "原画师展览|展示|店面设计", "label": "原画师展览|展示|店面设计"},
+          {"value": "多媒体设计", "label": "多媒体设计"},
+          {"value": "包装设计", "label": "包装设计"},
+          {"value": "工业|产品设计", "label": "工业|产品设计"},
+          {"value": "工艺品|珠宝设计鉴定", "label": "工艺品|珠宝设计鉴定"},
+          {"value": "家具|家居用品设计", "label": "家具|家居用品设计"},
+          {"value": "玩具设计", "label": "玩具设计"},
+          {"value": "其他", "label": "其他"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "教育|培训",
+    "label": "教育|培训",
+    "children": [
+      {
+        "value": "教师",
+        "label": "教师",
+        "children": [
+          {"value": "中学教师", "label": "中学教师"},
+          {"value": "院校教务管理人员", "label": "院校教务管理人员"},
+          {"value": "讲师|助教", "label": "讲师|助教"},
+          {"value": "家教", "label": "家教"},
+          {"value": "幼教", "label": "幼教"},
+          {"value": "大学教授", "label": "大学教授"},
+          {"value": "小学教师", "label": "小学教师"},
+          {"value": "兼职教师", "label": "兼职教师"},
+          {"value": "职业技术教师", "label": "职业技术教师"},
+          {"value": "校长", "label": "校长"},
+          {"value": "音乐|美术教师", "label": "音乐|美术教师"},
+          {"value": "外语培训师", "label": "外语培训师"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "培训",
+        "label": "培训",
+        "children": [
+          {"value": "培训督导", "label": "培训督导"},
+          {"value": "培训讲师", "label": "培训讲师"},
+          {"value": "培训策划", "label": "培训策划"},
+          {"value": "培训助理", "label": "培训助理"},
+          {"value": "培训|课程顾问", "label": "培训|课程顾问"},
+          {"value": "培训产品开发", "label": "培训产品开发"},
+          {"value": "其他", "label": "其他"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "商业服务|专业服务",
+    "label": "商业服务|专业服务",
+    "children": [
+      {
+        "value": "科研人员",
+        "label": "科研人员",
+        "children": [
+          {"value": "科研人员", "label": "科研人员"},
+          {"value": "科研管理人员", "label": "科研管理人员"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "律师|法务|合规",
+        "label": "律师|法务|合规",
+        "children": [
+          {"value": "律师|法律顾问", "label": "律师|法律顾问"},
+          {"value": "法务专员", "label": "法务专员"},
+          {"value": "律师助理", "label": "律师助理"},
+          {"value": "法务经理|主管", "label": "法务经理|主管"},
+          {"value": "法务助理", "label": "法务助理"},
+          {"value": "知识产权|专利|商标", "label": "知识产权|专利|商标"},
+          {"value": "合规经理", "label": "合规经理"},
+          {"value": "合规主管|专员", "label": "合规主管|专员"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "翻译",
+        "label": "翻译",
+        "children": [
+          {"value": "英语翻译", "label": "英语翻译"},
+          {"value": "日语翻译", "label": "日语翻译"},
+          {"value": "德语翻译", "label": "德语翻译"},
+          {"value": "法语翻译", "label": "法语翻译"},
+          {"value": "俄语翻译", "label": "俄语翻译"},
+          {"value": "西班牙语翻译", "label": "西班牙语翻译"},
+          {"value": "韩语|朝鲜语翻译", "label": "韩语|朝鲜语翻译"},
+          {"value": "阿拉伯语翻译", "label": "阿拉伯语翻译"},
+          {"value": "意大利语翻译", "label": "意大利语翻译"},
+          {"value": "葡萄牙语翻译", "label": "葡萄牙语翻译"},
+          {"value": "泰语翻译", "label": "泰语翻译"},
+          {"value": "中国方言翻译", "label": "中国方言翻译"},
+          {"value": "其他语种翻译", "label": "其他语种翻译"}
+        ]
+      },
+      {
+        "value": "咨询|调研",
+        "label": "咨询|调研",
+        "children": [
+          {"value": "专业顾问", "label": "专业顾问"},
+          {"value": "咨询总监", "label": "咨询总监"},
+          {"value": "咨询经理", "label": "咨询经理"},
+          {"value": "咨询员", "label": "咨询员"},
+          {"value": "专业培训师", "label": "专业培训师"},
+          {"value": "情报信息分析人员", "label": "情报信息分析人员"},
+          {"value": "猎头|人才中介", "label": "猎头|人才中介"},
+          {"value": "调研员其他", "label": "调研员其他"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "贸易|批发|零售|租赁业",
+    "label": "贸易|批发|零售|租赁业",
+    "children": [
+      {
+        "value": "采购",
+        "label": "采购",
+        "children": [
+          {"value": "采购总监", "label": "采购总监"},
+          {"value": "采购经理", "label": "采购经理"},
+          {"value": "采购主管", "label": "采购主管"},
+          {"value": "采购员", "label": "采购员"},
+          {"value": "采购助理", "label": "采购助理"},
+          {"value": "买手", "label": "买手"},
+          {"value": "供应商开发", "label": "供应商开发"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "贸易",
+        "label": "贸易",
+        "children": [
+          {"value": "贸易|外贸经理|主管", "label": "贸易|外贸经理|主管"},
+          {"value": "贸易|外贸专员|助理", "label": "贸易|外贸专员|助理"},
+          {"value": "国内贸易人员", "label": "国内贸易人员"},
+          {"value": "业务跟单经理", "label": "业务跟单经理"},
+          {"value": "高级业务跟单", "label": "高级业务跟单"},
+          {"value": "业务跟单", "label": "业务跟单"},
+          {"value": "助理业务跟单", "label": "助理业务跟单"},
+          {"value": "其他", "label": "其他"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "服务业",
+    "label": "服务业",
+    "children": [
+      {
+        "value": "餐饮|酒店|娱乐",
+        "label": "餐饮|酒店|娱乐",
+        "children": [
+          {"value": "餐饮|娱乐管理", "label": "餐饮|娱乐管理"},
+          {"value": "餐饮|娱乐领班|部长", "label": "餐饮|娱乐领班|部长"},
+          {"value": "餐饮|娱乐服务员", "label": "餐饮|娱乐服务员"},
+          {"value": "礼仪|迎宾", "label": "礼仪|迎宾"},
+          {"value": "司仪", "label": "司仪"},
+          {"value": "行政主厨|厨师长", "label": "行政主厨|厨师长"},
+          {"value": "厨师|面点师", "label": "厨师|面点师"},
+          {"value": "调酒师|侍酒师|吧台员", "label": "调酒师|侍酒师|吧台员"},
+          {"value": "茶艺师", "label": "茶艺师"},
+          {"value": "传菜主管|传菜员", "label": "传菜主管|传菜员"},
+          {"value": "厨师助理|学徒", "label": "厨师助理|学徒"},
+          {"value": "酒店|宾馆经理", "label": "酒店|宾馆经理"},
+          {"value": "酒店|宾馆营销", "label": "酒店|宾馆营销"},
+          {"value": "大堂经理", "label": "大堂经理"},
+          {"value": "楼面经理", "label": "楼面经理"},
+          {"value": "前厅接待", "label": "前厅接待"},
+          {"value": "客房服务员|楼面服务员", "label": "客房服务员|楼面服务员"},
+          {"value": "清洁服务人员", "label": "清洁服务人员"},
+          {"value": "宴会管理", "label": "宴会管理"},
+          {"value": "管家部经理|主管", "label": "管家部经理|主管"},
+          {"value": "宾客服务经理", "label": "宾客服务经理"},
+          {"value": "预定部主管", "label": "预定部主管"},
+          {"value": "预定员", "label": "预定员"},
+          {"value": "采购员", "label": "采购员"},
+          {"value": "健身房服务", "label": "健身房服务"},
+          {"value": "婚礼策划服务", "label": "婚礼策划服务"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "旅游|出入境",
+        "label": "旅游|出入境",
+        "children": [
+          {"value": "导游|旅行顾问", "label": "导游|旅行顾问"},
+          {"value": "票务|订房服务", "label": "票务|订房服务"},
+          {"value": "旅游产品销售", "label": "旅游产品销售"},
+          {"value": "行程管理|计调", "label": "行程管理|计调"},
+          {"value": "签证专员", "label": "签证专员"},
+          {"value": "机场代表", "label": "机场代表"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "家政|社区|安保",
+        "label": "家政|社区|安保",
+        "children": [
+          {"value": "保安人员", "label": "保安人员"},
+          {"value": "保镖", "label": "保镖"},
+          {"value": "寻呼员|话务员", "label": "寻呼员|话务员"},
+          {"value": "搬运工", "label": "搬运工"},
+          {"value": "清洁工", "label": "清洁工"},
+          {"value": "家政服务|保姆", "label": "家政服务|保姆"},
+          {"value": "保安经理", "label": "保安经理"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "美容|保健|健身",
+        "label": "美容|保健|健身",
+        "children": [
+          {"value": "美容顾问|化妆", "label": "美容顾问|化妆"},
+          {"value": "美容助理|见席美容师", "label": "美容助理|见席美容师"},
+          {"value": "瘦身顾问", "label": "瘦身顾问"},
+          {"value": "发型师", "label": "发型师"},
+          {"value": "发型助理|学徒", "label": "发型助理|学徒"},
+          {"value": "美甲师", "label": "美甲师"},
+          {"value": "按摩|足疗", "label": "按摩|足疗"},
+          {"value": "健身顾问|教练", "label": "健身顾问|教练"},
+          {"value": "彩妆培训师", "label": "彩妆培训师"},
+          {"value": "体育运动教练", "label": "体育运动教练"},
+          {"value": "宠物护理|美容", "label": "宠物护理|美容"},
+          {"value": "瑜伽|舞蹈老师", "label": "瑜伽|舞蹈老师"},
+          {"value": "专柜彩妆顾问(BA)", "label": "专柜彩妆顾问(BA)"},
+          {"value": "救生员", "label": "救生员"},
+          {"value": "美容导师", "label": "美容导师"},
+          {"value": "其他", "label": "其他"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "交通|运输|物流|仓储",
+    "label": "交通|运输|物流|仓储",
+    "children": [
+      {
+        "value": "物流|仓储",
+        "label": "物流|仓储",
+        "children": [
+          {"value": "物流总监", "label": "物流总监"},
+          {"value": "物流经理|主管", "label": "物流经理|主管"},
+          {"value": "物流主管", "label": "物流主管"},
+          {"value": "物流专员|助理", "label": "物流专员|助理"},
+          {"value": "供应链总监", "label": "供应链总监"},
+          {"value": "供应链经理|主管", "label": "供应链经理|主管"},
+          {"value": "供应链专员", "label": "供应链专员"},
+          {"value": "物料经理|主管", "label": "物料经理|主管"},
+          {"value": "物料专员", "label": "物料专员"},
+          {"value": "仓库经理|主管", "label": "仓库经理|主管"},
+          {"value": "仓库管理员", "label": "仓库管理员"},
+          {"value": "运输经理|主管", "label": "运输经理|主管"},
+          {"value": "项目经理|主管", "label": "项目经理|主管"},
+          {"value": "货运代理", "label": "货运代理"},
+          {"value": "集装箱业务", "label": "集装箱业务"},
+          {"value": "海关事务管理", "label": "海关事务管理"},
+          {"value": "报关与报检", "label": "报关与报检"},
+          {"value": "单证员", "label": "单证员"},
+          {"value": "船务|空运陆运操作", "label": "船务|空运陆运操作"},
+          {"value": "快递员", "label": "快递员"},
+          {"value": "调度员", "label": "调度员"},
+          {"value": "理货员", "label": "理货员"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "交通运输服务",
+        "label": "交通运输服务",
+        "children": [
+          {"value": "乘务员", "label": "乘务员"},
+          {"value": "司机", "label": "司机"},
+          {"value": "飞机机长|副机长", "label": "飞机机长|副机长"},
+          {"value": "空乘人员", "label": "空乘人员"},
+          {"value": "地勤人员", "label": "地勤人员"},
+          {"value": "列车|地铁车长", "label": "列车|地铁车长"},
+          {"value": "列车|地铁司机", "label": "列车|地铁司机"},
+          {"value": "船长|副船长", "label": "船长|副船长"},
+          {"value": "船员", "label": "船员"},
+          {"value": "其他", "label": "其他"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "房地产|建筑|物业",
+    "label": "房地产|建筑|物业",
+    "children": [
+      {
+        "value": "建筑装潢|市政建设",
+        "label": "建筑装潢|市政建设",
+        "children": [
+          {"value": "高级建筑工程师|总工", "label": "高级建筑工程师|总工"},
+          {"value": "建筑工程师", "label": "建筑工程师"},
+          {"value": "测绘|测量", "label": "测绘|测量"},
+          {"value": "爆破工程师", "label": "爆破工程师"},
+          {"value": "智能大厦|综合布线|安防|弱电", "label": "智能大厦|综合布线|安防|弱电"},
+          {"value": "建筑机电工程师", "label": "建筑机电工程师"},
+          {"value": "市政工程师", "label": "市政工程师"},
+          {"value": "土建造价工程师", "label": "土建造价工程师"},
+          {"value": "安装造价工程师", "label": "安装造价工程师"},
+          {"value": "工程造价师|预结算经理", "label": "工程造价师|预结算经理"},
+          {"value": "预结算员", "label": "预结算员"},
+          {"value": "施工员", "label": "施工员"},
+          {"value": "建筑设备工程师", "label": "建筑设备工程师"},
+          {"value": "工程监理", "label": "工程监理"},
+          {"value": "建筑工程管理|项目经理", "label": "建筑工程管理|项目经理"},
+          {"value": "安全员", "label": "安全员"},
+          {"value": "建筑工程验收", "label": "建筑工程验收"},
+          {"value": "合同管理", "label": "合同管理"},
+          {"value": "资料员", "label": "资料员"},
+          {"value": "建筑设计师", "label": "建筑设计师"},
+          {"value": "结构|土木|土建工程师", "label": "结构|土木|土建工程师"},
+          {"value": "岩土工程", "label": "岩土工程"},
+          {"value": "公路|桥梁|港口|隧道工程", "label": "公路|桥梁|港口|隧道工程"},
+          {"value": "建筑制图|模型|渲染", "label": "建筑制图|模型|渲染"},
+          {"value": "架线和管道工程技术", "label": "架线和管道工程技术"},
+          {"value": "楼宇自动化", "label": "楼宇自动化"},
+          {"value": "给排水|暖通工程", "label": "给排水|暖通工程"},
+          {"value": "空调工程师", "label": "空调工程师"},
+          {"value": "规划与设计", "label": "规划与设计"},
+          {"value": "园艺|园林|景观设计", "label": "园艺|园林|景观设计"},
+          {"value": "室内设计", "label": "室内设计"},
+          {"value": "软装设计师", "label": "软装设计师"},
+          {"value": "幕墙工程师", "label": "幕墙工程师"},
+          {"value": "开发报建", "label": "开发报建"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "物业管理",
+        "label": "物业管理",
+        "children": [
+          {"value": "高级物业顾问|物业顾问", "label": "高级物业顾问|物业顾问"},
+          {"value": "物业管理经理|主管", "label": "物业管理经理|主管"},
+          {"value": "开物业管理专员|助理发报建", "label": "物业管理专员|助理"},
+          {"value": "物业招商|租赁|租售", "label": "物业招商|租赁|租售"},
+          {"value": "物业设施管理人员", "label": "物业设施管理人员"},
+          {"value": "物业维修人员", "label": "物业维修人员"},
+          {"value": "物业机电工程师", "label": "物业机电工程师"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "房地产规划|开发",
+        "label": "房地产规划|开发",
+        "children": [
+          {"value": "房地产项目策划经理", "label": "房地产项目策划经理"},
+          {"value": "房地产项目策划主管|专员", "label": "房地产项目策划主管|专员"},
+          {"value": "开发报建经理|主管", "label": "开发报建经理|主管"},
+          {"value": "开发报建专员|助理", "label": "开发报建专员|助理"},
+          {"value": "规划设计总监", "label": "规划设计总监"},
+          {"value": "规划设计经理|主管", "label": "规划设计经理|主管"},
+          {"value": "房产项目配套工程师", "label": "房产项目配套工程师"},
+          {"value": "房地产项目招投标", "label": "房地产项目招投标"},
+          {"value": "成本总监", "label": "成本总监"},
+          {"value": "成本经理|主管", "label": "成本经理|主管"},
+          {"value": "房地产销售经理|主管", "label": "房地产销售经理|主管"},
+          {"value": "房地产投资分析", "label": "房地产投资分析"},
+          {"value": "房地产资产管理", "label": "房地产资产管理"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "房地产交易|中介",
+        "label": "房地产交易|中介",
+        "children": [
+          {"value": "房地产交易|中介", "label": "房地产交易|中介"},
+          {"value": "房地产销售经理|主管", "label": "房地产销售经理|主管"},
+          {"value": "房地产销售人员", "label": "房地产销售人员"},
+          {"value": "房地产招商", "label": "房地产招商"},
+          {"value": "房地产评估", "label": "房地产评估"},
+          {"value": "其他", "label": "其他"}
+        ]
+      }
+    ]
+  },
+  {
+    "value": "生产|加工|制造",
+    "label": "生产|加工|制造",
+    "children": [
+      {
+        "value": "电子|电器|半导体|仪器仪表",
+        "label": "电子|电器|半导体|仪器仪表",
+        "children": [
+          {"value": "集成电路IC设计|应用工程师", "label": "集成电路IC设计|应用工程师"},
+          {"value": "IC验证工程师", "label": "IC验证工程师"},
+          {"value": "电子工程师|技术员", "label": "电子工程师|技术员"},
+          {"value": "电气工程师|技术员", "label": "电气工程师|技术员"},
+          {"value": "电路工程师|技术员(模拟|数字)", "label": "电路工程师|技术员(模拟|数字)"},
+          {"value": "电声|音响工程师|技术员", "label": "电声|音响工程师|技术员"},
+          {"value": "半导体技术", "label": "半导体技术"},
+          {"value": "自动控制工程师|技术员", "label": "自动控制工程师|技术员"},
+          {"value": "电子软件开发(ARM|MCU...)", "label": "电子软件开发(ARM|MCU...)"},
+          {"value": "嵌入式软件开发(Linux|单片机|DLC|DSP…)", "label": "嵌入式软件开发(Linux|单片机|DLC|DSP…)"},
+          {"value": "电池|电源开发", "label": "电池|电源开发"},
+          {"value": "FAE 现场应用工程师", "label": "FAE 现场应用工程师"},
+          {"value": "家用电器|数码产品研发", "label": "家用电器|数码产品研发"},
+          {"value": "仪器|仪表|计量分析师", "label": "仪器|仪表|计量分析师"},
+          {"value": "测试工程师", "label": "测试工程师"},
+          {"value": "电子技术研发工程师", "label": "电子技术研发工程师"},
+          {"value": "激光|光电子技术", "label": "激光|光电子技术"},
+          {"value": "嵌入式硬件开发(主板机…)", "label": "嵌入式硬件开发(主板机…)"},
+          {"value": "电子|电器维修工程师", "label": "电子|电器维修工程师"},
+          {"value": "变压器与磁电工程师", "label": "变压器与磁电工程师"},
+          {"value": "版图设计工程师", "label": "版图设计工程师"},
+          {"value": "工艺工程师", "label": "工艺工程师"},
+          {"value": "射频工程师", "label": "射频工程师"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "生产|营运",
+        "label": "生产|营运",
+        "children": [
+          {"value": "工厂经理|厂长", "label": "工厂经理|厂长"},
+          {"value": "总工程师|副总工程师", "label": "总工程师|副总工程师"},
+          {"value": "项目经理|主管", "label": "项目经理|主管"},
+          {"value": "项目工程师", "label": "项目工程师"},
+          {"value": "营运经理", "label": "营运经理"},
+          {"value": "营运主管", "label": "营运主管"},
+          {"value": "生产经理|车间主任", "label": "生产经理|车间主任"},
+          {"value": "生产计划|物料管理(PMC)", "label": "生产计划|物料管理(PMC)"},
+          {"value": "生产主管|督导|领班|组长", "label": "生产主管|督导|领班|组长"},
+          {"value": "化验员", "label": "化验员"},
+          {"value": "生产文员", "label": "生产文员"},
+          {"value": "项目总监", "label": "项目总监"},
+          {"value": "生产总监", "label": "生产总监"},
+          {"value": "其他", "label": "其他"}
+        ]
+      },
+      {
+        "value": "生产|营运",
+        "label": "生产|营运",
+        "children": [
+          {"value": "工厂经理|厂长", "label": "工厂经理|厂长"},
+          {"value": "总工程师|副总工程师", "label": "总工程师|副总工程师"},
+          {"value": "项目经理|主管", "label": "项目经理|主管"},
+          {"value": "项目工程师", "label": "项目工程师"},
+          {"value": "营运经理", "label": "营运经理"},
+          {"value": "营运主管", "label": "营运主管"},
+          {"value": "生产经理|车间主任", "label": "生产经理|车间主任"},
+          {"value": "生产计划|物料管理(PMC)", "label": "生产计划|物料管理(PMC)"},
+          {"value": "生产主管|督导|领班|组长", "label": "生产主管|督导|领班|组长"},
+          {"value": "化验员", "label": "化验员"},
+          {"value": "生产文员", "label": "生产文员"},
+          {"value": "项目总监", "label": "项目总监"},
+          {"value": "生产总监", "label": "生产总监"},
+          {"value": "其他", "label": "其他"}
         ]
       }
     ]

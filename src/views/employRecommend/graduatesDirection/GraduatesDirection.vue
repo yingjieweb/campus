@@ -7,10 +7,10 @@
             <BarChart :option="jobOrient"></BarChart>
           </div>
           <div class="jobOrient">
-            <BarChart :option="jobOrient"></BarChart>
+            <BarChart :option="hotJobs"></BarChart>
           </div>
           <div class="jobOrient">
-            <BarChart :option="jobOrient"></BarChart>
+            <BarChart :option="salaryRank"></BarChart>
           </div>
         </div>
         <div class="map">
@@ -48,8 +48,8 @@
       return {
         jobOrient: {
           title: {
-            text: '毕业生去向图',
-            subtext: '毕业生主流城市去向'
+            text: '毕业生去向',
+            subtext: '毕业生就业热门城市'
           },
           tooltip: {
             trigger: 'axis',
@@ -102,13 +102,13 @@
           },
           yAxis: {
             type: 'category',
-            data: ['杭州', '上海', '青岛', '深圳', '南京', '北京']
+            data: ['Java', 'Web', '算法', '测试', '产品', '设计']
           },
           series: [
             {
               name: '2020年',
               type: 'bar',
-              data: [171, 103, 139, 123, 104, 182]
+              data: [186, 125, 39, 107, 82, 56]
             }
           ]
         },
@@ -135,13 +135,13 @@
           },
           yAxis: {
             type: 'category',
-            data: ['杭州', '上海', '青岛', '深圳', '南京', '北京']
+            data: ['Java', 'Web', '算法', '测试', '产品', '设计']
           },
           series: [
             {
               name: '2020年',
               type: 'bar',
-              data: [171, 103, 139, 123, 104, 182]
+              data: [22370, 20698, 27540, 17526, 21010, 18736]
             }
           ]
         }

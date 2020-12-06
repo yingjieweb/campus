@@ -7,8 +7,7 @@ export default new Vuex.Store({
   state: {
     currentUser: {},
     permission: '',
-    isLogin: false,
-    showAsideNav: false
+    isLogin: false
   },
   mutations: {
     getUserInfo(state, currentUser) {
@@ -17,9 +16,6 @@ export default new Vuex.Store({
     },
     changeLoginStatus(state, status) {
       state.isLogin = status
-    },
-    changeNavShowState(state, status) {
-      state.showAsideNav = status
     }
   },
   actions: {},

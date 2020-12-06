@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-aside class="aside" width="220px" v-show="this.$store.state.showAsideNav">
+    <el-aside class="aside" width="220px" v-if="$route.name !== 'Login'">
       <router-link to="/work-bench">
         <div class="logo">
           <p class="intro">

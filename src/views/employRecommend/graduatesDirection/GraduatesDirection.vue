@@ -21,7 +21,7 @@
             <PieChart></PieChart>
           </div>
           <div class="jobOrient">
-            <BarChart :option="jobOrient"></BarChart>
+            <BarChart :option="enrollRate"></BarChart>
           </div>
           <div class="jobOrient">
             <BarChart :option="jobOrient"></BarChart>
@@ -116,6 +116,39 @@
           title: {
             text: '岗位薪资排行榜',
             subtext: '岗位薪资排行榜'
+          },
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow'
+            }
+          },
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+          },
+          xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+          },
+          yAxis: {
+            type: 'category',
+            data: ['Java', 'Web', '算法', '测试', '产品', '设计']
+          },
+          series: [
+            {
+              name: '2020年',
+              type: 'bar',
+              data: [22370, 20698, 27540, 17526, 21010, 18736]
+            }
+          ]
+        },
+        enrollRate: {
+          title: {
+            text: '各岗位录取比例',
+            subtext: '各岗位录取比例'
           },
           tooltip: {
             trigger: 'axis',

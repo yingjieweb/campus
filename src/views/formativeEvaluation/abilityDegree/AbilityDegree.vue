@@ -2,22 +2,17 @@
   <Layout>
     <Block title="个人能力达成度">
       <div slot="content" class="container">
-        <div class="indexInfo">
-          <div class="indexTable">
-            <el-table :data="tableData" border style="width: 100%">
-              <el-table-column prop="ability" label="能力（单项满分为10分）" width="200"></el-table-column>
-              <el-table-column prop="classRank" label="班级内排名" width="180"></el-table-column>
-              <el-table-column prop="majorRank" label="专业排名" width="180"></el-table-column>
-              <el-table-column prop="gradeRank" label="年级内排名"></el-table-column>
-            </el-table>
+        <div class="indexOptions">
+          <el-button type="primary">评价</el-button>
+          <el-button type="primary">评价</el-button>
+          <el-button type="primary">评价</el-button>
+        </div>
+        <div class="indexChart">
+          <div class="lineChart">
+            <LineChart :option="option"></LineChart>
           </div>
-          <div class="indexChart">
-            <div class="lineChart">
-              <LineChart :option="option"></LineChart>
-            </div>
-            <div class="pieChart">
-              <PieChart></PieChart>
-            </div>
+          <div class="pieChart">
+            <PieChart></PieChart>
           </div>
         </div>
       </div>
@@ -88,28 +83,21 @@
 
 <style lang="scss" scoped>
   .container {
+    display: flex;
 
-    .indexInfo {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      margin-left: 5px;
+    .indexOptions {
+      flex: 3;
+      margin-right: 10px;
+      border: 1px solid gainsboro;
+    }
 
-      .indexTable {
-        margin-bottom: 5px;
-      }
+    .indexChart {
+      flex: 5;
 
-      .indexChart {
-        display: flex;
-
-        .lineChart, .pieChart {
-          flex: 1;
-          width: 500px;
-          height: 400px;
-          border: 1px solid gainsboro;
-        }
-        .lineChart {flex: 3;}
-        .pieChart {flex: 2; margin-left: 5px;}
+      .lineChart, .pieChart {
+        flex: 1;
+        height: 350px;
+        border: 1px solid gainsboro;
       }
     }
   }

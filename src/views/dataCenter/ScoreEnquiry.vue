@@ -1,11 +1,15 @@
 <template>
-  <div class="container">
-    <span class="title">个人成绩</span>
-    <el-table :data="tableData" stripe>
-      <el-table-column prop="courseName" label="课程名" width="180"></el-table-column>
-      <el-table-column prop="courseScore" label="成绩" width="180"></el-table-column>
-    </el-table>
-  </div>
+  <Layout>
+    <Block title="个人成绩">
+      <div slot="content" class="container">
+        <span class="title">个人成绩</span>
+        <el-table :data="tableData" stripe border>
+          <el-table-column prop="courseName" label="课程名"></el-table-column>
+          <el-table-column prop="courseScore" label="成绩" width="180"></el-table-column>
+        </el-table>
+      </div>
+    </Block>
+  </Layout>
 </template>
 
 <script lang="js">
@@ -31,7 +35,6 @@
   .container {
     display: flex;
     flex-direction: column;
-    border: 1px solid gainsboro;
 
     .title {
       font-size: 18px;

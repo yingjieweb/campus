@@ -30,18 +30,16 @@
           <el-menu-item index="4-2"><i class="el-icon-caret-right"></i>学校标准2</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
-      <el-menu-item index="5">
-        <i class="el-icon-s-data"></i>
-        <span slot="title">数据中心</span>
-      </el-menu-item>
+      <el-submenu index="5">
+        <template slot="title"><i class="el-icon-aim"></i><span>数据中心</span></template>
+        <el-menu-item-group>
+          <el-menu-item index="/score-enquiry"><i class="el-icon-caret-right"></i>成绩查询</el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
       <el-menu-item index="6">
         <i class="el-icon-cpu"></i>
         <span slot="title">数据治理</span>
       </el-menu-item>
-<!--      <el-menu-item index="/score-enquiry">-->
-<!--        <i class="el-icon-document-checked"></i>-->
-<!--        <span slot="title">成绩查询</span>-->
-<!--      </el-menu-item>-->
       <el-submenu index="7">
         <template slot="title"><i class="el-icon-setting"></i><span>系统设置</span></template>
         <el-menu-item-group>

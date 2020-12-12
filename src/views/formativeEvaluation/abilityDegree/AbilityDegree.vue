@@ -2,10 +2,6 @@
   <Layout>
     <Block title="个人能力达成度">
       <div slot="content" class="container">
-        <div class="scoreInfo">
-          <ScoreEnquiry></ScoreEnquiry>
-        </div>
-
         <div class="indexInfo">
           <div class="indexTable">
             <el-table :data="tableData" border style="width: 100%">
@@ -33,15 +29,13 @@
   import PieChart from "@/components/charts/PieChart"
   import LineChart from "@/components/charts/LineChart"
   import RadarChart from "@/components/charts/RadarChart"
-  import ScoreEnquiry from "@/views/formativeEvaluation/abilityDegree/childComps/ScoreEnquiry"
 
   export default {
     name: "AbilityDegree",
     components: {
       PieChart,
       LineChart,
-      RadarChart,
-      ScoreEnquiry
+      RadarChart
     },
     data(){
       return {
@@ -115,14 +109,8 @@
 
 <style lang="scss" scoped>
   .container {
-    display:flex;
-    justify-content: space-around;
 
-    .scoreInfo {
-      flex: 1;
-    }
     .indexInfo {
-      flex: 4;
       display: flex;
       flex-direction: column;
       justify-content: space-around;

@@ -80,28 +80,7 @@
               data: [225, 486, 301, 534]
             }
           ]
-        },
-        tableData: [{
-          ability: '专业能力',
-          classRank: '05-04',
-          majorRank: '56',
-          gradeRank: '517'
-        }, {
-          ability: '学习能力',
-          classRank: '05-04',
-          majorRank: '16',
-          gradeRank: '569'
-        }, {
-          ability: '协作能力',
-          classRank: '05-01',
-          majorRank: '55',
-          gradeRank: '519'
-        }, {
-          ability: '管理能力',
-          classRank: '05-03',
-          majorRank: '48',
-          gradeRank: '116'
-        }]
+        }
       }
     }
   }

@@ -18,7 +18,7 @@
         </div>
         <div class="right">
           <div class="jobOrient">
-            <PieChart></PieChart>
+            <PieChart :option="positionPredict"></PieChart>
           </div>
           <div class="jobOrient">
             <BarChart :option="enrollRate"></BarChart>
@@ -145,6 +145,37 @@
             }
           ]
         },
+        positionPredict: {
+          title: {
+            text: '岗位实时预测',
+            subtext: '2021年岗位招聘数量预测'
+          },
+          tooltip: {
+            trigger: 'item',
+            formatter: '{b}: {c}￥ ({d}%)'
+          },
+          series: [
+            {
+              type: 'pie',
+              radius: ['50%', '70%'],
+              avoidLabelOverlap: false,
+              label: {
+                normal: {
+                  position: 'outer',
+                  show: true
+                }
+              },
+              data: [
+                {value: 1548, name: 'Java'},
+                {value: 1346, name: 'Web'},
+                {value: 234, name: '算法'},
+                {value: 958, name: '测试'},
+                {value: 826, name: '产品'},
+                {value: 603, name: '设计'}
+              ]
+            }
+          ]
+        },
         enrollRate: {
           title: {
             text: '各岗位录取比例',
@@ -174,7 +205,7 @@
             {
               name: '2020年',
               type: 'bar',
-              data: [22370, 20698, 27540, 17526, 21010, 18736]
+              data: [4, 4, 26, 4, 13, 5]
             }
           ]
         }

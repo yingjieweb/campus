@@ -177,7 +177,7 @@
           xAxis: {
             type: 'category',
             boundaryGap: false,
-            data: ['类别一', '类别二', '类别三', '类别四']
+            data: ['第一学年', '第二学年', '第三学年', '第四学年']
           },
           yAxis: {
             type: 'value'

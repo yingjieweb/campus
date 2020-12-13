@@ -24,15 +24,15 @@
       ResumeViewTitle,
       BasicInfoModal
     },
-    data(){
+    data() {
       return {
         basicInfo: {
-          name: ['姓名','张三丰'],
-          phone: ['手机号码','18850888958'],
-          mail: ['邮箱','1188061078@qq.com'],
-          IDCard: ['个人证件','370888189509095574'],
-          currentState: ['当前状态','2021应届生'],
-          expectedPosition: ['求职意向','大数据开发工程师']
+          name: ['姓名', '张钰鹏'],
+          phone: ['手机号码', '18850888958'],
+          mail: ['邮箱', '1188061078@qq.com'],
+          IDCard: ['个人证件', '370888189509095574'],
+          currentState: ['当前状态', '2021应届生'],
+          expectedPosition: ['求职意向', '大数据开发工程师']
         }
       }
     },
@@ -40,17 +40,17 @@
       editBasicInfo() {
         this.$refs.ResumePersonalInfoModal.setDialogVisible('编辑基本信息', true, this.basicInfo);
       },
-      updateBasicInfo(form){
-        this.basicInfo.name = ['姓名',form.name];
-        this.basicInfo.phone = ['手机号码',form.phone];
-        this.basicInfo.mail = ['邮箱',form.mail];
-        this.basicInfo.IDCard = ['个人证件',form.IDCard];
-        this.basicInfo.currentState = ['当前状态',form.currentState];
-        this.basicInfo.expectedPosition = ['求职意向',form.expectedPosition];
+      updateBasicInfo(form) {
+        this.basicInfo.name = ['姓名', form.name];
+        this.basicInfo.phone = ['手机号码', form.phone];
+        this.basicInfo.mail = ['邮箱', form.mail];
+        this.basicInfo.IDCard = ['个人证件', form.IDCard];
+        this.basicInfo.currentState = ['当前状态', form.currentState];
+        this.basicInfo.expectedPosition = ['求职意向', form.expectedPosition];
 
         this.$EventBus.$emit('updateResumeBasicInfo', this.basicInfo);
       },
-      goNextItem(){
+      goNextItem() {
         this.$emit('goNextItem', 'second');
       }
     }

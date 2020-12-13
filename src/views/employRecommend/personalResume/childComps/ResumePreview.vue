@@ -71,44 +71,44 @@
 <script lang="js">
   export default {
     name: "ResumePreview",
-    mounted(){
-      this.$EventBus.$on('updateResumeBasicInfo', (newBasicInfo)=>{
-        this.personalInfo.basicInfo = newBasicInfo;
+    mounted() {
+      this.$EventBus.$on('updateResumeBasicInfo', (newBasicInfo) => {
+        this.personalInfo.basicInfo = newBasicInfo
       })
-      this.$EventBus.$on('updateResumeEduExp', (newEduExp)=>{
-        this.personalInfo.eduExp = newEduExp;
+      this.$EventBus.$on('updateResumeEduExp', (newEduExp) => {
+        this.personalInfo.eduExp = newEduExp
       })
-      this.$EventBus.$on('updateResumeInternExp', (hasIntern, newInternExp)=>{
-        this.personalInfo.hasIntern = hasIntern;
-        this.personalInfo.internExp = newInternExp;
+      this.$EventBus.$on('updateResumeInternExp', (hasIntern, newInternExp) => {
+        this.personalInfo.hasIntern = hasIntern
+        this.personalInfo.internExp = newInternExp
       })
-      this.$EventBus.$on('updateResumeProjectExp', (newProjectExp)=>{
-        this.personalInfo.projectExp = newProjectExp;
+      this.$EventBus.$on('updateResumeProjectExp', (newProjectExp) => {
+        this.personalInfo.projectExp = newProjectExp
       })
-      this.$EventBus.$on('updateResumeLangAbility', (newLangKind)=>{
-        this.personalInfo.langKind = newLangKind;
+      this.$EventBus.$on('updateResumeLangAbility', (newLangKind) => {
+        this.personalInfo.langKind = newLangKind
       })
-      this.$EventBus.$on('updateResumeSelfAccess', (newSelfAccess)=>{
-        this.personalInfo.selfAssess = newSelfAccess;
+      this.$EventBus.$on('updateResumeSelfAccess', (newSelfAccess) => {
+        this.personalInfo.selfAssess = newSelfAccess
       })
     },
-    data(){
+    data() {
       return {
         personalInfo: {
           basicInfo: {
-            name: ['姓名','张三丰'],
-            phone: ['手机号码','18850888958'],
-            mail: ['邮箱','1188061078@qq.com'],
-            IDCard: ['个人证件','370888189509095574'],
-            currentState: ['当前状态','2021应届生'],
-            expectedPosition: ['求职意向','大数据开发工程师']
+            name: ['姓名', '张钰鹏'],
+            phone: ['手机号码', '18850888958'],
+            mail: ['邮箱', '1188061078@qq.com'],
+            IDCard: ['个人证件', '370888189509095574'],
+            currentState: ['当前状态', '2021应届生'],
+            expectedPosition: ['求职意向', '大数据开发工程师']
           },
           eduExp: [{
-            school: ['学校','东北大学'],
-            major: ['专业','软件工程'],
-            period: ['起止时间','2018.09.07 ~ 2021.07.01'],
-            record: ['学历','硕士'],
-            scoreRank: ['成绩排名','50%'],
+            school: ['学校', '东北大学'],
+            major: ['专业', '软件工程'],
+            period: ['起止时间', '2018.09.07 ~ 2021.07.01'],
+            record: ['学历', '硕士'],
+            scoreRank: ['成绩排名', '50%'],
             studyType: ['学历类型', '统招全日制']
           }],
           hasIntern: false,
@@ -116,18 +116,18 @@
             company: ['公司', '京东'],
             period: ['时间', '2020.08.01~2020.05.01'],
             position: ['岗位', '前端开发实习生'],
-            describe: ['描述', '实习过程中具体用到的技术栈具体用到的技术栈']
+            describe: ['描述', '参照需求文档及 UI 设计原型图编写前端界面，主要使用 Element UI、Scss 和 flex 布局调整页面样式 封装过搜索、情报总览、tag 标签、统计 ECharts 饼图 等 公共组件，并根据需求对其进行维护和改进 使用 axios 和后端进行数据交互，配合后端人员确认接口传值字段，并进行业务 接口联调 测试 根据最新的提测报告和测试人员的参考意见，对开发过程中产生的缺陷进行补充和完善']
           }],
           projectExp: [{
-            projectName: ['项目名称','我的个人主页'],
-            projectRole: ['项目角色','前端模块负责人'],
-            period: ['起止时间','2018.09 ~ 2021.07'],
-            projectURL: ['项目链接','https://github.com/yingjieweb'],
-            describe: ['项目描述', '一款基于 Vue+TypeScript 开发的个人主页，内容包含个人简介、博客、项目等']
+            projectName: ['项目名称', '我的个人主页'],
+            projectRole: ['项目角色', '前端模块负责人'],
+            period: ['起止时间', '2018.09 ~ 2021.07'],
+            projectURL: ['项目链接', 'https://github.com/yingjieweb'],
+            describe: ['项目描述', '一款基于 Vue+TypeScript 开发的个人主页，内容包含个人简介、博客、项目等、项目的主要代码 60% 涉及 TypeScript，并结合 Vue 类组件 和装饰器进行开发 通过 前端路由 划分项目模块，主要有个人简介、博文总结、项目汇总以及个人的愿望清单  ']
           }],
           langKind: [{
-            lang: ['语言','英语'],
-            proficient: ['掌握程度','日常会话']
+            lang: ['语言', '英语'],
+            proficient: ['掌握程度', '日常会话']
           }],
           selfAssess: '真不错，感觉自己真不错！作为一位职场新人，一定能够以积极主动的工作态度来迎接工作中的每一个挑战；团队配合能力：善于沟通，' +
               '有一定团队协作经验，具备活动策划和组织协调能力；工作态度评价：良好的责任感，吃苦耐劳，擅于管理时间，勇于面对变化和挑战。'
@@ -163,19 +163,24 @@
         margin-bottom: 8px;
         border-bottom: 1px solid #909399;
       }
+
       .eduExpItems {
         &:hover {
           background-color: #F9FBFF;
         }
+
         .school_period {
           display: flex;
           justify-content: space-between;
         }
+
         .major_scoreRank {
           display: flex;
           justify-content: space-around;
 
-          .major {margin-left: -60px}
+          .major {
+            margin-left: -60px
+          }
         }
       }
     }
@@ -188,10 +193,12 @@
         margin-bottom: 8px;
         border-bottom: 1px solid #909399;
       }
+
       .internExpItems {
         &:hover {
           background-color: #F9FBFF;
         }
+
         .company_period {
           display: flex;
           justify-content: space-between;
@@ -207,10 +214,12 @@
         margin-bottom: 8px;
         border-bottom: 1px solid #909399;
       }
+
       .projectExpItems {
         &:hover {
           background-color: #F9FBFF;
         }
+
         .projectInfo {
           display: flex;
           justify-content: space-between;
@@ -226,10 +235,12 @@
         margin-bottom: 8px;
         border-bottom: 1px solid #909399;
       }
+
       .langKindItems {
         &:hover {
           background-color: #F9FBFF;
         }
+
         .langAbilityInfo {
           display: flex;
           justify-content: space-between;
@@ -239,6 +250,7 @@
 
     .selfAssess {
       margin-bottom: 8px;
+
       .title {
         font-weight: bold;
         margin-bottom: 8px;

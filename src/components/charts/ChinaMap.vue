@@ -155,7 +155,7 @@
               hoverSymbolSize: 10,
               tooltip: {
                 formatter(value) {
-                  return value.data.name + "<br/>" + "设备数：" + "22";
+                  return value.data.name + "<br/>" + "毕业生：" + "22";
                 },
                 show: true
               },

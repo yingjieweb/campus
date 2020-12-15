@@ -24,7 +24,7 @@
             <BarChart :option="enrollRate"></BarChart>
           </div>
           <div class="jobOrient">
-            <BarChart :option="jobOrient"></BarChart>
+            <LineChart :option="positionTrend"></LineChart>
           </div>
         </div>
       </div>
@@ -33,16 +33,18 @@
 </template>
 
 <script lang="js">
-  import BarChart from "@/components/charts/BarChart"
   import ChinaMap from "@/components/charts/ChinaMap"
+  import BarChart from "@/components/charts/BarChart"
   import PieChart from "@/components/charts/PieChart"
+  import LineChart from "@/components/charts/LineChart"
 
   export default {
     name: "GraduatesDirection",
     components: {
-      BarChart,
       ChinaMap,
-      PieChart
+      BarChart,
+      PieChart,
+      LineChart
     },
     data(){
       return {
@@ -206,6 +208,64 @@
               name: '2020年',
               type: 'bar',
               data: [4, 4, 26, 4, 13, 5]
+            }
+          ]
+        },
+        positionTrend: {
+          title: {
+            text: '近年热门岗位招聘走势'
+          },
+          tooltip: {
+            trigger: 'axis'
+          },
+          legend: {
+            top:'8%',
+            data: ['Java', 'Web', '算法', '测试', '产品', '设计']
+          },
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+          },
+          xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['2016', '2017', '2018', '2019', '2020']
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: [
+            {
+              name: 'Java',
+              type: 'line',
+              data: [1450, 1380, 1520, 1650, 1750]
+            },
+            {
+              name: 'Web',
+              type: 'line',
+              data: [462, 510, 539, 620, 750]
+            },
+            {
+              name: '算法',
+              type: 'line',
+              data: [512, 590, 730, 820, 401]
+            },
+            {
+              name: '测试',
+              type: 'line',
+              data: [378, 420, 446, 530, 590]
+            },
+            {
+              name: '产品',
+              type: 'line',
+              data: [932, 980, 1150, 1180, 1270]
+            },
+            {
+              name: '设计',
+              type: 'line',
+              data: [80, 98, 134, 185, 204]
             }
           ]
         }

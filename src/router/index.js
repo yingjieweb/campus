@@ -12,6 +12,8 @@ import AbilityAnalysis from "@/views/formativeEvaluation/abilityAnalysis/Ability
 import PersonalResume from "@/views/employRecommend/personalResume/PersonalResume"
 import GraduatesDirection from "@/views/employRecommend/graduatesDirection/GraduatesDirection"
 import EmployRecommend from "@/views/employRecommend/employRecommend/EmployRecommend"
+import Forbidden from  "@/views/statusCode/403.vue"
+import NotFound from "@/views/statusCode/404.vue"
 
 Vue.use(VueRouter)
 
@@ -69,6 +71,20 @@ const constantRoutes = [
     path: '/employ-recommend',
     name: 'EmployRecommend',
     component: EmployRecommend
+  },
+  {
+    path: '/403',
+    name: 'Forbidden',
+    component: Forbidden
+  },
+  {
+    path: '/404',
+    name: 'NotFound',
+    component: NotFound
+  },
+  {
+    path: '*',
+    redirect: '/404'
   }
 ]
 

@@ -1,35 +1,33 @@
 <template>
-  <Layout>
-    <Block title="应届生就业推荐">
-      <div slot="content">
-        <div class="search">
-          <div class="positionType">
-            <el-cascader
-                    v-model="value"
-                    :options="options"
-                    :show-all-levels="false"
-                    @change="handleChange"
-            ></el-cascader>
-          </div>
-          <input type="text" placeholder="搜索职位、公司或地点">
-          <button>搜索</button>
+  <Block title="应届生就业推荐">
+    <div slot="content">
+      <div class="search">
+        <div class="positionType">
+          <el-cascader
+                  v-model="value"
+                  :options="options"
+                  :show-all-levels="false"
+                  @change="handleChange"
+          ></el-cascader>
         </div>
-
-        <RecommendList :recommend-data="currentPageJobs"></RecommendList>
-
-        <div class="pagination">
-          <el-pagination
-                  background
-                  layout="prev, pager, next"
-                  @prev-click="prevClick"
-                  @next-click="nextClick"
-                  @current-change="currentChange"
-                  :total="totalPageCount">
-          </el-pagination>
-        </div>
+        <input type="text" placeholder="搜索职位、公司或地点">
+        <button>搜索</button>
       </div>
-    </Block>
-  </Layout>
+
+      <RecommendList :recommend-data="currentPageJobs"></RecommendList>
+
+      <div class="pagination">
+        <el-pagination
+                background
+                layout="prev, pager, next"
+                @prev-click="prevClick"
+                @next-click="nextClick"
+                @current-change="currentChange"
+                :total="totalPageCount">
+        </el-pagination>
+      </div>
+    </div>
+  </Block>
 </template>
 
 <script lang="ts">

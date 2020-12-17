@@ -1,27 +1,25 @@
 <template>
-  <Layout>
-    <Block title="能力对比分析">
-      <div slot="content" class="container">
-        <div class="search">
-          <span class="label">学校</span>
-          <el-input placeholder="请输入" style="width: 200px;"></el-input>
-          <span class="label">学院</span>
-          <el-input placeholder="请输入" style="width: 200px;"></el-input>
-          <span class="label">专业</span>
-          <el-input placeholder="请输入" style="width: 200px;"></el-input>
-          <el-button type="primary">分析</el-button>
+  <Block title="能力对比分析">
+    <div slot="content" class="container">
+      <div class="search">
+        <span class="label">学校</span>
+        <el-input placeholder="请输入" style="width: 200px;"></el-input>
+        <span class="label">学院</span>
+        <el-input placeholder="请输入" style="width: 200px;"></el-input>
+        <span class="label">专业</span>
+        <el-input placeholder="请输入" style="width: 200px;"></el-input>
+        <el-button type="primary">分析</el-button>
+      </div>
+      <div class="charts">
+        <div class="barChart">
+          <BarChart :option="option"></BarChart>
         </div>
-        <div class="charts">
-          <div class="barChart">
-            <BarChart :option="option"></BarChart>
-          </div>
-          <div class="radarChart">
-            <RadarChart></RadarChart>
-          </div>
+        <div class="radarChart">
+          <RadarChart></RadarChart>
         </div>
       </div>
-    </Block>
-  </Layout>
+    </div>
+  </Block>
 </template>
 
 <script>

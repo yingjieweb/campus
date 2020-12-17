@@ -55,7 +55,7 @@
 <style lang="scss" scoped>
   .tags {
     display: flex;
-    margin: 0 3px;
+    margin: 2px 3px 0 2px;
 
     .tagsItem {
       display: inline-block;
@@ -64,6 +64,7 @@
       justify-content: center;
       align-items: center;
       padding: 2px 4px;
+      margin: 0 2px;
 
       &:hover {
         cursor: pointer;

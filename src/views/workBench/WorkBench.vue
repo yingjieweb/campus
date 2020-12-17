@@ -1,6 +1,6 @@
 <template>
-  <Layout>
-    <div style="display:flex; justify-content: space-between;">
+  <div class="container">
+    <div style="display:flex;">
       <Block title="培养方案 - 上传列表">
         <div slot="content">
           <el-table
@@ -49,13 +49,13 @@
         </el-table>
       </div>
     </Block>
-  </Layout>
+  </div>
 </template>
 
 <script>
   export default {
     name: 'WorkBench',
-    data(){
+    data() {
       return {
         tableData: [{
           name: '教学大纲',
@@ -66,3 +66,7 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+
+</style>

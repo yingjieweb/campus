@@ -1,33 +1,31 @@
 <template>
-  <Layout>
-    <Block title="用户管理">
-      <div slot="button">
-        <el-button type="primary" size="small" plain icon="el-icon-circle-plus-outline" @click="addUser">新增</el-button>
-        <el-button type="danger" size="small" plain icon="el-icon-circle-close" @click="batchDeleteClick">删除</el-button>
-        <el-button type="primary" size="small" plain icon="el-icon-download">下载模板</el-button>
-        <el-button type="primary" size="small" plain icon="el-icon-upload">导入用户</el-button>
-      </div>
-      <div slot="operation">
-        <Search placeholder="登录名/姓名"></Search>
-      </div>
-      <div slot="content">
-        <el-table
-                ref="multipleTable"
-                :data="tableData"
-                tooltip-effect="dark"
-                border
-                @selection-change="selsChange">
-          <el-table-column type="selection" width="55"></el-table-column>
-          <el-table-column prop="username" label="登录名"></el-table-column>
-          <el-table-column prop="name" label="姓名"></el-table-column>
-          <el-table-column prop="gender" label="性别"></el-table-column>
-          <el-table-column prop="phone" label="电话"></el-table-column>
-          <el-table-column prop="address" label="地址" show-overflow-tooltip></el-table-column>
-        </el-table>
-        <UserManageModal ref="UserManageModal" @addUserInfo="addUserInfo"></UserManageModal>
-      </div>
-    </Block>
-  </Layout>
+  <Block title="用户管理">
+    <div slot="button">
+      <el-button type="primary" size="small" plain icon="el-icon-circle-plus-outline" @click="addUser">新增</el-button>
+      <el-button type="danger" size="small" plain icon="el-icon-circle-close" @click="batchDeleteClick">删除</el-button>
+      <el-button type="primary" size="small" plain icon="el-icon-download">下载模板</el-button>
+      <el-button type="primary" size="small" plain icon="el-icon-upload">导入用户</el-button>
+    </div>
+    <div slot="operation">
+      <Search placeholder="登录名/姓名"></Search>
+    </div>
+    <div slot="content">
+      <el-table
+              ref="multipleTable"
+              :data="tableData"
+              tooltip-effect="dark"
+              border
+              @selection-change="selsChange">
+        <el-table-column type="selection" width="55"></el-table-column>
+        <el-table-column prop="username" label="登录名"></el-table-column>
+        <el-table-column prop="name" label="姓名"></el-table-column>
+        <el-table-column prop="gender" label="性别"></el-table-column>
+        <el-table-column prop="phone" label="电话"></el-table-column>
+        <el-table-column prop="address" label="地址" show-overflow-tooltip></el-table-column>
+      </el-table>
+      <UserManageModal ref="UserManageModal" @addUserInfo="addUserInfo"></UserManageModal>
+    </div>
+  </Block>
 </template>
 
 <script>

@@ -1,26 +1,24 @@
 <template>
-  <Layout>
-    <Block title="个人成绩">
-      <div slot="content" class="container">
-        <div class="scoreSection">
-          <span class="title">个人成绩</span>
-          <el-table :data="tableData" stripe border>
-            <el-table-column prop="courseName" label="课程名"></el-table-column>
-            <el-table-column prop="courseScore" label="成绩"></el-table-column>
-          </el-table>
-        </div>
-        <div class="abilitySection">
-          <span class="title">个人能力</span>
-          <el-table :data="tableData2" stripe border>
-            <el-table-column prop="ability" label="能力（单项满分为10分）" width="200"></el-table-column>
-            <el-table-column prop="classRank" label="班级内排名" width="180"></el-table-column>
-            <el-table-column prop="majorRank" label="专业排名" width="180"></el-table-column>
-            <el-table-column prop="gradeRank" label="年级内排名"></el-table-column>
-          </el-table>
-        </div>
+  <Block title="个人成绩">
+    <div slot="content" class="container">
+      <div class="scoreSection">
+        <span class="title">个人成绩</span>
+        <el-table :data="tableData" stripe border>
+          <el-table-column prop="courseName" label="课程名"></el-table-column>
+          <el-table-column prop="courseScore" label="成绩"></el-table-column>
+        </el-table>
       </div>
-    </Block>
-  </Layout>
+      <div class="abilitySection">
+        <span class="title">个人能力</span>
+        <el-table :data="tableData2" stripe border>
+          <el-table-column prop="ability" label="能力（单项满分为10分）" width="200"></el-table-column>
+          <el-table-column prop="classRank" label="班级内排名" width="180"></el-table-column>
+          <el-table-column prop="majorRank" label="专业排名" width="180"></el-table-column>
+          <el-table-column prop="gradeRank" label="年级内排名"></el-table-column>
+        </el-table>
+      </div>
+    </div>
+  </Block>
 </template>
 
 <script lang="js">

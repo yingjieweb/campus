@@ -1,35 +1,33 @@
 <template>
-  <Layout>
-    <Block title="往届毕业生去向">
-      <div slot="content" class="container">
-        <div class="left">
-          <div class="jobOrient">
-            <BarChart :option="jobOrient"></BarChart>
-          </div>
-          <div class="jobOrient">
-            <BarChart :option="hotJobs"></BarChart>
-          </div>
-          <div class="jobOrient">
-            <BarChart :option="salaryRank"></BarChart>
-          </div>
+  <Block title="往届毕业生去向">
+    <div slot="content" class="container">
+      <div class="left">
+        <div class="jobOrient">
+          <BarChart :option="jobOrient"></BarChart>
         </div>
-        <div class="map">
-          <ChinaMap></ChinaMap>
+        <div class="jobOrient">
+          <BarChart :option="hotJobs"></BarChart>
         </div>
-        <div class="right">
-          <div class="jobOrient">
-            <PieChart :option="positionPredict"></PieChart>
-          </div>
-          <div class="jobOrient">
-            <BarChart :option="enrollRate"></BarChart>
-          </div>
-          <div class="jobOrient">
-            <LineChart :option="positionTrend"></LineChart>
-          </div>
+        <div class="jobOrient">
+          <BarChart :option="salaryRank"></BarChart>
         </div>
       </div>
-    </Block>
-  </Layout>
+      <div class="map">
+        <ChinaMap></ChinaMap>
+      </div>
+      <div class="right">
+        <div class="jobOrient">
+          <PieChart :option="positionPredict"></PieChart>
+        </div>
+        <div class="jobOrient">
+          <BarChart :option="enrollRate"></BarChart>
+        </div>
+        <div class="jobOrient">
+          <LineChart :option="positionTrend"></LineChart>
+        </div>
+      </div>
+    </div>
+  </Block>
 </template>
 
 <script lang="js">
@@ -46,7 +44,7 @@
       PieChart,
       LineChart
     },
-    data(){
+    data() {
       return {
         jobOrient: {
           title: {
@@ -219,7 +217,7 @@
             trigger: 'axis'
           },
           legend: {
-            top:'8%',
+            top: '8%',
             data: ['Java', 'Web', '算法', '测试', '产品', '设计']
           },
           grid: {

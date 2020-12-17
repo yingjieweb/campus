@@ -1,41 +1,39 @@
 <template>
-  <Layout>
-    <div style="display:flex;">
-      <Block title="我的个人简历"  style="flex: 6;">
-        <div slot="content" class="container">
-          <el-tabs tab-position="left" class="resumeEdit" v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane label="基本信息" name="first">
-              <BasicInfo @goNextItem="goNextItem"></BasicInfo>
-            </el-tab-pane>
-            <el-tab-pane label="教育经历" name="second">
-              <EducationExperience @goNextItem="goNextItem"></EducationExperience>
-            </el-tab-pane>
-            <el-tab-pane label="实习经历" name="third">
-              <InternExperience @goNextItem="goNextItem"></InternExperience>
-            </el-tab-pane>
-            <el-tab-pane label="项目经验" name="fourth">
-              <ProjectExperience @goNextItem="goNextItem"></ProjectExperience>
-            </el-tab-pane>
-            <el-tab-pane label="语言能力" name="fifth">
-              <LanguageAbility @goNextItem="goNextItem"></LanguageAbility>
-            </el-tab-pane>
-            <el-tab-pane label="自我评价" name="sixth">
-              <SelfAssess @goNextItem="goNextItem"></SelfAssess>
-            </el-tab-pane>
-            <el-tab-pane label="😏 求职意向" name="seventh">
-              <JobIntention></JobIntention>
-            </el-tab-pane>
-          </el-tabs>
-        </div>
-      </Block>
+  <div style="display:flex;">
+    <Block title="我的个人简历"  style="flex: 6;">
+      <div slot="content" class="container">
+        <el-tabs tab-position="left" class="resumeEdit" v-model="activeName" @tab-click="handleClick">
+          <el-tab-pane label="基本信息" name="first">
+            <BasicInfo @goNextItem="goNextItem"></BasicInfo>
+          </el-tab-pane>
+          <el-tab-pane label="教育经历" name="second">
+            <EducationExperience @goNextItem="goNextItem"></EducationExperience>
+          </el-tab-pane>
+          <el-tab-pane label="实习经历" name="third">
+            <InternExperience @goNextItem="goNextItem"></InternExperience>
+          </el-tab-pane>
+          <el-tab-pane label="项目经验" name="fourth">
+            <ProjectExperience @goNextItem="goNextItem"></ProjectExperience>
+          </el-tab-pane>
+          <el-tab-pane label="语言能力" name="fifth">
+            <LanguageAbility @goNextItem="goNextItem"></LanguageAbility>
+          </el-tab-pane>
+          <el-tab-pane label="自我评价" name="sixth">
+            <SelfAssess @goNextItem="goNextItem"></SelfAssess>
+          </el-tab-pane>
+          <el-tab-pane label="😏 求职意向" name="seventh">
+            <JobIntention></JobIntention>
+          </el-tab-pane>
+        </el-tabs>
+      </div>
+    </Block>
 
-      <Block title="简历预览图" style="flex: 4;">
-        <div slot="content" class="container">
-          <ResumePreview></ResumePreview>
-        </div>
-      </Block>
-    </div>
-  </Layout>
+    <Block title="简历预览图" style="flex: 4;">
+      <div slot="content" class="container">
+        <ResumePreview></ResumePreview>
+      </div>
+    </Block>
+  </div>
 </template>
 
 <script lang="ts">

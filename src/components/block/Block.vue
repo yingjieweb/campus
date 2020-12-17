@@ -22,7 +22,6 @@
 
 <style lang="scss" scoped>
   .block {
-    width: 100%;
     margin: 2px;
   }
 

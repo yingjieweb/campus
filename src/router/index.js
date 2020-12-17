@@ -78,13 +78,18 @@ const router = new VueRouter({
   routes: constantRoutes
 })
 
+// 路由跳转 -> 用户登录信息校验
 router.beforeEach((to, from, next) => {
-  if (to.name !== 'Login' && !store.state.isLogin) {
-    next({name: 'Login'})
-    Vue.prototype.$message({message: '如要手动执行路由跳转，需先登录用户信息！', type: 'error'})
-  } else {
-    next()
-  }
+  // console.log(store.state.isLogin)  //false
+  Vue.prototype.$nextTick(() => { // 解决刷新页面 store.state.isLogin 还没及时从 localStorage 中更新出来的问题
+    // console.log(store.state.isLogin)  // true
+    if (to.name !== 'Login' && !store.state.isLogin) {  // 即将要跳转的页面不是登录页，并且用户没有登录
+      next({name: 'Login'})
+      Vue.prototype.$message({message: '如要手动执行路由跳转，需先登录用户信息！', type: 'error'})
+    } else {
+      next()
+    }
+  })
 })
 
 export default router

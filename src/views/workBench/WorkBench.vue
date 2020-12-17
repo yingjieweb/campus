@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div style="display:flex;">
-      <Block title="培养方案 - 上传列表">
+    <div style="display: flex;">
+      <Block title="培养方案 - 上传列表" style="flex: 1;">
         <div slot="content">
           <el-table
                   ref="multipleTable"
@@ -16,7 +16,7 @@
         </div>
       </Block>
 
-      <Block title="培养方案 - 分发列表">
+      <Block title="培养方案 - 分发列表" style="flex: 1;">
         <div slot="content">
           <el-table
                   ref="multipleTable"

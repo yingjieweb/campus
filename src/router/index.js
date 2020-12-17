@@ -25,62 +25,74 @@ const constantRoutes = [
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: Login,
+    meta: { title: '登录' }
   },
   {
     path: '/work-bench',
     name: 'WorkBench',
-    component: WorkBench
+    component: WorkBench,
+    meta: { title: '系统首页' }
   },
   {
     path: '/course-construct',
     name: 'CourseConstruct',
-    component: CourseConstruct
+    component: CourseConstruct,
+    meta: { title: '课程建设' }
   },
   {
     path: '/score-enquiry',
     name: 'ScoreEnquiry',
-    component: ScoreEnquiry
+    component: ScoreEnquiry,
+    meta: { title: '成绩查询' }
   },
   {
     path: '/user-manage',
     name: 'UserManage',
-    component: UserManage
+    component: UserManage,
+    meta: { title: '用户管理' }
   },
   {
     path: '/ability-degree',
     name: 'AbilityDegree',
-    component: AbilityDegree
+    component: AbilityDegree,
+    meta: { title: '个人能力达成度' }
   },
   {
     path: '/ability-analysis',
     name: 'AbilityAnalysis',
-    component: AbilityAnalysis
+    component: AbilityAnalysis,
+    meta: { title: '能力对比分析' }
   },
   {
     path: '/personal-resume',
     name: 'PersonalResume',
-    component: PersonalResume
+    component: PersonalResume,
+    meta: { title: '个人信息及简历' }
   },
   {
     path: '/graduates-direction',
     name: 'GraduatesDirection',
-    component: GraduatesDirection
+    component: GraduatesDirection,
+    meta: { title: '往届毕业生去向' }
   },
   {
     path: '/employ-recommend',
     name: 'EmployRecommend',
-    component: EmployRecommend
+    component: EmployRecommend,
+    meta: { title: '就业岗位去向' }
   },
   {
     path: '/403',
     name: 'Forbidden',
-    component: Forbidden
+    component: Forbidden,
+    meta: { title: 'Forbidden' }
   },
   {
     path: '/404',
     name: 'NotFound',
-    component: NotFound
+    component: NotFound,
+    meta: { title: 'NotFound' }
   },
   {
     path: '*',

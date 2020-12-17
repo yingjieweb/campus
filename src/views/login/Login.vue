@@ -4,8 +4,15 @@
       <div class="avatar">
         <img src="@/assets/images/login.png" alt="avatar">
       </div>
-      <el-input style="margin: 10px auto" placeholder="学号" prefix-icon="el-icon-user" v-model="studentNo"></el-input>
-      <el-input style="margin: 14px auto" placeholder="密码" prefix-icon="el-icon-lock" v-model="password"
+      <el-input style="margin: 10px auto"
+                placeholder="学号"
+                prefix-icon="el-icon-user"
+                v-model="studentNo"
+                ref="studentNoInput"></el-input>
+      <el-input style="margin: 14px auto"
+                placeholder="密码"
+                prefix-icon="el-icon-lock"
+                v-model="password"
                 show-password
                 @keydown.enter.native="onsubmit">
       </el-input>
@@ -32,21 +39,24 @@
           return item.studentNo === this.studentNo
         })
 
-        if (currentStudent.length === 1){
-          if (currentStudent[0].password === this.password){
-            this.$message({message: '登陆成功', type: 'success'});
+        if (currentStudent.length === 1) {
+          if (currentStudent[0].password === this.password) {
+            this.$message({message: '登陆成功', type: 'success'})
 
-            this.$store.commit('changeLoginStatus', true);
-            this.$router.push('/work-bench');
+            this.$store.commit('changeLoginStatus', true)
+            this.$router.push('/work-bench')
 
-            this.$store.commit('getUserInfo', currentStudent[0]);
+            this.$store.commit('getUserInfo', currentStudent[0])
           } else {
-            this.$message({message: '密码错误，请重新输入！', type: 'error'});
+            this.$message({message: '密码错误，请重新输入！', type: 'error'})
           }
         } else {
-          this.$message({message: '当前用户不存在！', type: 'error'});
+          this.$message({message: '当前用户不存在！', type: 'error'})
         }
       }
+    },
+    mounted() {
+      this.$refs.studentNoInput.focus()
     }
   }
 </script>

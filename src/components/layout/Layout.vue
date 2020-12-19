@@ -1,26 +1,17 @@
 <template>
   <el-container style="height: 100vh; width: 100vw;">
-    <el-aside class="aside" width="220px" v-if="$route.name !== 'Login'">
-      <router-link to="/work-bench">
-        <div class="logo">
-          <p class="intro">
-            <strong class="strong">大学生就业推荐系统 </strong>
-            <span class="version">1.0.0</span>
-          </p>
-          <p class="english">
-            <span>Employment recommendation</span>
-          </p>
-        </div>
-      </router-link>
-      <Nav></Nav>
-    </el-aside>
     <el-container>
       <el-header height="50px" style="padding: 0;" v-if="$route.name !== 'Login'">
-        <Header></Header>
+        <Header @toggleMenuCollapse="toggleMenuCollapse"></Header>
       </el-header>
       <el-main class="main">
-        <RouterTags v-if="$route.name !== 'Login'"></RouterTags>
-        <router-view/>
+        <div class="sidebar"  v-if="$route.name !== 'Login'">
+          <Nav :isCollapse="menuCollapse"></Nav>
+        </div>
+        <div class="content">
+          <RouterTags v-if="$route.name !== 'Login'"></RouterTags>
+          <router-view/>
+        </div>
       </el-main>
     </el-container>
   </el-container>
@@ -37,47 +28,34 @@
       Header,
       RouterTags,
       Nav
+    },
+    data() {
+      return {
+        menuCollapse: false
+      }
+    },
+    methods: {
+      toggleMenuCollapse(value) {
+        this.menuCollapse = value
+      }
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  .aside {
-    height: 100vh;
-    background-color: #20335D;
-
-    .logo {
-      height: 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-
-      > .intro {
-        > .strong {
-          color: #F3F6F8;
-          vertical-align: top;
-        }
-
-        > .version {
-          display: inline-block;
-          margin-top: 1px;
-          font-size: 12px;
-          padding: 2px;
-          border: 1px solid #F9D149;
-          border-radius: 10px;
-          color: #F9D149;
-        }
-      }
-
-      > .english {
-        color: #D8D7D1;
-      }
-    }
-  }
-
   .main {
     padding: 0;
+    display: flex;
     background-color: #F2F2F2;
+
+    .sidebar {
+      background-color: #2c3e50;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
   }
 </style>

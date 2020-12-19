@@ -6,6 +6,7 @@
       background-color="#20335D"
       text-color="#fff"
       style="border-right: none;"
+      :collapse="isCollapse"
       unique-opened
       router>
       <el-submenu index="1">
@@ -74,6 +75,12 @@
 <script>
   export default {
     name: "Nav",
+    props: {
+      isCollapse: {
+        type: Boolean,
+        default: true
+      }
+    },
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);

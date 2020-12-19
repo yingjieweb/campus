@@ -34,13 +34,13 @@
         username: this.$store.state.currentUser.username,
         circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
         operationVisible: false,
-        menuCollapse: true
+        menuCollapse: false
       }
     },
     methods: {
       toggleMenuCollapse() {
         this.menuCollapse = !this.menuCollapse
-        this.$emit('toggleMenuCollapse', this.menuCollapse)
+        this.$EventBus.$emit('toggleMenuCollapse', this.menuCollapse)
       },
       logout(){
         this.$router.push('/login');

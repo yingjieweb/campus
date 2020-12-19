@@ -75,16 +75,20 @@
 <script>
   export default {
     name: "Nav",
-    props: {
-      isCollapse: {
-        type: Boolean,
-        default: true
-      }
-    },
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
       }
+    },
+    data() {
+      return {
+        isCollapse: false
+      }
+    },
+    created() {
+      this.$EventBus.$on('toggleMenuCollapse', (status) => {
+        this.isCollapse = status
+      })
     }
   }
 </script>

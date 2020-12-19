@@ -2,11 +2,11 @@
   <el-container style="height: 100vh; width: 100vw;">
     <el-container>
       <el-header height="50px" style="padding: 0;" v-if="$route.name !== 'Login'">
-        <Header @toggleMenuCollapse="toggleMenuCollapse"></Header>
+        <Header></Header>
       </el-header>
       <el-main class="main">
         <div class="sidebar"  v-if="$route.name !== 'Login'">
-          <Nav :isCollapse="menuCollapse"></Nav>
+          <Nav></Nav>
         </div>
         <div class="content">
           <RouterTags v-if="$route.name !== 'Login'"></RouterTags>
@@ -28,16 +28,6 @@
       Header,
       RouterTags,
       Nav
-    },
-    data() {
-      return {
-        menuCollapse: false
-      }
-    },
-    methods: {
-      toggleMenuCollapse(value) {
-        this.menuCollapse = value
-      }
     }
   }
 </script>

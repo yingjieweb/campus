@@ -22,6 +22,7 @@
         return path === this.$route.fullPath;
       },
       setTags(route) {
+        if (!route.name) return // 清除重定向的路由信息
         const isExist = this.tagsList.some(item => {
           return item.path === route.fullPath
         })
@@ -70,16 +71,14 @@
     margin: 2px 3px 0 2px;
 
     .tagsItem {
-      display: inline-block;
-      justify-content: center;
-      align-items: center;
+      color: #303133;
+      padding: 2px 4px;
+      margin: 0 2px;
+      white-space: nowrap;
       border: 1px solid #d3d4d6;
       border-radius: 4px;
       background-color: #fff;
-      padding: 2px 4px;
-      margin: 0 2px;
-      line-height: 21px;
-      color: #303133;
+      cursor: pointer;
 
       &:not(.active):hover {
         background: #f8f8f8;

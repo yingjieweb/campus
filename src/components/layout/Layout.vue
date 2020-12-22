@@ -39,7 +39,7 @@
     background-color: #F2F2F2;
 
     .sidebar {
-      background-color: #2c3e50;
+      background-color: #20335D;
     }
 
     .content {

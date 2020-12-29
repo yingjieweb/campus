@@ -141,7 +141,7 @@
         </div>
 
         <div class="evaluate">
-          <el-button type="primary" plain>能力评价</el-button>
+          <el-button type="primary">能力评价</el-button>
         </div>
 
         <div class="lineChart">
@@ -297,11 +297,13 @@
 
       .evaluate {
         margin-right: 3px;
+        display: flex;
+        justify-content: center;
 
         ::v-deep .el-button {
-          width: 100%;
+          width: 20%;
           padding: 6px 20px;
-          margin: 2px 0;
+          margin: 2px;
         }
       }
 

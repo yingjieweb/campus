@@ -140,6 +140,10 @@
           </div>
         </div>
 
+        <div class="evaluate">
+          <el-button type="primary" plain>能力评价</el-button>
+        </div>
+
         <div class="lineChart">
           <LineChart :option="option"></LineChart>
         </div>
@@ -170,7 +174,7 @@
             text: '个人能力曲线'
           },
           legend: {
-            data: ['专业能力', '学习能力', '协作能力', '管理能力']
+            data: ['专业能力', '学习能力', '实践能力', '创新能力']
           },
           xAxis: {
             type: 'category',
@@ -184,26 +188,22 @@
             {
               name: '专业能力',
               type: 'line',
-              stack: '总量',
-              data: [162, 182, 191, 234]
+              data: [6.2, 8.2, 9.1, 3.4]
             },
             {
               name: '学习能力',
               type: 'line',
-              stack: '总量',
-              data: [150, 232, 201, 154]
+              data: [5.0, 3.2, 7.1, 6.4]
             },
             {
-              name: '协作能力',
+              name: '实践能力',
               type: 'line',
-              stack: '总量',
-              data: [320, 332, 301, 334]
+              data: [6.3, 6.2, 8.1, 6.4]
             },
             {
-              name: '管理能力',
+              name: '创新能力',
               type: 'line',
-              stack: '总量',
-              data: [225, 486, 301, 534]
+              data: [7.5, 8.6, 9.1, 8.4]
             }
           ]
         },
@@ -247,10 +247,18 @@
         }
       }
 
+      .evaluate {
+        margin-right: 3px;
+
+        ::v-deep .el-button {
+          width: 100%;
+          padding: 6px 20px;
+          margin: 2px 0;
+        }
+      }
+
       .lineChart {
-        flex: 1;
         height: 350px;
-        margin-top: 5px;
         margin-right: 3px;
         border: 1px solid gainsboro;
       }

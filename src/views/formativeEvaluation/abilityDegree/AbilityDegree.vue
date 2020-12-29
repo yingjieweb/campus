@@ -145,12 +145,12 @@
         </div>
 
         <div class="lineChart">
-          <LineChart :option="option"></LineChart>
+          <LineChart :option="lineOption"></LineChart>
         </div>
       </div>
       <div class="right">
         <div class="radarChart">
-          <radarChart></radarChart>
+          <radarChart :option="radarOption"></radarChart>
         </div>
       </div>
     </div>
@@ -169,7 +169,7 @@
     },
     data() {
       return {
-        option: {
+        lineOption: {
           title: {
             text: '个人能力曲线'
           },
@@ -206,6 +206,54 @@
               data: [7.5, 8.6, 9.1, 8.4]
             }
           ]
+        },
+        radarOption: {
+          title: {
+            text: '全方位能力分析雷达图'
+          },
+          tooltip: {},
+          legend: {
+            data: ['第一学年能力评价', '第二学年能力评价', '第三学年能力评价', '第四学年能力评价']
+          },
+          radar: {
+            // shape: 'circle',
+            name: {
+              textStyle: {
+                color: '#fff',
+                backgroundColor: '#999',
+                borderRadius: 20,
+                padding: [3, 5]
+              }
+            },
+            indicator: [
+              { name: '专业能力', max: 10},
+              { name: '学习能力', max: 10},
+              { name: '实践能力', max: 10},
+              { name: '创新能力', max: 10}
+            ]
+          },
+          series: [{
+            name: '预算 vs 开销（Budget vs spending）',
+            type: 'radar',
+            data: [
+              {
+                value: [6.2, 5.0, 6.3, 7.5],
+                name: '第一学年能力评价'
+              },
+              {
+                value: [8.2, 3.2, 6.2, 8.6],
+                name: '第二学年能力评价'
+              },
+              {
+                value: [9.1, 7.1, 8.1, 9.1],
+                name: '第三学年能力评价'
+              },
+              {
+                value: [9.1, 3.4, 6.4, 8.4],
+                name: '第四学年能力评价'
+              }
+            ]
+          }]
         },
         form: {
           basicAverageScore: '',

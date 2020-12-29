@@ -12,10 +12,10 @@
       </div>
       <div class="charts">
         <div class="barChart">
-          <BarChart :option="option"></BarChart>
+          <BarChart :option="barOption"></BarChart>
         </div>
         <div class="radarChart">
-          <RadarChart></RadarChart>
+          <RadarChart :option="radarOption"></RadarChart>
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@
     },
     data() {
       return {
-        option: {
+        barOption: {
           title: {
             text: '个人能力与往届平均能力对比柱状图'
           },
@@ -59,6 +59,47 @@
             {type: 'bar'},
             {type: 'bar'}
           ]
+        },
+        radarOption: {
+          title: {
+            text: '全方位能力分析雷达图'
+          },
+          tooltip: {},
+          legend: {
+            data: ['平均能力分布', '个人能力分布图']
+          },
+          radar: {
+            // shape: 'circle',
+            name: {
+              textStyle: {
+                color: '#fff',
+                backgroundColor: '#999',
+                borderRadius: 20,
+                padding: [3, 5]
+              }
+            },
+            indicator: [
+              { name: '专业能力', max: 10},
+              { name: '学习能力', max: 10},
+              { name: '实践能力', max: 10},
+              { name: '创新能力', max: 10}
+            ]
+          },
+          series: [{
+            name: '平均能力分布 vs 个人能力分布图',
+            type: 'radar',
+            // areaStyle: {normal: {}},
+            data: [
+              {
+                value: [4.3, 7.1, 6.9, 8.0],
+                name: '平均能力分布'
+              },
+              {
+                value: [8.2, 6.0, 7.4, 6.8],
+                name: '个人能力分布图'
+              }
+            ]
+          }]
         }
       }
     }

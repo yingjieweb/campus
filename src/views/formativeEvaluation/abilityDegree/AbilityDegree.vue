@@ -209,11 +209,11 @@
         },
         radarOption: {
           title: {
-            text: '全方位能力分析雷达图'
+            text: '全方位能力分析'
           },
           tooltip: {},
           legend: {
-            data: ['第一学年能力评价', '第二学年能力评价', '第三学年能力评价', '第四学年能力评价']
+            data: ['第一学年', '第二学年', '第三学年', '第四学年']
           },
           radar: {
             // shape: 'circle',
@@ -234,23 +234,26 @@
           },
           series: [{
             name: '预算 vs 开销（Budget vs spending）',
+            nameTextStyle: {
+              padding: [0, 0, 0, 10]    // 四个数字分别为上右下左与原位置距离
+            },
             type: 'radar',
             data: [
               {
                 value: [6.2, 5.0, 6.3, 7.5],
-                name: '第一学年能力评价'
+                name: '第一学年'
               },
               {
                 value: [8.2, 3.2, 6.2, 8.6],
-                name: '第二学年能力评价'
+                name: '第二学年'
               },
               {
                 value: [9.1, 7.1, 8.1, 9.1],
-                name: '第三学年能力评价'
+                name: '第三学年'
               },
               {
                 value: [9.1, 3.4, 6.4, 8.4],
-                name: '第四学年能力评价'
+                name: '第四学年'
               }
             ]
           }]

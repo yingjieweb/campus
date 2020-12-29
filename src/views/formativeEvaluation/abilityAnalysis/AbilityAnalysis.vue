@@ -62,11 +62,11 @@
         },
         radarOption: {
           title: {
-            text: '全方位能力分析雷达图'
+            text: '全方位能力分析'
           },
           tooltip: {},
           legend: {
-            data: ['平均能力分布', '个人能力分布图']
+            data: ['平均能力分布', '个人能力分布']
           },
           radar: {
             // shape: 'circle',

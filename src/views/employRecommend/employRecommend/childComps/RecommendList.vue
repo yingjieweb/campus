@@ -25,6 +25,7 @@
   .recommendList {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 16px;
+    /*border: 1px solid red;*/
+    justify-content: flex-start;
   }
 </style>

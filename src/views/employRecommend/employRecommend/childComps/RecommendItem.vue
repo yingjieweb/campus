@@ -21,7 +21,9 @@
     props: {
       recommendItem: {
         type: Object,
-        default: {}
+        default() {
+          return {}
+        }
       }
     }
   }
@@ -29,10 +31,12 @@
 
 <style lang="scss" scoped>
   .recommendItem {
-    border: 1px solid gainsboro;
-    width: 525px;
+    width: 32.8%;
+    margin: 4px;
     padding: 18px 18px 10px 18px;
-    margin: 6px;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+    cursor: pointer;
 
     &:hover {box-shadow: 5px 5px 20px rgba(0,0,0,.05);}
 

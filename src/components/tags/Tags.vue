@@ -71,9 +71,11 @@
     margin: 2px 3px 0 2px;
 
     .tagsItem {
-      color: #303133;
+      color: dimgrey;
       padding: 2px 4px;
       margin: 0 2px;
+      font-size: 16px;
+      line-height: 16px;
       white-space: nowrap;
       border: 1px solid #d3d4d6;
       border-radius: 4px;

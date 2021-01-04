@@ -12,6 +12,7 @@ import AbilityAnalysis from "@/views/formativeEvaluation/abilityAnalysis/Ability
 import PersonalResume from "@/views/employRecommend/personalResume/PersonalResume"
 import GraduatesDirection from "@/views/employRecommend/graduatesDirection/GraduatesDirection"
 import EmployRecommend from "@/views/employRecommend/employRecommend/EmployRecommend"
+import PositionDetails from "@/views/employRecommend/employRecommend/childComps/PositionDetails"
 import Forbidden from  "@/views/statusCode/403.vue"
 import NotFound from "@/views/statusCode/404.vue"
 
@@ -81,6 +82,12 @@ const constantRoutes = [
     name: 'EmployRecommend',
     component: EmployRecommend,
     meta: { title: '就业岗位去向' }
+  },
+  {
+    path: '/position-details',
+    name: 'PositionDetails',
+    component: PositionDetails,
+    meta: { title: '岗位详情' }
   },
   {
     path: '/403',

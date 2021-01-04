@@ -1,5 +1,5 @@
 <template>
-  <div class="recommendItem">
+  <div class="recommendItem" @click="goDetails(recommendItem.id)">
     <div class="recruitInfo">
       <div class="jobs">{{recommendItem.jobs}}</div>
       <div class="salary">{{recommendItem.salary}}</div>
@@ -24,6 +24,14 @@
         default() {
           return {}
         }
+      }
+    },
+    methods: {
+      goDetails(id) {
+        this.$router.push({
+          path: '/position-details',
+          query: { positionId: id },
+        })
       }
     }
   }

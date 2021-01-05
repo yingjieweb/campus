@@ -23,9 +23,9 @@
 
 <style lang="scss" scoped>
   .recommendList {
+    min-width: 1502px;
     display: flex;
     flex-wrap: wrap;
-    /*border: 1px solid red;*/
     justify-content: flex-start;
   }
 </style>

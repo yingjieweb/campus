@@ -9,8 +9,11 @@
       <span class="label" v-for="item in recommendItem.label">{{item}}</span>
     </div>
     <div class="companyInfo">
-      <div class="company">{{recommendItem.company}}</div>
-      <div class="introduce">{{recommendItem.introduce}}</div>
+      <img class="avatar" :src="recommendItem.companyAvatar">
+      <div class="info">
+        <div class="company">{{recommendItem.company}}</div>
+        <div class="introduce">{{recommendItem.introduce}}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -48,30 +51,42 @@
 
     &:hover {box-shadow: 5px 5px 20px rgba(0,0,0,.05);}
 
-    > .recruitInfo {
+    .recruitInfo {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      > .jobs {font-size: 1.5em;}
-      > .salary {font-size: 1.5em; color: red;}
+      .jobs {font-size: 1.5em;}
+      .salary {font-size: 1.5em; color: red;}
     }
 
-    > .direction {
+    .direction {
       padding-bottom: 18px;
       border-bottom: 1px dashed gainsboro;
 
-      > .experience {margin: 8px 0;}
-      > .label {
+      .experience {margin: 8px 0;}
+      .label {
         border: 1px solid gainsboro;
         margin-right: 5px;
         padding: 2px;
       }
     }
 
-    > .companyInfo {
-      > .company {margin: 5px 0;}
-      > .introduce {margin: 5px 0;}
+    .companyInfo {
+      display: flex;
+      padding-top: 10px;
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+      }
+
+      .info {
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
     }
   }
 </style>

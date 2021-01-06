@@ -60,14 +60,18 @@
         <el-menu-item index="/ability-analysis"><i class="el-icon-caret-right"></i>能力对比分析</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
-    <el-submenu index="9" v-if="this.$store.state.permission">
-      <template slot="title"><i class="el-icon-s-promotion"></i><span>应届生就业推荐</span></template>
-      <el-menu-item-group>
-        <el-menu-item index="/personal-resume"><i class="el-icon-caret-right"></i>个人信息及简历</el-menu-item>
-        <el-menu-item index="/graduates-direction"><i class="el-icon-caret-right"></i>往届毕业生去向</el-menu-item>
-        <el-menu-item index="/employ-recommend"><i class="el-icon-caret-right"></i>就业岗位推荐</el-menu-item>
-      </el-menu-item-group>
-    </el-submenu>
+    <el-menu-item index="/personal-resume" v-if="this.$store.state.permission">
+      <i class="el-icon-s-order"></i>
+      <span slot="title">我的简历</span>
+    </el-menu-item>
+    <el-menu-item index="/employ-recommend" v-if="this.$store.state.permission">
+      <i class="el-icon-s-marketing"></i>
+      <span slot="title">就业岗位推荐</span>
+    </el-menu-item>
+    <el-menu-item index="/graduates-direction" v-if="this.$store.state.permission">
+      <i class="el-icon-s-promotion"></i>
+      <span slot="title">往届毕业生去向</span>
+    </el-menu-item>
   </el-menu>
 </template>
 

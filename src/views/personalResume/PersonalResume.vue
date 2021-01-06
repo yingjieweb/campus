@@ -1,6 +1,6 @@
 <template>
   <div style="display:flex;">
-    <Block title="我的个人简历"  style="flex: 6;">
+    <Block title="我的简历"  style="flex: 6;">
       <div slot="content" class="container">
         <el-tabs tab-position="left" class="resumeEdit" v-model="activeName" @tab-click="handleClick">
           <el-tab-pane label="基本信息" name="first">

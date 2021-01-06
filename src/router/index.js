@@ -10,9 +10,9 @@ import ScoreEnquiry from "@/views/dataCenter/ScoreEnquiry"
 import AbilityDegree from "@/views/formativeEvaluation/abilityDegree/AbilityDegree"
 import AbilityAnalysis from "@/views/formativeEvaluation/abilityAnalysis/AbilityAnalysis"
 import PersonalResume from "@/views/personalResume/PersonalResume"
-import GraduatesDirection from "@/views/graduatesDirection/GraduatesDirection"
 import EmployRecommend from "@/views/employRecommend/EmployRecommend"
 import PositionDetails from "@/views/employRecommend/childComps/PositionDetails"
+import GraduatesDirection from "@/views/graduatesDirection/GraduatesDirection"
 import Forbidden from  "@/views/statusCode/403.vue"
 import NotFound from "@/views/statusCode/404.vue"
 
@@ -69,25 +69,25 @@ const constantRoutes = [
     path: '/personal-resume',
     name: 'PersonalResume',
     component: PersonalResume,
-    meta: { title: '个人信息及简历' }
-  },
-  {
-    path: '/graduates-direction',
-    name: 'GraduatesDirection',
-    component: GraduatesDirection,
-    meta: { title: '往届毕业生去向' }
+    meta: { title: '我的简历' }
   },
   {
     path: '/employ-recommend',
     name: 'EmployRecommend',
     component: EmployRecommend,
-    meta: { title: '就业岗位去向' }
+    meta: { title: '就业岗位推荐' }
   },
   {
     path: '/position-details',
     name: 'PositionDetails',
     component: PositionDetails,
     meta: { title: '岗位详情' }
+  },
+  {
+    path: '/graduates-direction',
+    name: 'GraduatesDirection',
+    component: GraduatesDirection,
+    meta: { title: '往届毕业生去向' }
   },
   {
     path: '/403',

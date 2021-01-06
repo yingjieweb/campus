@@ -23,8 +23,8 @@
 </template>
 
 <script lang="js">
-  import ResumeViewTitle from "@/views/employRecommend/personalResume/childComps/ResumeViewTitle"
-  import JobIntentionModal from "@/views/employRecommend/personalResume/childComps/JobIntentionModal"
+  import ResumeViewTitle from "@/views/personalResume/childComps/ResumeViewTitle"
+  import JobIntentionModal from "@/views/personalResume/childComps/JobIntentionModal"
 
   export default {
     name: "JobIntention",

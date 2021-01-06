@@ -23,8 +23,8 @@
 </template>
 
 <script lang="js">
-  import ResumeViewTitle from "@/views/employRecommend/personalResume/childComps/ResumeViewTitle"
-  import ProjectExperienceModal from "@/views/employRecommend/personalResume/childComps/ProjectExperienceModal"
+  import ResumeViewTitle from "@/views/personalResume/childComps/ResumeViewTitle"
+  import ProjectExperienceModal from "@/views/personalResume/childComps/ProjectExperienceModal"
 
   export default {
     name: "ProjectExperience",

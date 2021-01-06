@@ -9,7 +9,7 @@
 </template>
 
 <script lang="js">
-  import recommendData from "../../../../database/recommendData.js"
+  import recommendData from "@/database/recommendData"
 
   export default {
     name: "PositionDetails",

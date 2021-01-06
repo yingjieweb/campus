@@ -33,7 +33,7 @@
 <script lang="ts">
   import RecommendList from "./childComps/RecommendList.vue";
   import RecommendItem from "./childComps/RecommendItem.vue";
-  import recommendData from "../../../database/recommendData"
+  import recommendData from "../../database/recommendData";
 
   export default {
     name: "EmployRecommend",

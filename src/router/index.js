@@ -11,6 +11,7 @@ import AbilityDegree from "@/views/formativeEvaluation/abilityDegree/AbilityDegr
 import AbilityAnalysis from "@/views/formativeEvaluation/abilityAnalysis/AbilityAnalysis"
 import PersonalResume from "@/views/personalResume/PersonalResume"
 import EmployRecommend from "@/views/employRecommend/EmployRecommend"
+import CampusRecruit from "@/views/campusRecruit/CampusRecruit"
 import PositionDetails from "@/views/employRecommend/childComps/PositionDetails"
 import GraduatesDirection from "@/views/graduatesDirection/GraduatesDirection"
 import Forbidden from  "@/views/statusCode/403.vue"
@@ -70,6 +71,12 @@ const constantRoutes = [
     name: 'PersonalResume',
     component: PersonalResume,
     meta: { title: '我的简历' }
+  },
+  {
+    path: '/campus-recruit',
+    name: 'CampusRecruit',
+    component: CampusRecruit,
+    meta: { title: '校园招聘' }
   },
   {
     path: '/employ-recommend',

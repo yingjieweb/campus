@@ -62,6 +62,7 @@
 
     > .hiddenNav {
         padding: 0 5px;
+        cursor: pointer;
 
         i {
           font-size: 1.5em;

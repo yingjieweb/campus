@@ -68,6 +68,10 @@
       <i class="el-icon-s-home"></i>
       <span slot="title">校园招聘</span>
     </el-menu-item>
+    <el-menu-item index="/hot-company" v-if="this.$store.state.permission">
+      <i class="el-icon-office-building"></i>
+      <span slot="title">热门公司</span>
+    </el-menu-item>
     <el-menu-item index="/employ-recommend" v-if="this.$store.state.permission">
       <i class="el-icon-s-marketing"></i>
       <span slot="title">就业岗位推荐</span>

@@ -24,13 +24,6 @@
       <i class="el-icon-folder"></i>
       <span slot="title">课程建设</span>
     </el-menu-item>
-    <el-submenu index="4">
-      <template slot="title"><i class="el-icon-aim"></i><span>学校标准</span></template>
-      <el-menu-item-group>
-        <el-menu-item index="4-1"><i class="el-icon-caret-right"></i>学校标准1</el-menu-item>
-        <el-menu-item index="4-2"><i class="el-icon-caret-right"></i>学校标准2</el-menu-item>
-      </el-menu-item-group>
-    </el-submenu>
     <el-submenu index="5">
       <template slot="title"><i class="el-icon-aim"></i><span>数据中心</span></template>
       <el-menu-item-group>

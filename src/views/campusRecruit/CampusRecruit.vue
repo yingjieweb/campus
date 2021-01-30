@@ -71,14 +71,19 @@
         </div>
         <div class="profile">求职信息占位</div>
       </div>
-      <div class="hot-job"></div>
+      <HotCompany></HotCompany>
     </div>
   </Block>
 </template>
 
 <script lang="js">
+  import HotCompany from "@/views/campusRecruit/HotCompany"
+
   export default {
     name: "CampusRecruit",
+    components: {
+      HotCompany
+    },
     data() {
       return {
         recommendList: [

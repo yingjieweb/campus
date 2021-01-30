@@ -6,7 +6,7 @@
         <button>搜索</button>
       </div>
       <div class="banner">
-        <div class="positions"></div>
+        <div class="positions">岗位选择占位</div>
         <div class="hot-recommend">
           <div class="hot-position">
             <div class="head">
@@ -16,11 +16,14 @@
             <div class="positionsList" v-for="item in recommendList" :key="item.name">
               <div class="positionItem">
                 <div class="avatar">
-                  <img :src="item.avatar">
+                  <img :src="item.companyAvatar">
                 </div>
                 <div class="info">
-                  <div class="name">{{item.name}}</div>
-                  <div class="intro">{{item.intro}}</div>
+                  <div class="name">
+                    <span class="company">{{item.company}}</span>
+                    <span class="salary">{{item.salary}}</span>
+                  </div>
+                  <div class="intro">{{item.introduce}}</div>
                 </div>
               </div>
             </div>
@@ -33,11 +36,14 @@
             <div class="positionsList" v-for="item in recommendList" :key="item.name">
               <div class="positionItem">
                 <div class="avatar">
-                  <img :src="item.avatar">
+                  <img :src="item.companyAvatar">
                 </div>
                 <div class="info">
-                  <div class="name">{{item.name}}</div>
-                  <div class="intro">{{item.intro}}</div>
+                  <div class="name">
+                    <span class="company">{{item.company}}</span>
+                    <span class="salary">{{item.salary}}</span>
+                  </div>
+                  <div class="intro">{{item.introduce}}</div>
                 </div>
               </div>
             </div>
@@ -50,17 +56,20 @@
             <div class="positionsList" v-for="item in recommendList" :key="item.name">
               <div class="positionItem">
                 <div class="avatar">
-                  <img :src="item.avatar">
+                  <img :src="item.companyAvatar">
                 </div>
                 <div class="info">
-                  <div class="name">{{item.name}}</div>
-                  <div class="intro">{{item.intro}}</div>
+                  <div class="name">
+                    <span class="company">{{item.company}}</span>
+                    <span class="salary">{{item.salary}}</span>
+                  </div>
+                  <div class="intro">{{item.introduce}}</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="profile"></div>
+        <div class="profile">求职信息占位</div>
       </div>
       <div class="hot-job"></div>
     </div>
@@ -73,11 +82,11 @@
     data() {
       return {
         recommendList: [
-          {avatar: require('../../database/companyAvatar/shanbei.png'), name: '字节跳动1', intro: '北京/文娱/D轮及以上'},
-          {avatar: require('../../database/companyAvatar/shanbei.png'), name: '字节跳动2', intro: '北京/文娱/D轮及以上'},
-          {avatar: require('../../database/companyAvatar/shanbei.png'), name: '字节跳动3', intro: '北京/文娱/D轮及以上'},
-          {avatar: require('../../database/companyAvatar/shanbei.png'), name: '字节跳动4', intro: '北京/文娱/D轮及以上'},
-          {avatar: require('../../database/companyAvatar/shanbei.png'), name: '字节跳动5', intro: '北京/文娱/D轮及以上'},
+          {companyAvatar: require('../../database/companyAvatar/shanbei.png'), company: '字节跳动1', introduce: '北京/文娱/D轮及以上', salary: '7k-13k·13薪'},
+          {companyAvatar: require('../../database/companyAvatar/shanbei.png'), company: '字节跳动2', introduce: '北京/文娱/D轮及以上', salary: '7k-13k·13薪'},
+          {companyAvatar: require('../../database/companyAvatar/shanbei.png'), company: '字节跳动3', introduce: '北京/文娱/D轮及以上', salary: '7k-13k·13薪'},
+          {companyAvatar: require('../../database/companyAvatar/shanbei.png'), company: '字节跳动4', introduce: '北京/文娱/D轮及以上', salary: '7k-13k·13薪'},
+          {companyAvatar: require('../../database/companyAvatar/shanbei.png'), company: '字节跳动5', introduce: '北京/文娱/D轮及以上', salary: '7k-13k·13薪'},
         ]
       }
     }
@@ -89,11 +98,11 @@
     .search {
       display: flex;
       justify-content: center;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
 
       input {
         width: 770px;
-        height: 46px;
+        height: 42px;
         line-height: 46px;
         padding: 12px 8px 12px 16px;
         font-size: 16px;
@@ -106,7 +115,7 @@
 
       button {
         width: 140px;
-        height: 46px;
+        height: 42px;
         line-height: 46px;
         font-size: 18px;
         border: 1px solid #00b38a;
@@ -144,6 +153,8 @@
             .title {font-weight: 600;}
           }
           .positionsList {
+            min-width: 312px;
+
             .positionItem {
               height: 58px;
               display: flex;
@@ -165,6 +176,16 @@
                 }
               }
               .info {
+                width: 100%;
+
+                .name {
+                  display: flex;
+                  justify-content: space-between;
+
+                  .salary {
+                    color: #e6775c;
+                  }
+                }
               }
             }
           }
@@ -198,11 +219,6 @@
         flex: 1;
         border: 1px solid #f0f0f0;
       }
-    }
-
-    .hot-job {
-      height: 356px;
-      border: 1px solid red;
     }
   }
 </style>

@@ -1,10 +1,16 @@
 <template>
-  <div class="hot-job">
-    <div class="hot-job-nav">
-      <span class="hot-job-title">力推好公司</span>
-      <span class="hot-job-city" v-for="item in ['北京', '上海', '杭州', '深圳', '成都', '南京']">{{item}}</span>
+  <div class="hot-company">
+    <div class="nav">
+      <span class="title">力推好公司</span>
+      <span
+          class="city"
+          v-for="(item, index) in cityArr"
+          :key="item"
+          @click="clickTabs(index)"
+          :class="{highlight: activeIndex === index}"
+      >{{item}}</span>
     </div>
-    <el-tabs type="border-card" tab-position="left">
+    <el-tabs v-show="activeIndex === 0" type="border-card" tab-position="left">
       <el-tab-pane label="字节跳动1" class="recommend-company">
         <div class="basic-info">
           <div class="company-info">基本信息</div>
@@ -19,22 +25,43 @@
       <el-tab-pane label="字节跳动6">定时任务补偿</el-tab-pane>
       <el-tab-pane label="字节跳动7">定时任务补偿</el-tab-pane>
     </el-tabs>
+
+    <el-tabs v-show="activeIndex === 1" type="border-card" tab-position="left">
+      <el-tab-pane label="字节跳动1">1111111111</el-tab-pane>
+      <el-tab-pane label="字节跳动2">定时任务补偿</el-tab-pane>
+      <el-tab-pane label="字节跳动3">定时任务补偿</el-tab-pane>
+      <el-tab-pane label="字节跳动4">定时任务补偿</el-tab-pane>
+      <el-tab-pane label="字节跳动5">定时任务补偿</el-tab-pane>
+      <el-tab-pane label="字节跳动6">定时任务补偿</el-tab-pane>
+      <el-tab-pane label="字节跳动7">定时任务补偿</el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 
 <script lang="js">
   export default {
-    name: "HotCompany"
+    name: "HotCompany",
+    data() {
+      return {
+        activeIndex: 0,
+        cityArr: ['北京', '上海', '杭州', '深圳', '成都', '南京']
+      }
+    },
+    methods: {
+      clickTabs(currentTabIndex) {
+        this.activeIndex = currentTabIndex
+      }
+    }
   }
 </script>
 
 <style lang="scss" scoped>
-  .hot-job {
-    .hot-job-nav {
+  .hot-company {
+    .nav {
       height: 32px;
       margin-top: 8px;
 
-      .hot-job-title {
+      .title {
         font-weight: 600;
         font-size: 20px;
         color: #333;
@@ -43,9 +70,13 @@
         margin-right: 40px;
       }
 
-      .hot-job-city {
+      .city {
         margin-left: 20px;
         cursor: pointer;
+      }
+
+      .highlight {
+        color: red;
       }
     }
 

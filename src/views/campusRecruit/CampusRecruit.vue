@@ -71,7 +71,12 @@
         </div>
         <div class="profile">求职信息占位</div>
       </div>
-      <HotCompany></HotCompany>
+      <div class="footer">
+        <HotCompany class="hot-company"></HotCompany>
+        <div class="recommend-jobs">
+          推荐岗位
+        </div>
+      </div>
     </div>
   </Block>
 </template>
@@ -223,6 +228,24 @@
       .profile {
         flex: 1;
         border: 1px solid #f0f0f0;
+      }
+    }
+
+    .footer {
+      display: flex;
+
+      .hot-company {flex: 3;}
+      .recommend-jobs {
+        flex: 1;
+        margin-left: 10px;
+        border: 1px solid red;
+
+        font-weight: 600;
+        font-size: 20px;
+        color: #333;
+        line-height: 28px;
+        display: inline-block;
+        margin-right: 20px;
       }
     }
   }

@@ -12,11 +12,16 @@
     </div>
     <el-tabs v-show="activeIndex === 0" type="border-card" tab-position="left">
       <el-tab-pane label="字节跳动1" class="recommend-company">
-        <div class="basic-info">
-          <div class="company-info">基本信息</div>
-          <div class="company-intro">介绍</div>
+        <div class="company-content-left">
+          <div class="company-profile">
+            <img class="company-avatar" src="@/database/companyAvatar/shanbei.png">
+            <div class="company-basic-info">
+
+            </div>
+          </div>
+          <div class="company-desc">介绍</div>
         </div>
-        <div class="company-pic">照片</div>
+        <div class="company-content-right">照片</div>
       </el-tab-pane>
       <el-tab-pane label="字节跳动2">定时任务补偿</el-tab-pane>
       <el-tab-pane label="字节跳动3">定时任务补偿</el-tab-pane>
@@ -59,7 +64,6 @@
   .hot-company {
     .nav {
       height: 32px;
-      margin-top: 8px;
 
       .title {
         font-weight: 600;
@@ -71,7 +75,7 @@
       }
 
       .city {
-        margin-left: 20px;
+        margin-left: 35px;
         cursor: pointer;
       }
 
@@ -92,16 +96,28 @@
 
     ::v-deep .recommend-company{
       display: flex;
-      border: 1px solid red;
 
-      .company-info {
-        /*border: 1px solid red;*/
+      .company-content-left {
+        flex: 1;
+        border: 1px solid red;
+
+        .company-profile {
+          .company-avatar {
+            width: 96px;
+            height: 96px;
+            border: 1px solid rgba(0,0,0,.04);
+            border-radius: 5px;
+          }
+
+          .company-basic-info {
+
+          }
+        }
       }
-      .company-intro {
-        /*border: 1px solid red;*/
-      }
-      .company-pic {
-        /*border: 1px solid red;*/
+
+      .company-content-right {
+        flex: 1;
+        border: 1px solid red;
       }
     }
   }

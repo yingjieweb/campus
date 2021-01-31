@@ -67,7 +67,7 @@
         color: #333;
         line-height: 28px;
         display: inline-block;
-        margin-right: 40px;
+        margin-right: 20px;
       }
 
       .city {
@@ -76,7 +76,17 @@
       }
 
       .highlight {
-        color: red;
+        color: #409eff;
+        position: relative;
+      }
+      .highlight:after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: #409eff;
+        position: absolute;
+        left: 0;
+        top: 110%;
       }
     }
 

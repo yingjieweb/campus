@@ -92,7 +92,12 @@
     },
     data() {
       return {
-        recommendList: recommendData.slice(0, 5)
+        random: Math.ceil(Math.random() * 8)
+      }
+    },
+    computed: {
+      recommendList() {
+        return recommendData.slice(this.random, this.random+5)
       }
     }
   }

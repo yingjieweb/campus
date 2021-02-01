@@ -23,7 +23,7 @@
                     <span class="company">{{item.company}}</span>
                     <span class="salary">{{item.salary}}</span>
                   </div>
-                  <div class="intro">{{item.introduce}}</div>
+                  <div class="intro">{{item.introduce.substr(0, 13)}}...</div>
                 </div>
               </div>
             </div>
@@ -43,7 +43,7 @@
                     <span class="company">{{item.company}}</span>
                     <span class="salary">{{item.salary}}</span>
                   </div>
-                  <div class="intro">{{item.introduce}}</div>
+                  <div class="intro">{{item.introduce.substr(0, 10)}}...</div>
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@
                     <span class="company">{{item.company}}</span>
                     <span class="salary">{{item.salary}}</span>
                   </div>
-                  <div class="intro">{{item.introduce}}</div>
+                  <div class="intro">{{item.introduce.substr(0, 10)}}...</div>
                 </div>
               </div>
             </div>
@@ -83,6 +83,7 @@
 
 <script lang="js">
   import HotCompany from "@/views/campusRecruit/HotCompany"
+  import recommendData from "@/database/recommendData"
 
   export default {
     name: "CampusRecruit",
@@ -91,13 +92,7 @@
     },
     data() {
       return {
-        recommendList: [
-          {companyAvatar: require('../../database/companyAvatar/shanbei.png'), company: '字节跳动1', introduce: '北京/文娱/D轮及以上', salary: '7k-13k·13薪'},
-          {companyAvatar: require('../../database/companyAvatar/shanbei.png'), company: '字节跳动2', introduce: '北京/文娱/D轮及以上', salary: '7k-13k·13薪'},
-          {companyAvatar: require('../../database/companyAvatar/shanbei.png'), company: '字节跳动3', introduce: '北京/文娱/D轮及以上', salary: '7k-13k·13薪'},
-          {companyAvatar: require('../../database/companyAvatar/shanbei.png'), company: '字节跳动4', introduce: '北京/文娱/D轮及以上', salary: '7k-13k·13薪'},
-          {companyAvatar: require('../../database/companyAvatar/shanbei.png'), company: '字节跳动5', introduce: '北京/文娱/D轮及以上', salary: '7k-13k·13薪'},
-        ]
+        recommendList: recommendData.slice(0, 5)
       }
     }
   }

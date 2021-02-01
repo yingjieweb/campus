@@ -6,7 +6,7 @@ const recommendData = [
     experience: '3-5年/本科',
     label: ['前端开发', 'HTML5', '移动端'],
     company: '扇贝',
-    introduce: '移动互联网,教育 B轮 南京·玄武区',
+    introduce: '移动互联网/教育/B轮/南京·玄武区',
     companyAvatar: require('./companyAvatar/shanbei.png'),
     details: {
       welfare: '1. 我们会有各种分享会，产品、设计、技术、运营、英语大家一起交流；\n' +
@@ -54,7 +54,7 @@ const recommendData = [
     salary: '20k-40k',
     experience: '经验不限/本科',
     label: ['模式识别', '搜索算法', '数据挖掘'],
-    company: '锐仕方达人力资源有限公司',
+    company: '锐仕方达',
     introduce: '企业服务,数据服务/不需要融资/2000人以上',
     companyAvatar: require('./companyAvatar/shanbei.png')
   },

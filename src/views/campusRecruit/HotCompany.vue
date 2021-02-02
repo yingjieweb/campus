@@ -16,12 +16,19 @@
           <div class="company-profile">
             <img class="company-avatar" src="@/database/companyAvatar/shanbei.png">
             <div class="company-basic-info">
-
+              <div class="company-name">扇贝单词</div>
+              <div class="company-intro">北京 / 社交平台 / 上市公司</div>
+              <div class="company-badge">岗位晋升、帅哥多、奥奥奥</div>
             </div>
           </div>
-          <div class="company-desc">介绍</div>
+          <div class="company-desc">介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
+            绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
+            绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
+          </div>
         </div>
-        <div class="company-content-right">照片</div>
+        <div class="company-content-right">
+          <img src="@/database/companyAvatar/shanbei-propa.png">
+        </div>
       </el-tab-pane>
       <el-tab-pane label="字节跳动2">定时任务补偿</el-tab-pane>
       <el-tab-pane label="字节跳动3">定时任务补偿</el-tab-pane>
@@ -95,13 +102,19 @@
     }
 
     ::v-deep .recommend-company{
+      height: 303px;
       display: flex;
 
       .company-content-left {
-        flex: 1;
-        border: 1px solid red;
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-top: 10px;
 
         .company-profile {
+          display: flex;
+
           .company-avatar {
             width: 96px;
             height: 96px;
@@ -110,14 +123,38 @@
           }
 
           .company-basic-info {
-
+            margin-left: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
           }
+        }
+
+        .company-desc {
+          color: #666;
+          font-size: 14px;
+          line-height: 30px;
+          margin: 34px 0;
+          max-height: 120px;
+          overflow: hidden;
+          -o-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
         }
       }
 
       .company-content-right {
-        flex: 1;
+        flex: 3;
+        margin-left: 30px;
         border: 1px solid red;
+
+        img {
+          height: 100%;
+          width: 520px;
+          /*height: 290px;*/
+        }
       }
     }
   }

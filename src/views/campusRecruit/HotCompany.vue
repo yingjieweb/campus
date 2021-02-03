@@ -10,54 +10,166 @@
           :class="{highlight: activeIndex === index}"
       >{{item}}</span>
     </div>
+
     <el-tabs v-show="activeIndex === 0" type="border-card" tab-position="left">
-      <el-tab-pane label="字节跳动1" class="recommend-company">
+      <el-tab-pane :label="item.company" class="recommend-company" v-for="item in recommendList1" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
-            <img class="company-avatar" src="@/database/companyAvatar/shanbei.png">
+            <img class="company-avatar" :src="item.companyAvatar">
             <div class="company-basic-info">
-              <div class="company-name">扇贝单词</div>
-              <div class="company-intro">北京 / 社交平台 / 上市公司</div>
-              <div class="company-badge">岗位晋升、帅哥多、奥奥奥</div>
+              <div class="company-name">{{item.company}}</div>
+              <div class="company-intro">{{item.introduce}}</div>
+              <div class="company-badge">
+                <span v-for="badge in item.label">{{badge}}</span>
+              </div>
             </div>
           </div>
-          <div class="company-desc">介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
-            绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
-            绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍
-          </div>
+          <div class="company-desc">{{item.abstract}}</div>
         </div>
         <div class="company-content-right">
-          <img src="@/database/companyAvatar/shanbei-propa.png">
+          <img :src="item.companyPropaPic">
         </div>
       </el-tab-pane>
-      <el-tab-pane label="字节跳动2">定时任务补偿</el-tab-pane>
-      <el-tab-pane label="字节跳动3">定时任务补偿</el-tab-pane>
-      <el-tab-pane label="字节跳动4">定时任务补偿</el-tab-pane>
-      <el-tab-pane label="字节跳动5">定时任务补偿</el-tab-pane>
-      <el-tab-pane label="字节跳动6">定时任务补偿</el-tab-pane>
-      <el-tab-pane label="字节跳动7">定时任务补偿</el-tab-pane>
     </el-tabs>
-
     <el-tabs v-show="activeIndex === 1" type="border-card" tab-position="left">
-      <el-tab-pane label="字节跳动1">1111111111</el-tab-pane>
-      <el-tab-pane label="字节跳动2">定时任务补偿</el-tab-pane>
-      <el-tab-pane label="字节跳动3">定时任务补偿</el-tab-pane>
-      <el-tab-pane label="字节跳动4">定时任务补偿</el-tab-pane>
-      <el-tab-pane label="字节跳动5">定时任务补偿</el-tab-pane>
-      <el-tab-pane label="字节跳动6">定时任务补偿</el-tab-pane>
-      <el-tab-pane label="字节跳动7">定时任务补偿</el-tab-pane>
+      <el-tab-pane :label="item.company" class="recommend-company" v-for="item in recommendList2" :key="item.id">
+        <div class="company-content-left">
+          <div class="company-profile">
+            <img class="company-avatar" :src="item.companyAvatar">
+            <div class="company-basic-info">
+              <div class="company-name">{{item.company}}</div>
+              <div class="company-intro">{{item.introduce}}</div>
+              <div class="company-badge">
+                <span v-for="badge in item.label">{{badge}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="company-desc">{{item.abstract}}</div>
+        </div>
+        <div class="company-content-right">
+          <img :src="item.companyPropaPic">
+        </div>
+      </el-tab-pane>
+    </el-tabs>
+    <el-tabs v-show="activeIndex === 2" type="border-card" tab-position="left">
+      <el-tab-pane :label="item.company" class="recommend-company" v-for="item in recommendList3" :key="item.id">
+        <div class="company-content-left">
+          <div class="company-profile">
+            <img class="company-avatar" :src="item.companyAvatar">
+            <div class="company-basic-info">
+              <div class="company-name">{{item.company}}</div>
+              <div class="company-intro">{{item.introduce}}</div>
+              <div class="company-badge">
+                <span v-for="badge in item.label">{{badge}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="company-desc">{{item.abstract}}</div>
+        </div>
+        <div class="company-content-right">
+          <img :src="item.companyPropaPic">
+        </div>
+      </el-tab-pane>
+    </el-tabs>
+    <el-tabs v-show="activeIndex === 3" type="border-card" tab-position="left">
+      <el-tab-pane :label="item.company" class="recommend-company" v-for="item in recommendList4" :key="item.id">
+        <div class="company-content-left">
+          <div class="company-profile">
+            <img class="company-avatar" :src="item.companyAvatar">
+            <div class="company-basic-info">
+              <div class="company-name">{{item.company}}</div>
+              <div class="company-intro">{{item.introduce}}</div>
+              <div class="company-badge">
+                <span v-for="badge in item.label">{{badge}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="company-desc">{{item.abstract}}</div>
+        </div>
+        <div class="company-content-right">
+          <img :src="item.companyPropaPic">
+        </div>
+      </el-tab-pane>
+    </el-tabs>
+    <el-tabs v-show="activeIndex === 4" type="border-card" tab-position="left">
+      <el-tab-pane :label="item.company" class="recommend-company" v-for="item in recommendList5" :key="item.id">
+        <div class="company-content-left">
+          <div class="company-profile">
+            <img class="company-avatar" :src="item.companyAvatar">
+            <div class="company-basic-info">
+              <div class="company-name">{{item.company}}</div>
+              <div class="company-intro">{{item.introduce}}</div>
+              <div class="company-badge">
+                <span v-for="badge in item.label">{{badge}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="company-desc">{{item.abstract}}</div>
+        </div>
+        <div class="company-content-right">
+          <img :src="item.companyPropaPic">
+        </div>
+      </el-tab-pane>
+    </el-tabs>
+    <el-tabs v-show="activeIndex === 5" type="border-card" tab-position="left">
+      <el-tab-pane :label="item.company" class="recommend-company" v-for="item in recommendList6" :key="item.id">
+        <div class="company-content-left">
+          <div class="company-profile">
+            <img class="company-avatar" :src="item.companyAvatar">
+            <div class="company-basic-info">
+              <div class="company-name">{{item.company}}</div>
+              <div class="company-intro">{{item.introduce}}</div>
+              <div class="company-badge">
+                <span v-for="badge in item.label">{{badge}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="company-desc">{{item.abstract}}</div>
+        </div>
+        <div class="company-content-right">
+          <img :src="item.companyPropaPic">
+        </div>
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
 
 <script lang="js">
+  import recommendData from "@/database/recommendData"
+
   export default {
     name: "HotCompany",
     data() {
       return {
         activeIndex: 0,
-        cityArr: ['北京', '上海', '杭州', '深圳', '成都', '南京']
+        cityArr: ['北京', '上海', '杭州', '深圳', '成都', '南京'],
+        random1: Math.ceil(Math.random() * 6),
+        random2: Math.ceil(Math.random() * 6),
+        random3: Math.ceil(Math.random() * 6),
+        random4: Math.ceil(Math.random() * 6),
+        random5: Math.ceil(Math.random() * 6),
+        random6: Math.ceil(Math.random() * 6),
       }
+    },
+    computed: {
+      recommendList1() {
+        return recommendData.slice(this.random1, this.random1+7)
+      },
+      recommendList2() {
+        return recommendData.slice(this.random2, this.random2+7)
+      },
+      recommendList3() {
+        return recommendData.slice(this.random3, this.random3+7)
+      },
+      recommendList4() {
+        return recommendData.slice(this.random4, this.random4+7)
+      },
+      recommendList5() {
+        return recommendData.slice(this.random5, this.random5+7)
+      },
+      recommendList6() {
+        return recommendData.slice(this.random6, this.random6+7)
+      },
     },
     methods: {
       clickTabs(currentTabIndex) {
@@ -106,11 +218,12 @@
       display: flex;
 
       .company-content-left {
-        flex: 2;
+        flex: 1;
+        min-width: 350px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        margin-top: 10px;
+        margin-top: 18px;
 
         .company-profile {
           display: flex;
@@ -127,6 +240,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-around;
+
+            .company-badge span {
+              border: 1px solid gainsboro;
+              margin-right: 5px;
+              padding: 2px;
+            }
           }
         }
 
@@ -146,14 +265,11 @@
       }
 
       .company-content-right {
-        flex: 3;
         margin-left: 30px;
-        border: 1px solid red;
 
         img {
           height: 100%;
           width: 520px;
-          /*height: 290px;*/
         }
       }
     }

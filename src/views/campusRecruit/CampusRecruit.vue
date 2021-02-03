@@ -74,7 +74,8 @@
       <div class="footer">
         <HotCompany class="hot-company"></HotCompany>
         <div class="recommend-jobs">
-          推荐岗位
+          <div class="title">为你匹配</div>
+          <div class="content"></div>
         </div>
       </div>
     </div>
@@ -238,14 +239,22 @@
       .recommend-jobs {
         flex: 1;
         margin-left: 10px;
-        border: 1px solid red;
+        margin-bottom: 32px;
 
-        font-weight: 600;
-        font-size: 20px;
-        color: #333;
-        line-height: 28px;
-        display: inline-block;
-        margin-right: 20px;
+        .title {
+          height: 32px;
+          font-weight: 600;
+          font-size: 20px;
+          color: #333;
+          line-height: 28px;
+          display: inline-block;
+          margin-right: 20px;
+        }
+
+        .content {
+          height: 100%;
+          border: 1px solid red;
+        }
       }
     }
   }

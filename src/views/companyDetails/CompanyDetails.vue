@@ -12,7 +12,7 @@
   import recommendData from "@/database/recommendData"
 
   export default {
-    name: "PositionDetails",
+    name: "CompanyDetails",
     data() {
       return {
         positionId: '',

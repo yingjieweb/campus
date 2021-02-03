@@ -13,7 +13,8 @@ import PersonalResume from "@/views/personalResume/PersonalResume"
 import EmployRecommend from "@/views/employRecommend/EmployRecommend"
 import CampusRecruit from "@/views/campusRecruit/CampusRecruit"
 import HotCompany from "@/views/hotCompany/HotCompany"
-import PositionDetails from "@/views/employRecommend/childComps/PositionDetails"
+import CompanyDetails from "@/views/companyDetails/CompanyDetails"
+import PositionDetails from "@/views/positionDetails/PositionDetails"
 import GraduatesDirection from "@/views/graduatesDirection/GraduatesDirection"
 import Forbidden from  "@/views/statusCode/403.vue"
 import NotFound from "@/views/statusCode/404.vue"
@@ -90,6 +91,12 @@ const constantRoutes = [
     name: 'EmployRecommend',
     component: EmployRecommend,
     meta: { title: '就业岗位推荐' }
+  },
+  {
+    path: '/company-details',
+    name: 'CompanyDetails',
+    component: CompanyDetails,
+    meta: { title: '公司详情' }
   },
   {
     path: '/position-details',

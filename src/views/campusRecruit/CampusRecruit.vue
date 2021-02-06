@@ -13,7 +13,7 @@
               <span class="title">大家都在投</span>
               <span class="message">助力好未来</span>
             </div>
-            <div class="positionsList" v-for="item in recommendList" :key="item.name">
+            <div class="positionsList" v-for="item in recommendList1" :key="item.name">
               <div class="positionItem">
                 <div class="avatar">
                   <img :src="item.companyAvatar">
@@ -33,7 +33,7 @@
               <span class="title">投递热门榜</span>
               <span class="message">值得投一投</span>
             </div>
-            <div class="positionsList" v-for="item in recommendList" :key="item.name">
+            <div class="positionsList" v-for="item in recommendList2" :key="item.name">
               <div class="positionItem">
                 <div class="avatar">
                   <img :src="item.companyAvatar">
@@ -53,7 +53,7 @@
               <span class="title">高薪职业榜</span>
               <span class="message">才华最值钱</span>
             </div>
-            <div class="positionsList" v-for="item in recommendList" :key="item.name">
+            <div class="positionsList" v-for="item in recommendList3" :key="item.name">
               <div class="positionItem">
                 <div class="avatar">
                   <img :src="item.companyAvatar">
@@ -85,6 +85,7 @@
 <script lang="js">
   import HotCompany from "@/views/campusRecruit/HotCompany"
   import recommendData from "@/database/recommendData"
+  import {getRandomNum} from "@/utils/randomNum"
 
   export default {
     name: "CampusRecruit",
@@ -93,13 +94,22 @@
     },
     data() {
       return {
-        random: Math.ceil(Math.random() * 8)
+        random1: getRandomNum(0, 8),
+        random2: getRandomNum(0, 8),
+        random3: getRandomNum(0, 8)
       }
     },
     computed: {
-      recommendList() {
-        return recommendData.slice(this.random, this.random+5)
+      recommendList1() {
+        return recommendData.slice(this.random1, this.random1+5)
+      },
+      recommendList2() {
+        return recommendData.slice(this.random2, this.random2+5)
+      },
+      recommendList3() {
+        return recommendData.slice(this.random3, this.random3+5)
       }
+
     }
   }
 </script>

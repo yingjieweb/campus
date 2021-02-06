@@ -136,6 +136,7 @@
 
 <script lang="js">
   import recommendData from "@/database/recommendData"
+  import {getRandomNum} from "@/utils/randomNum"
 
   export default {
     name: "HotCompany",
@@ -143,12 +144,12 @@
       return {
         activeIndex: 0,
         cityArr: ['北京', '上海', '杭州', '深圳', '成都', '南京'],
-        random1: Math.ceil(Math.random() * 6),
-        random2: Math.ceil(Math.random() * 6),
-        random3: Math.ceil(Math.random() * 6),
-        random4: Math.ceil(Math.random() * 6),
-        random5: Math.ceil(Math.random() * 6),
-        random6: Math.ceil(Math.random() * 6),
+        random1: getRandomNum(0, 6),
+        random2: getRandomNum(0, 6),
+        random3: getRandomNum(0, 6),
+        random4: getRandomNum(0, 6),
+        random5: getRandomNum(0, 6),
+        random6: getRandomNum(0, 6),
       }
     },
     computed: {

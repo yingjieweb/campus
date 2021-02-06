@@ -13,8 +13,8 @@
               <span class="title">大家都在投</span>
               <span class="message">助力好未来</span>
             </div>
-            <div class="positionsList" v-for="item in recommendList1" :key="item.name">
-              <div class="positionItem">
+            <div class="position-list" v-for="item in recommendList1" :key="item.name">
+              <div class="position-item">
                 <div class="avatar">
                   <img :src="item.companyAvatar">
                 </div>
@@ -33,8 +33,8 @@
               <span class="title">投递热门榜</span>
               <span class="message">值得投一投</span>
             </div>
-            <div class="positionsList" v-for="item in recommendList2" :key="item.name">
-              <div class="positionItem">
+            <div class="position-list" v-for="item in recommendList2" :key="item.name">
+              <div class="position-item">
                 <div class="avatar">
                   <img :src="item.companyAvatar">
                 </div>
@@ -53,8 +53,8 @@
               <span class="title">高薪职业榜</span>
               <span class="message">才华最值钱</span>
             </div>
-            <div class="positionsList" v-for="item in recommendList3" :key="item.name">
-              <div class="positionItem">
+            <div class="position-list" v-for="item in recommendList3" :key="item.name">
+              <div class="position-item">
                 <div class="avatar">
                   <img :src="item.companyAvatar">
                 </div>
@@ -75,7 +75,20 @@
         <HotCompany class="hot-company"></HotCompany>
         <div class="recommend-jobs">
           <div class="title">为你匹配</div>
-          <div class="content"></div>
+          <div class="recommend-list">
+            <div class="recommend-item" v-for="item in recommendList1" :key="item.name">
+              <div class="avatar">
+                <img :src="item.companyAvatar">
+              </div>
+              <div class="info">
+                <div class="name">
+                  <span class="company">{{item.company}}</span>
+                  <span class="salary">{{item.salary}}</span>
+                </div>
+                <div class="intro">{{item.introduce.substr(0, 13)}}...</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -173,10 +186,10 @@
 
             .title {font-weight: 600;}
           }
-          .positionsList {
+          .position-list {
             min-width: 312px;
 
-            .positionItem {
+            .position-item {
               height: 58px;
               display: flex;
               padding: 0 10px;
@@ -261,9 +274,44 @@
           margin-right: 20px;
         }
 
-        .content {
-          height: 100%;
-          border: 1px solid red;
+        .recommend-list {
+          background: #FFF;
+          border: 1px solid #DCDFE6;
+          box-shadow: 0 2px 4px 0 rgb(0 0 0 / 12%), 0 0 6px 0 rgb(0 0 0 / 4%);
+
+          .recommend-item {
+            height: 66.5px;
+            display: flex;
+            padding: 0 10px;
+            align-items: center;
+            cursor: pointer;
+            border-bottom: 1px dashed #f0f0f0;
+
+            &:hover {
+              background-color: #f0f0f0;
+            }
+
+            .avatar {
+              width: 44px;
+              height: 44px;
+              margin-right: 10px;
+              img {
+                width: 44px;
+              }
+            }
+            .info {
+              width: 100%;
+
+              .name {
+                display: flex;
+                justify-content: space-between;
+
+                .salary {
+                  color: #e6775c;
+                }
+              }
+            }
+          }
         }
       }
     }

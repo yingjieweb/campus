@@ -6,7 +6,9 @@
         <button>搜索</button>
       </div>
       <div class="banner">
-        <div class="positions">岗位选择占位</div>
+        <div class="positions">
+          <PositionChoice></PositionChoice>
+        </div>
         <div class="hot-recommend">
           <div class="hot-position">
             <div class="head">
@@ -96,6 +98,7 @@
 </template>
 
 <script lang="js">
+  import PositionChoice from "@/views/campusRecruit/PositionChoice"
   import HotCompany from "@/views/campusRecruit/HotCompany"
   import recommendData from "@/database/recommendData"
   import {getRandomNum} from "@/utils/randomNum"
@@ -103,6 +106,7 @@
   export default {
     name: "CampusRecruit",
     components: {
+      PositionChoice,
       HotCompany
     },
     data() {

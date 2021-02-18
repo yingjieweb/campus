@@ -30,7 +30,7 @@
   </Block>
 </template>
 
-<script lang="ts">
+<script>
   import RecommendList from "./childComps/RecommendList.vue";
   import RecommendItem from "./childComps/RecommendItem.vue";
   import recommendData from "../../database/recommendData";
@@ -246,6 +246,7 @@
       background-color: #55CBCA;
 
       &:hover {
+        cursor: pointer;
         background-color: #55BBCC;
       }
     }

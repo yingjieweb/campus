@@ -9,6 +9,7 @@ import ScoreEnquiry from "@/views/dataCenter/ScoreEnquiry"
 import AbilityDegree from "@/views/formativeEvaluation/abilityDegree/AbilityDegree"
 import AbilityAnalysis from "@/views/formativeEvaluation/abilityAnalysis/AbilityAnalysis"
 import PersonalResume from "@/views/personalResume/PersonalResume"
+import PositionSearch from "@/views/positionSearch/PositionSearch"
 import EmployRecommend from "@/views/employRecommend/EmployRecommend"
 import CampusRecruit from "@/views/campusRecruit/CampusRecruit"
 import HotCompany from "@/views/hotCompany/HotCompany"
@@ -66,6 +67,12 @@ const constantRoutes = [
     name: 'PersonalResume',
     component: PersonalResume,
     meta: { title: '我的简历' }
+  },
+  {
+    path: '/position-search',
+    name: 'PositionSearch',
+    component: PositionSearch,
+    meta: { title: '职位搜索' }
   },
   {
     path: '/campus-recruit',

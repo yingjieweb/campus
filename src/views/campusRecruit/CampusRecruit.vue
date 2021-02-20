@@ -71,7 +71,9 @@
             </div>
           </div>
         </div>
-        <div class="profile">求职信息占位</div>
+        <div class="profile">
+          <ProfileInfo></ProfileInfo>
+        </div>
       </div>
       <div class="footer">
         <HotCompany class="hot-company"></HotCompany>
@@ -99,6 +101,7 @@
 
 <script lang="js">
   import PositionChoice from "@/views/campusRecruit/PositionChoice"
+  import ProfileInfo from "@/views/campusRecruit/ProfileInfo"
   import HotCompany from "@/views/campusRecruit/HotCompany"
   import recommendData from "@/database/recommendData"
   import {getRandomNum} from "@/utils/randomNum"
@@ -107,6 +110,7 @@
     name: "CampusRecruit",
     components: {
       PositionChoice,
+      ProfileInfo,
       HotCompany
     },
     data() {

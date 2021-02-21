@@ -31,8 +31,8 @@
 </template>
 
 <script>
-  import RecommendList from "./childComps/RecommendList.vue";
-  import RecommendItem from "./childComps/RecommendItem.vue";
+  import RecommendList from "./RecommendList.vue";
+  import RecommendItem from "./RecommendItem.vue";
   import recommendData from "../../database/recommendData";
 
   export default {

@@ -173,7 +173,7 @@
       margin-bottom: 6px;
 
       .positions {
-        flex: 1;
+        flex: 0.8;
         border: 1px solid #f0f0f0;
       }
       .hot-recommend {
@@ -258,7 +258,7 @@
         }
       }
       .profile {
-        flex: 1;
+        flex: 0.8;
         border: 1px solid #f0f0f0;
       }
     }

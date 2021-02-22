@@ -1,32 +1,67 @@
 <template>
-  <Block title="热门公司" style="height: 1200px;">
+  <Block title="热门公司">
     <div slot="content" class="container">
-      <div class="worth-recommend">
-        什么值的投
-      </div>
-      <div class="company-list">
-        <div class="company-item">
-          美团
-        </div>
+      <CompanyList :company-list="currentPageCompany"></CompanyList>
+
+      <div class="pagination">
+        <el-pagination
+                background
+                layout="prev, pager, next"
+                @prev-click="prevClick"
+                @next-click="nextClick"
+                @current-change="currentChange"
+                :total="totalPageCount">
+        </el-pagination>
       </div>
     </div>
   </Block>
 </template>
 
 <script lang="js">
+  import CompanyList from "@/views/hotCompany/CompanyList"
+  import recommendData from "@/database/recommendData"
+
   export default {
-    name: "HotCompany"
+    name: "HotCompany",
+    components: {
+      CompanyList
+    },
+    data() {
+      return {
+        currentPage: 1,
+        currentPageCompany: [],
+      }
+    },
+    computed: {
+      totalPageCount() {
+        return Array.from(recommendData).length / 18 * 10;
+      }
+    },
+    methods: {
+      handleChange(value) {
+        console.log(value);
+      },
+      prevClick(currentPage) {
+        this.currentPageCompany = recommendData.slice((currentPage - 1) * 18, currentPage * 18);
+      },
+      nextClick(currentPage) {
+        this.currentPageCompany = recommendData.slice((currentPage - 1) * 18, currentPage * 18);
+      },
+      currentChange(currentPage) {
+        this.currentPageCompany = recommendData.slice((currentPage - 1) * 18, currentPage * 18);
+      }
+    },
+    created() {
+      this.currentPageCompany = recommendData.slice(0,18);
+    },
   }
 </script>
 
 <style lang="scss" scoped>
   .container {
-    .worth-recommend {
-      border: 1px solid red;
-    }
-
-    .company-list {
-      border: 1px solid red;
+    .pagination {
+      display: flex;
+      justify-content: center;
     }
   }
 </style>

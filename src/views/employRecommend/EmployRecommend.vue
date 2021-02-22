@@ -14,7 +14,7 @@
         <button>搜索</button>
       </div>
 
-      <RecommendList :recommend-data="currentPageJobs"></RecommendList>
+      <RecommendList :recommend-list="currentPageJobs"></RecommendList>
 
       <div class="pagination">
         <el-pagination
@@ -43,7 +43,6 @@
       return {
         currentPage: 1,
         currentPageJobs: [],
-        recommendData: recommendData,
         value: [],
         options: [{
           value: 'zhinan',

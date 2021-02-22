@@ -1,6 +1,6 @@
 <template>
-  <div class="recommendItem" @click="goDetails(recommendItem.id)">
-    <div class="recruitInfo">
+  <div class="recommend-item" @click="goDetails(recommendItem.id)">
+    <div class="recruit-info">
       <div class="jobs">{{recommendItem.jobs}}</div>
       <div class="salary">{{recommendItem.salary}}</div>
     </div>
@@ -8,7 +8,7 @@
       <div class="experience">{{recommendItem.experience}}</div>
       <span class="label" v-for="item in recommendItem.label">{{item}}</span>
     </div>
-    <div class="companyInfo">
+    <div class="company-info">
       <img class="avatar" :src="recommendItem.companyAvatar">
       <div class="info">
         <div class="company">{{recommendItem.company}}</div>
@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
   export default {
     name: "RecommendItem",
     props: {
@@ -41,7 +41,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .recommendItem {
+  .recommend-item {
     width: 32.8%;
     margin: 4px;
     padding: 18px 18px 10px 18px;
@@ -51,7 +51,7 @@
 
     &:hover {box-shadow: 5px 5px 20px rgba(0,0,0,.05);}
 
-    .recruitInfo {
+    .recruit-info {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -72,7 +72,7 @@
       }
     }
 
-    .companyInfo {
+    .company-info {
       display: flex;
       padding-top: 10px;
 

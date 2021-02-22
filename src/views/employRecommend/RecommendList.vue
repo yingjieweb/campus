@@ -1,6 +1,6 @@
 <template>
-  <div class="recommendList">
-    <RecommendItem v-for="(item, index) in recommendData" :key="index" :recommendItem="item">{{item}}</RecommendItem>
+  <div class="recommend-list">
+    <RecommendItem v-for="(item, index) in recommendList" :key="index" :recommendItem="item"></RecommendItem>
   </div>
 </template>
 
@@ -13,7 +13,7 @@
       RecommendItem
     },
     props: {
-      recommendData: {
+      recommendList: {
         type: Array,
         default: []
       }
@@ -22,7 +22,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .recommendList {
+  .recommend-list {
     min-width: 1502px;
     display: flex;
     flex-wrap: wrap;

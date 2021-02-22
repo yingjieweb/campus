@@ -32,22 +32,12 @@
 
 <script>
   import RecommendList from "./RecommendList.vue";
-  import RecommendItem from "./RecommendItem.vue";
   import recommendData from "../../database/recommendData";
 
   export default {
     name: "EmployRecommend",
     components: {
-      RecommendList,
-      RecommendItem
-    },
-    created() {
-      this.currentPageJobs = recommendData.slice(0,9);
-    },
-    computed: {
-      totalPageCount() {
-        return Array.from(recommendData).length / 9 * 10;
-      }
+      RecommendList
     },
     data() {
       return {
@@ -198,6 +188,11 @@
         }]
       }
     },
+    computed: {
+      totalPageCount() {
+        return Array.from(recommendData).length / 9 * 10;
+      }
+    },
     methods: {
       handleChange(value) {
         console.log(value);
@@ -211,7 +206,10 @@
       currentChange(currentPage) {
         this.currentPageJobs = recommendData.slice((currentPage - 1) * 9, currentPage * 9);
       }
-    }
+    },
+    created() {
+      this.currentPageJobs = recommendData.slice(0,9);
+    },
   }
 </script>
 

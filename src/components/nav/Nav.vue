@@ -29,9 +29,8 @@
     <el-submenu index="4">
       <template slot="title"><i class="el-icon-setting"></i><span>系统设置</span></template>
       <el-menu-item-group>
-        <el-menu-item index="/user-manage"><i class="el-icon-caret-right"></i>用户管理</el-menu-item>
-        <el-menu-item index="4-4"><i class="el-icon-caret-right"></i>课程控制</el-menu-item>
-        <el-menu-item index="4-5"><i class="el-icon-caret-right"></i>课程备份</el-menu-item>
+        <el-menu-item index="/student-manage"><i class="el-icon-caret-right"></i>学生管理</el-menu-item>
+        <el-menu-item index="/jobs-manage"><i class="el-icon-caret-right"></i>岗位管理</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-menu-item index="/personal-resume" v-if="this.$store.state.permission">

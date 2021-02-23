@@ -4,7 +4,8 @@ import store from '@/store/index'
 
 import Login from "@/views/login/Login"
 import WorkBench from '@/views/workBench/WorkBench.vue'
-import UserManage from "@/views/systemSetting/userManage/UserManage"
+import StudentManage from "@/views/systemSetting/studentManage/StudentManage"
+import JobsManage from "@/views/systemSetting/jobsManage/JobsManage"
 import ScoreEnquiry from "@/views/dataCenter/ScoreEnquiry"
 import AbilityDegree from "@/views/formativeEvaluation/abilityDegree/AbilityDegree"
 import AbilityAnalysis from "@/views/formativeEvaluation/abilityAnalysis/AbilityAnalysis"
@@ -45,10 +46,16 @@ const constantRoutes = [
     meta: { title: '成绩查询' }
   },
   {
-    path: '/user-manage',
-    name: 'UserManage',
-    component: UserManage,
-    meta: { title: '用户管理' }
+    path: '/student-manage',
+    name: 'StudentManage',
+    component: StudentManage,
+    meta: { title: '学生管理' }
+  },
+  {
+    path: '/jobs-manage',
+    name: 'JobsManage',
+    component: JobsManage,
+    meta: { title: '崗位管理' }
   },
   {
     path: '/ability-degree',

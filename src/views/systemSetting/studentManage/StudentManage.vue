@@ -4,7 +4,7 @@
       <el-button type="primary" size="small" plain icon="el-icon-circle-plus-outline" @click="addUser">新增</el-button>
       <el-button type="danger" size="small" plain icon="el-icon-circle-close" @click="batchDeleteClick">删除</el-button>
       <el-button type="primary" size="small" plain icon="el-icon-download">下载模板</el-button>
-      <el-button type="primary" size="small" plain icon="el-icon-upload">导入用户</el-button>
+      <el-button type="primary" size="small" plain icon="el-icon-upload">导入学生信息</el-button>
     </div>
     <div slot="operation">
       <Search placeholder="请输入搜索信息"></Search>
@@ -35,21 +35,21 @@
         <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
       </div>
 
-      <UserManageModal ref="UserManageModal" @addUserInfo="addUserInfo"></UserManageModal>
+      <StudentManageModal ref="StudentManageModal" @addUserInfo="addUserInfo"></StudentManageModal>
     </div>
   </Block>
 </template>
 
 <script>
   import Search from "@/components/search/Search"
-  import UserManageModal from "@/views/systemSetting/userManage/UserManageModal"
+  import StudentManageModal from "@/views/systemSetting/studentManage/StudentManageModal"
   import studentData from "@/database/studentData"
 
   export default {
-    name: "UserManage",
+    name: "StudentManage",
     components: {
       Search,
-      UserManageModal
+      StudentManageModal
     },
     data() {
       return {
@@ -68,7 +68,7 @@
     },
     methods: {
       addUser(){
-        this.$refs.UserManageModal.setDialogVisible(true);
+        this.$refs.StudentManageModal.setDialogVisible(true);
       },
       addUserInfo(newUserInfo){
         this.tableData.push(newUserInfo);

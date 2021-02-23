@@ -33,7 +33,7 @@
 
 <script>
   export default {
-    name: "UserManageModal",
+    name: "StudentManageModal",
     data() {
       return {
         dialogVisible: false,

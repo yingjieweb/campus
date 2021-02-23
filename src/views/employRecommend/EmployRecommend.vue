@@ -2,15 +2,7 @@
   <Block title="应届生就业推荐">
     <div slot="content">
       <div class="search">
-        <div class="positionType">
-          <el-cascader
-                  v-model="value"
-                  :options="options"
-                  :show-all-levels="false"
-                  @change="handleChange"
-          ></el-cascader>
-        </div>
-        <input type="text" placeholder="搜索职位、公司或地点">
+        <input type="text" placeholder="搜索职位、公司、地点">
         <button>搜索</button>
       </div>
 
@@ -30,7 +22,7 @@
   </Block>
 </template>
 
-<script>
+<script lang="js">
   import RecommendList from "./RecommendList.vue";
   import recommendData from "../../database/recommendData";
 
@@ -216,36 +208,30 @@
   .search {
     display: flex;
     justify-content: center;
-    position: relative;
+    margin-bottom: 6px;
 
-    > .positionType ::v-deep .el-input__inner {
-      border-radius: 0;
-    }
-
-    > input {
-      width: 420px;
-      height: 40px;
-      color: #606266;
-      padding: 0 4px;
-      display: inline-block;
-      border: 1px solid #DCDFE6;
-
-      &:hover {
-        border: 1px solid #409EFF;
-      }
-    }
-
-    > button {
-      width: 80px;
-      color: white;
-      border: none;
+    input {
+      width: 770px;
+      height: 42px;
+      line-height: 46px;
+      padding: 12px 8px 12px 16px;
+      font-size: 16px;
+      border: 1px solid #e8e8e8;
+      border-right: 0;
+      vertical-align: top;
       outline: none;
-      background-color: #55CBCA;
+      color: #333;
+    }
 
-      &:hover {
-        cursor: pointer;
-        background-color: #55BBCC;
-      }
+    button {
+      width: 140px;
+      height: 42px;
+      line-height: 46px;
+      font-size: 18px;
+      border: 1px solid #00b38a;
+      background: #00b38a;
+      color: #fff;
+      cursor: pointer;
     }
   }
 

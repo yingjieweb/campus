@@ -30,6 +30,11 @@
           </template>
         </el-table-column>
       </el-table>
+
+      <div class="pagination">
+        <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
+      </div>
+
       <UserManageModal ref="UserManageModal" @addUserInfo="addUserInfo"></UserManageModal>
     </div>
   </Block>
@@ -38,6 +43,7 @@
 <script>
   import Search from "@/components/search/Search"
   import UserManageModal from "@/views/systemSetting/userManage/UserManageModal"
+  import studentData from "@/database/studentData"
 
   export default {
     name: "UserManage",
@@ -49,14 +55,15 @@
       return {
         isShowDialog: false,
         selectedStudentId: [],
-        tableData: [{
-          name: '张磊',
-          grade: '2014级',
-          studentId: '2014416659',
-          gender: '男',
-          phone: '18860628958',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }]
+        tableData: studentData
+        // tableData: [{
+        //   name: '张磊',
+        //   grade: '2014级',
+        //   studentId: '2014416659',
+        //   gender: '男',
+        //   phone: '18860628958',
+        //   address: '上海市普陀区金沙江路 1518 弄'
+        // }]
       }
     },
     methods: {
@@ -93,9 +100,9 @@
 </script>
 
 <style lang="scss" scoped>
-  .top-bar {
+  .pagination {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 10px;
   }
 </style>

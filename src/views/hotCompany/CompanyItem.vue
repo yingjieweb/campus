@@ -1,20 +1,20 @@
 <template>
   <div class="company-item">
     <div class="top">
-      <img :src="companyItem.companyAvatar">
-      <span class="company-name">{{companyItem.company}}</span>
-      <span class="company-intro">{{companyItem.introduce.substr(0, 15)}}</span>
+      <img :src="companyItem.companyAvatar" @click="goDetails(companyItem.id)">
+      <span class="company-name" @click="goDetails(companyItem.id)">{{companyItem.company}}</span>
+      <span class="company-intro">{{companyItem.introduce.substr(0, 12)}}...</span>
     </div>
     <div class="bottom">
-      <div class="bottom-item">
+      <div class="bottom-item" @click="goDetails(companyItem.id)">
         <span>198</span>
         <span>面试评价</span>
       </div>
-      <div class="bottom-item">
+      <div class="bottom-item" @click="goDetails(companyItem.id)">
         <span>198</span>
         <span>在招岗位</span>
       </div>
-      <div class="bottom-item">
+      <div class="bottom-item" @click="goDetails(companyItem.id)">
         <span>198</span>
         <span>简历投递数</span>
       </div>
@@ -67,11 +67,13 @@
       justify-content: space-evenly;
       align-items: center;
 
-      img {width: 70px;}
+      img {
+        width: 70px;
+        cursor: pointer;
+      }
 
       .company-name {
         cursor: pointer;
-
         &:hover {color: #00b38a;}
       }
 

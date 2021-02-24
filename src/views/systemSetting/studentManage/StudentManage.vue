@@ -18,11 +18,15 @@
               @selection-change="selsChange">
         <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column prop="name" label="姓名"></el-table-column>
-        <el-table-column prop="grade" label="年级"></el-table-column>
         <el-table-column prop="gender" label="性别"></el-table-column>
+        <el-table-column prop="grade" label="年级"></el-table-column>
         <el-table-column prop="studentNo" label="学号"></el-table-column>
-        <el-table-column prop="phone" label="电话"></el-table-column>
+        <el-table-column prop="major" label="专业"></el-table-column>
         <el-table-column prop="address" label="家庭地址" show-overflow-tooltip></el-table-column>
+        <el-table-column prop="signCompany" label="签约公司" show-overflow-tooltip></el-table-column>
+        <el-table-column prop="signJob" label="签约岗位" show-overflow-tooltip></el-table-column>
+        <el-table-column prop="jobCity" label="就业城市" show-overflow-tooltip></el-table-column>
+        <el-table-column prop="phone" label="电话"></el-table-column>
         <el-table-column fixed="right" label="操作" width="100">
           <template slot-scope="scope">
             <el-button type="text" size="small" @click="editStudent(scope.row)">编辑</el-button>
@@ -73,6 +77,8 @@
         //   permission: 'admin',
         //   phone: '18604920086',
         //   address: '无锡新区震泽路18号软件园金牛座A栋3层',
+        //   signCompany: '北京字节跳动',
+        //   jobCity: '北京',
         //   scores: {
         //     '软件工程专业概论': '优',
         //     '面向对象程序设计': '94',

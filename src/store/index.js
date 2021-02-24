@@ -6,13 +6,13 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     currentUser: {},
-    permission: '',
+    isAdmin: false,
     isLogin: false
   },
   mutations: {
     getUserInfo(state, currentUser) {
       state.currentUser = currentUser
-      state.permission = currentUser.permission !== 'admin'
+      state.isAdmin = currentUser.permission === 'admin'
     },
     changeLoginStatus(state, status) {
       state.isLogin = status

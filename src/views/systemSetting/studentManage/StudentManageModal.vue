@@ -11,8 +11,8 @@
       <el-form-item label="年级" prop="grade" :label-width="formLabelWidth">
         <el-input v-model="form.grade" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="学号" prop="studentId" :label-width="formLabelWidth">
-        <el-input v-model="form.studentId" autocomplete="off"></el-input>
+      <el-form-item label="学号" prop="studentNo" :label-width="formLabelWidth">
+        <el-input v-model="form.studentNo" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item label="性别" prop="gender" :label-width="formLabelWidth">
         <el-input v-model="form.gender" autocomplete="off"></el-input>
@@ -42,7 +42,7 @@
         form: {
           name: '',
           grade: '',
-          studentId: '',
+          studentNo: '',
           gender: '',
           phone: '',
           address: ''
@@ -50,7 +50,7 @@
         rules: {
           name: [{required: true, message: '请输入学生姓名', trigger: 'blur'}],
           grade: [{required: true, message: '请输入学生年级', trigger: 'blur'}],
-          studentId: [{required: true, message: '请输入学生学号', trigger: 'blur'}],
+          studentNo: [{required: true, message: '请输入学生学号', trigger: 'blur'}],
           gender: [{required: true, message: '请输入学生年龄', trigger: 'blur'}],
           phone: [{required: true, message: '请输入学生电话', trigger: 'blur'}],
           address: [{required: true, message: '请输入学生家庭地址', trigger: 'blur'}]

@@ -23,7 +23,7 @@
 </template>
 
 <script lang="js">
-  import studentDetailData from "@/database/studentDetailData"
+  import studentData from "@/database/studentData"
 
   export default {
     name: "Login",
@@ -35,7 +35,7 @@
     },
     methods: {
       onsubmit() {
-        let currentStudent = studentDetailData.filter(item => {
+        let currentStudent = studentData.filter(item => {
           return item.studentNo === this.studentNo
         })
 

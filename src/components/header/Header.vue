@@ -31,7 +31,7 @@
     name: "Header",
     data(){
       return {
-        username: this.$store.state.currentUser.username,
+        username: this.$store.state.currentUser.name,
         circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
         operationVisible: false,
         menuCollapse: false

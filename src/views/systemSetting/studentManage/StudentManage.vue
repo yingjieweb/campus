@@ -20,7 +20,7 @@
         <el-table-column prop="name" label="姓名"></el-table-column>
         <el-table-column prop="grade" label="年级"></el-table-column>
         <el-table-column prop="gender" label="性别"></el-table-column>
-        <el-table-column prop="studentId" label="学号"></el-table-column>
+        <el-table-column prop="studentNo" label="学号"></el-table-column>
         <el-table-column prop="phone" label="电话"></el-table-column>
         <el-table-column prop="address" label="家庭地址" show-overflow-tooltip></el-table-column>
         <el-table-column fixed="right" label="操作" width="100">
@@ -57,12 +57,29 @@
         selectedStudentId: [],
         tableData: studentData
         // tableData: [{
-        //   name: '张磊',
+        //   id: 1,
+        //   name: '董梦嫣',
         //   grade: '2014级',
-        //   studentId: '2014416659',
-        //   gender: '男',
-        //   phone: '18860628958',
-        //   address: '上海市普陀区金沙江路 1518 弄'
+        //   gender: '女',
+        //   studentNo: '1871123',
+        //   password: '1871123',
+        //   permission: 'admin',
+        //   phone: '18604920086',
+        //   address: '无锡新区震泽路18号软件园金牛座A栋3层',
+        //   scores: {
+        //     '软件工程专业概论': '优',
+        //     '面向对象程序设计': '94',
+        //     '程序设计基础': '94',
+        //     '基础编程实训': '98',
+        //     '离散数学': '99',
+        //     '物理概论': '98',
+        //     '高等数学①（一）': '90',
+        //     '高等数学①（二）': '99',
+        //     '线性代数': '88',
+        //     '大学英语（1）': '81',
+        //     '大学英语（2）': '96',
+        //     '初级日语（1）': '99'
+        //   }
         // }]
       }
     },
@@ -75,7 +92,7 @@
       },
       deleteStudent(studentInfo) {
         this.tableData.map((item, index) => {
-          if (item.studentId === studentInfo.studentId)
+          if (item.studentNo === studentInfo.studentNo)
             this.tableData.splice(index, 1)
         })
       },
@@ -84,7 +101,7 @@
           this.tableData.push(newUserInfo)
         } else if (status === 'edit') {
           this.tableData.map((item, index) => {
-            if (item.studentId === newUserInfo.studentId) {
+            if (item.studentNo === newUserInfo.studentNo) {
               this.$set(this.tableData, index, newUserInfo)
             }
           })
@@ -92,7 +109,7 @@
       },
       selsChange(sels) {
         this.selectedStudentId = sels.map(item => {
-          return item.studentId
+          return item.id
         })
       },
       batchDeleteClick(){

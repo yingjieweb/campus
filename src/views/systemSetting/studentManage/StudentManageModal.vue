@@ -25,8 +25,8 @@
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">
-      <el-button size="small" @click="dialogVisible = false">取 消</el-button>
-      <el-button type="primary" size="small" @click="onsubmit">确 定</el-button>
+      <el-button size="small" @click="cancelSubmit">取 消</el-button>
+      <el-button type="primary" size="small" @click="onSubmit">确 定</el-button>
     </div>
   </el-dialog>
 </template>
@@ -38,6 +38,7 @@
       return {
         dialogVisible: false,
         formLabelWidth: '90px',
+        addOrEdit: '',
         form: {
           name: '',
           grade: '',
@@ -57,21 +58,32 @@
       }
     },
     methods: {
-      setDialogVisible(state) {
-        this.dialogVisible = state;
+      setDialogVisible(state, status, studentInfo) {
+        this.dialogVisible = state
+        this.addOrEdit = status
+        if (status === 'edit') {
+          // form 挂载前赋值，后面调用 resetFields() 方法将不生效
+          this.$nextTick(() => {this.form = studentInfo})
+        }
       },
       handleClose(done) {
-        // this.$confirm('确认关闭？').then(_ => {done();}).catch(_ => {});
+        // this.$confirm('确认关闭？').then(_ => {done();}).catch(_ => {})
+        if (this.addOrEdit === 'edit') this.$refs.userModalForm.resetFields()
         done()
       },
-      onsubmit() {
+      cancelSubmit() {
+        this.dialogVisible = false
+        if (this.addOrEdit === 'edit') this.$refs.userModalForm.resetFields()
+      },
+      onSubmit() {
         this.$refs.userModalForm.validate((valid) => {
           if (valid) {
-            this.$emit('addUserInfo', JSON.parse(JSON.stringify(this.form)));
-            this.$message({message: '添加成功！', type: 'success'});
-            this.dialogVisible = false;
+            this.$emit('loadListData', this.addOrEdit, JSON.parse(JSON.stringify(this.form)))
+            if (this.addOrEdit === 'edit') this.$refs.userModalForm.resetFields()
 
-            this.$refs.userModalForm.resetFields();
+            this.dialogVisible = false
+            this.$message.success('操作成功~')
+            this.$refs.userModalForm.resetFields()
           } else {
             this.$message.error('请按提示输入完整的学生信息~')
           }

@@ -1,7 +1,7 @@
 <template>
   <Block title="用户管理">
     <div slot="button">
-      <el-button type="primary" size="small" plain icon="el-icon-circle-plus-outline" @click="addUser">新增</el-button>
+      <el-button type="primary" size="small" plain icon="el-icon-circle-plus-outline" @click="addStudent">新增</el-button>
       <el-button type="danger" size="small" plain icon="el-icon-circle-close" @click="batchDeleteClick">删除</el-button>
       <el-button type="primary" size="small" plain icon="el-icon-download">下载模板</el-button>
       <el-button type="primary" size="small" plain icon="el-icon-upload">导入学生信息</el-button>
@@ -25,8 +25,8 @@
         <el-table-column prop="address" label="家庭地址" show-overflow-tooltip></el-table-column>
         <el-table-column fixed="right" label="操作" width="100">
           <template slot-scope="scope">
-            <el-button type="text" size="small">编辑</el-button>
-            <el-button type="text" size="small">删除</el-button>
+            <el-button type="text" size="small" @click="editStudent(scope.row)">编辑</el-button>
+            <el-button type="text" size="small" @click="deleteStudent(scope.row)">删除</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -35,7 +35,7 @@
         <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
       </div>
 
-      <StudentManageModal ref="StudentManageModal" @addUserInfo="addUserInfo"></StudentManageModal>
+      <StudentManageModal ref="StudentManageModal" @loadListData="loadListData"></StudentManageModal>
     </div>
   </Block>
 </template>
@@ -67,11 +67,28 @@
       }
     },
     methods: {
-      addUser(){
-        this.$refs.StudentManageModal.setDialogVisible(true);
+      addStudent(){
+        this.$refs.StudentManageModal.setDialogVisible(true, 'add')
       },
-      addUserInfo(newUserInfo){
-        this.tableData.push(newUserInfo);
+      editStudent(studentInfo) {
+        this.$refs.StudentManageModal.setDialogVisible(true, 'edit', JSON.parse(JSON.stringify(studentInfo)))
+      },
+      deleteStudent(studentInfo) {
+        this.tableData.map((item, index) => {
+          if (item.studentId === studentInfo.studentId)
+            this.tableData.splice(index, 1)
+        })
+      },
+      loadListData(status, newUserInfo){
+        if (status === 'add') {
+          this.tableData.push(newUserInfo)
+        } else if (status === 'edit') {
+          this.tableData.map((item, index) => {
+            if (item.studentId === newUserInfo.studentId) {
+              this.$set(this.tableData, index, newUserInfo)
+            }
+          })
+        }
       },
       selsChange(sels) {
         this.selectedStudentId = sels.map(item => {
@@ -89,10 +106,10 @@
               return !this.selectedStudentId.includes(item.studentId)
             })
           }).catch(() => {
-            this.$message({message: '取消删除操作！', type: 'info'})
+            this.$message.info('取消删除操作！')
           })
         } else {
-          this.$message.info('请选择需要删除的用户信息！');
+          this.$message.info('请选择需要删除的用户信息！')
         }
       },
     }

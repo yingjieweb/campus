@@ -12,7 +12,7 @@
     <div slot="content">
       <el-table
               ref="multipleTable"
-              :data="tableData"
+              :data="currentPageStudents"
               tooltip-effect="dark"
               border
               @selection-change="selsChange">
@@ -32,7 +32,14 @@
       </el-table>
 
       <div class="pagination">
-        <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
+        <el-pagination
+                background
+                layout="prev, pager, next"
+                @prev-click="prevClick"
+                @next-click="nextClick"
+                @current-change="currentChange"
+                :total="totalPageCount">
+        </el-pagination>
       </div>
 
       <StudentManageModal ref="StudentManageModal" @loadListData="loadListData"></StudentManageModal>
@@ -55,8 +62,8 @@
       return {
         isShowDialog: false,
         selectedStudentId: [],
-        tableData: studentData
-        // tableData: [{
+        currentPageStudents: studentData
+        // currentPageStudents: [{
         //   id: 1,
         //   name: '董梦嫣',
         //   grade: '2014级',
@@ -83,6 +90,11 @@
         // }]
       }
     },
+    computed: {
+      totalPageCount() {
+        return Array.from(studentData).length / 9 * 10;
+      }
+    },
     methods: {
       addStudent(){
         this.$refs.StudentManageModal.setDialogVisible(true, 'add')
@@ -91,18 +103,18 @@
         this.$refs.StudentManageModal.setDialogVisible(true, 'edit', JSON.parse(JSON.stringify(studentInfo)))
       },
       deleteStudent(studentInfo) {
-        this.tableData.map((item, index) => {
+        this.currentPageStudents.map((item, index) => {
           if (item.studentNo === studentInfo.studentNo)
-            this.tableData.splice(index, 1)
+            this.currentPageStudents.splice(index, 1)
         })
       },
       loadListData(status, newUserInfo){
         if (status === 'add') {
-          this.tableData.push(newUserInfo)
+          this.currentPageStudents.push(newUserInfo)
         } else if (status === 'edit') {
-          this.tableData.map((item, index) => {
+          this.currentPageStudents.map((item, index) => {
             if (item.studentNo === newUserInfo.studentNo) {
-              this.$set(this.tableData, index, newUserInfo)
+              this.$set(this.currentPageStudents, index, newUserInfo)
             }
           })
         }
@@ -119,8 +131,8 @@
             cancelButtonText: '取消',
             type: 'warning'
           }).then(() => {
-            this.tableData = this.tableData.filter(item => {
-              return !this.selectedStudentId.includes(item.studentId)
+            this.currentPageStudents = this.currentPageStudents.filter(item => {
+              return !this.selectedStudentId.includes(item.id)
             })
           }).catch(() => {
             this.$message.info('取消删除操作！')
@@ -129,7 +141,22 @@
           this.$message.info('请选择需要删除的用户信息！')
         }
       },
-    }
+      handleChange(value) {
+        console.log(value);
+      },
+      prevClick(currentPage) {
+        this.currentPageStudents = studentData.slice((currentPage - 1) * 9, currentPage * 9);
+      },
+      nextClick(currentPage) {
+        this.currentPageStudents = studentData.slice((currentPage - 1) * 9, currentPage * 9);
+      },
+      currentChange(currentPage) {
+        this.currentPageStudents = studentData.slice((currentPage - 1) * 9, currentPage * 9);
+      }
+    },
+    created() {
+      this.currentPageStudents = studentData.slice(0,9);
+    },
   }
 </script>
 

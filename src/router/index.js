@@ -55,7 +55,7 @@ const constantRoutes = [
     path: '/jobs-manage',
     name: 'JobsManage',
     component: JobsManage,
-    meta: { title: '崗位管理' }
+    meta: { title: '岗位管理' }
   },
   {
     path: '/ability-degree',

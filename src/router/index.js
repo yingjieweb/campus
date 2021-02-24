@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import store from '@/store/index'
 
 import Login from "@/views/login/Login"
-import WorkBench from '@/views/workBench/WorkBench.vue'
 import StudentManage from "@/views/systemSetting/studentManage/StudentManage"
 import JobsManage from "@/views/systemSetting/jobsManage/JobsManage"
 import ScoreEnquiry from "@/views/dataCenter/ScoreEnquiry"
@@ -32,12 +31,6 @@ const constantRoutes = [
     name: 'Login',
     component: Login,
     meta: { title: '登录' }
-  },
-  {
-    path: '/work-bench',
-    name: 'WorkBench',
-    component: WorkBench,
-    meta: { title: '系统首页' }
   },
   {
     path: '/score-enquiry',

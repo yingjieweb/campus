@@ -4,7 +4,7 @@
       <i class="el-icon-s-fold" v-if="!menuCollapse"></i>
       <i class="el-icon-s-unfold" v-else></i>
     </div>
-    <router-link to="/work-bench">
+    <router-link to="/campus-recruit">
       <div class="logo">
         <p class="intro">
           <strong class="strong">大学生就业推荐系统 </strong>

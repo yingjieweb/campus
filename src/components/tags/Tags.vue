@@ -43,8 +43,8 @@
           delItem.path === this.$route.fullPath && this.$router.push(item.path)
         } else {
           this.tagsList = [{
-            path: "/work-bench",
-            title: "系统首页"
+            path: "/campus-recruit",
+            title: "校园招聘"
           }]
         }
       }

@@ -44,7 +44,7 @@
             this.$message({message: '登陆成功', type: 'success'})
 
             this.$store.commit('changeLoginStatus', true)
-            this.$router.push('/work-bench')
+            this.$router.push('/campus-recruit')
 
             this.$store.commit('getUserInfo', currentStudent[0])
           } else {

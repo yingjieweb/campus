@@ -24,7 +24,7 @@
 
 <script lang="js">
   import RecommendList from "./RecommendList.vue";
-  import recommendData from "../../database/recommendData";
+  import jobData from "../../database/jobData";
 
   export default {
     name: "EmployRecommend",
@@ -181,7 +181,7 @@
     },
     computed: {
       totalPageCount() {
-        return Array.from(recommendData).length / 9 * 10;
+        return Array.from(jobData).length / 9 * 10;
       }
     },
     methods: {
@@ -189,17 +189,17 @@
         console.log(value);
       },
       prevClick(currentPage) {
-        this.currentPageJobs = recommendData.slice((currentPage - 1) * 9, currentPage * 9);
+        this.currentPageJobs = jobData.slice((currentPage - 1) * 9, currentPage * 9);
       },
       nextClick(currentPage) {
-        this.currentPageJobs = recommendData.slice((currentPage - 1) * 9, currentPage * 9);
+        this.currentPageJobs = jobData.slice((currentPage - 1) * 9, currentPage * 9);
       },
       currentChange(currentPage) {
-        this.currentPageJobs = recommendData.slice((currentPage - 1) * 9, currentPage * 9);
+        this.currentPageJobs = jobData.slice((currentPage - 1) * 9, currentPage * 9);
       }
     },
     created() {
-      this.currentPageJobs = recommendData.slice(0,9);
+      this.currentPageJobs = jobData.slice(0,9);
     },
   }
 </script>

@@ -103,7 +103,7 @@
   import PositionChoice from "@/views/campusRecruit/PositionChoice"
   import ProfileInfo from "@/views/campusRecruit/ProfileInfo"
   import HotCompany from "@/views/campusRecruit/HotCompany"
-  import recommendData from "@/database/recommendData"
+  import jobData from "@/database/jobData"
   import {getRandomNum} from "@/utils/randomNum"
 
   export default {
@@ -122,13 +122,13 @@
     },
     computed: {
       recommendList1() {
-        return recommendData.slice(this.random1, this.random1+5)
+        return jobData.slice(this.random1, this.random1+5)
       },
       recommendList2() {
-        return recommendData.slice(this.random2, this.random2+5)
+        return jobData.slice(this.random2, this.random2+5)
       },
       recommendList3() {
-        return recommendData.slice(this.random3, this.random3+5)
+        return jobData.slice(this.random3, this.random3+5)
       }
 
     }

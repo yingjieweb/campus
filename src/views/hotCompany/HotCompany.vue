@@ -19,7 +19,7 @@
 
 <script lang="js">
   import CompanyList from "@/views/hotCompany/CompanyList"
-  import recommendData from "@/database/recommendData"
+  import jobData from "@/database/jobData"
 
   export default {
     name: "HotCompany",
@@ -34,7 +34,7 @@
     },
     computed: {
       totalPageCount() {
-        return Array.from(recommendData).length / 18 * 10;
+        return Array.from(jobData).length / 18 * 10;
       }
     },
     methods: {
@@ -42,17 +42,17 @@
         console.log(value);
       },
       prevClick(currentPage) {
-        this.currentPageCompany = recommendData.slice((currentPage - 1) * 18, currentPage * 18);
+        this.currentPageCompany = jobData.slice((currentPage - 1) * 18, currentPage * 18);
       },
       nextClick(currentPage) {
-        this.currentPageCompany = recommendData.slice((currentPage - 1) * 18, currentPage * 18);
+        this.currentPageCompany = jobData.slice((currentPage - 1) * 18, currentPage * 18);
       },
       currentChange(currentPage) {
-        this.currentPageCompany = recommendData.slice((currentPage - 1) * 18, currentPage * 18);
+        this.currentPageCompany = jobData.slice((currentPage - 1) * 18, currentPage * 18);
       }
     },
     created() {
-      this.currentPageCompany = recommendData.slice(0,18);
+      this.currentPageCompany = jobData.slice(0,18);
     },
   }
 </script>

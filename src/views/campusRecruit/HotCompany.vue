@@ -135,7 +135,7 @@
 </template>
 
 <script lang="js">
-  import recommendData from "@/database/recommendData"
+  import jobData from "@/database/jobData"
   import {getRandomNum} from "@/utils/randomNum"
 
   export default {
@@ -154,22 +154,22 @@
     },
     computed: {
       recommendList1() {
-        return recommendData.slice(this.random1, this.random1+7)
+        return jobData.slice(this.random1, this.random1+7)
       },
       recommendList2() {
-        return recommendData.slice(this.random2, this.random2+7)
+        return jobData.slice(this.random2, this.random2+7)
       },
       recommendList3() {
-        return recommendData.slice(this.random3, this.random3+7)
+        return jobData.slice(this.random3, this.random3+7)
       },
       recommendList4() {
-        return recommendData.slice(this.random4, this.random4+7)
+        return jobData.slice(this.random4, this.random4+7)
       },
       recommendList5() {
-        return recommendData.slice(this.random5, this.random5+7)
+        return jobData.slice(this.random5, this.random5+7)
       },
       recommendList6() {
-        return recommendData.slice(this.random6, this.random6+7)
+        return jobData.slice(this.random6, this.random6+7)
       },
     },
     methods: {

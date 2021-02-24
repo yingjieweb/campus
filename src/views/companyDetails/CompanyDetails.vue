@@ -2,26 +2,26 @@
   <Block title="岗位详情">
     <div slot="content">
       positionId： {{positionId}}
-      recommendDataDetails: {{recommendDataDetails}}
-      <img :src="recommendDataDetails.companyAvatar" alt="">
+      jobDataDetails: {{jobDataDetails}}
+      <img :src="jobDataDetails.companyAvatar">
     </div>
   </Block>
 </template>
 
 <script lang="js">
-  import recommendData from "@/database/recommendData"
+  import jobData from "@/database/jobData"
 
   export default {
     name: "CompanyDetails",
     data() {
       return {
         positionId: '',
-        recommendData: recommendData
+        jobData: jobData
       }
     },
     computed: {
-      recommendDataDetails() {
-        return recommendData[--this.positionId]
+      jobDataDetails() {
+        return jobData[--this.positionId]
       }
     },
     created() {

@@ -51,7 +51,7 @@ const studentData = [
   },
   {
     id: 3,
-    name: '冯慕白',
+    name: '孙志伟',
     grade: '2014级',
     gender: '男',
     studentNo: '20103437',

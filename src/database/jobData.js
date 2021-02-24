@@ -1,4 +1,4 @@
-const recommendData = [
+const jobData = [
   {
     id: 1,
     jobs: 'web前端开发工程师',
@@ -183,4 +183,4 @@ const recommendData = [
   }
 ]
 
-export default recommendData
+export default jobData

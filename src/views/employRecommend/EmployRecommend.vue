@@ -199,7 +199,7 @@
       }
     },
     created() {
-      this.currentPageJobs = jobData.slice(0,9);
+      this.currentPageJobs = jobData.slice(0, 9);
     },
   }
 </script>

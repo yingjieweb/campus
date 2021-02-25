@@ -52,7 +52,7 @@
       }
     },
     created() {
-      this.currentPageCompany = jobData.slice(0,18);
+      this.currentPageCompany = jobData.slice(0, 18);
     },
   }
 </script>

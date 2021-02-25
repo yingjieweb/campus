@@ -15,7 +15,9 @@
     props: {
       companyList: {
         type: Array,
-        default: []
+        default() {
+          return []
+        }
       }
     }
   }

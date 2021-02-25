@@ -80,13 +80,13 @@
         <div class="recommend-jobs">
           <div class="title">为你匹配</div>
           <div class="recommend-list">
-            <div class="recommend-item" v-for="item in recommendList1" :key="item.name">
+            <div class="recommend-item" v-for="item in jobDataList1" :key="item.name">
               <div class="avatar">
                 <img :src="item.companyAvatar">
               </div>
               <div class="info">
                 <div class="name">
-                  <span class="company">{{item.company}}</span>
+                  <span class="company">{{item.companyName}}</span>
                   <span class="salary">{{item.salary}}</span>
                 </div>
                 <div class="intro">{{item.introduce.substr(0, 13)}}...</div>

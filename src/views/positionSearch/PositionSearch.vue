@@ -7,27 +7,21 @@
       </div>
 
       <div class="condition">
-        <div class="left">
-          <div class="position">工作地点</div>
-          <div class="experience">工作经验</div>
-          <div class="degree">学历要求</div>
-        </div>
-        <div class="right">
-          <div class="status">工作地点</div>
-          <div class="scale">工作经验</div>
-          <div class="degree">学历要求</div>
-        </div>
+        <SearchCondition></SearchCondition>
       </div>
 
       <div class="results">
-        <PositionList></PositionList>
+        <PositionList :job-data-list="currentPageJobs"></PositionList>
       </div>
 
       <div class="pagination">
         <el-pagination
                 background
                 layout="prev, pager, next"
-                :total="1000">
+                @prev-click="prevClick"
+                @next-click="nextClick"
+                @current-change="currentChange"
+                :total="totalPageCount">
         </el-pagination>
       </div>
     </div>
@@ -36,12 +30,42 @@
 
 
 <script lang="js">
+  import SearchCondition from "@/views/positionSearch/SearchCondition"
   import PositionList from "@/views/positionSearch/PositionList"
+  import jobData from "@/database/jobData"
 
   export default {
     name: "PositionSearch",
     components: {
+      SearchCondition,
       PositionList
+    },
+    data() {
+      return {
+        currentPageJobs: []
+      }
+    },
+    computed: {
+      totalPageCount() {
+        return Array.from(jobData).length / 10 * 10;
+      }
+    },
+    methods: {
+      handleChange(value) {
+        console.log(value);
+      },
+      prevClick(currentPage) {
+        this.currentPageJobs = jobData.slice((currentPage - 1) * 10, currentPage * 10);
+      },
+      nextClick(currentPage) {
+        this.currentPageJobs = jobData.slice((currentPage - 1) * 10, currentPage * 10);
+      },
+      currentChange(currentPage) {
+        this.currentPageJobs = jobData.slice((currentPage - 1) * 10, currentPage * 10);
+      }
+    },
+    created() {
+      this.currentPageJobs = jobData.slice(0, 10)
     }
   }
 </script>
@@ -77,27 +101,15 @@
     }
   }
 
-  .condition {
-    display: flex;
-    margin-bottom: 20px;
-
-    .left {
-      width: 50%;
-      border: 1px solid red;
-    }
-
-    .right {
-      width: 50%;
-      border: 1px solid red;
-    }
-  }
+  .condition {margin-bottom: 10px;}
 
   .results {
-    height: 580px;
-    border: 1px solid red;
+    /*height: px;*/
+    /*border: 1px solid red;*/
   }
 
   .pagination {
+    margin-top: 5px;
     display: flex;
     justify-content: center;
   }

@@ -51,7 +51,7 @@
       <div class="field">
         <span class="title">行业领域：</span>
         <span class="option"
-              v-for="(item, index) in degreeArr"
+              v-for="(item, index) in fieldArr"
               :key="item"
               @click="clickPositionItem('fieldCurrentIndex', index)"
               :class="{active: index === fieldCurrentIndex}"

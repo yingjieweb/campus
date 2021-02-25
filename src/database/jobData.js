@@ -10,6 +10,7 @@ const jobData = [
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -39,9 +40,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -71,9 +74,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -103,9 +108,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -135,9 +142,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -167,9 +176,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -199,9 +210,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -231,9 +244,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -263,9 +278,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -295,9 +312,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -327,9 +346,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -359,9 +380,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -391,9 +414,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -423,9 +448,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -455,9 +482,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -487,9 +516,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -518,9 +549,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -550,9 +583,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -582,9 +617,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -614,9 +651,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -646,9 +685,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +
@@ -678,9 +719,11 @@ const jobData = [
     companyAddress: '无锡市新吴区菱湖大道200号E1栋6楼',
     companyScale: '150-500人',
     companyType: '国有企业',
+    companyWelfare: '六险一金，周末双休，餐补，交通补贴',
     recruitJob: 'web前端开发工程师',
     recruitCount: 15,
     requiredDegree: '本科',
+    requiredExp: '经验1-3年',
     requiredMajor: '计算机/软件/通信工程',
     jobDutyDetails: '1、负责公司产品前端页面的功能设计与实现，包括管理系统和H5页面；\n' +
         '2、使用 HTML5、CSS3、JavaScript(ES6)、Angular、Vue等 Web 技术开发 PC/Mobile端应用；\n' +

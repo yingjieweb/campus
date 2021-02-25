@@ -1,6 +1,6 @@
 <template>
   <div class="position-list">
-    <PositionItem v-for="item in 16"></PositionItem>
+    <PositionItem v-for="item in jobDataList" :key="item.id" :job-item="item"></PositionItem>
   </div>
 </template>
 
@@ -11,6 +11,14 @@
     name: "PositionList",
     components: {
       PositionItem
+    },
+    props: {
+      jobDataList: {
+        type: Array,
+        default() {
+          return []
+        }
+      }
     }
   }
 </script>
@@ -18,8 +26,7 @@
 <style lang="scss" scoped>
   .position-list {
     width: 100%;
-    border: 1px solid red;
-
+    min-width: 1664px;
     display: flex;
     flex-wrap: wrap;
   }

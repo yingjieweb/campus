@@ -6,9 +6,22 @@
         <button>搜索</button>
       </div>
 
-      <div class="condition">查询条件</div>
+      <div class="condition">
+        <div class="left">
+          <div class="position">工作地点</div>
+          <div class="experience">工作经验</div>
+          <div class="degree">学历要求</div>
+        </div>
+        <div class="right">
+          <div class="status">工作地点</div>
+          <div class="scale">工作经验</div>
+          <div class="degree">学历要求</div>
+        </div>
+      </div>
 
-      <div class="results">查询结果</div>
+      <div class="results">
+        <PositionList></PositionList>
+      </div>
 
       <div class="pagination">
         <el-pagination
@@ -23,8 +36,13 @@
 
 
 <script lang="js">
+  import PositionList from "@/views/positionSearch/PositionList"
+
   export default {
-    name: "PositionSearch"
+    name: "PositionSearch",
+    components: {
+      PositionList
+    }
   }
 </script>
 
@@ -60,12 +78,22 @@
   }
 
   .condition {
-    height: 300px;
-    border: 1px solid red;
+    display: flex;
+    margin-bottom: 20px;
+
+    .left {
+      width: 50%;
+      border: 1px solid red;
+    }
+
+    .right {
+      width: 50%;
+      border: 1px solid red;
+    }
   }
 
   .results {
-    height: 380px;
+    height: 580px;
     border: 1px solid red;
   }
 

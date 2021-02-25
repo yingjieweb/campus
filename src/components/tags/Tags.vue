@@ -19,12 +19,12 @@
     },
     methods: {
       isActive(path) {
-        return path === this.$route.fullPath
+        return path === this.$route.path
       },
       setTags(route) {
         if (!route.name) return // 清除重定向的路由信息
         const isExist = this.tagsList.some(item => {
-          return item.path === route.fullPath
+          return item.path === route.path
         })
         if (!isExist) {
           if (this.tagsList.length >= 10) {
@@ -32,7 +32,7 @@
           }
           this.tagsList.push({
             title: route.meta.title,
-            path: route.fullPath
+            path: route.path
           })
         }
       },
@@ -40,7 +40,7 @@
         const delItem = this.tagsList.splice(index, 1)[0]
         const item = this.tagsList[index] ? this.tagsList[index] : this.tagsList[index - 1]
         if (item) {
-          delItem.path === this.$route.fullPath && this.$router.push(item.path)
+          delItem.path === this.$route.path && this.$router.push(item.path)
         } else {
           this.tagsList = [{
             path: "/campus-recruit",

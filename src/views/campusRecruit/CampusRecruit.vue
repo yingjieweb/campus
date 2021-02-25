@@ -5,6 +5,7 @@
         <input type="text" placeholder="搜索职位、公司、地点">
         <button>搜索</button>
       </div>
+
       <div class="banner">
         <div class="positions">
           <PositionChoice></PositionChoice>
@@ -16,7 +17,7 @@
               <span class="message">助力好未来</span>
             </div>
             <div class="position-list" v-for="item in jobDataList1" :key="item.id">
-              <div class="position-item">
+              <div class="position-item" @click="goDetails(item.id)">
                 <div class="avatar">
                   <img :src="item.companyAvatar">
                 </div>
@@ -36,7 +37,7 @@
               <span class="message">值得投一投</span>
             </div>
             <div class="position-list" v-for="item in jobDataList2" :key="item.name">
-              <div class="position-item">
+              <div class="position-item" @click="goDetails(item.id)">
                 <div class="avatar">
                   <img :src="item.companyAvatar">
                 </div>
@@ -56,7 +57,7 @@
               <span class="message">才华最值钱</span>
             </div>
             <div class="position-list" v-for="item in jobDataList3" :key="item.name">
-              <div class="position-item">
+              <div class="position-item" @click="goDetails(item.id)">
                 <div class="avatar">
                   <img :src="item.companyAvatar">
                 </div>
@@ -77,10 +78,11 @@
       </div>
       <div class="footer">
         <HotCompany class="hot-company"></HotCompany>
+
         <div class="recommend-jobs">
           <div class="title">为你匹配</div>
           <div class="recommend-list">
-            <div class="recommend-item" v-for="item in jobDataList1" :key="item.name">
+            <div class="recommend-item" v-for="item in jobDataList1" :key="item.name" @click="goDetails(item.id)">
               <div class="avatar">
                 <img :src="item.companyAvatar">
               </div>
@@ -129,6 +131,14 @@
       },
       jobDataList3() {
         return jobData.slice(this.random3, this.random3+5)
+      }
+    },
+    methods: {
+      goDetails(id) {
+        this.$router.push({
+          path: '/position-details',
+          query: { positionId: id },
+        })
       }
     }
   }

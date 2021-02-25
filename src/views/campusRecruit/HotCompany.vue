@@ -15,9 +15,9 @@
       <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList1" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
-            <img class="company-avatar" :src="item.companyAvatar">
+            <img class="company-avatar" :src="item.companyAvatar" @click="goDetails(item.id)">
             <div class="company-basic-info">
-              <div class="company-name">{{item.companyName}}</div>
+              <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
                 <span v-for="badge in item.label">{{badge}}</span>
@@ -35,9 +35,9 @@
       <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList2" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
-            <img class="company-avatar" :src="item.companyAvatar">
+            <img class="company-avatar" :src="item.companyAvatar" @click="goDetails(item.id)">
             <div class="company-basic-info">
-              <div class="company-name">{{item.companyName}}</div>
+              <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
                 <span v-for="badge in item.label">{{badge}}</span>
@@ -55,9 +55,9 @@
       <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList3" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
-            <img class="company-avatar" :src="item.companyAvatar">
+            <img class="company-avatar" :src="item.companyAvatar" @click="goDetails(item.id)">
             <div class="company-basic-info">
-              <div class="company-name">{{item.companyName}}</div>
+              <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
                 <span v-for="badge in item.label">{{badge}}</span>
@@ -75,9 +75,9 @@
       <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList4" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
-            <img class="company-avatar" :src="item.companyAvatar">
+            <img class="company-avatar" :src="item.companyAvatar" @click="goDetails(item.id)">
             <div class="company-basic-info">
-              <div class="company-name">{{item.companyName}}</div>
+              <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
                 <span v-for="badge in item.label">{{badge}}</span>
@@ -95,9 +95,9 @@
       <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList5" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
-            <img class="company-avatar" :src="item.companyAvatar">
+            <img class="company-avatar" :src="item.companyAvatar" @click="goDetails(item.id)">
             <div class="company-basic-info">
-              <div class="company-name">{{item.companyName}}</div>
+              <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
                 <span v-for="badge in item.label">{{badge}}</span>
@@ -115,9 +115,9 @@
       <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList6" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
-            <img class="company-avatar" :src="item.companyAvatar">
+            <img class="company-avatar" :src="item.companyAvatar" @click="goDetails(item.id)">
             <div class="company-basic-info">
-              <div class="company-name">{{item.companyName}}</div>
+              <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
                 <span v-for="badge in item.label">{{badge}}</span>
@@ -175,6 +175,12 @@
     methods: {
       clickTabs(currentTabIndex) {
         this.activeIndex = currentTabIndex
+      },
+      goDetails(id) {
+        this.$router.push({
+          path: '/position-details',
+          query: { positionId: id },
+        })
       }
     }
   }
@@ -234,6 +240,7 @@
             height: 96px;
             border: 1px solid rgba(0,0,0,.04);
             border-radius: 5px;
+            cursor: pointer;
           }
 
           .company-basic-info {
@@ -241,6 +248,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-around;
+
+            .company-name {cursor: pointer;}
 
             .company-badge span {
               border: 1px solid gainsboro;

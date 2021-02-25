@@ -66,7 +66,7 @@
       return {
         isShowDialog: false,
         selectedStudentId: [],
-        currentPageStudents: studentData
+        currentPageStudents: []
         // currentPageStudents: [{
         //   id: 1,
         //   name: '董梦嫣',
@@ -98,7 +98,7 @@
     },
     computed: {
       totalPageCount() {
-        return Array.from(studentData).length / 9 * 10;
+        return Array.from(studentData).length / 10 * 10;
       }
     },
     methods: {
@@ -151,17 +151,17 @@
         console.log(value);
       },
       prevClick(currentPage) {
-        this.currentPageStudents = studentData.slice((currentPage - 1) * 9, currentPage * 9);
+        this.currentPageStudents = studentData.slice((currentPage - 1) * 10, currentPage * 10);
       },
       nextClick(currentPage) {
-        this.currentPageStudents = studentData.slice((currentPage - 1) * 9, currentPage * 9);
+        this.currentPageStudents = studentData.slice((currentPage - 1) * 10, currentPage * 10);
       },
       currentChange(currentPage) {
-        this.currentPageStudents = studentData.slice((currentPage - 1) * 9, currentPage * 9);
+        this.currentPageStudents = studentData.slice((currentPage - 1) * 10, currentPage * 10);
       }
     },
     created() {
-      this.currentPageStudents = studentData.slice(0,9);
+      this.currentPageStudents = studentData.slice(0, 10);
     },
   }
 </script>

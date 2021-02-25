@@ -15,14 +15,14 @@
               <span class="title">大家都在投</span>
               <span class="message">助力好未来</span>
             </div>
-            <div class="position-list" v-for="item in recommendList1" :key="item.name">
+            <div class="position-list" v-for="item in jobDataList1" :key="item.id">
               <div class="position-item">
                 <div class="avatar">
                   <img :src="item.companyAvatar">
                 </div>
                 <div class="info">
                   <div class="name">
-                    <span class="company">{{item.company}}</span>
+                    <span class="company">{{item.companyName}}</span>
                     <span class="salary">{{item.salary}}</span>
                   </div>
                   <div class="intro">{{item.introduce.substr(0, 13)}}...</div>
@@ -35,14 +35,14 @@
               <span class="title">投递热门榜</span>
               <span class="message">值得投一投</span>
             </div>
-            <div class="position-list" v-for="item in recommendList2" :key="item.name">
+            <div class="position-list" v-for="item in jobDataList2" :key="item.name">
               <div class="position-item">
                 <div class="avatar">
                   <img :src="item.companyAvatar">
                 </div>
                 <div class="info">
                   <div class="name">
-                    <span class="company">{{item.company}}</span>
+                    <span class="company">{{item.companyName}}</span>
                     <span class="salary">{{item.salary}}</span>
                   </div>
                   <div class="intro">{{item.introduce.substr(0, 10)}}...</div>
@@ -55,14 +55,14 @@
               <span class="title">高薪职业榜</span>
               <span class="message">才华最值钱</span>
             </div>
-            <div class="position-list" v-for="item in recommendList3" :key="item.name">
+            <div class="position-list" v-for="item in jobDataList3" :key="item.name">
               <div class="position-item">
                 <div class="avatar">
                   <img :src="item.companyAvatar">
                 </div>
                 <div class="info">
                   <div class="name">
-                    <span class="company">{{item.company}}</span>
+                    <span class="company">{{item.companyName}}</span>
                     <span class="salary">{{item.salary}}</span>
                   </div>
                   <div class="intro">{{item.introduce.substr(0, 10)}}...</div>
@@ -121,16 +121,15 @@
       }
     },
     computed: {
-      recommendList1() {
+      jobDataList1() {
         return jobData.slice(this.random1, this.random1+5)
       },
-      recommendList2() {
+      jobDataList2() {
         return jobData.slice(this.random2, this.random2+5)
       },
-      recommendList3() {
+      jobDataList3() {
         return jobData.slice(this.random3, this.random3+5)
       }
-
     }
   }
 </script>

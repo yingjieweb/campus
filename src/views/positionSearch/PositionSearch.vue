@@ -9,6 +9,14 @@
       <div class="condition">查询条件</div>
 
       <div class="results">查询结果</div>
+
+      <div class="pagination">
+        <el-pagination
+                background
+                layout="prev, pager, next"
+                :total="1000">
+        </el-pagination>
+      </div>
     </div>
   </Block>
 </template>
@@ -49,5 +57,20 @@
       color: #fff;
       cursor: pointer;
     }
+  }
+
+  .condition {
+    height: 300px;
+    border: 1px solid red;
+  }
+
+  .results {
+    height: 380px;
+    border: 1px solid red;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
   }
 </style>

@@ -12,12 +12,12 @@
     </div>
 
     <el-tabs v-show="activeIndex === 0" type="border-card" tab-position="left">
-      <el-tab-pane :label="item.company" class="recommend-company" v-for="item in recommendList1" :key="item.id">
+      <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList1" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
             <img class="company-avatar" :src="item.companyAvatar">
             <div class="company-basic-info">
-              <div class="company-name">{{item.company}}</div>
+              <div class="company-name">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
                 <span v-for="badge in item.label">{{badge}}</span>
@@ -32,12 +32,12 @@
       </el-tab-pane>
     </el-tabs>
     <el-tabs v-show="activeIndex === 1" type="border-card" tab-position="left">
-      <el-tab-pane :label="item.company" class="recommend-company" v-for="item in recommendList2" :key="item.id">
+      <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList2" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
             <img class="company-avatar" :src="item.companyAvatar">
             <div class="company-basic-info">
-              <div class="company-name">{{item.company}}</div>
+              <div class="company-name">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
                 <span v-for="badge in item.label">{{badge}}</span>
@@ -52,12 +52,12 @@
       </el-tab-pane>
     </el-tabs>
     <el-tabs v-show="activeIndex === 2" type="border-card" tab-position="left">
-      <el-tab-pane :label="item.company" class="recommend-company" v-for="item in recommendList3" :key="item.id">
+      <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList3" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
             <img class="company-avatar" :src="item.companyAvatar">
             <div class="company-basic-info">
-              <div class="company-name">{{item.company}}</div>
+              <div class="company-name">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
                 <span v-for="badge in item.label">{{badge}}</span>
@@ -72,12 +72,12 @@
       </el-tab-pane>
     </el-tabs>
     <el-tabs v-show="activeIndex === 3" type="border-card" tab-position="left">
-      <el-tab-pane :label="item.company" class="recommend-company" v-for="item in recommendList4" :key="item.id">
+      <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList4" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
             <img class="company-avatar" :src="item.companyAvatar">
             <div class="company-basic-info">
-              <div class="company-name">{{item.company}}</div>
+              <div class="company-name">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
                 <span v-for="badge in item.label">{{badge}}</span>
@@ -92,12 +92,12 @@
       </el-tab-pane>
     </el-tabs>
     <el-tabs v-show="activeIndex === 4" type="border-card" tab-position="left">
-      <el-tab-pane :label="item.company" class="recommend-company" v-for="item in recommendList5" :key="item.id">
+      <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList5" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
             <img class="company-avatar" :src="item.companyAvatar">
             <div class="company-basic-info">
-              <div class="company-name">{{item.company}}</div>
+              <div class="company-name">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
                 <span v-for="badge in item.label">{{badge}}</span>
@@ -112,12 +112,12 @@
       </el-tab-pane>
     </el-tabs>
     <el-tabs v-show="activeIndex === 5" type="border-card" tab-position="left">
-      <el-tab-pane :label="item.company" class="recommend-company" v-for="item in recommendList6" :key="item.id">
+      <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList6" :key="item.id">
         <div class="company-content-left">
           <div class="company-profile">
             <img class="company-avatar" :src="item.companyAvatar">
             <div class="company-basic-info">
-              <div class="company-name">{{item.company}}</div>
+              <div class="company-name">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
                 <span v-for="badge in item.label">{{badge}}</span>
@@ -153,22 +153,22 @@
       }
     },
     computed: {
-      recommendList1() {
+      jobDataList1() {
         return jobData.slice(this.random1, this.random1+7)
       },
-      recommendList2() {
+      jobDataList2() {
         return jobData.slice(this.random2, this.random2+7)
       },
-      recommendList3() {
+      jobDataList3() {
         return jobData.slice(this.random3, this.random3+7)
       },
-      recommendList4() {
+      jobDataList4() {
         return jobData.slice(this.random4, this.random4+7)
       },
-      recommendList5() {
+      jobDataList5() {
         return jobData.slice(this.random5, this.random5+7)
       },
-      recommendList6() {
+      jobDataList6() {
         return jobData.slice(this.random6, this.random6+7)
       },
     },

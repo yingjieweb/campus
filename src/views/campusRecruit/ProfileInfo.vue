@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <img class="avatar" src="@/assets/images/headpic_male.png">
-    <div class="name">{{$store.state.currentUser.username}}</div>
+    <div class="name">{{$store.state.currentUser.name}}</div>
     <div class="trend">
       <div class="send">
         <span>已投递</span>

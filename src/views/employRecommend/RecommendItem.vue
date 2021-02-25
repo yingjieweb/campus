@@ -1,17 +1,17 @@
 <template>
   <div class="recommend-item" @click="goDetails(recommendItem.id)">
     <div class="recruit-info">
-      <div class="jobs">{{recommendItem.jobs}}</div>
+      <div class="jobs">{{recommendItem.recruitJob}}</div>
       <div class="salary">{{recommendItem.salary}}</div>
     </div>
     <div class="direction">
-      <div class="experience">{{recommendItem.experience}}</div>
+      <div class="experience">{{recommendItem.requiredDegree}} - {{recommendItem.requiredMajor}}</div>
       <span class="label" v-for="item in recommendItem.label">{{item}}</span>
     </div>
     <div class="company-info">
       <img class="avatar" :src="recommendItem.companyAvatar">
       <div class="info">
-        <div class="company">{{recommendItem.company}}</div>
+        <div class="company">{{recommendItem.companyName}}</div>
         <div class="introduce">{{recommendItem.introduce}}</div>
       </div>
     </div>

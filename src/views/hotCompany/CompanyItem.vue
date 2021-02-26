@@ -2,7 +2,7 @@
   <div class="company-item">
     <div class="top">
       <img :src="companyItem.companyAvatar" @click="goDetails(companyItem.id)">
-      <span class="company-name" @click="goDetails(companyItem.id)">{{companyItem.company}}</span>
+      <span class="company-name" @click="goDetails(companyItem.id)">{{companyItem.companyName}}</span>
       <span class="company-intro">{{companyItem.introduce.substr(0, 12)}}...</span>
     </div>
     <div class="bottom">

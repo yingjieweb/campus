@@ -85,7 +85,7 @@ const jobData = [
         '4.熟悉常用的互联网开源工具或者框架，如 redis、memcache、消息队列、jenkins等。\n' +
         '5.有良好的沟通协调能力，具备创新思维，对新事物有较强的探索精神。\n' +
         '6.学习能力强，优秀的分析问题和解决问题的能力，勇于迎难而上，强烈的上进心和求知欲这优先。',
-    salary: '18k-30k',
+    salary: '18k-30k·14薪',
     publishTime: '2021/02/25',
     label: ['测试开发', 'Server端测试'],
     introduce: '在线教育/D轮及以上',
@@ -187,7 +187,7 @@ const jobData = [
         '2、乐于挑战没有明显答案的问题，快速理解业务场景，从具体问题中抽象出通用的解决方案；\n' +
         '3、有实际的大规模分布式系统相关工作经历优先；\n' +
         '4、对推荐、搜索、广告系统有理解、认识或经验者优先。',
-    salary: '25k-50k',
+    salary: '25k-30k·14薪',
     publishTime: '2021/02/25',
     label: ['后端开发', '服务端'],
     introduce: '内容资讯,短视频/D轮及以上',
@@ -485,8 +485,8 @@ const jobData = [
     publishTime: '2021/02/25',
     label: ['销售', '客户代表', '电话销售', '销售顾问'],
     introduce: '消费生活',
-    companyAvatar: require('./companyAvatar/weilan.png'),
-    companyPropaPic: require('./companyAvatar/weilan-propa.png'),
+    companyAvatar: require('./companyAvatar/lianjia.png'),
+    companyPropaPic: require('./companyAvatar/lianjia-propa.png'),
     companyHomePage: 'http://sh.lianjia.com/',
     abstract: '链家目前已覆盖北京、上海、广州、深圳、天津、成都、青岛、重庆、大连、合肥等28个地区，全国门店数量约8000家，' +
         '旗下经纪人超过13万名。为不断提高购房服务体验，链家积极布局线上平台。目前线上已覆盖PC端、链家APP、链家网手机版等终端，' +
@@ -654,6 +654,135 @@ const jobData = [
     companyHomePage: 'http://www.opticsjournal.net/',
     abstract: '韩创科技（www.hanmaker.com）成立于2007年4月，一直聚焦在互联网设计领域，崇尚学习与创新的新一代互联网公司，' +
         '坚持以“阅读改变人生，知识成就梦想”的口号，同时也是国内真正实行“你的疯狂创业梦，韩创帮你来实现”的合伙人创业制度的公司。'
+  },
+  {
+    id: 21,
+    companyName: '微盟',
+    companyCity: '上海',
+    companyAddress: '宝山区长江路258号中成智谷创意园区B1栋微盟大厦',
+    companyScale: '500-2000人',
+    companyType: '上市公司',
+    companyWelfare: '带薪病假、带薪年假、年度体检、周末双休',
+    recruitJob: '项目经理',
+    recruitCount: '10+',
+    requiredDegree: '本科及以上',
+    requiredExp: '应届/在校/经验1-3年',
+    requiredMajor: '计算机/软件/通信工程',
+    jobDutyDetails: '1、制定项目工作规划。制定详细的项目工作计划，包括需求调研及分析、系统设计、进度管理、质量管理、制定和项目技术方案的全过程；\n' +
+        '2、组织项目开展。明确项目组内各成员的分工职责，指导并督促各端能按计划有序进行，定期召开项目会议，做好项目阶段总结，跟进项目进度和质量；\n' +
+        '3、负责项目风险评估、预警。负责组织新项目风险评估，规划，正确识别干系人，预估项目风险，预研处理方案并协调处理。针对项目执行过程中突发的问题及时解决和调整；',
+    requiredSkillDesc: '1、本科以上学历，计算机或理工科专业优先；\n' +
+        '2、3年以上项目经理经验，具备PMI认证；具备SAAS软件行业或者新零售行业的相关经验优先；\n' +
+        '3、具有良好的文档编写能力和交流能力；\n' +
+        '4、具备强烈的责任心、敬业精神和抗压能力；',
+    salary: '10k-20k·13薪',
+    publishTime: '2021/02/25',
+    label: ['营销服务｜咨询', '软件服务｜咨询', 'PMI'],
+    introduce: '营销服务｜咨询/上市公司',
+    companyAvatar: require('./companyAvatar/weimeng.png'),
+    companyPropaPic: require('./companyAvatar/weimeng-propa.png'),
+    companyHomePage: 'https://www.weimob.com/',
+    abstract: '微盟，国内领先的微信开发服务商。凭借着丰富的产品功能、全新的产品设计、快速的产品创新、超出用户期待的产品价值，' +
+        '基于微信为企业提供开发、运营、培训、推广一体化解决方案。 微盟软件——提供SAAS互联网解决方案：商业云，营销云，销售云 ' +
+        '微盟盟聚——基于移动社交的精准营销解决方案 还有更多的业务孵化ing....'
+  },
+  {
+    id: 22,
+    companyName: '海万科技',
+    companyCity: '上海',
+    companyAddress: '静安区共和新路1481号',
+    companyScale: '500-2000人',
+    companyType: '上市公司',
+    companyWelfare: '带薪病假、带薪年假、年度体检、周末双休',
+    recruitJob: '前端开发工程师',
+    recruitCount: '10+',
+    requiredDegree: '大专及以上',
+    requiredExp: '应届/在校/经验1-3年',
+    requiredMajor: '计算机/软件/通信工程',
+    jobDutyDetails: '1、负责线下业务H5模块和其他产品前端的架构设计和开发工作；\n' +
+        '2、负责插件开发，模块化框架设计与开发；\n' +
+        '3、负责Web App及混合App的前沿技术研究和新技术调研。',
+    requiredSkillDesc: '1、熟练运用JavaScript语言与HTML5、CSS3等技术；\n' +
+        '2、熟悉模块化、前端编译和构建工具，熟练运用主流的移动端JS库和开发框架，并深入理解其设计原理；\n' +
+        '3、能提供完善的WebApp和混合App（JS方向）技术方案，了解服务端（node/java或其他语言）或native移动应用开发；\n' +
+        '4、对技术有强烈的进取心，具有良好的沟通能力和团队合作精神、优秀的分析问题和解决问题的能力；\n' +
+        '5、开源项目开发经验者优先。',
+    salary: '15k-25k·16薪',
+    publishTime: '2021/02/25',
+    label: ['软件服务', '前端开发', '移动端', 'Web前端'],
+    introduce: '软件服务｜咨询,IT技术服务/D轮及以上',
+    companyAvatar: require('./companyAvatar/haiwan.png'),
+    companyPropaPic: require('./companyAvatar/haiwan-propa.png'),
+    companyHomePage: 'https://www.tianyancha.com/company/2965251213',
+    abstract: '公司科技立足于上海，在北京、南京、成都深圳等地设立有分公司，目前在职人员规模超过1000人。公司业务范围是证券、' +
+        '银行、保险、基金、期货、电力等行业的核心软件的开发、服务。公司的软件产品包括注册过户系统、销售系统、电子商务平台、' +
+        '基金数据中心、客户关系管理系统等，也为我们的客户提供专业的业务流程外包服务。'
+  },
+  {
+    id: 23,
+    companyName: '医相随',
+    companyCity: '上海',
+    companyAddress: '闵行区宜山路2016号1号楼',
+    companyScale: '15-50人',
+    companyType: 'A轮',
+    companyWelfare: '药品电商,投资机构投资,领导扁平',
+    recruitJob: '前端开发工程师',
+    recruitCount: '10+',
+    requiredDegree: '本科及以上',
+    requiredExp: '应届/在校/经验1-3年',
+    requiredMajor: '计算机/软件/通信工程',
+    jobDutyDetails: '1、负责移动端（公众号及小程序开发）、PC端的开发、维护和优化工作；\n' +
+        '2、负责搭建高性能、高可用和安全的前端开发框架，持续提升前端开发的效率和质量；\n' +
+        '3、深入理解业务需求，UI设计和用户体验, 主导开发整个项目的前端框架。',
+    requiredSkillDesc: '1、本科以上学历，精通Web前端开发，实践经验丰富，2年以上web前端开发经验；\n' +
+        '2、熟练掌握HTML5/CSS3/ES6 语法和常用技术；\n' +
+        '3、深刻理解web标准，熟练掌握不同端及浏览器之间的兼容性；\n' +
+        '4、精通vue，react、bootstrap、webpack等框架及工具；\n' +
+        '5、对跨平台开发如flutter等有一定的了解；\n' +
+        '6、对HTTP和相关的其他底层网络协议有比较全面的了解；',
+    salary: '15k-18k·16薪',
+    publishTime: '2021/02/25',
+    label: ['在线医疗', '前端开发', '移动端', 'Vue'],
+    introduce: '在线医疗/A轮',
+    companyAvatar: require('./companyAvatar/yixiangsui.png'),
+    companyPropaPic: require('./companyAvatar/yixiangsui-propa.png'),
+    companyHomePage: 'https://www.tianyancha.com/company/2329171890',
+    abstract: '作为致力于移动端医疗服务，基于移动互联网技术整合下的医疗服务平台，通过互联网连接医院、医生、患者，' +
+        '促进三者间信息的高效共享，并提供最领先、最受信任的移动医疗服务，构建新型的中国医患关系和全新的移动互联网医疗服务模式，' +
+        '打造公众就医及健康生活平台和良性互动的医疗服务与健康产业生态圈。'
+  },
+  {
+    id: 24,
+    companyName: '天地宽视',
+    companyCity: '上海',
+    companyAddress: '浦东新区金豫路251号2F',
+    companyScale: '500-2000人',
+    companyType: 'A轮',
+    companyWelfare: '物联网 技术大牛多',
+    recruitJob: '单片机开发工程师',
+    recruitCount: '10+',
+    requiredDegree: '本科及以上',
+    requiredExp: '应届/在校/经验1-3年',
+    requiredMajor: '计算机/软件/通信工程',
+    jobDutyDetails: '1、 负责物联网/智能家居终端设备的软件开发工作；\n' +
+        '2、负责相关平台中的RTOS，以及相关单片机开发工作；\n' +
+        '3、 进行软件设计和编码等工作；\n' +
+        '4、 进行软件代码维护、优化等工作；\n' +
+        '5、 参与相关质量活动、确保设计和实现按时保质完成；',
+    requiredSkillDesc: '1、计算机、电子信息等专业，本科及以上学历；\n' +
+        '2、1年及以上单片机开发经验，精通C语言；\n' +
+        '3、熟悉单片机外围接口，精通iic/spi/uart等通信协议，具备协议设计能力；\n' +
+        '4、有音视频产品及GUI产品开发经验更佳；\n' +
+        '5、思路清晰，肯专研、吃苦耐劳、性格乐观、积极向上、能够承受一定的工作压力。',
+    salary: '8k-10k·14薪',
+    publishTime: '2021/02/25',
+    label: ['C', '智能硬件', '单片机'],
+    introduce: '硬件/A轮',
+    companyAvatar: require('./companyAvatar/tiandi.png'),
+    companyPropaPic: require('./companyAvatar/tiandi-propa.png'),
+    companyHomePage: 'https://www.qualvision.cn/',
+    abstract: '公司于2009年在上海成立，由多位原世界500强企业管理层人员投资创建，当前上海研发中心有研发员工200人，销售人员近50人。有大量华为，中兴等高素质人才加入。\n' +
+        '公司聚焦于安防领域（视频监控/智能楼宇/智能家居），通过第一个三年发展，已成为细分领域的隐形冠军，销售额过亿。当前处于第三个三年发展中，并积极筹备融资/上市。'
   }
 ]
 

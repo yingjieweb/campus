@@ -131,6 +131,46 @@
         </div>
       </el-tab-pane>
     </el-tabs>
+    <el-tabs v-show="activeIndex === 6" type="border-card" tab-position="left">
+      <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList7" :key="item.id">
+        <div class="company-content-left">
+          <div class="company-profile">
+            <img class="company-avatar" :src="item.companyAvatar" @click="goDetails(item.id)">
+            <div class="company-basic-info">
+              <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
+              <div class="company-intro">{{item.introduce}}</div>
+              <div class="company-badge">
+                <span v-for="badge in item.label">{{badge}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="company-desc">{{item.abstract}}</div>
+        </div>
+        <div class="company-content-right">
+          <img :src="item.companyPropaPic">
+        </div>
+      </el-tab-pane>
+    </el-tabs>
+    <el-tabs v-show="activeIndex === 7" type="border-card" tab-position="left">
+      <el-tab-pane :label="item.companyName" class="recommend-company" v-for="item in jobDataList8" :key="item.id">
+        <div class="company-content-left">
+          <div class="company-profile">
+            <img class="company-avatar" :src="item.companyAvatar" @click="goDetails(item.id)">
+            <div class="company-basic-info">
+              <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
+              <div class="company-intro">{{item.introduce}}</div>
+              <div class="company-badge">
+                <span v-for="badge in item.label">{{badge}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="company-desc">{{item.abstract}}</div>
+        </div>
+        <div class="company-content-right">
+          <img :src="item.companyPropaPic">
+        </div>
+      </el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 
@@ -143,13 +183,15 @@
     data() {
       return {
         activeIndex: 0,
-        cityArr: ['北京', '上海', '杭州', '深圳', '成都', '南京'],
-        random1: getRandomNum(0, 6),
-        random2: getRandomNum(0, 6),
+        cityArr: ['北京', '上海', '广州', '深圳', '成都', '杭州', '南京', '苏州'],
+        random1: getRandomNum(0, 5),
+        random2: getRandomNum(12, 17),
         random3: getRandomNum(0, 6),
         random4: getRandomNum(0, 6),
         random5: getRandomNum(0, 6),
         random6: getRandomNum(0, 6),
+        random7: getRandomNum(0, 6),
+        random8: getRandomNum(0, 6),
       }
     },
     computed: {
@@ -169,6 +211,12 @@
         return jobData.slice(this.random5, this.random5+7)
       },
       jobDataList6() {
+        return jobData.slice(this.random6, this.random6+7)
+      },
+      jobDataList7() {
+        return jobData.slice(this.random5, this.random5+7)
+      },
+      jobDataList8() {
         return jobData.slice(this.random6, this.random6+7)
       },
     },

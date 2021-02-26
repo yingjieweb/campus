@@ -117,9 +117,9 @@
     },
     data() {
       return {
-        random1: getRandomNum(0, 8),
-        random2: getRandomNum(0, 8),
-        random3: getRandomNum(0, 8)
+        random1: getRandomNum(0, 19),
+        random2: getRandomNum(0, 19),
+        random3: getRandomNum(0, 19)
       }
     },
     computed: {

@@ -26,11 +26,12 @@
             <span class="upload">☆ 上传附件简历</span>
           </div>
         </div>
-        <div class="position-head-r"></div>
+        <div class="position-head-r">rrrrr</div>
       </div>
 
       <div class="position-body">
-        222
+        <div class="position-info">info</div>
+        <div class="similar-job">相似岗位</div>
       </div>
     </div>
   </Block>
@@ -149,7 +150,17 @@
   }
 
   .position-body {
-    height: 300px;
-    border: 1px solid red;
+    height: 550px;
+    display: flex;
+
+    .position-info {
+      flex: 8;
+      border: 1px solid red;
+    }
+
+    .similar-job {
+      flex: 2;
+      border: 1px solid red;
+    }
   }
 </style>

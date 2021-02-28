@@ -1,7 +1,7 @@
 <template>
   <div class="container" v-if="showTags">
     <ul class="tags">
-      <li class="tagsItem" v-for="(item, index) in tagsList" :key="item.title" :class="{'active': isActive(item.path)}">
+      <li class="tagsItem" v-for="(item, index) in tagsList" :key="item.path" :class="{'active': isActive(item.path)}">
         <router-link :to="item.path" class="tags-li-title">{{item.title}}</router-link>
         <i class="el-icon-close" @click="closeTags(index)"></i>
       </li>
@@ -19,12 +19,12 @@
     },
     methods: {
       isActive(path) {
-        return path === this.$route.path
+        return path === this.$route.fullPath
       },
       setTags(route) {
         if (!route.name) return // 清除重定向的路由信息
         const isExist = this.tagsList.some(item => {
-          return item.path === route.path
+          return item.path === route.fullPath
         })
         if (!isExist) {
           if (this.tagsList.length >= 10) {
@@ -32,7 +32,7 @@
           }
           this.tagsList.push({
             title: route.meta.title,
-            path: route.path
+            path: route.fullPath
           })
         }
       },
@@ -40,7 +40,7 @@
         const delItem = this.tagsList.splice(index, 1)[0]
         const item = this.tagsList[index] ? this.tagsList[index] : this.tagsList[index - 1]
         if (item) {
-          delItem.path === this.$route.path && this.$router.push(item.path)
+          delItem.path === this.$route.fullPath && this.$router.push(item.path)
         } else {
           this.tagsList = [{
             path: "/campus-recruit",

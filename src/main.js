@@ -6,6 +6,10 @@ import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
+import AmapVue from '@amap/amap-vue'
+AmapVue.config.key = '8e342d7d66ccb8ec1b251540d9f2efc2'
+Vue.use(AmapVue)
+
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false;

@@ -16,7 +16,7 @@
           </div>
           <div class="pub-time">{{currentJob.publishTime}} 发布</div>
         </div>
-        <div class="position-head-m">
+        <div class="position-head-r">
           <div class="operate">
             <div class="collect">收藏</div>
             <div class="send">投递简历</div>
@@ -26,12 +26,30 @@
             <span class="upload">☆ 上传附件简历</span>
           </div>
         </div>
-        <div class="position-head-r">rrrrr</div>
       </div>
 
       <div class="position-body">
-        <div class="position-info">info</div>
-        <div class="similar-job">相似岗位</div>
+        <div class="position-info">
+          <div class="comp-welfare">
+            <span class="title">职位诱惑：</span>
+            <p class="welfare">{{currentJob.companyWelfare}}</p>
+          </div>
+          <div class="comp-duty">
+            <span class="title">岗位职责：</span>
+            <p class="duty" v-html="currentJob.jobDutyDetails.replace(/\n/g,'<br/>')"></p>
+          </div>
+          <div class="comp-require">
+            <span class="title">岗位要求：</span>
+            <p class="require" v-html="currentJob.requiredSkillDesc.replace(/\n/g,'<br/>')"></p>
+          </div>
+        </div>
+        <div class="position-address">
+          <span class="title">工作地址：</span>
+          <div style="width: 100%; height: 500px; border: 1px solid red;">这里是地图细节</div>
+        </div>
+        <div class="similar-job">
+          <span class="title">相似岗位:</span>
+        </div>
       </div>
     </div>
   </Block>
@@ -48,7 +66,7 @@
       }
     },
     created() {
-      this.currentJob = jobData[this.$route.query.positionId]
+      this.currentJob = jobData[--this.$route.query.positionId]
     }
   }
 </script>
@@ -59,6 +77,7 @@
     padding: 10px;
     background-color: #f2f5f4;
     display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
 
     .position-head-l {
@@ -104,11 +123,12 @@
       .pub-time {color: #737373;}
     }
 
-    .position-head-m {
+    .position-head-r {
       width: 30%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      border: 1px solid red;
 
       .operate {
         .collect, .send {
@@ -121,6 +141,7 @@
           border-radius: 3px;
           cursor: pointer;
           font-size: 14px;
+          user-select: none;
         }
 
         .collect {
@@ -143,24 +164,50 @@
         }
       }
     }
-    .position-head-r {
-      width: 40%;
-      border: 1px solid red;
-    }
   }
 
   .position-body {
-    height: 550px;
+    height: 560px;
+    padding: 10px;
     display: flex;
 
     .position-info {
-      flex: 8;
+      flex: 3;
+      /*border: 1px solid red;*/
+
+      .comp-welfare, .comp-duty, .comp-require {
+        margin-bottom: 10px;
+
+        .title {
+          font-weight: 600;
+          line-height: 32px;
+        }
+
+        p {
+          line-height: 30px;
+        }
+      }
+    }
+
+    .position-address {
+      flex: 4;
+      margin: 0 10px;
       border: 1px solid red;
+
+      .title {
+        font-weight: 600;
+        line-height: 32px;
+      }
     }
 
     .similar-job {
       flex: 2;
       border: 1px solid red;
+
+      .title {
+        font-weight: 600;
+        line-height: 32px;
+      }
     }
   }
 </style>

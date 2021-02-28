@@ -72,6 +72,20 @@
         </div>
         <div class="similar-job">
           <span class="title">相似岗位:</span>
+          <div class="recommend-list">
+            <div class="recommend-item" v-for="item in similarJob" :key="item.name" @click="goDetails(item.id)">
+              <div class="avatar">
+                <img :src="item.companyAvatar">
+              </div>
+              <div class="info">
+                <div class="name">
+                  <span class="company">{{item.companyName}}</span>
+                  <span class="salary">{{item.salary}}</span>
+                </div>
+                <div class="intro">{{item.introduce.substr(0, 13)}}...</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -93,11 +107,25 @@
         rotation: 15,
       }
     },
+    computed: {
+      similarJob() {
+        let currentJobId = this.currentJob.id
+        return jobData.filter(item => {
+          return item.id != currentJobId
+        }).slice(0, 5)
+      }
+    },
     methods: {
       onHotspotClick(e) {
         if (e && e.lnglat) {
           this.center = [e.lnglat.lng, e.lnglat.lat];
         }
+      },
+      goDetails(id) {
+        this.$router.push({
+          path: '/position-details',
+          query: { positionId: id },
+        })
       }
     },
     created() {
@@ -236,11 +264,51 @@
 
     .similar-job {
       flex: 2;
-      border: 1px solid red;
+      min-width: 360px;
 
       .title {
         font-weight: 600;
         line-height: 32px;
+      }
+
+      .recommend-list {
+        background: #FFF;
+        border: 1px solid #DCDFE6;
+        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 12%), 0 0 6px 0 rgb(0 0 0 / 4%);
+
+        .recommend-item {
+          height: 66.5px;
+          display: flex;
+          padding: 0 10px;
+          align-items: center;
+          cursor: pointer;
+          border-bottom: 1px dashed #f0f0f0;
+
+          &:hover {
+            background-color: #f0f0f0;
+          }
+
+          .avatar {
+            width: 44px;
+            height: 44px;
+            margin-right: 10px;
+            img {
+              width: 44px;
+            }
+          }
+          .info {
+            width: 100%;
+
+            .name {
+              display: flex;
+              justify-content: space-between;
+
+              .salary {
+                color: #e6775c;
+              }
+            }
+          }
+        }
       }
     }
   }

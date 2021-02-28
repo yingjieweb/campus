@@ -45,7 +45,30 @@
         </div>
         <div class="position-address">
           <span class="title">工作地址：</span>
-          <div style="width: 100%; height: 500px; border: 1px solid red;">这里是地图细节</div>
+          <div class="address" style="width: 100%; height: 500px;">
+            <amap
+                    cache-key="map"
+                    ref="map"
+                    view-mode="3D"
+                    map-style="amap://styles/whitesmoke"
+                    async
+                    :zoom.sync="zoom"
+                    :center.sync="center"
+                    :pitch.sync="pitch"
+                    :rotation.sync="rotation"
+                    :show-indoor-map="false"
+                    is-hotspot
+                    @hotspotclick="onHotspotClick"
+            >
+              <amap-marker
+                      :position="position"
+                      :label="{
+                        content: currentJob.companyAddress,
+                        direction: 'bottom',
+                      }"
+              />
+            </amap>
+          </div>
         </div>
         <div class="similar-job">
           <span class="title">相似岗位:</span>
@@ -62,7 +85,19 @@
     name: "PositionDetails",
     data() {
       return {
-        currentJob: {}
+        currentJob: {},
+        center: [116.473778, 39.990661],
+        position: [116.473778, 39.990661],
+        zoom: 14,
+        pitch: 45,
+        rotation: 15,
+      }
+    },
+    methods: {
+      onHotspotClick(e) {
+        if (e && e.lnglat) {
+          this.center = [e.lnglat.lng, e.lnglat.lat];
+        }
       }
     },
     created() {
@@ -128,7 +163,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      border: 1px solid red;
 
       .operate {
         .collect, .send {
@@ -173,7 +207,7 @@
 
     .position-info {
       flex: 3;
-      /*border: 1px solid red;*/
+      min-width: 540px;
 
       .comp-welfare, .comp-duty, .comp-require {
         margin-bottom: 10px;
@@ -191,8 +225,8 @@
 
     .position-address {
       flex: 4;
+      min-width: 540px;
       margin: 0 10px;
-      border: 1px solid red;
 
       .title {
         font-weight: 600;

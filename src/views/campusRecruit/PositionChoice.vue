@@ -34,6 +34,8 @@
 
 <style lang="scss" scoped>
   .container {
+    min-width: 288px;
+
     .position-sample {
       height: 50px;
       font-size: 18px;

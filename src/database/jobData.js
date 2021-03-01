@@ -780,6 +780,132 @@ const jobData = [
     companyHomePage: 'https://www.qualvision.cn/',
     abstract: '公司于2009年在上海成立，由多位原世界500强企业管理层人员投资创建，当前上海研发中心有研发员工200人，销售人员近50人。有大量华为，中兴等高素质人才加入。\n' +
         '公司聚焦于安防领域（视频监控/智能楼宇/智能家居），通过第一个三年发展，已成为细分领域的隐形冠军，销售额过亿。当前处于第三个三年发展中，并积极筹备融资/上市。'
+  },
+  {
+    id: 25,
+    companyName: '富力地产',
+    companyCity: '广州',
+    companyAddress: '天河区广州市天河区富力中心',
+    companyScale: '2000人以上',
+    companyType: '上市公司',
+    companyWelfare: '团队靠谱，平台靠谱，新业务大有可为',
+    recruitJob: 'NLP算法工程师',
+    recruitCount: '10+',
+    requiredDegree: '本科及以上',
+    requiredExp: '应届/在校/经验1-3年',
+    requiredMajor: '计算机/软件/通信工程',
+    jobDutyDetails: '1、组织开展对地产垂直领域存量数据以及爬取的互联网数据进行数据预处理的工作；\n' +
+        '2、应用自然语言处理技术，对具有业务含义的文本进行关键信息提取，负责相应算法的实现与优化，提高其准确度与适用率；\n' +
+        '3、按照指定业务场景和业务需求进行数据建模并落地；\n' +
+        '4、负责文本分析、挖掘等技术领域的研究和知识的积累，并尝试与实际业务场景相结合。',
+    requiredSkillDesc: '1. 统计学、数学或计算机相关专业，本科以上学历；\n' +
+        '2. 掌握主流NLP模型（BERT/Transformer）和框架（TensorFlow、Pytorch等），具备3年以上相关经验（包括但不限于文本分类，文本聚类、文本归纳等NLP应用场景）；\n' +
+        '3. 熟悉NLP开发处理流程，熟练掌握至少一种编程语言（C++、Java、Python等），有扎实的算法基础；',
+    salary: '20k-35k·14薪',
+    publishTime: '2021/02/25',
+    label: ['文字识别', '自然语言处理', 'TensoFlow'],
+    introduce: '房地产｜建筑｜物业/上市公司',
+    companyAvatar: require('./companyAvatar/fuli.png'),
+    companyPropaPic: require('./companyAvatar/fuli-propa.png'),
+    companyHomePage: 'http://www.rfchina.com/',
+    abstract: '广州富力地产股份有限公司（以下简称“富力”）（香港联合交易所上市编号：2777）成立于1994年，注册资金8.06亿人民币，' +
+        '集房地产设计、开发、工程监理、销售、物业管理、房地产中介等业务为一体，拥有国家建设部颁发的一级开发资质、甲级设计资质、甲级工程监理资质、' +
+        '一级物业管理资质及一级房地产中介资质,是中国综合实力最强的房地产企业之一。'
+  },
+  {
+    id: 26,
+    companyName: '凡科',
+    companyCity: '广州',
+    companyAddress: '海珠区工业大道北67号凤凰创意园',
+    companyScale: '500-2000人',
+    companyType: '上市公司',
+    companyWelfare: '福利待遇好,工作氛围好,各种团建,专业培训',
+    recruitJob: '测试工程师（营销业务）',
+    recruitCount: '10+',
+    requiredDegree: '本科及以上',
+    requiredExp: '应届/在校/经验1-3年',
+    requiredMajor: '计算机/软件/通信工程',
+    jobDutyDetails: '1、依据需求文档及设计文档，编写测试用例；\n' +
+        '2、依据测试用例执行手工测试，反馈跟踪产品BUG及用例缺陷，协助开发人员定位及修复bug，并做好回归测试，并提交测试报告；\n' +
+        '3、对测试中发现的问题进行详细分析和准确定位，与开发人员讨论缺陷解决方案；\n' +
+        '4、协助开发人员定位及修复bug，并做好回归测试；\n' +
+        '5、对测试结果进行总结与统计分析，对测试进行跟踪，并提出反馈意见。',
+    requiredSkillDesc: '1、计算机及相关专业毕业，有扎实的计算机基础知识；\n' +
+        '2、熟悉常用软件测试工具，熟悉测试分析技术，有较强的逻辑分析能力和总结能力；\n' +
+        '3、规范编写项目测试计划、测试用例、测试报告，熟悉常用缺陷管理工具；\n' +
+        '4、掌握基本的测试理论，熟悉软件测试的基本方法、流程和规范；\n' +
+        '5、热爱软件测试工作，工作耐心、细致、认真。',
+    salary: '10k-12k·14薪',
+    publishTime: '2021/02/25',
+    label: ['功能测试', 'Web测试', '小程序测试', '软件测试'],
+    introduce: '人工智能服务',
+    companyAvatar: require('./companyAvatar/fanke.png'),
+    companyPropaPic: require('./companyAvatar/fanke-propa.png'),
+    companyHomePage: 'https://www.fkw.com/',
+    abstract: '凡科建站一直专注用户体验，升级产品功能，已累计服务上千万个网站，发展成为自助建站第一品牌。免费注册即可拥有电脑网站、' +
+        '手机网站、微信网站，涵盖所有行业，满足企业官网、推广产品、在线商城等全方位需求，凡科凭借对自助建站行业的深耕以及对互联网技术的深入研发'
+  },
+  {
+    id: 27,
+    companyName: '广州南天',
+    companyCity: '广州',
+    companyAddress: '天河区中山大道天河软件园建工路1号南天大厦五层',
+    companyScale: '500-2000人',
+    companyType: '上市公司',
+    companyWelfare: '五险一金,年终奖金,带薪年假,节日福利',
+    recruitJob: '系统工程师（应届）',
+    recruitCount: '10+',
+    requiredDegree: '本科及以上',
+    requiredExp: '应届/在校/经验1-3年',
+    requiredMajor: '计算机/软件/通信工程',
+    jobDutyDetails: '1、参与集成项目实施；\n' +
+        '2、协助项目经理达成项目目标管理工作；\n' +
+        '3、完成公司安排的其它任务。',
+    requiredSkillDesc: '1、计算机相关专业；\n' +
+        '2、了解TCP/IP协议体系，熟悉静态、动态等路由协议；\n' +
+        '3、熟悉Office办公软件；\n' +
+        '4、有CCNP或者同类认证证书者优先考虑。',
+    salary: '8k-12k·14薪',
+    publishTime: '2021/02/25',
+    label: ['Linux', 'CCNP'],
+    introduce: 'IT技术服务',
+    companyAvatar: require('./companyAvatar/nantian.png'),
+    companyPropaPic: require('./companyAvatar/nantian-propa.png'),
+    companyHomePage: 'https://www.tianyancha.com/company/12066459',
+    abstract: '作为南天在华南的区域平台，广州南天围绕行业客户进行战略布局和发展，为客户提供专业信息化建设的服务，' +
+        '包括：行业应用软件开发（研发）、软硬件系统集成、测试、专业IT服务等。公司具备较强的行业应用软件研发、服务、系统集成与大客户管理、大型项目实施管理等能力。'
+  },
+  {
+    id: 28,
+    companyName: '佳都科技',
+    companyCity: '广州',
+    companyAddress: '天河区新岑四路2号佳都智慧大厦',
+    companyScale: '2000人以上',
+    companyType: '上市公司',
+    companyWelfare: '上市公司+专业团队+有竞争力的薪酬福利',
+    recruitJob: '产品售前工程师校招',
+    recruitCount: '10+',
+    requiredDegree: '本科及以上',
+    requiredExp: '应届/在校/经验1-3年',
+    requiredMajor: '计算机/软件/通信工程',
+    jobDutyDetails: '1、支撑智慧城市相关领域（包括但不限于公安、交通、应急、政务、住建）技术交流、需求分析、方案落地与实施工作；\n' +
+        '2、根据售前项目需求，进行需求调研、方案设计，编制项目技术方案；\n' +
+        '3、依据客户需求，结合公司智慧城市产品，完成解决方案与售前的交流、进行产品演示与讲解培训，呈现方案价值，引导客户需求；\n' +
+        '4、负责投标工作，分析采购招标文件，组织编写标书、完成项目招标；\n' +
+        '5、结合市场情况，完成市场活动中的产品宣讲、与合作伙伴厂商的技术交流、日常工作的文件整理归档等。',
+    requiredSkillDesc: '1、本科及以上学历，计算机、自动化、信息工程等相关专业，2021年应届毕业生；\n' +
+        '2、熟悉CAD、Visio、office、Photoshop等办公软件操作；有良好的方案编制能力与文案功底；\n' +
+        '3、性格大方，沟通表达能力强，有较好的责任心和抗压能力；',
+    salary: '7k-10k·13薪',
+    publishTime: '2021/02/25',
+    label: ['售前', '技术支持', '企业软件'],
+    introduce: '数据服务｜咨询,人工智能服务',
+    companyAvatar: require('./companyAvatar/jiadu.png'),
+    companyPropaPic: require('./companyAvatar/jiadu-propa.png'),
+    companyHomePage: 'http://www.pci-suntektech.com/',
+    abstract: '佳都新太科技股份有限公司是一家让刷脸无处不在，让地铁追上高铁，让创业触手可及的高速发展的沪市A股上市的高科技公司。' +
+        'OFFICE 交通便利且宽敞舒适，每天您将享有公司的营养丰富的工作餐、多姿多彩的各类俱乐部活动;你将在这里锻炼各方面的能力，' +
+        'follow最资深的导师，成长为专业领域大牛；您也将有机会接受三大管理人才蓄水池的培养项目，成为卓越的管理者或领导者；'
   }
 ]
 

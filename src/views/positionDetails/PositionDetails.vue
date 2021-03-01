@@ -72,7 +72,7 @@
         </div>
         <div class="similar-job">
           <span class="title">相似岗位:</span>
-          <div class="recommend-list">
+          <div class="recommend-list" v-loading="isLoading">
             <div class="recommend-item" v-for="item in similarJob" :key="item.name" @click="goDetails(item.id)">
               <div class="avatar">
                 <img :src="item.companyAvatar">
@@ -100,6 +100,7 @@
     data() {
       return {
         currentJob: {},
+        isLoading: true,
         center: [116.473778, 39.990661],
         position: [116.473778, 39.990661],
         zoom: 14,
@@ -111,8 +112,13 @@
       similarJob() {
         let currentJobId = this.currentJob.id
         return jobData.filter(item => {
-          return item.id != currentJobId
+          return item.id !== currentJobId
         }).slice(0, 5)
+      }
+    },
+    watch: {
+      $route() {
+        this.getCurrentJob()
       }
     },
     methods: {
@@ -126,10 +132,17 @@
           path: '/position-details',
           query: { positionId: id },
         })
+      },
+      getCurrentJob() {
+        this.currentJob = jobData[--this.$route.query.positionId]
+        this.isLoading = true
+        setTimeout(() => {
+          this.isLoading = false
+        }, 2000)
       }
     },
     created() {
-      this.currentJob = jobData[--this.$route.query.positionId]
+      this.getCurrentJob()
     }
   }
 </script>
@@ -259,6 +272,10 @@
       .title {
         font-weight: 600;
         line-height: 32px;
+      }
+
+      .address {
+        box-shadow: 0 2px 4px 0 rgb(0 0 0 / 12%), 0 0 6px 0 rgb(0 0 0 / 4%);
       }
     }
 

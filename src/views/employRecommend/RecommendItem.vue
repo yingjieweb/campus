@@ -44,7 +44,7 @@
   .recommend-item {
     width: 32.8%;
     margin: 4px;
-    padding: 18px 18px 10px 18px;
+    padding: 10px 10px 10px 10px;
     border: 1px solid gainsboro;
     border-radius: 3px;
     cursor: pointer;
@@ -61,7 +61,7 @@
     }
 
     .direction {
-      padding-bottom: 18px;
+      padding-bottom: 10px;
       border-bottom: 1px dashed gainsboro;
 
       .experience {margin: 8px 0;}
@@ -69,12 +69,13 @@
         border: 1px solid gainsboro;
         margin-right: 5px;
         padding: 2px;
+        line-height: 16px;
       }
     }
 
     .company-info {
       display: flex;
-      padding-top: 10px;
+      padding-top: 5px;
 
       .avatar {
         width: 50px;

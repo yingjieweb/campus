@@ -21,9 +21,12 @@
               <img :src="currentComp.companyPropaPic">
             </div>
           </el-tab-pane>
-          <el-tab-pane label="招聘岗位" name="second">招聘岗位</el-tab-pane>
-          <el-tab-pane label="校招岗位" name="third">校招岗位</el-tab-pane>
-          <el-tab-pane label="公司问答" name="fourth">公司问答</el-tab-pane>
+          <el-tab-pane label="招聘岗位" name="second">
+            <PositionList :job-data-list="currentPageJobs"></PositionList>
+          </el-tab-pane>
+          <el-tab-pane label="校招岗位" name="third">
+            <PositionList :job-data-list="currentPageJobs"></PositionList>
+          </el-tab-pane>
         </el-tabs>
       </div>
     </div>
@@ -32,22 +35,33 @@
 
 <script lang="js">
   import jobData from "@/database/jobData"
+  import PositionList from "@/views/positionSearch/PositionList"
 
   export default {
     name: "CompanyDetails",
+    components: {
+      PositionList
+    },
     data() {
       return {
         currentComp: {},
-        activeName: 'first'
+        activeName: 'first',
+        currentPageJobs: []
       }
     },
     methods: {
       getCurrentComp() {
         this.currentComp = jobData[--this.$route.query.positionId]
+      },
+      getCurrentPageJobs() {
+        this.currentPageJobs = jobData.filter(item => {
+          return item.id === this.currentComp.id
+        })
       }
     },
     created() {
       this.getCurrentComp()
+      this.getCurrentPageJobs()
     }
   }
 </script>

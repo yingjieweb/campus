@@ -1,14 +1,14 @@
 <template>
   <Block title="个人成绩">
     <div slot="content" class="container">
-      <div class="scoreSection">
+      <div class="score-section">
         <span class="title">个人成绩</span>
         <el-table :data="tableData" stripe border>
           <el-table-column prop="courseName" label="课程名"></el-table-column>
           <el-table-column prop="courseScore" label="成绩"></el-table-column>
         </el-table>
       </div>
-      <div class="abilitySection">
+      <div class="ability-section">
         <span class="title">个人能力</span>
         <el-table :data="tableData2" stripe border>
           <el-table-column prop="ability" label="能力（单项满分为10分）" width="200"></el-table-column>
@@ -16,20 +16,21 @@
           <el-table-column prop="majorRank" label="专业排名" width="180"></el-table-column>
           <el-table-column prop="gradeRank" label="年级内排名"></el-table-column>
         </el-table>
+        <div class="ability-chart">
+          <BarChart :option="barOption"></BarChart>
+        </div>
       </div>
     </div>
   </Block>
 </template>
 
 <script lang="js">
+  import BarChart from "@/components/charts/BarChart"
+
   export default {
     name: "ScoreEnquiry",
-    created() {
-      let computedTableData = [];
-      for (let item in this.scores){
-        computedTableData.push(Object.assign({}, {courseName: item, courseScore: this.scores[item]}))
-      }
-      this.tableData = computedTableData;
+    components: {
+      BarChart
     },
     data() {
       return {
@@ -55,9 +56,42 @@
           classRank: '05-03',
           majorRank: '48',
           gradeRank: '116'
-        }]
+        }],
+        barOption: {
+          title: {
+            text: '个人能力水平柱状图'
+          },
+          legend: {},
+          tooltip: {},
+          dataset: {
+            dimensions: ['product', '本人', '18平均', '19平均', '20平均'],
+            source: [
+              {product: '专业能力', '本人': 43.3, '18平均': 85.8, '19平均': 93.7, '20平均': 93.7},
+              {product: '学习能力', '本人': 83.1, '18平均': 73.4, '19平均': 55.1, '20平均': 93.7},
+              {product: '协作能力', '本人': 86.4, '18平均': 65.2, '19平均': 82.5, '20平均': 93.7},
+              {product: '管理能力', '本人': 72.4, '18平均': 53.9, '19平均': 39.1, '20平均': 93.7}
+            ]
+          },
+          xAxis: {type: 'category'},
+          yAxis: {},
+          // Declare several bar series, each will be mapped
+          // to a column of dataset.source by default.
+          series: [
+            {type: 'bar'},
+            {type: 'bar'},
+            {type: 'bar'},
+            {type: 'bar'}
+          ]
+        },
       }
-    }
+    },
+    created() {
+      let computedTableData = [];
+      for (let item in this.scores){
+        computedTableData.push(Object.assign({}, {courseName: item, courseScore: this.scores[item]}))
+      }
+      this.tableData = computedTableData;
+    },
   }
 </script>
 
@@ -72,13 +106,19 @@
       margin-left: 6px;
     }
 
-    .scoreSection {
+    .score-section {
       flex: 5;
       margin-right: 10px;
     }
 
-    .abilitySection {
+    .ability-section {
       flex: 5;
+
+      .ability-chart {
+        height: 372px;
+        margin-top: 10px;
+        border: 1px solid gainsboro;
+      }
     }
   }
 </style>

@@ -6,6 +6,8 @@
         <button>搜索</button>
       </div>
 
+      <SearchCondition></SearchCondition>
+
       <RecommendList :recommend-list="currentPageJobs"></RecommendList>
 
       <div class="pagination">
@@ -23,12 +25,14 @@
 </template>
 
 <script lang="js">
+  import SearchCondition from "@/views/positionSearch/SearchCondition"
   import RecommendList from "./RecommendList.vue";
   import jobData from "../../database/jobData";
 
   export default {
     name: "EmployRecommend",
     components: {
+      SearchCondition,
       RecommendList
     },
     data() {

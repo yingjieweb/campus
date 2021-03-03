@@ -19,8 +19,10 @@ Vue.prototype.$EventBus = new Vue();
 
 import Layout from  '@/components/layout/Layout.vue'
 import Block from  '@/components/block/Block.vue'
+import Blank from "@/views/statusCode/Blank"
 Vue.component('Layout', Layout);
 Vue.component('Block', Block);
+Vue.component('Blank', Blank);
 
 new Vue({
   router,

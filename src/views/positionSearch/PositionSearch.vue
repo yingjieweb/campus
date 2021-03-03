@@ -12,6 +12,7 @@
 
       <div class="results">
         <PositionList :job-data-list="currentPageJobs"></PositionList>
+        <Blank v-if="!this.jobData.length"></Blank>
       </div>
 
       <div class="pagination">
@@ -103,10 +104,7 @@
 
   .condition {margin-bottom: 10px;}
 
-  .results {
-    /*height: px;*/
-    /*border: 1px solid red;*/
-  }
+  .results {min-height: 560px;}
 
   .pagination {
     margin-top: 5px;

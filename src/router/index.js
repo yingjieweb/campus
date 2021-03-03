@@ -19,6 +19,12 @@ import GraduatesDirection from "@/views/graduatesDirection/GraduatesDirection"
 import Forbidden from  "@/views/statusCode/403.vue"
 import NotFound from "@/views/statusCode/404.vue"
 
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
+
 Vue.use(VueRouter)
 
 const constantRoutes = [

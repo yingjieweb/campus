@@ -2,8 +2,8 @@
   <Block title="应届生就业推荐">
     <div slot="content">
       <div class="search">
-        <input type="text" placeholder="搜索职位、公司、地点">
-        <button>搜索</button>
+        <input type="text" v-model="queryString" placeholder="搜索职位、公司、地点" @keydown.enter="searchJobs">
+        <button @click="searchJobs">搜索</button>
       </div>
 
       <SearchCondition></SearchCondition>
@@ -37,6 +37,7 @@
     },
     data() {
       return {
+        queryString: '',
         currentPage: 1,
         currentPageJobs: [],
         value: [],
@@ -189,6 +190,16 @@
       }
     },
     methods: {
+      searchJobs() {
+        if (this.queryString === '') {
+          this.$message.error('请输入需要搜索的职位、公司或地点~')
+        } else {
+          this.$router.push({
+            path: '/position-search',
+            query: { queryString: this.queryString },
+          })
+        }
+      },
       handleChange(value) {
         console.log(value);
       },

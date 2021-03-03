@@ -2,8 +2,8 @@
   <Block title="职位搜索">
     <div slot="content">
       <div class="search">
-        <input type="text" placeholder="搜索职位、公司、地点">
-        <button>搜索</button>
+        <input type="text" v-model="queryString" placeholder="搜索职位、公司、地点" @keydown.enter="searchJobs">
+        <button @click="searchJobs">搜索</button>
       </div>
 
       <div class="condition">
@@ -43,30 +43,49 @@
     },
     data() {
       return {
+        jobData: jobData,
+        queryString: '',
         currentPageJobs: []
       }
     },
     computed: {
       totalPageCount() {
-        return Array.from(jobData).length / 10 * 10;
+        return Array.from(this.jobData).length / 10 * 10
       }
     },
     methods: {
-      handleChange(value) {
-        console.log(value);
+      searchJobs() {
+        if (this.queryString === '') {
+          this.$message.error('请输入需要搜索的职位、公司或地点~')
+          this.jobData = jobData
+          this.currentPageJobs = this.jobData.slice(0, 10)
+        } else {
+          this.jobData = jobData.filter(item => {
+            return item.recruitJob.indexOf(this.queryString) !== -1
+          })
+          this.getCurrentPageJobs()
+        }
       },
+      getCurrentPageJobs() {
+        this.currentPageJobs = this.jobData.slice(0, 10)
+      },
+      handleChange(value) {console.log(value);},
       prevClick(currentPage) {
-        this.currentPageJobs = jobData.slice((currentPage - 1) * 10, currentPage * 10);
+        this.currentPageJobs = this.jobData.slice((currentPage - 1) * 10, currentPage * 10);
       },
       nextClick(currentPage) {
-        this.currentPageJobs = jobData.slice((currentPage - 1) * 10, currentPage * 10);
+        this.currentPageJobs = this.jobData.slice((currentPage - 1) * 10, currentPage * 10);
       },
       currentChange(currentPage) {
-        this.currentPageJobs = jobData.slice((currentPage - 1) * 10, currentPage * 10);
+        this.currentPageJobs = this.jobData.slice((currentPage - 1) * 10, currentPage * 10);
       }
     },
     created() {
-      this.currentPageJobs = jobData.slice(0, 10)
+      this.getCurrentPageJobs()
+      if (this.$route.query.queryString) {
+        this.queryString = this.$route.query.queryString
+        this.searchJobs()
+      }
     }
   }
 </script>

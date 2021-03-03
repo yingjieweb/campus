@@ -2,8 +2,8 @@
   <Block title="校园招聘" style="height: 1200px;">
     <div slot="content" class="container">
       <div class="search">
-        <input type="text" placeholder="搜索职位、公司、地点">
-        <button>搜索</button>
+        <input type="text" v-model="queryString" placeholder="搜索职位、公司、地点" @keydown.enter="searchJobs">
+        <button @click="searchJobs">搜索</button>
       </div>
 
       <div class="banner">
@@ -117,6 +117,7 @@
     },
     data() {
       return {
+        queryString: '',
         random1: getRandomNum(0, 19),
         random2: getRandomNum(0, 19),
         random3: getRandomNum(0, 19)
@@ -134,6 +135,16 @@
       }
     },
     methods: {
+      searchJobs() {
+        if (this.queryString === '') {
+          this.$message.error('请输入需要搜索的职位、公司或地点~')
+        } else {
+          this.$router.push({
+            path: '/position-search',
+            query: { queryString: this.queryString },
+          })
+        }
+      },
       goDetails(id) {
         this.$router.push({
           path: '/position-details',

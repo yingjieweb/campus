@@ -2,12 +2,12 @@
   <div class="container">
     <div class="position-sample" v-for="items in positions">
       <span class="title">{{items[0]}}</span>
-      <span class="position-behalf">{{items[1]}}</span>
-      <span class="position-behalf">{{items[2]}}</span>
-      <span class="position-behalf">{{items[3]}}</span>
+      <span class="position-behalf" @click="searchJobs(items[1])">{{items[1]}}</span>
+      <span class="position-behalf" @click="searchJobs(items[2])">{{items[2]}}</span>
+      <span class="position-behalf" @click="searchJobs(items[3])">{{items[3]}}</span>
       <span class="arrow">></span>
       <div class="position-details">
-        <span v-for="item in items">{{item}}</span>
+        <span v-for="item in items.slice(1)" @click="searchJobs(item)">{{item}}</span>
       </div>
     </div>
   </div>
@@ -27,6 +27,14 @@
           ['职能', '人力资源', '人事', '行政', '前台', '招聘', '财务', '会计', '出纳'],
           ['销售', '销售专员', '销售顾问', '商务拓展', '渠道销售', '广告销售', '销售总监', '其他销售'],
         ]
+      }
+    },
+    methods: {
+      searchJobs(queryString) {
+        this.$router.push({
+          path: '/position-search',
+          query: { queryString: queryString },
+        })
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <Block title="岗位详情">
+  <Block title="公司详情">
     <div slot="content">
       <div class="comp-details">
         <el-tabs class="comp-tabs" v-model="activeName">

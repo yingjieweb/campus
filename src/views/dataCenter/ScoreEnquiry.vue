@@ -11,9 +11,10 @@
       <div class="ability-section">
         <span class="title">个人能力</span>
         <el-table :data="tableData2" stripe border>
-          <el-table-column prop="ability" label="能力（单项满分为10分）" width="200"></el-table-column>
-          <el-table-column prop="classRank" label="班级内排名" width="180"></el-table-column>
-          <el-table-column prop="majorRank" label="专业排名" width="180"></el-table-column>
+          <el-table-column prop="name" label="能力信息"></el-table-column>
+          <el-table-column prop="ability" label="能力（满分10分）"></el-table-column>
+          <el-table-column prop="classRank" label="班级内排名"></el-table-column>
+          <el-table-column prop="majorRank" label="专业排名"></el-table-column>
           <el-table-column prop="gradeRank" label="年级内排名"></el-table-column>
         </el-table>
         <div class="ability-chart">
@@ -37,22 +38,26 @@
         scores: this.$store.state.currentUser.scores,
         tableData: [],
         tableData2: [{
-          ability: '专业能力',
+          name: '专业能力',
+          ability: '8.5',
           classRank: '05-04',
           majorRank: '56',
           gradeRank: '517'
         }, {
-          ability: '学习能力',
+          name: '学习能力',
+          ability: '7.2',
           classRank: '05-04',
           majorRank: '16',
           gradeRank: '569'
         }, {
-          ability: '协作能力',
+          name: '协作能力',
+          ability: '8.6',
           classRank: '05-01',
           majorRank: '55',
           gradeRank: '519'
         }, {
-          ability: '管理能力',
+          name: '管理能力',
+          ability: '9.2',
           classRank: '05-03',
           majorRank: '48',
           gradeRank: '116'

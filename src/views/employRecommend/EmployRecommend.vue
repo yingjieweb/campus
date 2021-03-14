@@ -186,7 +186,7 @@
     },
     computed: {
       totalPageCount() {
-        return Array.from(jobData).length / 9 * 10;
+        return Array.from(jobData).length + 469 / 9 * 10;
       }
     },
     methods: {

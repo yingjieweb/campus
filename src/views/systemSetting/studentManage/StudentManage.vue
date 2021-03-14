@@ -98,7 +98,7 @@
     },
     computed: {
       totalPageCount() {
-        return Array.from(studentData).length / 10 * 10;
+        return Array.from(studentData).length + 1658 / 10 * 10;
       }
     },
     methods: {

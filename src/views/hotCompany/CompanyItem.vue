@@ -7,15 +7,15 @@
     </div>
     <div class="bottom">
       <div class="bottom-item" @click="goDetails(companyItem.id)">
-        <span>198</span>
+        <span>{{ random1 }}</span>
         <span>面试评价</span>
       </div>
       <div class="bottom-item" @click="goDetails(companyItem.id)">
-        <span>198</span>
+        <span>{{ random2 }}</span>
         <span>在招岗位</span>
       </div>
       <div class="bottom-item" @click="goDetails(companyItem.id)">
-        <span>198</span>
+        <span>{{ random3 }}</span>
         <span>简历投递数</span>
       </div>
     </div>
@@ -23,6 +23,8 @@
 </template>
 
 <script lang="js">
+  import {getRandomNum} from "@/utils/randomNum";
+
   export default {
     name: "CompanyItem",
     props: {
@@ -31,6 +33,13 @@
         default() {
           return {}
         }
+      }
+    },
+    data() {
+      return {
+        random1: getRandomNum(4, 34),
+        random2: getRandomNum(2, 19),
+        random3: getRandomNum(1, 25)
       }
     },
     methods: {
@@ -85,8 +94,11 @@
       display: flex;
 
       .bottom-item {
-        text-align: center;
-        align-self: flex-start;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         &:hover {
           span {color: #00b38a;}

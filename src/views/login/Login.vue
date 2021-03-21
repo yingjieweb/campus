@@ -18,7 +18,7 @@
       </el-input>
       <el-button class="submit" type="primary" size="mini" round @click="onsubmit">登录</el-button>
     </div>
-    <div class="instructions">大学生综合评价就业推荐系统</div>
+    <div class="instructions">大学生综合能力评估画像就业推荐系统</div>
   </div>
 </template>
 

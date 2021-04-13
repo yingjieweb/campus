@@ -6,13 +6,10 @@
     </div>
     <router-link to="/campus-recruit">
       <div class="logo">
-        <p class="intro">
-          <strong class="strong">大学生就业推荐系统 </strong>
-          <span class="version">1.0.0</span>
-        </p>
-        <p class="english">
-          <span>Employment recommendation</span>
-        </p>
+        <div class="intro">
+          <strong class="strong">基于大学生综合能力模型和行为画像就业推荐系统 </strong>
+          <strong class="version"> 1.0.0</strong>
+        </div>
       </div>
     </router-link>
     <div class="userInfo">
@@ -64,9 +61,7 @@
         padding: 0 5px;
         cursor: pointer;
 
-        i {
-          font-size: 1.5em;
-        }
+        i {font-size: 1.5em;}
     }
 
     .logo {
@@ -76,15 +71,14 @@
       justify-content: space-around;
       align-items: center;
 
-      > .intro {
-        > .strong {
-          vertical-align: top;
-        }
-
-        > .version {
+      .intro {
+        .strong {
           display: inline-block;
-          margin-top: 1px;
-          font-size: 12px;
+          margin-right: 5px;
+        }
+        .version {
+          display: inline-block;
+          font-size: 14px;
           padding: 2px;
           border: 1px solid #F9D149;
           border-radius: 10px;

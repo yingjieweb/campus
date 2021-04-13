@@ -3,11 +3,11 @@
     <div slot="content" class="container">
       <div class="search">
         <span class="label">学校</span>
-        <el-input placeholder="请输入" style="width: 200px;"></el-input>
+        <el-input placeholder="请输入" style="width: 200px;" v-model="school"></el-input>
         <span class="label">学院</span>
-        <el-input placeholder="请输入" style="width: 200px;"></el-input>
+        <el-input placeholder="请输入" style="width: 200px;" v-model="college"></el-input>
         <span class="label">专业</span>
-        <el-input placeholder="请输入" style="width: 200px;"></el-input>
+        <el-input placeholder="请输入" style="width: 200px;" v-model="major"></el-input>
         <el-button type="primary">分析</el-button>
       </div>
       <div class="charts">
@@ -34,6 +34,9 @@
     },
     data() {
       return {
+        school: '',
+        college: '',
+        major: '',
         barOption: {
           title: {
             text: '个人能力与往届平均能力对比柱状图'
@@ -41,12 +44,12 @@
           legend: {},
           tooltip: {},
           dataset: {
-            dimensions: ['product', '本人', '18平均', '19平均', '20平均'],
+            dimensions: ['product', '本人', '18届平均', '19届平均', '20届平均'],
             source: [
-              {product: '专业能力', '本人': 43.3, '18平均': 85.8, '19平均': 93.7, '20平均': 93.7},
-              {product: '学习能力', '本人': 83.1, '18平均': 73.4, '19平均': 55.1, '20平均': 93.7},
-              {product: '协作能力', '本人': 86.4, '18平均': 65.2, '19平均': 82.5, '20平均': 93.7},
-              {product: '管理能力', '本人': 72.4, '18平均': 53.9, '19平均': 39.1, '20平均': 93.7}
+              {product: '专业知识能力', '本人': 7.33, '18届平均': 7.58, '19届平均': 8.37, '20届平均': 7.37},
+              {product: '学习能力', '本人': 8.31, '18届平均': 7.34, '19届平均': 8.21, '20届平均': 9.37},
+              {product: '实践能力', '本人': 8.64, '18届平均': 8.52, '19届平均': 8.25, '20届平均': 8.67},
+              {product: '创新能力', '本人': 8.24, '18届平均': 7.39, '19届平均': 6.91, '20届平均': 8.37}
             ]
           },
           xAxis: {type: 'category'},
@@ -60,13 +63,54 @@
             {type: 'bar'}
           ]
         },
+        // radarOption: {
+        //   title: {
+        //     text: '全方位能力分析'
+        //   },
+        //   tooltip: {},
+        //   legend: {
+        //     data: ['平均能力分布', '个人能力分布']
+        //   },
+        //   radar: {
+        //     // shape: 'circle',
+        //     name: {
+        //       textStyle: {
+        //         color: '#fff',
+        //         backgroundColor: '#999',
+        //         borderRadius: 20,
+        //         padding: [3, 5]
+        //       }
+        //     },
+        //     indicator: [
+        //       { name: '专业知识能力', max: 10},
+        //       { name: '学习能力', max: 10},
+        //       { name: '实践能力', max: 10},
+        //       { name: '创新能力', max: 10}
+        //     ]
+        //   },
+        //   series: [{
+        //     name: '平均能力分布 vs 个人能力分布图',
+        //     type: 'radar',
+        //     // areaStyle: {normal: {}},
+        //     data: [
+        //       {
+        //         value: [4.3, 7.1, 6.9, 8.0],
+        //         name: '平均能力分布'
+        //       },
+        //       {
+        //         value: [8.2, 6.0, 7.4, 6.8],
+        //         name: '个人能力分布图'
+        //       }
+        //     ]
+        //   }]
+        // },
         radarOption: {
           title: {
             text: '全方位能力分析'
           },
           tooltip: {},
           legend: {
-            data: ['平均能力分布', '个人能力分布']
+            data: ['本人', '18届平均', '19届平均', '20届平均']
           },
           radar: {
             // shape: 'circle',
@@ -79,28 +123,38 @@
               }
             },
             indicator: [
-              { name: '专业能力', max: 10},
+              { name: '专业知识能力', max: 10},
               { name: '学习能力', max: 10},
               { name: '实践能力', max: 10},
               { name: '创新能力', max: 10}
             ]
           },
           series: [{
-            name: '平均能力分布 vs 个人能力分布图',
+            name: '预算 vs 开销（Budget vs spending）',
+            nameTextStyle: {
+              padding: [0, 0, 0, 10]    // 四个数字分别为上右下左与原位置距离
+            },
             type: 'radar',
-            // areaStyle: {normal: {}},
             data: [
               {
-                value: [4.3, 7.1, 6.9, 8.0],
-                name: '平均能力分布'
+                value: [7.33, 8.31, 8.64, 8.24],
+                name: '本人'
               },
               {
-                value: [8.2, 6.0, 7.4, 6.8],
-                name: '个人能力分布图'
+                value: [7.58, 7.34, 8.52, 7.39],
+                name: '18届平均'
+              },
+              {
+                value: [8.37, 8.21, 8.25, 6.91],
+                name: '19届平均'
+              },
+              {
+                value: [7.37, 9.37, 8.67, 8.37],
+                name: '20届平均'
               }
             ]
           }]
-        }
+        },
       }
     }
   }

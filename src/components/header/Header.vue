@@ -7,7 +7,7 @@
     <router-link to="/campus-recruit">
       <div class="logo">
         <div class="intro">
-          <strong class="strong">基于大学生综合能力模型和行为画像就业推荐系统 </strong>
+          <strong class="strong">基于学生能力和行为画像的就业推荐系统 </strong>
           <strong class="version"> 1.0.0</strong>
         </div>
       </div>

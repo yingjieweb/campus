@@ -35,10 +35,10 @@
     data(){
       return {
         jobIntention: {
-          expectedPosition: ['期望职位','大数据开发工程师'],
-          expectedIndustry: ['期望行业','软件工程'],
+          expectedPosition: ['期望职位','图像识别'],
+          expectedIndustry: ['期望行业','移动互联网'],
           workCity: ['工作城市','北京'],
-          salaryRank: ['薪资要求','15k']
+          salaryRank: ['薪资要求','10-15k']
         }
       }
     },
@@ -47,7 +47,7 @@
         this.$refs.JobIntentionModal.setDialogVisible('编辑求职意向', true, this.jobIntention);
       },
       updateJobIntention(form){
-        this.jobIntention.expectedPosition = ['期望职位', form.expectedPosition];
+        this.jobIntention.expectedPosition = ['期望职位', form.expectedPosition[form.expectedPosition.length - 1]];
         this.jobIntention.expectedIndustry = ['期望行业', form.expectedIndustry];
         this.jobIntention.workCity = ['工作城市', form.workCity];
         this.jobIntention.salaryRank = ['薪资要求', form.salaryRank];

@@ -7,7 +7,7 @@
     <el-form :model="form" :rules="rules" ref="basicInfoForm" :label-width="formLabelWidth">
       <el-form-item label="期望职位" prop="expectedPosition">
         <el-cascader
-          v-model="expectedPosition"
+          v-model="form.expectedPosition"
           :options="expectedPositionData"
           :props="{ expandTrigger: 'hover' }"
           :show-all-levels="false"
@@ -15,20 +15,29 @@
       </el-form-item>
       <el-form-item label="期望行业" prop="expectedIndustry">
         <el-select v-model="form.expectedIndustry" placeholder="请选择期望行业" style="width: 100%;">
-          <el-option label="前 10%" value="前 10%"></el-option>
+          <el-option label="移动互联网" value="移动互联网"></el-option>
+          <el-option label="电商" value="电商"></el-option>
+          <el-option label="企业服务" value="企业服务"></el-option>
+          <el-option label="文娱|内容" value="文娱|内容"></el-option>
           <el-option label="其他" value="其他"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="工作城市" prop="workCity">
         <el-select v-model="form.workCity" placeholder="请选择期望行业" style="width: 100%;">
-          <el-option label="前 10%" value="前 10%"></el-option>
+          <el-option label="北京" value="北京"></el-option>
+          <el-option label="上海" value="上海"></el-option>
+          <el-option label="杭州" value="杭州"></el-option>
+          <el-option label="深圳" value="深圳"></el-option>
           <el-option label="其他" value="其他"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="薪资要求" prop="salaryRank">
         <el-select v-model="form.salaryRank" placeholder="请选择期望行业" style="width: 100%;">
-          <el-option label="前 10%" value="前 10%"></el-option>
-          <el-option label="其他" value="其他"></el-option>
+          <el-option label="5k以下" value="5k以下"></el-option>
+          <el-option label="5-10k" value="5-10k"></el-option>
+          <el-option label="10-15k" value="10-15k"></el-option>
+          <el-option label="15-25k" value="15-25k"></el-option>
+          <el-option label="25k以上" value="25k以上"></el-option>
         </el-select>
       </el-form-item>
     </el-form>

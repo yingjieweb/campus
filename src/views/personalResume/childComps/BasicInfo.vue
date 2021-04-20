@@ -32,7 +32,7 @@
           mail: ['邮箱', '1188061078@qq.com'],
           IDCard: ['个人证件', '370888189509095574'],
           currentState: ['当前状态', '2021应届生'],
-          expectedPosition: ['求职意向', '大数据开发工程师']
+          expectedPosition: ['求职意向', '图像识别工程师']
         }
       }
     },

@@ -44,7 +44,9 @@
           <strong class="projectName">{{projectExpItem.projectName[1]}} - {{projectExpItem.projectRole[1]}}</strong>
           <span>{{projectExpItem.period[1]}}</span>
         </div>
-        <div class="projectURL">项目链接： {{projectExpItem.projectURL[1]}}</div>
+        <div class="projectURL" v-if="projectExpItem.describe[1].indexOf('军方') < 0">
+          项目链接： {{projectExpItem.projectURL[1]}}
+        </div>
         <div class="describe">项目描述：<br>
           <span style="display: inline-block; width: 30px;"></span>
           {{projectExpItem.describe[1]}}
@@ -101,7 +103,7 @@
             mail: ['邮箱', '1188061078@qq.com'],
             IDCard: ['个人证件', '370888189509095574'],
             currentState: ['当前状态', '2021应届生'],
-            expectedPosition: ['求职意向', '大数据开发工程师']
+            expectedPosition: ['求职意向', '图像识别工程师']
           },
           eduExp: [{
             school: ['学校', '东北大学'],
@@ -115,21 +117,21 @@
           internExp: [{
             company: ['公司', '京东'],
             period: ['时间', '2020.08.01~2020.05.01'],
-            position: ['岗位', '前端开发实习生'],
-            describe: ['描述', '参照需求文档及 UI 设计原型图编写前端界面，主要使用 Element UI、Scss 和 flex 布局调整页面样式 封装过搜索、情报总览、tag 标签、统计 ECharts 饼图 等 公共组件，并根据需求对其进行维护和改进 使用 axios 和后端进行数据交互，配合后端人员确认接口传值字段，并进行业务 接口联调 测试 根据最新的提测报告和测试人员的参考意见，对开发过程中产生的缺陷进行补充和完善']
+            position: ['岗位', '图像识别实习生'],
+            describe: ['描述', '针对表格检测问题，对比了各种主流方法，确定了使用基于语义分割的模型TableNet—一只需输入一张图片，将表格检测和表格列识别任务协同训练，两者共享一个编码器，各独立训练一个解码器，在预测时可逐像素预测表格和表格中的列；随后使用Pytorch复现了该论文，并基于甲方的金融表格数据集进行处理，并输入该端到端的网络进行训练，算法预测评估指标达到预期结果，其中表检测结果的F1分数达到0.9486，表结构识别的F1分数达到0.8933']
           }],
           projectExp: [{
-            projectName: ['项目名称', '我的个人主页'],
-            projectRole: ['项目角色', '前端模块负责人'],
+            projectName: ['项目名称', '军方综合管控系统'],
+            projectRole: ['项目角色', '模块负责人'],
             period: ['起止时间', '2018.09 ~ 2021.07'],
             projectURL: ['项目链接', 'https://github.com/yingjieweb'],
-            describe: ['项目描述', '一款基于 Vue+TypeScript 开发的个人主页，内容包含个人简介、博客、项目等、项目的主要代码 60% 涉及 TypeScript，并结合 Vue 类组件 和装饰器进行开发 通过 前端路由 划分项目模块，主要有个人简介、博文总结、项目汇总以及个人的愿望清单  ']
+            describe: ['项目描述', '该军方综合管控系统是由为框架编写的，前端使用vue.js框架。本人主要协助测试对系统功能进行测试：协助开发修改后端bug：协助需求工程师与用户对接系统功能需求；协助需求工程师完成需求大纲、详细设计大纲的编写：协助测试工程师完成测试大纲的编写。']
           }],
           langKind: [{
             lang: ['语言', '英语'],
             proficient: ['掌握程度', '日常会话']
           }],
-          selfAssess: '真不错，感觉自己真不错！作为一位职场新人，一定能够以积极主动的工作态度来迎接工作中的每一个挑战；团队配合能力：善于沟通，' +
+          selfAssess: '作为一位职场新人，一定能够以积极主动的工作态度来迎接工作中的每一个挑战；团队配合能力：善于沟通，' +
               '有一定团队协作经验，具备活动策划和组织协调能力；工作态度评价：良好的责任感，吃苦耐劳，擅于管理时间，勇于面对变化和挑战。'
         }
       }

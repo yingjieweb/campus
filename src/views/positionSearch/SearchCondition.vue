@@ -42,7 +42,7 @@
       <div class="scale">
         <span class="title">公司规模：</span>
         <span class="option"
-              v-for="(item, index) in degreeArr"
+              v-for="(item, index) in scaleArr"
               :key="item"
               @click="clickPositionItem('scaleCurrentIndex', index)"
               :class="{active: index === scaleCurrentIndex}"

@@ -11,10 +11,22 @@
         <el-button type="primary">分析</el-button>
       </div>
       <div class="charts">
-        <div class="barChart">
-          <BarChart :option="barOption"></BarChart>
+        <div class="left-part">
+          <div class="score-table">
+            <span class="title">个人能力</span>
+            <el-table :data="tableData2" stripe border>
+              <el-table-column prop="name" label="能力信息"></el-table-column>
+              <el-table-column prop="ability" label="能力（满分10分）"></el-table-column>
+              <el-table-column prop="classRank" label="班级内排名"></el-table-column>
+              <el-table-column prop="majorRank" label="专业排名"></el-table-column>
+              <el-table-column prop="gradeRank" label="年级内排名"></el-table-column>
+            </el-table>
+          </div>
+          <div class="bar-chart">
+            <BarChart :option="barOption"></BarChart>
+          </div>
         </div>
-        <div class="radarChart">
+        <div class="right-part">
           <RadarChart :option="radarOption"></RadarChart>
         </div>
       </div>
@@ -53,7 +65,7 @@
             ]
           },
           xAxis: {type: 'category'},
-          yAxis: {},
+          yAxis: {name: '能力值（分）'},
           // Declare several bar series, each will be mapped
           // to a column of dataset.source by default.
           series: [
@@ -63,47 +75,31 @@
             {type: 'bar'}
           ]
         },
-        // radarOption: {
-        //   title: {
-        //     text: '全方位能力分析'
-        //   },
-        //   tooltip: {},
-        //   legend: {
-        //     data: ['平均能力分布', '个人能力分布']
-        //   },
-        //   radar: {
-        //     // shape: 'circle',
-        //     name: {
-        //       textStyle: {
-        //         color: '#fff',
-        //         backgroundColor: '#999',
-        //         borderRadius: 20,
-        //         padding: [3, 5]
-        //       }
-        //     },
-        //     indicator: [
-        //       { name: '专业知识能力', max: 10},
-        //       { name: '学习能力', max: 10},
-        //       { name: '实践能力', max: 10},
-        //       { name: '创新能力', max: 10}
-        //     ]
-        //   },
-        //   series: [{
-        //     name: '平均能力分布 vs 个人能力分布图',
-        //     type: 'radar',
-        //     // areaStyle: {normal: {}},
-        //     data: [
-        //       {
-        //         value: [4.3, 7.1, 6.9, 8.0],
-        //         name: '平均能力分布'
-        //       },
-        //       {
-        //         value: [8.2, 6.0, 7.4, 6.8],
-        //         name: '个人能力分布图'
-        //       }
-        //     ]
-        //   }]
-        // },
+        tableData2: [{
+          name: '专业知识能力',
+          ability: '7.33',
+          classRank: '12',
+          majorRank: '56',
+          gradeRank: '117'
+        }, {
+          name: '学习能力',
+          ability: '8.31',
+          classRank: '7',
+          majorRank: '16',
+          gradeRank: '69'
+        }, {
+          name: '实践能力',
+          ability: '8.64',
+          classRank: '6',
+          majorRank: '15',
+          gradeRank: '49'
+        }, {
+          name: '创新能力',
+          ability: '8.24',
+          classRank: '5',
+          majorRank: '8',
+          gradeRank: '36'
+        }],
         radarOption: {
           title: {
             text: '全方位能力分析'
@@ -184,14 +180,29 @@
 
     .charts {
       display: flex;
-      height: 500px;
+      height: 700px;
 
-      .barChart {
+      .left-part {
         flex: 3;
-        border: 1px solid gainsboro;
+
+        .score-table {
+          border: 1px solid gainsboro;
+
+          .title {
+            font-size: 18px;
+            color: #303133;
+            font-weight: bold;
+            margin-left: 6px;
+          }
+        }
+        .bar-chart {
+          height: 61%;
+          margin-top: 5px;
+          border: 1px solid gainsboro;
+        }
       }
 
-      .radarChart {
+      .right-part {
         flex: 2;
         margin-left: 5px;
         border: 1px solid gainsboro;

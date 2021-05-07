@@ -16,9 +16,19 @@
                 show-password
                 @keydown.enter.native="onsubmit">
       </el-input>
+
+      <div class="verify">
+        <span style="margin-right: 10px; color: #606266;">验证码</span>
+        <div style="width: 140px; height: 40px; margin-right: 10px; border: 1px solid gainsboro; border-radius: 4px"></div>
+        <img src="@/assets/images/verify_code.png">
+        <span>看不清？</span>
+      </div>
+
       <el-button class="submit" type="primary" size="mini" round @click="onsubmit">登录</el-button>
+      <el-button class="submit" type="primary" size="mini" round @click="onsubmit">注册</el-button>
     </div>
     <div class="instructions">基于学生能力和行为画像的就业推荐系统</div>
+    <!--<div class="instructions">大学生综合能力评价及就业推荐系统</div>-->
   </div>
 </template>
 
@@ -76,7 +86,7 @@
 
     > .form {
       max-width: 475px;
-      max-height: 240px;
+      max-height: 300px;
       padding: 65px 60px 30px 60px;
       position: relative;
       border: 1px solid #E6E8ED;
@@ -97,6 +107,12 @@
 
       > input {
         margin: 10px 0;
+      }
+
+      .verify {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
       }
 
       > .submit {

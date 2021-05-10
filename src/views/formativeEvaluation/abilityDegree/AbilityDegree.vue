@@ -181,9 +181,13 @@
             boundaryGap: false,
             data: ['第一学年', '第二学年', '第三学年', '第四学年']
           },
-          yAxis: {
-            type: 'value'
-          },
+          yAxis: [{
+            max: 10,
+            min: 0,
+            type: 'value',
+            name: '能力值（分）',
+            interval: 2
+          }],
           series: [
             {
               name: '专业知识能力',

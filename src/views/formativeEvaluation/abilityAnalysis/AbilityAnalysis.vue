@@ -65,7 +65,13 @@
             ]
           },
           xAxis: {type: 'category'},
-          yAxis: {name: '能力值（分）'},
+          yAxis: [{
+            max: 10,
+            min: 0,
+            type: 'value',
+            name: '能力值（分）',
+            interval: 2
+          }],
           // Declare several bar series, each will be mapped
           // to a column of dataset.source by default.
           series: [

@@ -4,7 +4,7 @@
       <div class="name">{{personalInfo.basicInfo.name[1]}}</div>
       <div class="contact">
         <span>电话：{{personalInfo.basicInfo.phone[1]}}</span> |
-        <span>邮箱：{{personalInfo.basicInfo.phone[1]}}</span>
+        <span>邮箱：{{personalInfo.basicInfo.mail[1]}}</span>
       </div>
       <div class="state">
         <span>当前状态：{{personalInfo.basicInfo.currentState[1]}}</span> |
@@ -44,7 +44,7 @@
           <strong class="projectName">{{projectExpItem.projectName[1]}} - {{projectExpItem.projectRole[1]}}</strong>
           <span>{{projectExpItem.period[1]}}</span>
         </div>
-        <div class="projectURL" v-if="projectExpItem.describe[1].indexOf('军方') < 0">
+        <div class="projectURL" v-if="projectExpItem.describe[1].indexOf('bug') < 0">
           项目链接： {{projectExpItem.projectURL[1]}}
         </div>
         <div class="describe">项目描述：<br>
@@ -98,17 +98,17 @@
       return {
         personalInfo: {
           basicInfo: {
-            name: ['姓名', '张钰鹏'],
-            phone: ['手机号码', '18850888958'],
-            mail: ['邮箱', '1188061078@qq.com'],
-            IDCard: ['个人证件', '370888189509095574'],
+            name: ['姓名', '张*鹏'],
+            phone: ['手机号码', '188********'],
+            mail: ['邮箱', '118806****@qq.com'],
+            IDCard: ['个人证件', '******************'],
             currentState: ['当前状态', '2021应届生'],
             expectedPosition: ['求职意向', '图像识别工程师']
           },
           eduExp: [{
             school: ['学校', '东北大学'],
             major: ['专业', '软件工程'],
-            period: ['起止时间', '2018.09.07 ~ 2021.07.01'],
+            period: ['起止时间', '2017.09.07 ~ 2021.07.01'],
             record: ['学历', '硕士'],
             scoreRank: ['成绩排名', '50%'],
             studyType: ['学历类型', '统招全日制']
@@ -125,7 +125,7 @@
             projectRole: ['项目角色', '模块负责人'],
             period: ['起止时间', '2018.09 ~ 2021.07'],
             projectURL: ['项目链接', 'https://github.com/yingjieweb'],
-            describe: ['项目描述', '该军方综合管控系统是由为框架编写的，前端使用vue.js框架。本人主要协助测试对系统功能进行测试：协助开发修改后端bug：协助需求工程师与用户对接系统功能需求；协助需求工程师完成需求大纲、详细设计大纲的编写：协助测试工程师完成测试大纲的编写。']
+            describe: ['项目描述', '本人主要协助测试对系统功能进行测试：协助开发修改后端bug：协助需求工程师与用户对接系统功能需求；协助需求工程师完成需求大纲、详细设计大纲的编写：协助测试工程师完成测试大纲的编写。']
           }],
           langKind: [{
             lang: ['语言', '英语'],

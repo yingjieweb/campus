@@ -79,7 +79,7 @@
               </div>
               <div class="info">
                 <div class="name">
-                  <span class="company">{{item.companyName}}</span>
+                  <span class="company">{{item.recruitJob}}</span>
                   <span class="salary">{{item.salary}}</span>
                 </div>
                 <div class="intro">{{item.introduce.substr(0, 13)}}...</div>
@@ -94,6 +94,7 @@
 
 <script lang="js">
   import jobData from "@/database/jobData"
+  import {getRandomNum} from "@/utils/randomNum";
 
   export default {
     name: "PositionDetails",
@@ -106,6 +107,7 @@
         zoom: 14,
         pitch: 45,
         rotation: 15,
+        random: getRandomNum(0, 28)
       }
     },
     computed: {
@@ -113,7 +115,7 @@
         let currentJobId = this.currentJob.id
         return jobData.filter(item => {
           return item.id !== currentJobId
-        }).slice(0, 5)
+        }).slice(this.random, this.random + 7)
       }
     },
     watch: {

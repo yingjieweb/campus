@@ -2,7 +2,7 @@ const studentData = [
   {
     id: 1,
     name: '管理员',
-    grade: '2014级',
+    grade: '2014届',
     gender: '女',
     studentNo: 'admin',
     password: 'admin',
@@ -30,8 +30,8 @@ const studentData = [
   },
   {
     id: 1,
-    name: '张钰鹏',
-    grade: '2014级',
+    name: '张*鹏',
+    grade: '2021届',
     gender: '女',
     studentNo: '1871123',
     password: '1871123',
@@ -60,7 +60,7 @@ const studentData = [
   {
     id: 2,
     name: '张子健',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20103367',
     password: '20103367',
@@ -89,7 +89,7 @@ const studentData = [
   {
     id: 3,
     name: '孙志伟',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20103459',
     password: '20103459',
@@ -118,7 +118,7 @@ const studentData = [
   {
     id: 4,
     name: '冯慕白',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20103437',
     password: '20103367',
@@ -147,7 +147,7 @@ const studentData = [
   {
     id: 5,
     name: '贾春辉',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20103471',
     password: '20103471',
@@ -176,7 +176,7 @@ const studentData = [
   {
     id: 6,
     name: '赵光明',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20103513',
     password: '20103513',
@@ -205,7 +205,7 @@ const studentData = [
   {
     id: 7,
     name: '张强',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20103545',
     password: '20103545',
@@ -234,7 +234,7 @@ const studentData = [
   {
     id: 8,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -263,7 +263,7 @@ const studentData = [
   {
     id: 9,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -292,7 +292,7 @@ const studentData = [
   {
     id: 10,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -321,7 +321,7 @@ const studentData = [
   {
     id: 11,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -350,7 +350,7 @@ const studentData = [
   {
     id: 12,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -379,7 +379,7 @@ const studentData = [
   {
     id: 13,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -408,7 +408,7 @@ const studentData = [
   {
     id: 14,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -437,7 +437,7 @@ const studentData = [
   {
     id: 15,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -466,7 +466,7 @@ const studentData = [
   {
     id: 16,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -495,7 +495,7 @@ const studentData = [
   {
     id: 17,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -524,7 +524,7 @@ const studentData = [
   {
     id: 18,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -553,7 +553,7 @@ const studentData = [
   {
     id: 19,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -582,7 +582,7 @@ const studentData = [
   {
     id: 20,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',
@@ -611,7 +611,7 @@ const studentData = [
   {
     id: 21,
     name: '姜峰',
-    grade: '2014级',
+    grade: '2014届',
     gender: '男',
     studentNo: '20100772',
     password: '20100772',

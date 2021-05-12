@@ -1,8 +1,8 @@
 <template>
-  <Block title="职位搜索">
+  <Block title="岗位搜索">
     <div slot="content">
       <div class="search">
-        <input type="text" v-model="queryString" placeholder="搜索职位、公司、地点" @keydown.enter="searchJobs">
+        <input type="text" v-model="queryString" placeholder="搜索岗位、公司、地点" @keydown.enter="searchJobs">
         <button @click="searchJobs">搜索</button>
       </div>
 
@@ -50,7 +50,7 @@
     },
     computed: {
       totalPageCount() {
-        return Array.from(this.jobData).length + 4651 / 10 * 10
+        return Array.from(this.jobData).length + 13851 / 10 * 10
       }
     },
     methods: {

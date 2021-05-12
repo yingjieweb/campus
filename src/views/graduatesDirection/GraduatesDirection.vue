@@ -48,8 +48,8 @@
       return {
         jobOrient: {
           title: {
-            text: '毕业生去向',
-            subtext: '毕业生就业热门城市'
+            text: '往届毕业生就业城市',
+            subtext: '2014-2020届毕业生就业热门城市'
           },
           tooltip: {
             trigger: 'axis',
@@ -75,14 +75,14 @@
             {
               name: '2020年',
               type: 'bar',
-              data: [171, 103, 139, 123, 104, 182]
+              data: [583, 360, 120, 542, 181, 843]
             }
           ]
         },
         hotJobs: {
           title: {
-            text: '就业岗位排行榜',
-            subtext: '2020届毕业生热门岗位'
+            text: '往届毕业生就业岗位排行榜',
+            subtext: '2020届毕业生热门就业岗位'
           },
           tooltip: {
             trigger: 'axis',
@@ -108,14 +108,14 @@
             {
               name: '2020年',
               type: 'bar',
-              data: [186, 125, 39, 107, 82, 56]
+              data: [166, 95, 49, 67, 52, 26]
             }
           ]
         },
         salaryRank: {
           title: {
-            text: '岗位薪资排行榜',
-            subtext: '岗位薪资排行榜'
+            text: '往届毕业生岗位薪资排行榜',
+            subtext: '岗位薪资排行榜（月薪）'
           },
           tooltip: {
             trigger: 'axis',
@@ -141,13 +141,13 @@
             {
               name: '2020年',
               type: 'bar',
-              data: [22370, 20698, 27540, 17526, 21010, 18736]
+              data: [15370, 13698, 20540, 10526, 15010, 12736]
             }
           ]
         },
         positionPredict: {
           title: {
-            text: '岗位实时预测',
+            text: '岗位数量实时预测',
             subtext: '2021年岗位招聘数量预测'
           },
           tooltip: {
@@ -166,11 +166,11 @@
                 }
               },
               data: [
-                {value: 1548, name: 'Java'},
+                {value: 1648, name: 'Java'},
                 {value: 1346, name: 'Web'},
-                {value: 234, name: '算法'},
+                {value: 134, name: '算法'},
                 {value: 958, name: '测试'},
-                {value: 826, name: '产品'},
+                {value: 226, name: '产品'},
                 {value: 603, name: '设计'}
               ]
             }
@@ -178,8 +178,8 @@
         },
         enrollRate: {
           title: {
-            text: '各岗位录取比例',
-            subtext: '各岗位录取比例'
+            text: '往年岗位投递录取比例',
+            subtext: '2020年各岗位投递录取比例'
           },
           tooltip: {
             trigger: 'axis',
@@ -205,7 +205,7 @@
             {
               name: '2020年',
               type: 'bar',
-              data: [4, 4, 26, 4, 13, 5]
+              data: [6, 4, 26, 4, 17, 5]
             }
           ]
         },

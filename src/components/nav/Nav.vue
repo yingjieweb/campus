@@ -39,7 +39,7 @@
     </el-menu-item>
     <el-menu-item index="/position-search">
       <i class="el-icon-search"></i>
-      <span slot="title">职位搜索</span>
+      <span slot="title">岗位搜索</span>
     </el-menu-item>
     <el-menu-item index="/campus-recruit">
       <i class="el-icon-s-home"></i>

@@ -78,7 +78,7 @@ const constantRoutes = [
     path: '/position-search',
     name: 'PositionSearch',
     component: PositionSearch,
-    meta: { title: '职位搜索' }
+    meta: { title: '岗位搜索' }
   },
   {
     path: '/campus-recruit',

@@ -71,7 +71,7 @@
     },
     computed: {
       totalPageCount() {
-        return jobData.length + 12851 / 10 * 10;
+        return jobData.length + 13851 / 10 * 10;
       }
     },
     methods: {

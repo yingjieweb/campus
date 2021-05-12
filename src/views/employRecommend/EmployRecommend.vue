@@ -1,5 +1,5 @@
 <template>
-  <Block title="应届生就业推荐">
+  <Block title="就业岗位推荐">
     <div slot="content">
       <div class="search">
         <input type="text" v-model="queryString" placeholder="搜索职位、公司、地点" @keydown.enter="searchJobs">
@@ -186,7 +186,7 @@
     },
     computed: {
       totalPageCount() {
-        return Array.from(jobData).length + 142 / 9 * 10;
+        return Array.from(jobData).length + 50 / 9 * 10;
       }
     },
     methods: {
@@ -214,7 +214,7 @@
       }
     },
     created() {
-      this.currentPageJobs = jobData.slice(0, 9);
+      this.currentPageJobs = jobData.slice(15, 24);
     },
   }
 </script>

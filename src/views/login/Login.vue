@@ -13,15 +13,17 @@
                 placeholder="密码"
                 prefix-icon="el-icon-lock"
                 v-model="password"
-                show-password
-                @keydown.enter.native="onsubmit">
+                show-password>
       </el-input>
 
       <div class="verify">
-        <span style="margin-right: 10px; color: #606266;">验证码</span>
-        <div style="width: 140px; height: 40px; margin-right: 10px; border: 1px solid gainsboro; border-radius: 4px"></div>
-        <img src="@/assets/images/verify_code.png">
-        <span>看不清？</span>
+        <el-input style="margin: 14px 14px 14px 0"
+                  placeholder="验证码"
+                  prefix-icon="el-icon-lock"
+                  v-model="verifyCode"
+                  @keydown.enter.native="onsubmit">
+        </el-input>
+        <img class="code-img" src="@/assets/images/verify_code.png" @click="changeCode">
       </div>
 
       <el-button class="submit" type="primary" size="mini" round @click="onsubmit">登录</el-button>
@@ -40,10 +42,14 @@
     data() {
       return {
         studentNo: '',
-        password: ''
+        password: '',
+        verifyCode: ''
       }
     },
     methods: {
+      changeCode() {
+        console.log('更换验证码图片')  // TODO
+      },
       onsubmit() {
         let currentStudent = studentData.filter(item => {
           return item.studentNo === this.studentNo
@@ -51,12 +57,16 @@
 
         if (currentStudent.length === 1) {
           if (currentStudent[0].password === this.password) {
-            this.$message({message: '登陆成功', type: 'success'})
+            if (this.verifyCode === '8233') {
+              this.$message({message: '登陆成功', type: 'success'})
 
-            this.$store.commit('changeLoginStatus', true)
-            this.$router.push('/campus-recruit')
+              this.$store.commit('changeLoginStatus', true)
+              this.$router.push('/campus-recruit')
 
-            this.$store.commit('getUserInfo', currentStudent[0])
+              this.$store.commit('getUserInfo', currentStudent[0])
+            } else {
+              this.$message({message: '请输入正确的验证码！', type: 'error'})
+            }
           } else {
             this.$message({message: '密码错误，请重新输入！', type: 'error'})
           }
@@ -86,7 +96,6 @@
 
     > .form {
       max-width: 475px;
-      max-height: 300px;
       padding: 65px 60px 30px 60px;
       position: relative;
       border: 1px solid #E6E8ED;
@@ -113,6 +122,8 @@
         display: flex;
         align-items: center;
         margin-bottom: 15px;
+
+        .code-img {cursor: pointer;}
       }
 
       > .submit {

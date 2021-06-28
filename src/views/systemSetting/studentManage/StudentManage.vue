@@ -3,7 +3,7 @@
     <div slot="button">
       <el-button type="primary" size="small" plain icon="el-icon-circle-plus-outline" @click="addStudent">新增</el-button>
       <el-button type="danger" size="small" plain icon="el-icon-circle-close" @click="batchDeleteClick">删除</el-button>
-      <el-button type="primary" size="small" plain icon="el-icon-download">下载模板</el-button>
+      <el-button type="primary" size="small" plain icon="el-icon-download" @click="downloadTemplate">下载模板</el-button>
       <el-button type="primary" size="small" plain icon="el-icon-upload">导入学生信息</el-button>
     </div>
     <div slot="operation">
@@ -113,6 +113,11 @@
           if (item.studentNo === studentInfo.studentNo)
             this.currentPageStudents.splice(index, 1)
         })
+      },
+      downloadTemplate() {
+        // TODO 下载模板
+        // <a href="downloadFileName" target="_blank" download="downloadFileName">下载文件</a>
+        // <a :href="[srcValue]" target="_blank" :download="[srcValue]">下载文件</a>
       },
       loadListData(status, newUserInfo){
         if (status === 'add') {

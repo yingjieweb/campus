@@ -8,21 +8,34 @@
       <el-form-item label="姓名" prop="name" :label-width="formLabelWidth">
         <el-input v-model="form.name" autocomplete="off"></el-input>
       </el-form-item>
+      <el-form-item label="性别" prop="gender" :label-width="formLabelWidth">
+        <el-input v-model="form.gender" autocomplete="off"></el-input>
+      </el-form-item>
       <el-form-item label="年级" prop="grade" :label-width="formLabelWidth">
         <el-input v-model="form.grade" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item label="学号" prop="studentNo" :label-width="formLabelWidth">
         <el-input v-model="form.studentNo" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="性别" prop="gender" :label-width="formLabelWidth">
-        <el-input v-model="form.gender" autocomplete="off"></el-input>
+      <el-form-item label="专业" prop="major" :label-width="formLabelWidth">
+        <el-input v-model="form.major" autocomplete="off"></el-input>
+      </el-form-item>
+      <el-form-item label="籍贯" prop="address" :label-width="formLabelWidth">
+        <el-input v-model="form.address" autocomplete="off"></el-input>
+      </el-form-item>
+      <el-form-item label="签约公司" prop="signCompany" :label-width="formLabelWidth">
+        <el-input v-model="form.signCompany" autocomplete="off"></el-input>
+      </el-form-item>
+      <el-form-item label="签约岗位" prop="signJob" :label-width="formLabelWidth">
+        <el-input v-model="form.signJob" autocomplete="off"></el-input>
+      </el-form-item>
+      <el-form-item label="就业城市" prop="jobCity" :label-width="formLabelWidth">
+        <el-input v-model="form.jobCity" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item label="电话" prop="phone" :label-width="formLabelWidth">
         <el-input v-model="form.phone" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="家庭地址" prop="address" :label-width="formLabelWidth">
-        <el-input v-model="form.address" autocomplete="off"></el-input>
-      </el-form-item>
+
     </el-form>
     <div slot="footer" class="dialog-footer">
       <el-button size="small" @click="cancelSubmit">取 消</el-button>
@@ -41,19 +54,27 @@
         addOrEdit: '',
         form: {
           name: '',
+          gender: '',
           grade: '',
           studentNo: '',
-          gender: '',
-          phone: '',
-          address: ''
+          major: '',
+          address: '',
+          signCompany: '',
+          signJob: '',
+          jobCity: '',
+          phone: ''
         },
         rules: {
           name: [{required: true, message: '请输入学生姓名', trigger: 'blur'}],
+          gender: [{required: true, message: '请输入学生年龄', trigger: 'blur'}],
           grade: [{required: true, message: '请输入学生年级', trigger: 'blur'}],
           studentNo: [{required: true, message: '请输入学生学号', trigger: 'blur'}],
-          gender: [{required: true, message: '请输入学生年龄', trigger: 'blur'}],
-          phone: [{required: true, message: '请输入学生电话', trigger: 'blur'}],
-          address: [{required: true, message: '请输入学生家庭地址', trigger: 'blur'}]
+          major: [{required: true, message: '请输入专业名称', trigger: 'blur'}],
+          address: [{required: true, message: '请输入学生籍贯', trigger: 'blur'}],
+          signCompany: [{required: true, message: '在校生或尚未签约就业的学生填写：无', trigger: 'blur'}],
+          signJob: [{required: true, message: '在校生或尚未签约就业的学生填写：无', trigger: 'blur'}],
+          jobCity: [{required: true, message: '在校生或尚未签约就业的学生填写：无', trigger: 'blur'}],
+          phone: [{required: true, message: '请输入学生电话', trigger: 'blur'}]
         }
       }
     },
@@ -77,8 +98,8 @@
       },
       onSubmit() {
         this.$refs.userModalForm.validate((valid) => {
-          if (valid) {
-            this.$emit('loadListData', this.addOrEdit, JSON.parse(JSON.stringify(this.form)))
+          if (true) {
+            this.$emit('loadTableData', this.addOrEdit, JSON.parse(JSON.stringify(this.form)))
             if (this.addOrEdit === 'edit') this.$refs.userModalForm.resetFields()
 
             this.dialogVisible = false
@@ -95,6 +116,8 @@
 
 <style lang="scss" scoped>
  ::v-deep .el-dialog {
+   margin-top: 12vh;
+
    .el-dialog__header {
      border-bottom: 1px solid #DCDFE6;
    }

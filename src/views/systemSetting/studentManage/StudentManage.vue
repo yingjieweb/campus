@@ -1,10 +1,14 @@
 <template>
   <Block title="用户管理">
-    <div slot="button">
+    <div slot="button" class="buttons">
       <el-button type="primary" size="small" plain icon="el-icon-circle-plus-outline" @click="addStudent">新增</el-button>
       <el-button type="danger" size="small" plain icon="el-icon-circle-close" @click="batchDeleteClick">删除</el-button>
       <el-button type="primary" size="small" plain icon="el-icon-download" @click="downloadTemplate">下载模板</el-button>
-      <el-button type="primary" size="small" plain icon="el-icon-upload">导入学生信息</el-button>
+      <el-upload
+          action="https://jsonplaceholder.typicode.com/posts/"
+          :show-file-list="false">
+        <el-button type="primary" size="small" plain icon="el-icon-upload">点击上传</el-button>
+      </el-upload>
     </div>
     <div slot="operation">
       <Search placeholder="请输入搜索信息"></Search>
@@ -22,7 +26,7 @@
         <el-table-column prop="grade" label="年级"></el-table-column>
         <el-table-column prop="studentNo" label="学号"></el-table-column>
         <el-table-column prop="major" label="专业"></el-table-column>
-        <el-table-column prop="address" label="家庭地址" show-overflow-tooltip></el-table-column>
+        <el-table-column prop="address" label="籍贯" show-overflow-tooltip></el-table-column>
         <el-table-column prop="signCompany" label="签约公司" show-overflow-tooltip></el-table-column>
         <el-table-column prop="signJob" label="签约岗位" show-overflow-tooltip></el-table-column>
         <el-table-column prop="jobCity" label="就业城市" show-overflow-tooltip></el-table-column>
@@ -46,7 +50,7 @@
         </el-pagination>
       </div>
 
-      <StudentManageModal ref="StudentManageModal" @loadListData="loadListData"></StudentManageModal>
+      <StudentManageModal ref="StudentManageModal" @loadTableData="loadTableData"></StudentManageModal>
     </div>
   </Block>
 </template>
@@ -64,44 +68,20 @@
     },
     data() {
       return {
-        isShowDialog: false,
-        selectedStudentId: [],
-        currentPageStudents: []
-        // currentPageStudents: [{
-        //   id: 1,
-        //   name: '董梦嫣',
-        //   grade: '2014级',
-        //   gender: '女',
-        //   studentNo: '1871123',
-        //   password: '1871123',
-        //   permission: 'admin',
-        //   phone: '18604920086',
-        //   address: '无锡新区震泽路18号软件园金牛座A栋3层',
-        //   signCompany: '北京字节跳动',
-        //   jobCity: '北京',
-        //   scores: {
-        //     '软件工程专业概论': '优',
-        //     '面向对象程序设计': '94',
-        //     '程序设计基础': '94',
-        //     '基础编程实训': '98',
-        //     '离散数学': '99',
-        //     '物理概论': '98',
-        //     '高等数学①（一）': '90',
-        //     '高等数学①（二）': '99',
-        //     '线性代数': '88',
-        //     '大学英语（1）': '81',
-        //     '大学英语（2）': '96',
-        //     '初级日语（1）': '99'
-        //   }
-        // }]
-      }
-    },
-    computed: {
-      totalPageCount() {
-        return Array.from(studentData).length + 1658 / 10 * 10;
+        studentData: studentData,
+        totalPageCount: '',
+        currentPage: 1,
+        currentPageStudents: [],
+        selectedStudentId: []
       }
     },
     methods: {
+      getCurrentPageStudents() {
+        this.currentPageStudents = this.studentData.slice((this.currentPage - 1) * 10, this.currentPage * 10)
+      },
+      getTotalPageCount() {
+        this.totalPageCount = this.studentData.length / 10 * 10
+      },
       addStudent(){
         this.$refs.StudentManageModal.setDialogVisible(true, 'add')
       },
@@ -109,31 +89,37 @@
         this.$refs.StudentManageModal.setDialogVisible(true, 'edit', JSON.parse(JSON.stringify(studentInfo)))
       },
       deleteStudent(studentInfo) {
-        this.currentPageStudents.map((item, index) => {
+        this.studentData.map((item, index) => {
           if (item.studentNo === studentInfo.studentNo)
-            this.currentPageStudents.splice(index, 1)
+            this.studentData.splice(index, 1)
         })
+        this.getCurrentPageStudents()
+        this.getTotalPageCount()
       },
       downloadTemplate() {
-        // TODO 下载模板
-        // <a href="downloadFileName" target="_blank" download="downloadFileName">下载文件</a>
-        // <a :href="[srcValue]" target="_blank" :download="[srcValue]">下载文件</a>
+        let link = document.createElement("a")
+        link.setAttribute("download", "学生信息收集模板.xlsx")
+        link.href = "template1.xlsx"
+        link.style.display = "none"
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
       },
-      loadListData(status, newUserInfo){
+      loadTableData(status, newUserInfo){
         if (status === 'add') {
-          this.currentPageStudents.push(newUserInfo)
+          this.studentData.push(newUserInfo)
         } else if (status === 'edit') {
-          this.currentPageStudents.map((item, index) => {
+          this.studentData.map((item, index) => {
             if (item.studentNo === newUserInfo.studentNo) {
-              this.$set(this.currentPageStudents, index, newUserInfo)
+              this.$set(this.studentData, index, newUserInfo)
             }
           })
         }
+        this.getCurrentPageStudents()
+        this.getTotalPageCount()
       },
       selsChange(sels) {
-        this.selectedStudentId = sels.map(item => {
-          return item.id
-        })
+        this.selectedStudentId = sels.map(item => item.id)
       },
       batchDeleteClick(){
         if (this.selectedStudentId.length > 0) {
@@ -142,9 +128,11 @@
             cancelButtonText: '取消',
             type: 'warning'
           }).then(() => {
-            this.currentPageStudents = this.currentPageStudents.filter(item => {
+            this.studentData = this.studentData.filter(item => {
               return !this.selectedStudentId.includes(item.id)
             })
+            this.getCurrentPageStudents()
+            this.getTotalPageCount()
           }).catch(() => {
             this.$message.info('取消删除操作！')
           })
@@ -152,26 +140,33 @@
           this.$message.info('请选择需要删除的用户信息！')
         }
       },
-      handleChange(value) {
-        console.log(value);
-      },
       prevClick(currentPage) {
-        this.currentPageStudents = studentData.slice((currentPage - 1) * 10, currentPage * 10);
+        this.currentPageStudents = this.studentData.slice((currentPage - 1) * 10, currentPage * 10);
       },
       nextClick(currentPage) {
-        this.currentPageStudents = studentData.slice((currentPage - 1) * 10, currentPage * 10);
+        this.currentPageStudents = this.studentData.slice((currentPage - 1) * 10, currentPage * 10);
       },
       currentChange(currentPage) {
-        this.currentPageStudents = studentData.slice((currentPage - 1) * 10, currentPage * 10);
+        this.currentPage = currentPage
+        this.currentPageStudents = this.studentData.slice((currentPage - 1) * 10, currentPage * 10);
       }
     },
     created() {
-      this.currentPageStudents = studentData.slice(0, 10);
+      this.getCurrentPageStudents()
+      this.getTotalPageCount()
     },
   }
 </script>
 
 <style lang="scss" scoped>
+  .buttons {
+    display: flex;
+
+    ::v-deep .el-upload {
+      margin-left: 10px;
+    }
+  }
+
   .pagination {
     display: flex;
     justify-content: center;

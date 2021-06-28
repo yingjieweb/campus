@@ -29,7 +29,7 @@
   import BarChart from "@/components/charts/BarChart"
 
   export default {
-    name: "ScoreEnquiry",
+    name: "PersonalData",
     components: {
       BarChart
     },

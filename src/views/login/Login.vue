@@ -62,7 +62,6 @@
 
               this.$store.commit('changeLoginStatus', true)
               this.$router.push('/campus-recruit')
-
               this.$store.commit('getUserInfo', currentStudent[0])
             } else {
               this.$message({message: '请输入正确的验证码！', type: 'error'})

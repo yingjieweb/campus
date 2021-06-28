@@ -57,7 +57,7 @@
 
 <script>
   import Search from "@/components/search/Search"
-  import StudentManageModal from "@/views/systemSetting/studentManage/StudentManageModal"
+  import StudentManageModal from "@/views/studentManage/StudentManageModal"
   import studentData from "@/database/studentData"
 
   export default {

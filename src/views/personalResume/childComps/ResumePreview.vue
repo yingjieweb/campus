@@ -98,7 +98,7 @@
       return {
         personalInfo: {
           basicInfo: {
-            name: ['姓名', '张*鹏'],
+            name: ['姓名', '张钰鹏'],
             phone: ['手机号码', '188********'],
             mail: ['邮箱', '118806****@qq.com'],
             IDCard: ['个人证件', '******************'],

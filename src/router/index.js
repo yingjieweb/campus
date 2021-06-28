@@ -3,9 +3,9 @@ import VueRouter from 'vue-router'
 import store from '@/store/index'
 
 import Login from "@/views/login/Login"
-import StudentManage from "@/views/systemSetting/studentManage/StudentManage"
-import JobsManage from "@/views/systemSetting/jobsManage/JobsManage"
-import ScoreEnquiry from "@/views/dataCenter/ScoreEnquiry"
+import StudentManage from "@/views/studentManage/StudentManage"
+import JobsManage from "@/views/jobsManage/JobsManage"
+import PersonalData from "@/views/personalData/PersonalData"
 import AbilityDegree from "@/views/formativeEvaluation/abilityDegree/AbilityDegree"
 import AbilityAnalysis from "@/views/formativeEvaluation/abilityAnalysis/AbilityAnalysis"
 import PersonalResume from "@/views/personalResume/PersonalResume"
@@ -39,10 +39,10 @@ const constantRoutes = [
     meta: { title: '登录' }
   },
   {
-    path: '/score-enquiry',
-    name: 'ScoreEnquiry',
-    component: ScoreEnquiry,
-    meta: { title: '成绩查询' }
+    path: '/personal-data',
+    name: 'PersonalData',
+    component: PersonalData,
+    meta: { title: '个人数据' }
   },
   {
     path: '/student-manage',
@@ -134,7 +134,7 @@ const constantRoutes = [
   }
 ]
 
-const asyncRoutes = []
+const asyncRoutes = []  // TODO
 
 const router = new VueRouter({
   routes: constantRoutes

@@ -29,8 +29,8 @@
       <el-button class="submit" type="primary" size="mini" round @click="onsubmit">登录</el-button>
       <el-button class="submit" type="primary" size="mini" round @click="onsubmit">注册</el-button>
     </div>
-    <div class="instructions">基于学生能力和行为画像的就业推荐系统</div>
-    <!--<div class="instructions">大学生综合能力评价及就业推荐系统</div>-->
+    <div class="instructions">大学生综合能力评价及就业推荐系统</div>
+    <!--<div class="instructions">基于学生能力和行为画像的就业推荐系统</div>-->
   </div>
 </template>
 

@@ -6,6 +6,7 @@
       <el-button type="primary" size="small" plain icon="el-icon-download" @click="downloadTemplate">下载模板</el-button>
       <el-upload
           action="https://jsonplaceholder.typicode.com/posts/"
+          :on-success="uploadSuccess"
           :show-file-list="false">
         <el-button type="primary" size="small" plain icon="el-icon-upload">点击上传</el-button>
       </el-upload>
@@ -96,15 +97,6 @@
         this.getCurrentPageStudents()
         this.getTotalPageCount()
       },
-      downloadTemplate() {
-        let link = document.createElement("a")
-        link.setAttribute("download", "学生信息收集模板.xlsx")
-        link.href = "template1.xlsx"
-        link.style.display = "none"
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-      },
       loadTableData(status, newUserInfo){
         if (status === 'add') {
           this.studentData.push(newUserInfo)
@@ -139,6 +131,18 @@
         } else {
           this.$message.info('请选择需要删除的用户信息！')
         }
+      },
+      downloadTemplate() {
+        let link = document.createElement("a")
+        link.setAttribute("download", "学生信息收集模板.xlsx")
+        link.href = "template1.xlsx"
+        link.style.display = "none"
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+      },
+      uploadSuccess() {
+        console.log('uploadSuccess')
       },
       prevClick(currentPage) {
         this.currentPageStudents = this.studentData.slice((currentPage - 1) * 10, currentPage * 10);

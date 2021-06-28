@@ -36,7 +36,7 @@
       <i class="el-icon-office-building"></i>
       <span slot="title">热门公司</span>
     </el-menu-item>
-    <el-submenu index="8">
+    <el-submenu index="8" v-if="!this.$store.state.isAdmin">
       <template slot="title"><i class="el-icon-stopwatch"></i><span>形成性评价</span></template>
       <el-menu-item-group>
         <el-menu-item index="/ability-degree"><i class="el-icon-caret-right"></i>个人能力达成度</el-menu-item>
@@ -46,6 +46,10 @@
     <el-menu-item index="/employ-recommend" v-if="!this.$store.state.isAdmin">
       <i class="el-icon-s-marketing"></i>
       <span slot="title">就业岗位推荐</span>
+    </el-menu-item>
+    <el-menu-item index="10" v-if="this.$store.state.isAdmin">
+      <i class="el-icon-s-data"></i>
+      <span slot="title">学生能力分析</span>
     </el-menu-item>
     <el-menu-item index="/graduates-direction">
       <i class="el-icon-s-promotion"></i>

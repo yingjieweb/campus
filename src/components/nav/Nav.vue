@@ -40,14 +40,14 @@
       <template slot="title"><i class="el-icon-stopwatch"></i><span>形成性评价</span></template>
       <el-menu-item-group>
         <el-menu-item index="/ability-degree"><i class="el-icon-caret-right"></i>个人能力达成度</el-menu-item>
-        <el-menu-item index="/ability-analysis"><i class="el-icon-caret-right"></i>能力对比分析</el-menu-item>
+        <el-menu-item index="/ability-compare"><i class="el-icon-caret-right"></i>能力对比分析</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-menu-item index="/employ-recommend" v-if="!this.$store.state.isAdmin">
       <i class="el-icon-s-marketing"></i>
       <span slot="title">就业岗位推荐</span>
     </el-menu-item>
-    <el-menu-item index="10" v-if="this.$store.state.isAdmin">
+    <el-menu-item index="/ability-analysis" v-if="this.$store.state.isAdmin">
       <i class="el-icon-s-data"></i>
       <span slot="title">学生能力分析</span>
     </el-menu-item>

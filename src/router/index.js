@@ -7,7 +7,7 @@ import StudentManage from "@/views/studentManage/StudentManage"
 import JobsManage from "@/views/jobsManage/JobsManage"
 import PersonalData from "@/views/personalData/PersonalData"
 import AbilityDegree from "@/views/formativeEvaluation/abilityDegree/AbilityDegree"
-import AbilityAnalysis from "@/views/formativeEvaluation/abilityAnalysis/AbilityAnalysis"
+import AbilityCompare from "@/views/formativeEvaluation/abilityCompare/AbilityCompare"
 import PersonalResume from "@/views/personalResume/PersonalResume"
 import PositionSearch from "@/views/positionSearch/PositionSearch"
 import EmployRecommend from "@/views/employRecommend/EmployRecommend"
@@ -15,10 +15,12 @@ import CampusRecruit from "@/views/campusRecruit/CampusRecruit"
 import HotCompany from "@/views/hotCompany/HotCompany"
 import CompanyDetails from "@/views/companyDetails/CompanyDetails"
 import PositionDetails from "@/views/positionDetails/PositionDetails"
+import AbilityAnalysis from "@/views/abilityAnalysis/AbilityAnalysis"
 import GraduatesDirection from "@/views/graduatesDirection/GraduatesDirection"
 import Forbidden from  "@/views/statusCode/403.vue"
 import NotFound from "@/views/statusCode/404.vue"
 
+// 解决 VueRouter 跳转相同路由报错
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
@@ -63,10 +65,10 @@ const constantRoutes = [
     meta: { title: '个人能力达成度' }
   },
   {
-    path: '/ability-analysis',
-    name: 'AbilityAnalysis',
-    component: AbilityAnalysis,
-    meta: { title: '能力对比分析' }
+    path: '/ability-compare',
+    name: 'AbilityCompare',
+    component: AbilityCompare,
+    meta: {title: '能力对比分析'}
   },
   {
     path: '/personal-resume',
@@ -102,25 +104,31 @@ const constantRoutes = [
     path: '/company-details',
     name: 'CompanyDetails',
     component: CompanyDetails,
-    meta: { title: '公司详情' }
+    meta: {title: '公司详情'}
   },
   {
     path: '/position-details',
     name: 'PositionDetails',
     component: PositionDetails,
-    meta: { title: '岗位详情' }
+    meta: {title: '岗位详情'}
+  },
+  {
+    path: '/ability-analysis',
+    name: 'AbilityAnalysis',
+    component: AbilityAnalysis,
+    meta: {title: '学生能力分析'}
   },
   {
     path: '/graduates-direction',
     name: 'GraduatesDirection',
     component: GraduatesDirection,
-    meta: { title: '往届毕业生去向' }
+    meta: {title: '往届毕业生去向'}
   },
   {
     path: '/403',
     name: 'Forbidden',
     component: Forbidden,
-    meta: { title: 'Forbidden' }
+    meta: {title: 'Forbidden'}
   },
   {
     path: '/404',

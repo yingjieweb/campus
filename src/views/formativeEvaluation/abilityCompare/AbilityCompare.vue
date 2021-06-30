@@ -39,7 +39,7 @@
   import RadarChart from "@/components/charts/RadarChart"
 
   export default {
-    name: "AbilityAnalysis",
+    name: "AbilityCompare",
     components: {
       BarChart,
       RadarChart,
@@ -125,10 +125,10 @@
               }
             },
             indicator: [
-              { name: '专业知识能力', max: 10},
-              { name: '学习能力', max: 10},
-              { name: '实践能力', max: 10},
-              { name: '创新能力', max: 10}
+              {name: '专业知识能力', max: 10},
+              {name: '学习能力', max: 10},
+              {name: '实践能力', max: 10},
+              {name: '创新能力', max: 10}
             ]
           },
           series: [{

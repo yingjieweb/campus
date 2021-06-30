@@ -1,13 +1,19 @@
 <template>
   <div class="search">
-    <el-input class="search" :placeholder="placeholder" v-model="queryString"></el-input>
+    <el-input
+        class="search"
+        :placeholder="placeholder"
+        v-model="queryString"
+        @keydown.enter.native="$emit('searchStudent', queryString)">
+    </el-input>
     <el-button
-            plain
-            size="small"
-            type="primary"
-            icon="el-icon-search"
-            @click="$emit('search', {'queryString': queryString})"
-    >搜索</el-button>
+        plain
+        size="small"
+        type="primary"
+        icon="el-icon-search"
+        @click="$emit('searchStudent', queryString)"
+    >搜索
+    </el-button>
   </div>
 </template>
 

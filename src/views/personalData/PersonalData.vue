@@ -1,5 +1,5 @@
 <template>
-  <Block title="个人成绩">
+  <Block title="个人数据">
     <div slot="content" class="container">
       <div class="score-section">
         <span class="title">个人成绩</span>

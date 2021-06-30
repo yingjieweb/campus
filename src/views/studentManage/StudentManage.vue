@@ -1,5 +1,5 @@
 <template>
-  <Block title="用户管理">
+  <Block title="学生管理">
     <div slot="button" class="buttons">
       <el-button type="primary" size="small" plain icon="el-icon-circle-plus-outline" @click="addStudent">新增</el-button>
       <el-button type="danger" size="small" plain icon="el-icon-circle-close" @click="batchDeleteClick">删除</el-button>
@@ -13,7 +13,7 @@
       </el-upload>
     </div>
     <div slot="operation">
-      <Search placeholder="请输入搜索信息"></Search>
+      <Search placeholder="请输入学生姓名" @searchStudent="searchStudent"></Search>
     </div>
     <div slot="content">
       <el-table
@@ -58,9 +58,6 @@
 </template>
 
 <script>
-import axios from "axios";
-import XLSX from "xlsx"
-
 import Search from "@/components/search/Search"
 import StudentManageModal from "@/views/studentManage/StudentManageModal"
 import studentData from "@/database/studentData"
@@ -73,7 +70,7 @@ export default {
     },
     data() {
       return {
-        studentData: studentData,
+        studentData: studentData.slice(1),
         totalPageCount: '',
         currentPage: 1,
         currentPageStudents: [],
@@ -83,19 +80,22 @@ export default {
     methods: {
       getCurrentPageStudents() {
         this.currentPageStudents = this.studentData.slice((this.currentPage - 1) * 10, this.currentPage * 10)
+        if (this.currentPageStudents.length === 0 && this.studentData.length !== 0) {
+          this.currentPageStudents = this.studentData.slice((this.currentPage - 2) * 10, this.currentPage * 10)
+        }
       },
       getTotalPageCount() {
         this.totalPageCount = this.studentData.length / 10 * 10
       },
       addStudent(){
-        this.$refs.StudentManageModal.setDialogVisible(true, 'add')
+        this.$refs.StudentManageModal.setDialogVisible(true, 'add', this.studentData.length)
       },
       editStudent(studentInfo) {
         this.$refs.StudentManageModal.setDialogVisible(true, 'edit', JSON.parse(JSON.stringify(studentInfo)))
       },
       deleteStudent(studentInfo) {
         this.studentData.map((item, index) => {
-          if (item.studentNo === studentInfo.studentNo)
+          if (item.id === studentInfo.id)
             this.studentData.splice(index, 1)
         })
         this.getCurrentPageStudents()
@@ -138,47 +138,83 @@ export default {
       },
       downloadTemplate() {
         let link = document.createElement("a")
-        link.setAttribute("download", "学生信息收集模板.xlsx")
-        link.href = "stu_info_template.xlsx"
+        link.setAttribute("download", "学生信息收集模板.csv")
+        link.href = "stu_info_template.csv"
         link.style.display = "none"
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
       },
       beforeUpload(file) {
-        const isXLSX = file.name.substring(file.name.lastIndexOf('.') + 1) === 'xlsx'
+        const isCSV = file.name.substring(file.name.lastIndexOf('.') + 1) === 'csv'
         const isLt2M = file.size / 1024 / 1024 < 2
 
-        if (!isXLSX) this.$message.error('请按照模板上传 xlsx 格式文件!')
+        if (!isCSV) this.$message.error('请按照模板上传 csv 格式文件!')
         if (!isLt2M) this.$message.error('上传文件大小不能超过 2MB!')
-        if (isXLSX && isLt2M) this.$message.success('文件上传成功!')
+        if (isCSV && isLt2M) this.$message.success('文件上传成功!')
 
-        return isXLSX && isLt2M;
+        return isCSV && isLt2M;
       },
-      // TODO
       uploadSuccess(res, file) {
         this.$message.success('正在解析，请稍候...')
-        console.log('res', res)
-        console.log('file', file)
-
-        let csvURL = URL.createObjectURL(file.raw)
-
         let reader = new FileReader()
-        reader.onload = function (e) {
-          let data = e.target.result;
-          let workbook = XLSX.read(data, {type: 'binary'});
-          // if(callback) callback(workbook);
+        reader.onload = (event) => {
+          this.parseUploadData(event.target.result)
         };
-        let result = reader.readAsBinaryString(file.raw);
-        console.log(result)
+        reader.readAsText(file.raw, 'GB2312');
+      },
+      parseUploadData(fileData) {
+        let dataBody = fileData.split('\r\n').slice(1)
 
+        let newStuInfo = []
+        dataBody.map(item => {
+          let itemArr = item.split(',')
+          newStuInfo.push({
+            id: this.studentData.length + 1,
+            name: itemArr[0],
+            gender: itemArr[1],
+            grade: itemArr[2],
+            studentNo: itemArr[3],
+            password: itemArr[3],
+            permission: 'student',
+            major: itemArr[4],
+            address: itemArr[5],
+            signCompany: itemArr[6],
+            signJob: itemArr[7],
+            jobCity: itemArr[8],
+            phone: itemArr[9],
+            scores: {
+              '软件工程专业概论': itemArr[10],
+              '面向对象程序设计': itemArr[11],
+              '程序设计基础': itemArr[12],
+              '基础编程实训': itemArr[13],
+              '离散数学': itemArr[14],
+              '物理概论': itemArr[15],
+              '高等数学①（一）': itemArr[16],
+              '高等数学①（二）': itemArr[17],
+              '线性代数': itemArr[18],
+              '大学英语（1）': itemArr[19],
+              '大学英语（2）': itemArr[20],
+              '初级日语（1）': itemArr[21]
+            }
+          })
+        })
+        this.studentData = this.studentData.concat(newStuInfo)
 
-        // axios({
-        //   url: csvURL,
-        //   method: 'get',
-        // }).then(res => {
-        //   console.log(res)
-        // })
+        this.$message.success('学生信息导入成功！')
+        this.getCurrentPageStudents()
+        this.getTotalPageCount()
+      },
+      searchStudent(queryString) {
+        if (queryString === '') {
+          this.studentData = studentData.slice(1)
+        } else {
+          this.studentData = studentData.slice(1).filter(item => {
+            return item.name.includes(queryString)
+          })
+        }
+        this.getCurrentPageStudents()
+        this.getTotalPageCount()
       },
       prevClick(currentPage) {
         this.currentPageStudents = this.studentData.slice((currentPage - 1) * 10, currentPage * 10);

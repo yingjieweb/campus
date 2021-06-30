@@ -6,9 +6,10 @@
       <el-button type="primary" size="small" plain icon="el-icon-download" @click="downloadTemplate">下载模板</el-button>
       <el-upload
           action="https://jsonplaceholder.typicode.com/posts/"
+          :before-upload="beforeUpload"
           :on-success="uploadSuccess"
           :show-file-list="false">
-        <el-button type="primary" size="small" plain icon="el-icon-upload">点击上传</el-button>
+        <el-button type="primary" size="small" plain icon="el-icon-upload">导入学生信息</el-button>
       </el-upload>
     </div>
     <div slot="operation">
@@ -57,15 +58,18 @@
 </template>
 
 <script>
-  import Search from "@/components/search/Search"
-  import StudentManageModal from "@/views/studentManage/StudentManageModal"
-  import studentData from "@/database/studentData"
+import axios from "axios";
+import XLSX from "xlsx"
 
-  export default {
-    name: "StudentManage",
-    components: {
-      Search,
-      StudentManageModal
+import Search from "@/components/search/Search"
+import StudentManageModal from "@/views/studentManage/StudentManageModal"
+import studentData from "@/database/studentData"
+
+export default {
+  name: "StudentManage",
+  components: {
+    Search,
+    StudentManageModal
     },
     data() {
       return {
@@ -135,14 +139,46 @@
       downloadTemplate() {
         let link = document.createElement("a")
         link.setAttribute("download", "学生信息收集模板.xlsx")
-        link.href = "template1.xlsx"
+        link.href = "stu_info_template.xlsx"
         link.style.display = "none"
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
       },
-      uploadSuccess() {
-        console.log('uploadSuccess')
+      beforeUpload(file) {
+        const isXLSX = file.name.substring(file.name.lastIndexOf('.') + 1) === 'xlsx'
+        const isLt2M = file.size / 1024 / 1024 < 2
+
+        if (!isXLSX) this.$message.error('请按照模板上传 xlsx 格式文件!')
+        if (!isLt2M) this.$message.error('上传文件大小不能超过 2MB!')
+        if (isXLSX && isLt2M) this.$message.success('文件上传成功!')
+
+        return isXLSX && isLt2M;
+      },
+      // TODO
+      uploadSuccess(res, file) {
+        this.$message.success('正在解析，请稍候...')
+        console.log('res', res)
+        console.log('file', file)
+
+        let csvURL = URL.createObjectURL(file.raw)
+
+        let reader = new FileReader()
+        reader.onload = function (e) {
+          let data = e.target.result;
+          let workbook = XLSX.read(data, {type: 'binary'});
+          // if(callback) callback(workbook);
+        };
+        let result = reader.readAsBinaryString(file.raw);
+        console.log(result)
+
+
+        // axios({
+        //   url: csvURL,
+        //   method: 'get',
+        // }).then(res => {
+        //   console.log(res)
+        // })
       },
       prevClick(currentPage) {
         this.currentPageStudents = this.studentData.slice((currentPage - 1) * 10, currentPage * 10);

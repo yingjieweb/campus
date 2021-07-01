@@ -50,9 +50,8 @@
         college: '',
         major: '',
         barOption: {
-          title: {
-            text: '个人能力与往届平均能力对比柱状图'
-          },
+          title: {text: '个人能力与往届平均能力对比柱状图'},
+          tooltip: {trigger: 'axis'},
           legend: {x: '300px'},
           dataset: {
             dimensions: ['product', '18届平均', '19届平均', '20届平均', '21届平均', '本人'],

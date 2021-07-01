@@ -16,7 +16,7 @@
         <div class="search">
           <el-form ref="form" :model="form" label-width="80px" :inline="true">
             <el-form-item label="往届生">
-              <el-select v-model="form.grade" placeholder="请选择往届生" clearable style="width:170px">
+              <el-select v-model="form.grade" placeholder="请选择往届生" style="width:170px">
                 <el-option label="2017 届" value="2017"></el-option>
                 <el-option label="2018 届" value="2018"></el-option>
                 <el-option label="2019 届" value="2019"></el-option>
@@ -26,7 +26,7 @@
               </el-select>
             </el-form-item>
             <el-form-item label="薪资水平">
-              <el-select v-model="form.salaryRank" placeholder="请选择薪资水平" clearable style="width:170px">
+              <el-select v-model="form.salaryRank" placeholder="请选择薪资水平" style="width:170px">
                 <el-option label="小于 5k" value="5"></el-option>
                 <el-option label="5k - 10k" value="10"></el-option>
                 <el-option label="10k - 15k" value="15"></el-option>
@@ -36,7 +36,7 @@
               </el-select>
             </el-form-item>
             <el-form-item label="就业岗位">
-              <el-select v-model="form.job" placeholder="请选择就业岗位" clearable style="width:170px">
+              <el-select v-model="form.job" placeholder="请选择就业岗位" style="width:170px">
                 <el-option label="技术类" value="technology"></el-option>
                 <el-option label="产品类" value="product"></el-option>
                 <el-option label="设计类" value="design"></el-option>
@@ -326,9 +326,9 @@
     },
     methods: {
       filterData() {
-        this.$refs.barChart1.init();
-        this.$refs.barChart2.init();
-        this.$refs.barChart3.init();
+        this.$refs.barChart1.init()
+        this.$refs.barChart2.init()
+        this.$refs.barChart3.init()
       }
     }
   }

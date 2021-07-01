@@ -170,9 +170,8 @@
     data() {
       return {
         lineOption: {
-          title: {
-            text: '个人能力曲线'
-          },
+          title: {text: '个人能力曲线'},
+          tooltip: {trigger: 'axis'},
           legend: {
             data: ['专业知识能力', '学习能力', '实践能力', '创新能力']
           },
@@ -212,9 +211,7 @@
           ]
         },
         radarOption: {
-          title: {
-            text: '全方位能力分析'
-          },
+          title: {text: '全方位能力分析'},
           tooltip: {},
           legend: {
             x: '150px',

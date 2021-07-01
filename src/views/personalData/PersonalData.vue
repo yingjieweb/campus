@@ -63,9 +63,8 @@
           gradeRank: '116'
         }],
         barOption: {
-          title: {
-            text: '个人能力水平柱状图'
-          },
+          title: {text: '个人能力水平柱状图'},
+          tooltip: {trigger: 'axis'},
           legend: {},
           dataset: {
             dimensions: ['product', '18平均', '19平均', '20平均', '21平均', '本人'],

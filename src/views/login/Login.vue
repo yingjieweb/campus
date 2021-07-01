@@ -27,7 +27,7 @@
       </div>
 
       <el-button class="submit" type="primary" size="mini" round @click="onsubmit">登录</el-button>
-      <el-button class="submit" type="primary" size="mini" round @click="onsubmit">注册</el-button>
+      <el-button class="submit" type="primary" size="mini" round @click="registerAccount">注册</el-button>
     </div>
     <div class="instructions">大学生综合能力评价及就业推荐系统</div>
     <!--<div class="instructions">基于学生能力和行为画像的就业推荐系统</div>-->
@@ -73,6 +73,9 @@
         } else {
           this.$message({message: '当前用户不存在！', type: 'error'})
         }
+      },
+      registerAccount() {
+        this.$message.warning('注册账号功能正在开发当中...')
       }
     },
     mounted() {
@@ -125,13 +128,15 @@
 
         .verify-code {
           height: 40px;
-          cursor: pointer;
-          user-select: none;
+          padding: 0 10px;
+          line-height: 40px;
+          text-align: center;
           border: 1px solid #E6E8ED;
           border-radius: 4px;
-          text-align: center;
-          line-height: 40px;
-          padding: 0 10px;
+          font-weight: bold;
+          color: #606266;
+          cursor: pointer;
+          user-select: none;
           background-image: url(../../assets/images/verify_bgc.jpg);
         }
       }

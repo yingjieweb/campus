@@ -12,7 +12,7 @@
           <BarChart :option="salaryRank" ref="barChart3"></BarChart>
         </div>
       </div>
-      <div class="map">
+      <div class="middle">
         <div class="search">
           <el-form ref="form" :model="form" label-width="80px" :inline="true">
             <el-form-item label="往届生">
@@ -22,7 +22,7 @@
                 <el-option label="2019 届" value="2019"></el-option>
                 <el-option label="2020 届" value="2020"></el-option>
                 <el-option label="2021 届" value="2021"></el-option>
-                <el-option label="不限" value="all"></el-option>
+                <el-option label="不限" value="2017-2021"></el-option>
               </el-select>
             </el-form-item>
             <el-form-item label="薪资水平">
@@ -353,7 +353,7 @@
       }
     }
 
-    > .map {
+    > .middle {
       flex: 6;
       flex-direction: column;
 

@@ -19,7 +19,8 @@
       <button class="button" @click="operationVisible = !operationVisible"><i class="el-icon-arrow-down"></i></button>
     </div>
     <div class="operation" v-if="operationVisible">
-      <span class="logout" @click="logout">退出</span>
+      <el-button @click="logout" size="small">退出账户</el-button>
+      <el-button @click="downloadDoc" size="small" v-if="this.$store.state.isAdmin">下载文档</el-button>
     </div>
   </div>
 </template>
@@ -40,9 +41,18 @@
         this.menuCollapse = !this.menuCollapse
         this.$EventBus.$emit('toggleMenuCollapse', this.menuCollapse)
       },
-      logout(){
+      logout() {
         this.$router.push('/login');
         this.$store.commit('changeLoginStatus', false)
+      },
+      downloadDoc() {
+        let link = document.createElement("a")
+        link.setAttribute("download", "系统说明文档.docx")
+        link.href = "sys_intro_doc.docx"
+        link.style.display = "none"
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
       }
     }
   }
@@ -108,21 +118,21 @@
     }
 
     > .operation {
-      padding: 6px;
       width: 105px;
+      padding: 6px;
       position: absolute;
-      top: 85%;
-      right: 5px;
+      top: 96%;
+      right: 8px;
       border: 1px solid #E6E8ED;
       border-radius: 5px;
       background-color: white;
 
-      > .logout {
+      ::v-deep .el-button {
         width: 100%;
         cursor: pointer;
         display: inline-block;
         text-align: center;
-        padding: 2px;
+        margin: 10px 0;
       }
     }
   }

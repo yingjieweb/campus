@@ -155,7 +155,7 @@
               hoverSymbolSize: 10,
               tooltip: {
                 formatter(value) {
-                  return value.data.name + "<br/>" + "毕业生：" + Math.floor(Math.random() * 25);
+                  return value.data.name + "<br/>" + "毕业生：" + Math.ceil(Math.random() * 6);
                 },
                 show: true
               },

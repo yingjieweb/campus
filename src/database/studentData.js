@@ -16,7 +16,7 @@ const studentData = [
     permission: 'student',
     major: '软件工程',
     address: '江苏省无锡市',
-    signCompany: '北京字节跳动',
+    signCompany: '字节跳动',
     signJob: 'Java开发工程师',
     jobCity: '北京',
     phone: '18604920086',

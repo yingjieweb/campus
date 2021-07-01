@@ -85,9 +85,8 @@ export default {
     return {
       title: 'AbilityAnalysis',
       lineOption1: {
-        title: {
-          text: '毕业生平均能力曲线'
-        },
+        title: {text: '毕业生平均能力曲线'},
+        tooltip: {trigger: 'axis'},
         legend: {
           x: '180px',
           data: ['专业知识能力', '学习能力', '实践能力', '创新能力']
@@ -128,9 +127,8 @@ export default {
         ]
       },
       lineOption2: {
-        title: {
-          text: '在校生平均能力曲线'
-        },
+        title: {text: '在校生平均能力曲线'},
+        tooltip: {trigger: 'axis'},
         legend: {
           x: '180px',
           data: ['专业知识能力', '学习能力', '实践能力', '创新能力']
@@ -151,22 +149,22 @@ export default {
           {
             name: '专业知识能力',
             type: 'line',
-            data: [5.2, 7.1, 9.4, 5.2]
+            data: [5.2, 5.2, 7.1, 8.1]
           },
           {
             name: '学习能力',
             type: 'line',
-            data: [3.2, 7.8, 8.4, 3.2]
+            data: [3.2, 4.2, 6.8, 8.4]
           },
           {
             name: '实践能力',
             type: 'line',
-            data: [6.2, 8.1, 9.7, 6.2,]
+            data: [6.2, 6.2, 7.4, 8.7]
           },
           {
             name: '创新能力',
             type: 'line',
-            data: [5.6, 7.6, 8.9, 5.6]
+            data: [5.6, 6.6, 7.6, 8.9]
           }
         ]
       },
@@ -329,22 +327,22 @@ export default {
         {
           name: '专业知识能力',
           type: 'line',
-          data: [0, 5.2, 7.1, 9.4, 5.2, 7.1, 9.4, 5.2, 7.1, 9.4].slice(grade, grade * 2)
+          data: [0, 5.2, 5.4, 6.1, 5.2, 5.2, 7.1, 8.1].slice(grade, grade * 2)
         },
         {
           name: '学习能力',
           type: 'line',
-          data: [0, 3.2, 7.8, 8.4, 3.2, 7.8, 8.4, 3.2, 7.8, 8.4].slice(grade, grade * 2)
+          data: [0, 3.2, 5.1, 5.9, 3.2, 4.2, 6.8, 8.4].slice(grade, grade * 2)
         },
         {
           name: '实践能力',
           type: 'line',
-          data: [0, 6.2, 8.1, 9.7, 6.2, 8.1, 9.7, 6.2, 8.1, 9.7].slice(grade, grade * 2)
+          data: [0, 6.2, 5.0, 6.7, 3.2, 4.2, 6.8, 8.4].slice(grade, grade * 2)
         },
         {
           name: '创新能力',
           type: 'line',
-          data: [0, 5.6, 7.6, 8.9, 5.6, 7.6, 8.9, 5.6, 7.6, 8.9].slice(grade, grade * 2)
+          data: [0, 5.6, 4.6, 6.9, 5.6, 6.6, 7.6, 8.9].slice(grade, grade * 2)
         }
       ]
       this.$refs.LineChart2.init()

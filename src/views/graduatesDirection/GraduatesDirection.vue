@@ -3,17 +3,58 @@
     <div slot="content" class="container">
       <div class="left">
         <div class="jobOrient">
-          <BarChart :option="jobOrient"></BarChart>
+          <BarChart :option="jobOrient" ref="barChart1"></BarChart>
         </div>
         <div class="jobOrient">
-          <BarChart :option="hotJobs"></BarChart>
+          <BarChart :option="hotJobs" ref="barChart2"></BarChart>
         </div>
         <div class="jobOrient">
-          <BarChart :option="salaryRank"></BarChart>
+          <BarChart :option="salaryRank" ref="barChart3"></BarChart>
         </div>
       </div>
       <div class="map">
-        <ChinaMap></ChinaMap>
+        <div class="search">
+          <el-form ref="form" :model="form" label-width="80px" :inline="true">
+            <el-form-item label="往届生">
+              <el-select v-model="form.grade" placeholder="请选择往届生" clearable style="width:170px">
+                <el-option label="2017 届" value="2017"></el-option>
+                <el-option label="2018 届" value="2018"></el-option>
+                <el-option label="2019 届" value="2019"></el-option>
+                <el-option label="2020 届" value="2020"></el-option>
+                <el-option label="2021 届" value="2021"></el-option>
+                <el-option label="不限" value="all"></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item label="薪资水平">
+              <el-select v-model="form.salaryRank" placeholder="请选择薪资水平" clearable style="width:170px">
+                <el-option label="小于 5k" value="5"></el-option>
+                <el-option label="5k - 10k" value="10"></el-option>
+                <el-option label="10k - 15k" value="15"></el-option>
+                <el-option label="15k - 20k" value="20"></el-option>
+                <el-option label="大于 20k" value="25"></el-option>
+                <el-option label="不限" value="all"></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item label="就业岗位">
+              <el-select v-model="form.job" placeholder="请选择就业岗位" clearable style="width:170px">
+                <el-option label="技术类" value="technology"></el-option>
+                <el-option label="产品类" value="product"></el-option>
+                <el-option label="设计类" value="design"></el-option>
+                <el-option label="运营类" value="operation"></el-option>
+                <el-option label="市场类" value="market"></el-option>
+                <el-option label="销售类" value="sell"></el-option>
+                <el-option label="职能类" value="function"></el-option>
+                <el-option label="不限" value="all"></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item style="margin-left: 16px;">
+              <el-button type="primary" plain size="medium" @click="filterData">立即筛选</el-button>
+            </el-form-item>
+          </el-form>
+        </div>
+        <div class="map">
+          <ChinaMap></ChinaMap>
+        </div>
       </div>
       <div class="right">
         <div class="jobOrient">
@@ -46,16 +87,24 @@
     },
     data() {
       return {
-        jobOrient: {
+        form: {
+          grade: '2021',
+          salaryRank: 'all',
+          job: 'all',
+        }
+      }
+    },
+    computed: {
+      jobOrient: function () {
+        return {
           title: {
             text: '往届毕业生就业城市',
-            subtext: '2014-2020届毕业生就业热门城市'
+            subtext: `${this.form.grade}届毕业生就业热门城市`
           },
           tooltip: {
             trigger: 'axis',
-            axisPointer: {
-              type: 'shadow'
-            }
+            axisPointer: {type: 'shadow'},
+            formatter: '{b}: {c} 人'
           },
           grid: {
             left: '3%',
@@ -73,22 +122,23 @@
           },
           series: [
             {
-              name: '2020年',
+              name: '2021届',
               type: 'bar',
-              data: [583, 360, 120, 542, 181, 843]
+              data: [78, 46, 22, 74, 58, 124]
             }
           ]
-        },
-        hotJobs: {
+        }
+      },
+      hotJobs: function () {
+        return {
           title: {
             text: '往届毕业生就业岗位排行榜',
-            subtext: '2020届毕业生热门就业岗位'
+            subtext: `${this.form.grade}届毕业生热门就业岗位`
           },
           tooltip: {
             trigger: 'axis',
-            axisPointer: {
-              type: 'shadow'
-            }
+            axisPointer: {type: 'shadow'},
+            formatter: '{b}: {c} 人'
           },
           grid: {
             left: '3%',
@@ -106,22 +156,23 @@
           },
           series: [
             {
-              name: '2020年',
+              name: '2021年',
               type: 'bar',
               data: [166, 95, 49, 67, 52, 26]
             }
           ]
-        },
-        salaryRank: {
+        }
+      },
+      salaryRank: function () {
+        return {
           title: {
             text: '往届毕业生岗位薪资排行榜',
-            subtext: '岗位薪资排行榜（月薪）'
+            subtext: `${this.form.grade}届毕业生岗位薪资排行榜（月薪）`
           },
           tooltip: {
             trigger: 'axis',
-            axisPointer: {
-              type: 'shadow'
-            }
+            axisPointer: {type: 'shadow'},
+            formatter: '{b}: {c} ￥'
           },
           grid: {
             left: '3%',
@@ -139,25 +190,27 @@
           },
           series: [
             {
-              name: '2020年',
+              name: '2021年',
               type: 'bar',
-              data: [15370, 13698, 20540, 10526, 15010, 12736]
+              data: [15300, 13600, 20500, 10500, 15000, 12700]
             }
           ]
-        },
-        positionPredict: {
+        }
+      },
+      positionPredict: function () {
+        return {
           title: {
             text: '岗位数量实时预测',
             subtext: '2021年岗位招聘数量预测'
           },
           tooltip: {
             trigger: 'item',
-            formatter: '{b}: {c}￥ ({d}%)'
+            formatter: '{b}岗: {c} 个 ({d}%)'
           },
           series: [
             {
               type: 'pie',
-              radius: ['50%', '70%'],
+              radius: ['50%', '65%'],
               avoidLabelOverlap: false,
               label: {
                 normal: {
@@ -175,17 +228,18 @@
               ]
             }
           ]
-        },
-        enrollRate: {
+        }
+      },
+      enrollRate: function () {
+        return {
           title: {
             text: '往年岗位投递录取比例',
-            subtext: '2020年各岗位投递录取比例'
+            subtext: '2021年各岗位投递录取比例'
           },
           tooltip: {
             trigger: 'axis',
-            axisPointer: {
-              type: 'shadow'
-            }
+            axisPointer: {type: 'shadow'},
+            formatter: '{b}岗: {c}:1'
           },
           grid: {
             left: '3%',
@@ -203,21 +257,22 @@
           },
           series: [
             {
-              name: '2020年',
+              name: '2021年',
               type: 'bar',
               data: [6, 4, 26, 4, 17, 5]
             }
           ]
-        },
-        positionTrend: {
+        }
+      },
+      positionTrend: function () {
+        return {
           title: {
             text: '近年热门岗位招聘走势'
           },
-          tooltip: {
-            trigger: 'axis'
-          },
+          tooltip: {trigger: 'axis'},
           legend: {
             top: '8%',
+            left: '30%',
             data: ['Java', 'Web', '算法', '测试', '产品', '设计']
           },
           grid: {
@@ -229,7 +284,7 @@
           xAxis: {
             type: 'category',
             boundaryGap: false,
-            data: ['2016', '2017', '2018', '2019', '2020']
+            data: ['2017', '2018', '2019', '2020', '2021']
           },
           yAxis: {
             type: 'value'
@@ -268,6 +323,13 @@
           ]
         }
       }
+    },
+    methods: {
+      filterData() {
+        this.$refs.barChart1.init();
+        this.$refs.barChart2.init();
+        this.$refs.barChart3.init();
+      }
     }
   }
 </script>
@@ -293,7 +355,25 @@
 
     > .map {
       flex: 6;
-      border: 1px dashed #1296DB;
+      flex-direction: column;
+
+      .search {
+        margin-bottom: 5px;
+        border: 1px dashed #1296DB;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        ::v-deep .el-form-item {
+          margin-top: 22px;
+        }
+      }
+
+      .map {
+        flex: 1;
+        height: calc(100% - 91px);
+        border: 1px dashed #1296DB;
+      }
     }
 
     > .right {

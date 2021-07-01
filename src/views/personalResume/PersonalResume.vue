@@ -2,7 +2,7 @@
   <div style="display:flex;">
     <Block title="我的简历"  style="flex: 6;">
       <div slot="content" class="container">
-        <el-tabs tab-position="left" class="resumeEdit" v-model="activeName" @tab-click="handleClick">
+        <el-tabs tab-position="left" class="resumeEdit" v-model="activeName">
           <el-tab-pane label="基本信息" name="first">
             <BasicInfo @goNextItem="goNextItem"></BasicInfo>
           </el-tab-pane>
@@ -64,9 +64,6 @@
       }
     },
     methods: {
-      handleClick(tab, event) {
-        console.log(tab, event);
-      },
       goNextItem(next){
         this.activeName = next;
       }

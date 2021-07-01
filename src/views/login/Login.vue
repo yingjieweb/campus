@@ -20,10 +20,10 @@
         <el-input style="margin: 14px 14px 14px 0"
                   placeholder="验证码"
                   prefix-icon="el-icon-lock"
-                  v-model="verifyCode"
+                  v-model="verifyInput"
                   @keydown.enter.native="onsubmit">
         </el-input>
-        <img class="code-img" src="@/assets/images/verify_code.png" @click="changeCode">
+        <div class="verify-code" @click="changeCode">{{ verifyCode }}</div>
       </div>
 
       <el-button class="submit" type="primary" size="mini" round @click="onsubmit">登录</el-button>
@@ -43,12 +43,13 @@
       return {
         studentNo: '',
         password: '',
-        verifyCode: ''
+        verifyInput: '',
+        verifyCode: Math.ceil(Math.random() * 9999)
       }
     },
     methods: {
       changeCode() {
-        console.log('更换验证码图片')  // TODO
+        this.verifyCode = Math.ceil(Math.random() * 9999)
       },
       onsubmit() {
         let currentStudent = studentData.filter(item => {
@@ -57,7 +58,7 @@
 
         if (currentStudent.length === 1) {
           if (currentStudent[0].password === this.password) {
-            if (this.verifyCode === '8233') {
+            if (parseInt(this.verifyInput) === this.verifyCode) {
               this.$message({message: '登陆成功', type: 'success'})
 
               this.$store.commit('changeLoginStatus', true)
@@ -122,7 +123,17 @@
         align-items: center;
         margin-bottom: 15px;
 
-        .code-img {cursor: pointer;}
+        .verify-code {
+          height: 40px;
+          cursor: pointer;
+          user-select: none;
+          border: 1px solid #E6E8ED;
+          border-radius: 4px;
+          text-align: center;
+          line-height: 40px;
+          padding: 0 10px;
+          background-image: url(../../assets/images/verify_bgc.jpg);
+        }
       }
 
       > .submit {

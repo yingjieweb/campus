@@ -6,7 +6,7 @@
     </div>
     <div class="direction">
       <div class="experience">{{recommendItem.requiredDegree}} - {{recommendItem.requiredMajor}}</div>
-      <span class="label" v-for="item in recommendItem.label">{{item}}</span>
+      <span class="label" v-for="item in recommendItem.label.split('/')">{{ item }}</span>
     </div>
     <div class="company-info">
       <img class="avatar" :src="recommendItem.companyAvatar">

@@ -106,7 +106,7 @@ export default {
           this.studentData.push(newUserInfo)
         } else if (status === 'edit') {
           this.studentData.map((item, index) => {
-            if (item.studentNo === newUserInfo.studentNo) {
+            if (item.id === newUserInfo.id) {
               this.$set(this.studentData, index, newUserInfo)
             }
           })

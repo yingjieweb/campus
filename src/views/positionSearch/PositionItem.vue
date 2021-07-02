@@ -22,7 +22,7 @@
     </div>
     <div class="bot">
       <span class="comp-label">
-        <span class="label-item" v-for="item in jobItem.label" :key="item">{{item}}</span>
+        <span class="label-item" v-for="item in jobItem.label.split('/')" :key="item">{{ item }}</span>
       </span>
       <span class="comp-welfare">{{jobItem.companyWelfare}}</span>
     </div>

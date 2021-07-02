@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-      title="添加学生信息"
+      title="新增学生信息"
       :visible.sync="dialogVisible"
       width="38%"
       :before-close="handleClose">
@@ -112,7 +112,7 @@
           } else {
             this.$message.error('请按提示输入完整的学生信息~')
           }
-        });
+        })
       }
     }
   }
@@ -133,5 +133,4 @@
      border-top: 1px solid #DCDFE6;
    }
  }
-
 </style>

@@ -20,7 +20,7 @@
               <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
-                <span v-for="badge in item.label">{{badge}}</span>
+                <span v-for="badge in item.label.split('/')">{{ badge }}</span>
               </div>
             </div>
           </div>
@@ -40,7 +40,7 @@
               <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
-                <span v-for="badge in item.label">{{badge}}</span>
+                <span v-for="badge in item.label.split('/')">{{ badge }}</span>
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@
               <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
-                <span v-for="badge in item.label">{{badge}}</span>
+                <span v-for="badge in item.label.split('/')">{{ badge }}</span>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
               <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
-                <span v-for="badge in item.label">{{badge}}</span>
+                <span v-for="badge in item.label.split('/')">{{ badge }}</span>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@
               <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
-                <span v-for="badge in item.label">{{badge}}</span>
+                <span v-for="badge in item.label.split('/')">{{ badge }}</span>
               </div>
             </div>
           </div>
@@ -120,7 +120,7 @@
               <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
-                <span v-for="badge in item.label">{{badge}}</span>
+                <span v-for="badge in item.label.split('/')">{{ badge }}</span>
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@
               <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
-                <span v-for="badge in item.label">{{badge}}</span>
+                <span v-for="badge in item.label.split('/')">{{ badge }}</span>
               </div>
             </div>
           </div>
@@ -160,7 +160,7 @@
               <div class="company-name" @click="goDetails(item.id)">{{item.companyName}}</div>
               <div class="company-intro">{{item.introduce}}</div>
               <div class="company-badge">
-                <span v-for="badge in item.label">{{badge}}</span>
+                <span v-for="badge in item.label.split('/')">{{ badge }}</span>
               </div>
             </div>
           </div>

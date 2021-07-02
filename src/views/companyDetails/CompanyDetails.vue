@@ -11,7 +11,7 @@
                   <div class="company-name">{{currentComp.companyName}}</div>
                   <div class="company-intro">{{currentComp.introduce}}</div>
                   <div class="company-badge">
-                    <span v-for="badge in currentComp.label">{{badge}}</span>
+                    <span v-for="badge in currentComp.label.split('/')">{{ badge }}</span>
                   </div>
                 </div>
               </div>

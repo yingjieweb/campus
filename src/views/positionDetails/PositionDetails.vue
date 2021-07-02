@@ -12,7 +12,7 @@
             <span class="experience">{{currentJob.requiredExp}}</span>
           </div>
           <div class="comp-label">
-            <span class="label-item" v-for="item in currentJob.label">{{item}}</span>
+            <span class="label-item" v-for="item in currentJob.label.split('/')">{{ item }}</span>
           </div>
           <div class="pub-time">{{currentJob.publishTime}} 发布</div>
         </div>

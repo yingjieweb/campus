@@ -13,7 +13,7 @@
       </el-upload>
     </div>
     <div slot="operation">
-      <Search placeholder="请输入学生姓名" @searchStudent="searchStudent"></Search>
+      <Search placeholder="请输入学生姓名" @searchData="searchStudent"></Search>
     </div>
     <div slot="content">
       <el-table

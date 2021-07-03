@@ -13,7 +13,7 @@
       </el-upload>
     </div>
     <div slot="operation">
-      <Search placeholder="请输入公司名称"></Search>
+      <Search placeholder="请输入公司名称" @searchData="searchJob"></Search>
     </div>
     <div slot="content">
       <el-table
@@ -206,26 +206,26 @@ export default {
         this.getCurrentPageJobs()
         this.getTotalPageCount()
       },
-      searchStudent(queryString) {
+      searchJob(queryString) {
         if (queryString === '') {
-          this.jobData = jobData.slice(1)
+          this.jobData = jobData
         } else {
-          this.jobData = jobData.slice(1).filter(item => {
-            return item.name.includes(queryString)
+          this.jobData = jobData.filter(item => {
+            return item.companyName.includes(queryString)
           })
         }
         this.getCurrentPageJobs()
         this.getTotalPageCount()
       },
       prevClick(currentPage) {
-        this.currentPageJobs = jobData.slice((currentPage - 1) * 10, currentPage * 10);
+        this.currentPageJobs = this.jobData.slice((currentPage - 1) * 10, currentPage * 10);
       },
       nextClick(currentPage) {
-        this.currentPageJobs = jobData.slice((currentPage - 1) * 10, currentPage * 10);
+        this.currentPageJobs = this.jobData.slice((currentPage - 1) * 10, currentPage * 10);
       },
       currentChange(currentPage) {
         this.currentPage = currentPage
-        this.currentPageJobs = jobData.slice((currentPage - 1) * 10, currentPage * 10);
+        this.currentPageJobs = this.jobData.slice((currentPage - 1) * 10, currentPage * 10);
       }
     },
     created() {

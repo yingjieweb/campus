@@ -4,14 +4,14 @@
         class="search"
         :placeholder="placeholder"
         v-model="queryString"
-        @keydown.enter.native="$emit('searchStudent', queryString)">
+        @keydown.enter.native="$emit('searchData', queryString)">
     </el-input>
     <el-button
         plain
         size="small"
         type="primary"
         icon="el-icon-search"
-        @click="$emit('searchStudent', queryString)"
+        @click="$emit('searchData', queryString)"
     >搜索
     </el-button>
   </div>

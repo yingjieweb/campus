@@ -22,7 +22,7 @@
                 <el-option label="2019 届" value="2019"></el-option>
                 <el-option label="2020 届" value="2020"></el-option>
                 <el-option label="2021 届" value="2021"></el-option>
-                <el-option label="不限" value="2017-2021"></el-option>
+                <el-option label="不限" value="2022"></el-option>
               </el-select>
             </el-form-item>
             <el-form-item label="薪资水平">
@@ -52,8 +52,8 @@
             </el-form-item>
           </el-form>
         </div>
-        <div class="map">
-          <ChinaMap></ChinaMap>
+        <div class="map" v-loading="mapLoading">
+          <ChinaMap ref="chinaMap"></ChinaMap>
         </div>
       </div>
       <div class="right">
@@ -76,6 +76,7 @@
   import BarChart from "@/components/charts/BarChart"
   import PieChart from "@/components/charts/PieChart"
   import LineChart from "@/components/charts/LineChart"
+  import graduatesDirectionData from "@/database/graduatesDirectionData";
 
   export default {
     name: "GraduatesDirection",
@@ -91,15 +92,12 @@
           grade: '2021',
           salaryRank: 'all',
           job: 'all',
-        }
-      }
-    },
-    computed: {
-      jobOrient: function () {
-        return {
+        },
+        mapLoading: false,
+        jobOrient: {
           title: {
             text: '往届毕业生就业城市',
-            subtext: `${this.form.grade}届毕业生就业热门城市`
+            subtext: `往届毕业生就业热门城市`
           },
           tooltip: {
             trigger: 'axis',
@@ -127,13 +125,11 @@
               data: [78, 46, 22, 74, 58, 124]
             }
           ]
-        }
-      },
-      hotJobs: function () {
-        return {
+        },
+        hotJobs: {
           title: {
             text: '往届毕业生就业岗位排行榜',
-            subtext: `${this.form.grade}届毕业生热门就业岗位`
+            subtext: `往届毕业生热门就业岗位`
           },
           tooltip: {
             trigger: 'axis',
@@ -161,13 +157,11 @@
               data: [166, 95, 49, 67, 52, 26]
             }
           ]
-        }
-      },
-      salaryRank: function () {
-        return {
+        },
+        salaryRank: {
           title: {
             text: '往届毕业生岗位薪资排行榜',
-            subtext: `${this.form.grade}届毕业生岗位薪资排行榜（月薪）`
+            subtext: `往届毕业生岗位薪资排行榜（月薪）`
           },
           tooltip: {
             trigger: 'axis',
@@ -192,13 +186,11 @@
             {
               name: '2021年',
               type: 'bar',
-              data: [15300, 13600, 20500, 10500, 15000, 12700]
+              data: [16300, 15600, 20500, 14500, 18000, 17700]
             }
           ]
-        }
-      },
-      positionPredict: function () {
-        return {
+        },
+        positionPredict: {
           title: {
             text: '岗位数量实时预测',
             subtext: '2021年岗位招聘数量预测'
@@ -228,10 +220,8 @@
               ]
             }
           ]
-        }
-      },
-      enrollRate: function () {
-        return {
+        },
+        enrollRate: {
           title: {
             text: '往年岗位投递录取比例',
             subtext: '2021年各岗位投递录取比例'
@@ -262,10 +252,8 @@
               data: [6, 4, 26, 4, 17, 5]
             }
           ]
-        }
-      },
-      positionTrend: function () {
-        return {
+        },
+        positionTrend: {
           title: {
             text: '近年热门岗位招聘走势'
           },
@@ -326,9 +314,20 @@
     },
     methods: {
       filterData() {
+        this.jobOrient.series[0].data = graduatesDirectionData.jobOrientData[this.form.grade - 2017]
+        this.hotJobs.series[0].data = graduatesDirectionData.hotJobsData[this.form.grade - 2017]
+        this.salaryRank.series[0].data = graduatesDirectionData.salaryRankData[this.form.grade - 2017]
+
         this.$refs.barChart1.init()
         this.$refs.barChart2.init()
         this.$refs.barChart3.init()
+
+        this.mapLoading = true
+        this.$refs.chinaMap.init()
+        this.$refs.chinaMap.setCityCoord()
+        setTimeout(() => {
+          this.mapLoading = false
+        }, 2800)
       }
     }
   }

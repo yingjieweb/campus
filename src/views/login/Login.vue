@@ -5,12 +5,12 @@
         <img src="@/assets/images/login.png" alt="avatar">
       </div>
       <el-input style="margin: 10px auto"
-                placeholder="学号"
+                placeholder="学号「学生：12345」「管理员：admin」"
                 prefix-icon="el-icon-user"
                 v-model="studentNo"
                 ref="studentNoInput"></el-input>
       <el-input style="margin: 14px auto"
-                placeholder="密码"
+                placeholder="密码「可以随便填」"
                 prefix-icon="el-icon-lock"
                 v-model="password"
                 show-password>
@@ -57,7 +57,8 @@
         })
 
         if (currentStudent.length === 1) {
-          if (currentStudent[0].password === this.password) {
+          // if (currentStudent[0].password === this.password) {
+          if (this.password) {
             if (parseInt(this.verifyInput) === this.verifyCode) {
               this.$message({message: '登陆成功', type: 'success'})
 

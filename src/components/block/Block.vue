@@ -23,6 +23,10 @@
 <style lang="scss" scoped>
   .block {
     margin: 2px;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   >>> .el-card__header{
